@@ -1,0 +1,781 @@
+---
+title: Styles et CSS
+description: Apprenez à mettre en forme des composants dans Astro avec des styles à portée limitée, des CSS externes et des outils tels que Sass et PostCSS.
+i18nReady: true
+
+---
+import Since from '~/components/Since.astro';
+import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
+import ReadMore from '~/components/ReadMore.astro'
+import { Steps } from '@astrojs/starlight/components';
+import RecipeLinks from "~/components/RecipeLinks.astro";
+
+
+Astro a été conçu pour rendre la mise en forme et l'écriture CSS un jeu d'enfant. Écrivez votre propre CSS directement dans un composant Astro ou importez votre bibliothèque CSS préférée comme [Tailwind][tailwind]. Les langages avancés de mise en forme comme [Sass][sass] et [Less][less] sont également pris en charge.
+
+##  Styliser avec Astro
+
+La mise en forme d'un composant Astro est aussi simple que l'ajout d'une balise `<style>` à votre composant ou à votre modèle de page. Lorsque vous placez une balise `<style>` à l'intérieur d'un composant Astro, Astro détecte le CSS et gère vos styles pour vous, automatiquement.
+
+```astro title="src/components/MyComponent.astro"
+<style>
+  h1 { color: red; }
+</style>
+```
+
+### Styles à portée limitée
+
+Les règles CSS définies dans la balise `<style>` d'Astro disposent automatiquement d'une **portée limitée par défaut** (« scoped » en anglais). Les styles à portée limitée sont compilés en arrière-plan pour s'appliquer uniquement au code HTML écrit à l'intérieur de ce même composant. Le CSS que vous écrivez à l'intérieur d'un composant Astro est automatiquement encapsulé à l'intérieur de ce composant.
+
+Ce CSS:
+```astro title="src/pages/index.astro"
+<style>
+  h1 {
+    color: red;
+  }
+
+  .text {
+    color: blue;
+  }
+</style>
+```
+
+Est compilé comme ceci :
+```astro
+<style>
+  h1[data-astro-cid-hhnqfkh6] {
+     color: red;
+  }
+
+  .text[data-astro-cid-hhnqfkh6] {
+    color: blue;
+  }
+</style>
+```
+
+
+Les styles à portée limitée ne fuient pas et n'auront pas d'impact sur le reste de votre site. Dans Astro, il est possible d'utiliser des sélecteurs peu spécifiques comme `h1 {}` ou `p {}` car ils seront compilés avec une portée limitée dans la sortie finale.
+
+Les styles à portée limitée ne s'appliquent pas non plus aux autres composants Astro contenus dans votre modèle. Si vous devez mettre en forme un composant enfant, pensez à envelopper ce composant dans un `<div>` (ou un autre élément) que vous pourrez ensuite mettre en forme.
+
+La spécificité des styles à portée limitée est préservée, ce qui leur permet de fonctionner de manière cohérente avec d'autres fichiers CSS ou bibliothèques CSS tout en préservant les limites exclusives qui empêchent les styles de s'appliquer en dehors du composant.
+
+### Styles globaux
+
+Bien que nous recommandions des styles à portée limitée pour la plupart des composants, il se peut que vous trouviez une raison valable d'écrire du CSS global et sans portée limitée. Vous pouvez désactiver la portée CSS automatique avec l'attribut `<style is:global>`.
+
+```astro title="src/components/GlobalStyles.astro" "is:global"
+<style is:global>
+  /* Sans portée limitée, livré tel quel au navigateur.
+     S'applique à toutes les balises <h1> de votre site. */
+  h1 { color: red; }
+</style>
+```
+
+Vous pouvez également mélanger des règles CSS globales et à portée limitée dans la même balise `<style>` en utilisant le sélecteur `:global()`. Cela devient un modèle puissant pour appliquer des styles CSS aux enfants de votre composant.
+
+```astro title="src/components/MixedStyles.astro" ":global(h1)"
+<style>
+  /* Pour ce composant, seulement. */
+  h1 { color: red; }
+  /* Mixte : S'applique uniquement aux éléments enfants `h1`. */
+  article :global(h1) {
+    color: blue;
+  }
+</style>
+<h1>Titre</h1>
+<article><slot /></article>
+```
+
+C'est un excellent moyen de mettre en forme des éléments tels que des articles de blog ou des documents dont le contenu est géré par un CMS et qui se trouvent en dehors d'Astro. Mais attention : les composants dont l'apparence diffère selon qu'ils ont ou non un certain composant parent peuvent devenir difficiles à dépanner.
+
+Les styles à portée limitée doivent être utilisés aussi souvent que possible. Les styles globaux ne doivent être utilisés qu'en cas de besoin.
+
+### Combiner des classes avec `class:list`
+
+Si vous avez besoin de combiner dynamiquement des classes sur un élément, vous pouvez utiliser l'attribut utilitaire `class:list` dans les fichiers `.astro`.
+
+```astro title="src/components/ClassList.astro" /class:list={.*}/
+---
+const { isRed } = Astro.props;
+---
+<!-- Si `isRed` est vrai, la classe sera "box red". -->
+<!-- Si `isRed` est faux, la classe sera "box". -->
+<div class:list={['box', { red: isRed }]}><slot /></div>
+
+<style>
+  .box { border: 1px solid blue; }
+  .red { border-color: red; }
+</style>
+```
+
+<ReadMore>Consultez notre page de [référence des directives](/fr/reference/directives-reference/#classlist) pour en savoir plus sur `class:list`.</ReadMore>
+
+### Variables CSS
+
+<p><Since v="0.21.0" /></p>
+
+La balise `<style>` d'Astro peut référencer n'importe quelle variable CSS disponible sur la page. Vous pouvez également passer des variables CSS directement à partir du frontmatter de votre composant en utilisant la directive `define:vars`.
+
+```astro title="src/components/DefineVars.astro" /define:vars={{.*}}/ /var\\(.*\\)/
+---
+const foregroundColor = "rgb(221 243 228)";
+const backgroundColor = "rgb(24 121 78)";
+---
+<style define:vars={{ foregroundColor, backgroundColor }}>
+  h1 {
+    background-color: var(--backgroundColor);
+    color: var(--foregroundColor);
+  }
+</style>
+<h1>Bonjour</h1>
+```
+
+<ReadMore>Consultez notre page de [référence des directives](/fr/reference/directives-reference/#definevars) pour en savoir plus sur `define:vars`.</ReadMore>
+
+
+### Transmettre une classe à un composant enfant
+
+Dans Astro, les attributs HTML comme `class` ne sont pas automatiquement transmis aux composants enfants.
+
+Au lieu de cela, il faut accepter un attribut `class` dans le composant enfant et l'appliquer à l'élément racine. Lors de la déstructuration, vous devez le renommer, car `class` est un [mot réservé](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Lexical_grammar#mots-clés) en JavaScript.
+
+En utilisant la stratégie de style à portée limitée par défaut, vous devez également passer l'attribut `data-astro-cid-*`. Vous pouvez le faire en passant le reste des props au composant. Si vous avez changé `scopedStyleStrategy` en `'class'` ou `'where'`, la propriété `...rest` n'est pas nécessaire.
+
+```astro title="src/components/MyComponent.astro" {2,4}
+---
+const { class: className, ...rest } = Astro.props;
+---
+<div class={className} {...rest}>
+  <slot/>
+</div>
+```
+
+```astro title="src/pages/index.astro"
+---
+import MyComponent from "../components/MyComponent.astro"
+---
+<style>
+  .red {
+    color: red;
+  }
+</style>
+<MyComponent class="red">Ce sera rouge !</MyComponent>
+```
+
+:::note[Styles à portée limitée à partir des composants parents]
+Parce que l'attribut `data-astro-cid-*` inclut l'enfant dans la portée de son parent, il est possible que les styles passent en cascade du parent à l'enfant. Pour éviter que cela n'ait des effets secondaires inattendus, assurez-vous d'utiliser des noms de classe uniques dans le composant enfant.
+:::
+
+### Styles en ligne
+
+Vous pouvez mettre en forme les éléments HTML en ligne en utilisant l'attribut `style`. Il peut s'agir d'une chaîne CSS ou d'un objet de propriétés CSS :
+
+```astro title="src/pages/index.astro"
+// Ils sont équivalents:
+<p style={{ color: "brown", textDecoration: "underline" }}>Mon texte</p>
+<p style="color: brown; text-decoration: underline;">Mon texte</p>
+```
+
+## Styles externes
+
+Il y a deux façons de résoudre les feuilles de style globales externes : une importation ESM pour les fichiers situés dans la source de votre projet, et un lien URL absolu pour les fichiers dans votre répertoire `public/`, ou hébergés en dehors de votre projet.
+
+<ReadMore>En savoir plus sur l'utilisation des [ressources statiques](/fr/guides/imports/) situés dans `public/` ou `src/`.</ReadMore>
+
+### Importer une feuille de style locale
+
+:::caution[Utilisation d'un paquet npm ?]
+Vous pouvez avoir besoin de mettre à jour votre `astro.config` lorsque vous importez des paquets npm. Voir la section [« importer des feuilles de style depuis un paquet npm »](#importer-une-feuille-de-style-à-partir-dun-paquet-npm) ci-dessous.
+:::
+
+Vous pouvez importer des feuilles de style dans le frontmatter de vos composants Astro en utilisant la syntaxe d'importation ESM. Les importations CSS fonctionnent comme [toute autre importation ESM dans un composant Astro](/fr/basics/astro-components/#le-script-du-composant), qui doit être référencé comme **relatif au composant** et doit être écrit en **haut** du script de votre composant, avec toutes les autres importations.
+
+```astro title="src/pages/index.astro" {4}
+---
+// Astro regroupera et optimisera automatiquement ce CSS pour vous
+// Cela fonctionne également pour les fichiers de préprocesseur tels que .scss, .styl, etc.
+import '../styles/utils.css';
+---
+<html><!-- Votre page ici --></html>
+```
+
+L'importation de CSS via ESM est supportée à l'intérieur de n'importe quel fichier JavaScript, y compris les composants JSX comme React et Preact.  Cela peut être utile pour écrire des styles granulaires par composant pour vos composants React. 
+
+### Importer une feuille de style à partir d'un paquet npm
+
+Vous pouvez également avoir besoin de charger des feuilles de style à partir d'un paquet npm externe. Ceci est particulièrement courant pour les utilitaires comme [Open Props](https://open-props.style/). Si votre paquet **recommande l'utilisation d'une extension de fichier** (ex. `nom-du-paquet/styles.css` au lieu de `nom-du-paquet/styles`), cela devrait fonctionner comme n'importe quelle feuille de style locale :
+
+```astro {3}
+---
+// src/pages/random-page.astro
+import 'package-name/styles.css';
+---
+<html><!-- Votre page ici --></html>
+```
+
+Si votre paquet **ne suggère pas l'utilisation d'une extension de fichier** (c'est-à-dire `nom-du-paquet/styles`), vous devrez d'abord mettre à jour votre configuration Astro !
+
+Disons que vous importez un fichier CSS depuis `nom-du-paquet` appelé `normalize` (avec l'extension de fichier omise). Pour s'assurer que nous pouvons rendre votre page correctement, ajoutez `nom-du-paquet` au [tableau `vite.ssr.noExternal`](https://vite.dev/config/ssr-options.html#ssr-noexternal) :
+
+```js ins={7}
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
+
+export default defineConfig({
+  vite: {
+    ssr: {
+      noExternal: ['nom-du-paquet'],
+    }
+  }
+})
+```
+
+:::note
+Il s'agit d'un [paramètre spécifique à Vite](https://vite.dev/config/ssr-options.html#ssr-noexternal) qui n'a _pas_ de rapport avec (ou ne nécessite pas) [Astro SSR](/fr/guides/on-demand-rendering/).
+:::
+
+Maintenant, vous êtes libre d'importer `nom-du-paquet/normalize`. Celle-ci sera regroupée et optimisée par Astro comme n'importe quelle autre feuille de style locale.
+
+
+```astro {3}
+---
+// src/pages/random-page.astro
+import 'package-name/normalize';
+---
+<html><!-- Votre page ici --></html>
+```
+
+### Charger une feuille de style statique via les balises "link"
+
+Vous pouvez également utiliser l'élément `<link>` pour charger une feuille de style sur la page. Il doit s'agir d'un chemin d'URL absolu vers un fichier CSS situé dans votre répertoire `/public`, ou d'une URL vers un site web externe. Les valeurs href `<link>` relatives ne sont pas supportées.
+
+```astro title="src/pages/index.astro" {3,5}
+<head>
+  <!-- Local : /public/styles/global.css -->
+  <link rel="stylesheet" href="/styles/global.css" />
+  <!-- Externe -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-tomorrow.css" />
+</head>
+```
+
+Comme cette approche utilise le répertoire `public/`, elle ne tient pas compte du traitement CSS normal, du regroupement et des optimisations fournis par Astro. Si vous avez besoin de ces transformations, utilisez la méthode [Importer une feuille de style](#importer-une-feuille-de-style-locale) ci-dessus.
+
+## Ordre de cascade
+
+Les composants Astro doivent parfois évaluer plusieurs sources de CSS. Par exemple, votre composant peut importer une feuille de style CSS, inclure sa propre balise `<style>`, *et* être rendu à l'intérieur d'une mise en page qui importe du CSS.
+
+Lorsque des règles CSS contradictoires s'appliquent au même élément, les navigateurs utilisent d'abord la _spécificité_, puis l'_ordre d'apparition_ pour déterminer la valeur à afficher.
+
+Si une règle est plus _spécifique_ qu'une autre, sa valeur sera prioritaire, quel que soit l'endroit où la règle CSS apparaît :
+
+```astro title="src/components/MyComponent.astro"
+<style>
+  h1 { color: red }
+  div > h1 {
+    color: purple
+  }
+</style>
+<div>
+  <h1>
+    Cette en-tête sera mauve !
+  </h1>
+</div>
+```
+
+Si deux règles ont la même spécificité, l'_ordre d'apparition_ est évalué et la valeur de la dernière règle est prioritaire :
+```astro title="src/components/MyComponent.astro"
+<style>
+  h1 { color: purple }
+  h1 { color: red }
+</style>
+<div>
+  <h1>
+    Cette en-tête sera rouge !
+  </h1>
+</div>
+```
+
+Les règles CSS Astro sont évaluées dans cet ordre d'apparition :
+
+- **balises `<link>` dans l'en-tête** (priorité la plus faible)
+- **styles importés**
+- **styles à portée limitée** (priorité la plus élevée)
+
+### Styles à portée limitée
+
+En fonction de la valeur choisie pour [`scopedStyleStrategy`](/fr/reference/configuration-reference/#scopedstylestrategy), les styles à portée limitée peuvent ou non augmenter la [spécificité de la colonne CLASS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity#class_column).
+
+Cependant, les [styles à portée limitée](#styles-à-portée-limitée) apparaissent toujours en dernier. Ces derniers auront donc la priorité sur les autres styles de même spécificité. Par exemple, si vous importez une feuille de style qui entre en conflit avec un style à portée limitée, c'est la valeur du style à portée limitée qui s'appliquera :
+
+```css title="src/components/make-it-purple.css"
+h1 {
+  color: purple;
+}
+```
+```astro title="src/components/MyComponent.astro"
+---
+import "./make-it-purple.css"
+---
+<style>
+  h1 { color: red }
+</style>
+<div>
+  <h1>
+    Cette en-tête sera rouge !
+  </h1>
+</div>
+```
+
+Les styles à portée limitée seront écrasés si le style importé est plus spécifique. Le style le plus spécifique aura la priorité sur le style à portée limitée :
+
+```css title="src/components/make-it-purple.css"
+#intro {
+  color: purple;
+}
+```
+```astro title="src/components/MyComponent.astro"
+---
+import "./make-it-purple.css"
+---
+<style>
+  h1 { color: red }
+</style>
+<div>
+  <h1 id="intro">
+    Cette en-tête sera mauve !
+  </h1>
+</div>
+```
+
+### Ordre d'importation
+
+Lors de l'importation de plusieurs feuilles de style dans un composant Astro, les règles CSS sont évaluées dans l'ordre dans lequel elles sont importées. Une spécificité plus élevée déterminera toujours les styles à afficher, quel que soit le moment où la feuille de style CSS est évaluée. Mais lorsque des styles conflictuels ont la même spécificité, c'est le _dernier importé_ qui l'emporte :
+
+```css title="src/components/make-it-purple.css"
+div > h1 {
+  color: purple;
+}
+```
+```css title="src/components/make-it-green.css"
+div > h1 {
+  color: green;
+}
+```
+```astro title="src/components/MyComponent.astro"
+---
+import "./make-it-green.css"
+import "./make-it-purple.css"
+---
+<style>
+  h1 { color: red }
+</style>
+<div>
+  <h1>
+    Cette en-tête sera mauve !
+  </h1>
+</div>
+```
+
+Alors que les balises `<style>` sont à portée limitée et ne s'appliquent qu'au composant qui les déclare, le CSS _importé_ peut « fuir ». L'importation d'un composant applique toutes les feuilles de style CSS qu'il importe, même si le composant n'est jamais utilisé :
+
+```astro title="src/components/PurpleComponent.astro"
+---
+import "./make-it-purple.css"
+---
+<div>
+  <h1>J'importe du CSS violet.</h1>
+</div>
+```
+```astro title="src/components/MyComponent.astro"
+---
+import "./make-it-green.css"
+import PurpleComponent from "./PurpleComponent.astro";
+---
+<style>
+  h1 { color: red }
+</style>
+<div>
+  <h1>
+    Cette en-tête sera mauve !
+  </h1>
+</div>
+```
+
+:::tip
+Un modèle courant dans Astro consiste à importer des feuilles de style CSS globales à l'intérieur d'un [Layout](/fr/basics/layouts/). Veillez à importer le composant Layout avant les autres importations afin qu'il ait la priorité la plus faible.
+:::
+
+### Balises de lien
+Les feuilles de style chargées via [les balises de lien](#charger-une-feuille-de-style-statique-via-les-balises-link) sont évaluées dans l'ordre, avant tout autre style dans un fichier Astro. Par conséquent, ces styles ont une priorité inférieure à celle des feuilles de style importées et des styles à portée limitée :
+
+```astro title="src/pages/index.astro"
+---
+import "../components/make-it-purple.css"
+---
+
+<html lang="efr">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+		<link rel="stylesheet" href="/styles/make-it-blue.css" />
+	</head>
+	<body>
+		<div>
+			<h1>Cette en-tête sera mauve</h1>
+		</div>
+	</body>
+</html>
+```
+
+## Tailwind
+
+Astro prend en charge l'ajout de bibliothèques, d'outils et de frameworks CSS populaires à votre projet, comme [Tailwind](https://tailwindcss.com) et bien d'autres encore !
+
+Astro prend en charge Tailwind 3 et 4. Vous pouvez [ajouter la prise en charge de Tailwind 4 via un plugin Vite](#ajouter-tailwind-4) à votre projet avec une commande CLI, ou installer manuellement les dépendances héritées pour ajouter la [prise en charge de Tailwind 3 via une intégration Astro](#prise-en-charge-héritée-de-tailwind-3).
+
+Pour [mettre à niveau votre projet Astro de Tailwind 3 à 4](#mettre-à-niveau-depuis-tailwind-3), vous devrez à la fois ajouter la prise en charge de Tailwind 4 et supprimer la prise en charge héritée de Tailwind 3.
+
+### Ajouter Tailwind 4
+
+Dans Astro `>=5.2.0`, utilisez la commande `astro add tailwind` de votre gestionnaire de paquets pour installer le plugin Vite officiel pour Tailwind. Pour ajouter la prise en charge de Tailwind 4 aux versions antérieures d'Astro, suivez les [instructions dans la documentation de Tailwind][tailwind] pour ajouter manuellement le plugin Vite `@tailwindcss/vite`.
+
+<PackageManagerTabs>
+  <Fragment slot="npm">
+    ```shell
+    npx astro add tailwind
+    ```
+  </Fragment>
+  <Fragment slot="pnpm">
+    ```shell
+    pnpm astro add tailwind
+    ```
+  </Fragment>
+  <Fragment slot="yarn">
+    ```shell
+    yarn astro add tailwind
+    ```
+  </Fragment>
+</PackageManagerTabs>
+
+Ensuite, importez `tailwindcss` dans `src/styles/global.css` (ou un autre fichier CSS de votre choix) pour rendre les classes Tailwind disponibles pour votre projet Astro. Ce fichier incluant l'importation sera créé par défaut si vous avez utilisé la commande `astro add tailwind` pour installer le plugin Vite.
+
+```css title="src/styles/global.css"
+@import "tailwindcss";
+```
+
+Importez ce fichier dans les pages où vous souhaitez appliquer Tailwind. Cette opération est souvent effectuée dans un composant de mise en page afin que les styles Tailwind puissent être utilisés sur toutes les pages partageant cette mise en page :
+
+```astro title="src/layouts/Layout.astro"
+---
+import "../styles/global.css";
+---
+```
+
+### Mettre à niveau depuis Tailwind 3
+
+Suivez les étapes pour mettre à jour un projet Astro existant qui utilise Tailwind v3 (en utilisant l'intégration `@astrojs/tailwind`) vers Tailwind 4 (en utilisant [le plugin `@tailwindcss/vite`](https://tailwindcss.com/docs/installation/framework-guides/astro)).
+
+<Steps>
+1. [Ajoutez la prise en charge de Tailwind 4 à votre projet](#ajouter-tailwind-4) via la CLI pour la dernière version d'Astro, ou en ajoutant le plugin Vite manuellement.
+
+2. Désinstallez l'intégration `@astrojs/tailwind` de votre projet :
+
+    <PackageManagerTabs>
+      <Fragment slot="npm">
+      ```shell
+      npm uninstall @astrojs/tailwind
+      ```
+      </Fragment>
+      <Fragment slot="pnpm">
+      ```shell
+      pnpm remove @astrojs/tailwind
+      ```
+      </Fragment>
+      <Fragment slot="yarn">
+      ```shell
+      yarn remove @astrojs/tailwind
+      ```
+      </Fragment>
+    </PackageManagerTabs>
+
+3. Supprimez l'intégration `@astrojs/tailwind` dans votre fichier `astro.config.mjs` :
+
+    ```js title="astro.config.mjs" del={2} del="tailwind()"
+    import { defineConfig } from 'astro/config';
+    import tailwind from '@astrojs/tailwind';
+
+    export default defineConfig({
+      // ...
+      integrations: [tailwind()],
+      // ...
+    });
+    ```
+
+4. Ensuite, mettez à niveau votre projet conformément au [guide de mise à niveau vers la v4 de Tailwind](https://tailwindcss.com/docs/upgrade-guide#changes-from-v3).
+</Steps>
+
+#### Prise en charge héritée de Tailwind 3
+
+Pour ajouter (ou conserver) la prise en charge de Tailwind 3, vous devrez installer à la fois `tailwindcss@3` et l'intégration officielle d'Astro pour Tailwind `@astrojs/tailwind`. L'installation manuelle de ces dépendances est uniquement destinée à la compatibilité avec Tailwind 3 et n'est pas requise pour Tailwind 4. Vous aurez également besoin d'une [ancienne configuration Tailwind](https://v3.tailwindcss.com/docs/configuration#creating-your-configuration-file) :
+
+<Steps>
+1. Installez Tailwind et l'intégration Astro Tailwind sur les dépendances de votre projet à l'aide de votre gestionnaire de paquets préféré :
+
+   <PackageManagerTabs>
+     <Fragment slot="npm">
+     ```shell
+     npm install tailwindcss@3 @astrojs/tailwind
+     ```
+     </Fragment>
+     <Fragment slot="pnpm">
+     ```shell
+     pnpm add tailwindcss@3 @astrojs/tailwind
+     ```
+     </Fragment>
+     <Fragment slot="yarn">
+     ```shell
+     yarn add tailwindcss@3 @astrojs/tailwind
+     ```
+     </Fragment>
+   </PackageManagerTabs>
+
+2. Importez l'intégration dans votre fichier `astro.config.mjs` et ajoutez-la à votre tableau `integrations[]` :
+
+    ```js title="astro.config.mjs" ins={2} ins="tailwind()"
+    import { defineConfig } from 'astro/config';
+    import tailwind from '@astrojs/tailwind';
+
+    export default defineConfig({
+      // ...
+      integrations: [tailwind()],
+      // ...
+    });
+    ```
+3. Créez un fichier `tailwind.config.mjs` dans le répertoire racine de votre projet. Vous pouvez utiliser la commande suivante pour générer un fichier de configuration de base :
+
+   <PackageManagerTabs>
+     <Fragment slot="npm">
+     ```shell
+     npx tailwindcss init
+     ```
+     </Fragment>
+     <Fragment slot="pnpm">
+     ```shell
+     pnpm dlx tailwindcss init
+     ```
+     </Fragment>
+     <Fragment slot="yarn">
+     ```shell
+     yarn dlx tailwindcss init
+     ```
+     </Fragment>
+   </PackageManagerTabs>
+
+4. Ajoutez la configuration de base suivante à votre fichier `tailwind.config.mjs` :
+
+    ```ts title="tailwind.config.mjs" ins={3}
+    /** @type {import('tailwindcss').Config} */
+    export default {
+      content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+    };
+    ```
+</Steps>
+
+<RecipeLinks slugs={["fr/recipes/tailwind-rendered-markdown"]}/>
+
+## Préprocesseurs CSS
+
+Astro supporte les préprocesseurs CSS tels que [Sass][sass], [Stylus][stylus], et [Less][less] à travers [Vite][vite-preprocessors].
+
+### Sass et SCSS
+
+ ```shell
+ npm install sass
+ ```
+
+Utilisez `<style lang="scss">` ou `<style lang="sass">` dans les fichiers `.astro`.
+
+### Stylus
+
+```shell
+npm install stylus
+```
+
+Utilisez `<style lang="styl">` ou `<style lang="stylus">` dans les fichiers `.astro`.
+
+### Less
+
+```shell
+npm install less
+```
+
+Utilisez `<style lang="less">` dans les fichiers `.astro`.
+
+### LightningCSS
+
+```shell
+npm install lightningcss
+```
+
+Mettez à jour votre configuration `vite` dans `astro.config.mjs` :
+
+```js title="astro.config.mjs" ins={4-8}
+import { defineConfig } from 'astro/config'
+
+export default defineConfig({
+  vite: {
+    css: {
+      transformer: "lightningcss",
+    },
+  },
+})
+
+```
+
+### Dans les composants du framework
+
+Vous pouvez également utiliser tous les préprocesseurs CSS ci-dessus dans les frameworks JS ! Veillez à suivre les modèles recommandés par chaque framework :
+
+- **React** / **Preact** : `importer les styles depuis './styles.module.scss';`
+- **Vue** : `<style lang="scss">`
+- **Svelte** : `<style lang="scss">`
+
+## PostCSS
+
+Astro est livré avec PostCSS inclus dans [Vite](https://vite.dev/guide/features.html#postcss). Pour configurer PostCSS pour votre projet, créez un fichier `postcss.config.cjs` à la racine du projet. Vous pouvez importer des plugins en utilisant `require()` après les avoir installés (par exemple `npm install autoprefixer`).
+
+```js title="postcss.config.cjs" ins={3-4}
+module.exports = {
+  plugins: [
+    require('autoprefixer'),
+    require('cssnano'),
+  ],
+};
+```
+
+
+## Frameworks et bibliothèques
+
+### 📘 React / Preact
+
+`.jsx` supportent à la fois les CSS globales et les modules CSS. Pour activer ces derniers, utilisez l'extension `.module.css` (ou `.module.scss`/`.module.sass` si vous utilisez Sass).
+
+```jsx title="src/components/MyReactComponent.jsx" /[a-z]+(\\.module\\.css)/
+import './global.css'; // inclure le CSS global
+import Styles from './styles.module.css'; // Utiliser des modules CSS (qui doivent se terminer par `.module.css`, `.module.scss`, ou `.module.sass`!)
+```
+
+### 📗 Vue
+
+Vue dans Astro supporte les mêmes méthodes que `vue-loader` :
+
+- [vue-loader - Scoped CSS][vue-scoped]
+- [vue-loader - CSS Modules][vue-css-modules]
+
+### 📕 Svelte
+
+Svelte dans Astro fonctionne aussi exactement comme prévu : [Documentation sur la mise en forme avec Svelte][svelte-style].
+
+## Style Markdown
+
+Toutes les méthodes de style Astro sont disponibles pour un [composant de mise en page Markdown](/fr/basics/layouts/#mises-en-page-markdown), mais des méthodes différentes auront des effets de style différents sur votre page.
+
+Vous pouvez appliquer des styles globaux à votre contenu Markdown en ajoutant des [feuilles de style importées](#styles-externes) à la mise en page qui englobe le contenu de votre page. Il est également possible d'appliquer un style à votre document Markdown avec des balises [`<style is:global>`](#styles-globaux) dans le composant de mise en page.  Notez que tous les styles ajoutés sont soumis à [l'ordre de cascade d'Astro](#ordre-de-cascade), et vous devriez vérifier votre page rendue avec soin pour vous assurer que vos styles sont appliqués comme prévu.
+
+Vous pouvez également ajouter des intégrations CSS, notamment [Tailwind](/fr/recipes/tailwind-rendered-markdown/). Si vous utilisez Tailwind, le [plugin de typographie](https://tailwindcss.com/docs/typography-plugin) peut être utile pour styliser Markdown.
+
+## Production
+
+### Contrôle des paquets
+
+Lorsque Astro construit votre site pour un déploiement en production, il minifie et combine votre CSS en morceaux. Chaque page de votre site reçoit son propre bloc et, en outre, les feuilles de style CSS partagées entre plusieurs pages sont divisées en blocs distincts afin d'être réutilisées.
+
+Cependant, lorsque plusieurs pages partagent des styles, certains morceaux partagés peuvent devenir très petits. S'ils étaient tous envoyés séparément, cela entraînerait de nombreuses requêtes de feuilles de style et affecterait les performances du site. C'est pourquoi, par défaut, Astro ne liera que les éléments de votre HTML dont la taille est supérieure à 4kB en tant que balises `<link rel="stylesheet">`, tout en intégrant les éléments plus petits dans `<style type="text/css">`. Cette approche permet de trouver un équilibre entre le nombre de requêtes supplémentaires et le volume de CSS qui peut être mis en cache entre les pages.
+
+Vous pouvez configurer la taille à partir de laquelle les feuilles de style seront liées en externe (en octets) en utilisant l'option `assetsInlineLimit` de construction vite. Notez que cette option affecte également l'intégration en ligne des scripts et des images.
+
+```js
+import { defineConfig } from 'astro/config';
+
+export default defineConfig({
+  vite: {
+    build: {
+      assetsInlineLimit: 1024,
+    }
+  };
+});
+```
+
+Si vous préférez que tous les styles de projet restent externes, vous pouvez configurer l'option de construction `inlineStylesheets`.
+
+```js
+import { defineConfig } from 'astro/config';
+
+export default defineConfig({
+  build: {
+    inlineStylesheets: 'never'
+  }
+});
+```
+
+Vous pouvez également définir cette option sur `'always'`, ce qui intégrera en ligne toutes les feuilles de style.
+
+## Avancé
+
+:::caution
+Soyez prudent lorsque vous contournez le regroupement CSS intégré d'Astro ! Les styles ne seront pas automatiquement inclus dans la sortie construite, et il est de votre responsabilité de vous assurer que le fichier référencé est correctement inclus dans la sortie finale de la page.
+:::
+
+### Importations CSS avec `?raw`
+
+Pour les cas d'utilisation avancés, les feuilles de style CSS peuvent être lues directement à partir du disque sans être regroupées ou optimisées par Astro. Cela peut s'avérer utile lorsque vous avez besoin d'un contrôle total sur un extrait de CSS et que vous devez contourner la gestion CSS automatique d'Astro.
+
+Cette solution n'est pas recommandée pour la plupart des utilisateurs.
+
+```astro title="src/components/RawInlineStyles.astro" "?raw"
+---
+// Exemple avancé ! Non recommandé pour la plupart des utilisateurs.
+import rawStylesCSS from '../styles/main.css?raw';
+---
+<style is:inline set:html={rawStylesCSS}></style>
+```
+
+Voir la [documentation de Vite](https://vite.dev/guide/assets.html#importing-asset-as-string) pour plus d'informations.
+### Importations CSS avec `?url`
+
+Pour les cas d'utilisation avancés, vous pouvez importer une référence URL directe pour un fichier CSS dans le répertoire `src/` de votre projet. Cela peut être utile lorsque vous avez besoin d'un contrôle total sur la façon dont un fichier CSS est chargé sur la page. Cependant, cela empêchera l'optimisation de ce fichier CSS avec le reste de votre page CSS.
+
+Cela n'est pas recommandé pour la plupart des utilisateurs. Placez plutôt vos fichiers CSS à l'intérieur de `public/` pour obtenir une référence URL cohérente.
+
+:::caution
+Importer un fichier CSS plus petit avec `?url` peut retourner le contenu encodé en base64 du fichier CSS en tant qu'URL de données dans votre compilation finale. Soit vous écrivez votre code pour supporter les URLs de données encodées (`data:text/css;base64,...`), soit vous mettez l'option de configuration [`vite.build.assetsInlineLimit`](https://vite.dev/config/#build-assetsinlinelimit) à `0` pour désactiver cette fonctionnalité.
+:::
+
+```astro title="src/components/RawStylesUrl.astro" "?url"
+---
+// Exemple avancé ! Non recommandé pour la plupart des utilisateurs
+import stylesUrl from '../styles/main.css?url';
+---
+<link rel="preload" href={stylesUrl} as="style">
+<link rel="stylesheet" href={stylesUrl}>
+```
+
+Voir la [documentation de Vite](https://vite.dev/guide/assets.html#importing-asset-as-url) pour plus d'informations.
+
+
+[less]: https://lesscss.org/
+[sass]: https://sass-lang.com/
+[stylus]: https://stylus-lang.com/
+[svelte-style]: https://svelte.dev/docs#component-format-style
+[tailwind]: https://tailwindcss.com/docs/installation/framework-guides/astro
+[vite-preprocessors]: https://vite.dev/guide/features.html#css-pre-processors
+[vue-css-modules]: https://vue-loader.vuejs.org/guide/css-modules.html
+[vue-scoped]: https://vue-loader.vuejs.org/guide/scoped-css.html

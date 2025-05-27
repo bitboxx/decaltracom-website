@@ -1,0 +1,109 @@
+---
+title: Récupération de données
+description: Apprenez à récupérer des données distantes avec Astro à l'aide de l'API fetch.
+i18nReady: true
+---
+Les fichiers `.astro` peuvent récupérer des données distantes pour vous aider à générer de vos pages.
+
+## `fetch()` dans Astro
+
+Tous les [composants Astro](/fr/basics/astro-components/) ont accès à la [fonction globale `fetch()`](https://developer.mozilla.org/fr/docs/Web/API/fetch) dans le script de leur composant pour effectuer des requêtes HTTP aux API en utilisant l'URL complète (par exemple `https://example.com/api`).
+En outre, vous pouvez construire une URL vers les pages et les points de terminaison de votre projet qui sont affichés à la demande sur le serveur en utilisant [`new URL("/api", Astro.url)`](/fr/reference/api-reference/#url).
+
+Cet appel sera exécuté au moment de la construction (Build), et les données seront disponibles pour le modèle de composant afin de générer du HTML dynamique. Si le mode [SSR](/fr/guides/on-demand-rendering/) est activé, tous les appels de recherche seront exécutés au moment de l'exécution.
+
+💡 Profitez de la fonctionnalité "[**top-level `await` (EN)**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await#top_level_await)" à l'intérieur de votre Script de composant Astro.
+
+💡 Transmettez les données récupérées aux composants Astro et aux composants du framework, en tant que props.
+
+```astro /await fetch\\(.*?\\);/
+---
+// src/components/User.astro
+import Contact from "../components/Contact.jsx";
+import Location from "../components/Location.astro";
+
+const response = await fetch("https://randomuser.me/api/");
+const data = await response.json();
+const randomUser = data.results[0];
+---
+<!-- Les données récupérées lors de la construction peuvent être rendues en HTML -->
+<h1>Utilisateur</h1>
+<h2>{randomUser.name.first} {randomUser.name.last}</h2>
+
+<!-- Les données récupérées lors de la construction peuvent être transmises aux composants en tant que props -->
+<Contact client:load email={randomUser.email} />
+<Location city={randomUser.location.city} />
+```
+
+:::note
+N'oubliez pas que toutes les données des composants Astro sont récupérées lors du rendu du composant.
+
+Votre site Astro déployé récupérera les données **une seule fois, au moment de la construction (Build)**. En développement, vous verrez les données récupérées lors du rafraîchissement des composants. Si vous avez besoin de récupérer des données plusieurs fois côté client, utilisez un [composant de Framework](/fr/guides/framework-components/) ou un [script coté client](/fr/guides/client-side-scripts/) dans un composant Astro.
+:::
+
+## `fetch()` dans les Composants de Framework
+
+La fonction `fetch()` est également disponible globalement dans tous les [composants de Framework](/fr/guides/framework-components/) :
+
+```tsx title="src/components/Movies.tsx" /await fetch\\(.*?\\)/
+import type { FunctionalComponent } from 'preact';
+
+const data = await fetch('https://example.com/movies.json').then((response) => response.json());
+
+// Les composants dont le rendu est effectué au moment de la construction se connectent également à la console (CLI).
+// Lorsqu'ils sont rendus avec une directive `client:*`, ils se connectent également à la console du navigateur.
+console.log(data);
+
+const Movies: FunctionalComponent = () => {
+  // Affiche le résultat sur la page
+  return <div>{JSON.stringify(data)}</div>;
+};
+
+export default Movies;
+```
+
+### Requêtes GraphQL
+
+Astro peut aussi utiliser `fetch()` pour interroger un serveur GraphQL avec n'importe quelle requête GraphQL valide.
+
+```astro title="src/components/Film.astro" "await fetch"
+---
+const response = await fetch(
+  "https://swapi-graphql.netlify.app/.netlify/functions/index",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: `
+        query getFilm ($id:ID!) {
+          film(id: $id) {
+            title
+            releaseDate
+          }
+        }
+      `,
+      variables: {
+        id: "ZmlsbXM6MQ==",
+      },
+    }),
+  }
+);
+
+
+const json = await response.json();
+const { film } = json.data;
+---
+<h1>Recherche d'informations sur Star Wars : Un nouvel espoir</h1>
+<h2>Titre : {film.title}</h2>
+<p>Année : {film.releaseDate}</p>
+```
+
+## Récupérer à partir d'un Headless CMS
+
+Les composants Astro peuvent récupérer des données de votre CMS préféré et les restituer sous forme de contenu de page. Grâce aux [routes dynamiques](/fr/guides/routing/#routes-dynamiques), les composants peuvent même générer des pages basées sur le contenu de votre CMS.
+
+Consultez nos [Guides CMS](/fr/guides/cms/) pour plus de détails sur l'intégration d'Astro avec des CMS headless comme Storyblok, Contentful et WordPress.
+
+## Ressources communautaires
+
+- [Créer une application fullstack avec Astro + GraphQL (EN)](https://robkendal.co.uk/blog/how-to-build-astro-site-with-graphql/)

@@ -1,0 +1,86 @@
+---
+type: tutorial
+title: Félicitations !
+description: >-
+  Tutoriel : Créer votre premier blog avec Astro —
+
+  Découvrez la version finale de votre projet et découvrez ce qui vous attend 
+  avec Astro !
+i18nReady: true
+---
+import Box from '~/components/tutorial/Box.astro';
+import Checklist from '~/components/Checklist.astro';
+import CompletionConfetti from '~/components/tutorial/CompletionConfetti.astro';
+import PreCheck from '~/components/tutorial/PreCheck.astro';
+import Button from '~/components/Button.astro';
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Il reste une dernière modification à apporter...
+
+```astro title="src/pages/about.astro" del={5} ins={6}
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "À propos de moi";
+const happy = true;
+const finished = false;
+const finished = true;
+const goal = 3;
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Rédactrice technique",
+  hobbies: ["photographie", "observation des oiseaux", "baseball"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Rédaction de documentation"];
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+---
+```
+
+Nous espérons que vous avez un peu appris les bases d'Astro et que vous avez pris du plaisir tout au long du tutoriel !
+
+Vous pouvez trouver le code à ce stade du tutoriel sur [GitHub](https://github.com/withastro/blog-tutorial-demo/tree/complete) ou ouvrir une version fonctionnelle dans un environnement de code en ligne comme [IDX](https://idx.google.com/import?url=https:%2F%2Fgithub.com%2Fwithastro%2Fblog-tutorial-demo%2F) ou
+[StackBlitz](https://stackblitz.com/github/withastro/blog-tutorial-demo/tree/complete?file=src/pages/index.astro).
+
+Consultez notre documentation pour des guides et des références, et rejoignez notre Discord pour poser des questions, obtenir de l'aide ou simplement discuter !
+
+Bienvenue dans l'univers, astronaute. 👩🏼‍🚀👨🏿‍🚀🧑‍🚀👩🏾‍🚀
+
+<Box icon="check-list">
+
+## Liste de contrôle
+
+<Checklist>
+- [ ] Je suis impatient(e) de commencer mon prochain projet Astro ! 🚀
+</Checklist>
+</Box>
+
+<CompletionConfetti />
+
+## Partager votre réussite !
+
+Félicitations pour avoir terminé le tutoriel de blog d'Astro ! Partagez votre réussite avec le monde entier et faites savoir à tout le monde que vous êtes désormais un Astronaute !
+
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+  <Button link='https://twitter.com/intent/tweet?text=Je%20viens%20de%20finir%20d%27apprendre%20%C3%A0%20cr%C3%A9er%20mon%20premier%20blog%20avec%20Astro%20%21%20Jetez%20un%20œil%20%C3%A0%20https://docs.astro.build/%0Avia%20%40astrodotbuild'>Partager sur Twitter</Button>
+  <Button link='https://www.reddit.com/submit?url=https://docs.astro.build/&title=Je%20viens%20de%20finir%20d%27apprendre%20%C3%A0%20cr%C3%A9er%20mon%20premier%20blog%20avec%20Astro%20!'>Partager sur Reddit</Button>
+  <Button link='https://bsky.app/intent/compose?text=Je%20viens%20de%20finir%20d%27apprendre%20%C3%A0%20cr%C3%A9er%20mon%20premier%20blog%20avec%20Astro%20%21%20Jetez%20un%20œil%20%C3%A0%20https://docs.astro.build/%0Avia%20%40astro.build'>Partager sur Bluesky</Button>
+</div>
+
+## Étapes suivantes
+
+Vous pouvez améliorer le code final de ce projet avec l'une de nos extensions de tutoriel, ou démarrer votre prochain projet Astro !
+<CardGrid>
+  <LinkCard
+    title="Démarrer un nouveau projet Astro"
+    description="Commencez un nouveau projet vide ou utilisez un modèle de thème Astro existant."
+    href="/fr/install-and-setup/"
+  />
+  <LinkCard
+    title="Nous rejoindre sur Discord"
+    description="Entrez en contact avec notre communauté pour poser des questions, partager votre travail et vous impliquer dans le projet !"
+    href="https://astro.build/chat"
+  />
+</CardGrid>
