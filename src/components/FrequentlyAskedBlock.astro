@@ -1,0 +1,97 @@
+---
+// src/components/FrequentlyAskedBlock.astro
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  title?: string;
+  faqs: FAQItem[];
+}
+
+const { title = "Frequently asked questions", faqs } = Astro.props;
+
+// Basic Alpine.js for accordion functionality
+const alpineScript = `
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('accordion', (idx) => ({
+      open: false,
+      id: 'faq-' + idx,
+      trigger: {
+        ['@click']() {
+          this.open = !this.open;
+        },
+        [':aria-expanded']() {
+          return this.open;
+        },
+        [':aria-controls']() {
+          return this.id;
+        }
+      },
+      content: {
+        ['x-show']() {
+          return this.open;
+        },
+        [':id']() {
+          return this.id;
+        }
+      }
+    }))
+  })
+`;
+---
+
+<div class="bg-white">
+  <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{title}</h2>
+      <dl class="mt-16 divide-y divide-gray-900/10">
+        {faqs.map((faq, index) => (
+          <div class="py-6 first:pt-0 last:pb-0" x-data={`accordion(${index})`}>
+            <dt>
+              <button type="button" class="flex w-full items-start justify-between text-left text-gray-900" x-bind="trigger">
+                <span class="text-base/7 font-semibold">{faq.question}</span>
+                <span class="ml-6 flex h-7 items-center">
+                  <svg class="size-6" :class="{ 'hidden': open, '': !open }" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                  </svg>
+                  <svg class="size-6" :class="{ '': open, 'hidden': !open }" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <dd class="mt-2 pr-12" x-bind="content" x-cloak>
+              <p class="text-base/7 text-gray-600">{faq.answer}</p>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ alpineScript }}>
+  // Inject Alpine.js if not already present (basic check)
+  if (typeof Alpine === 'undefined') {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js';
+    script.defer = true;
+    document.head.appendChild(script);
+
+    const alpineInitScript = document.createElement('script');
+    alpineInitScript.innerHTML = alpineScript;
+    document.body.appendChild(alpineInitScript); // Append to body to ensure Alpine is loaded
+  } else {
+     // If Alpine is already loaded, just run the init script
+    const existingScript = document.querySelector('script[data-alpine-init-block="faq"]');
+    if (!existingScript) {
+      const alpineInitScript = document.createElement('script');
+      alpineInitScript.setAttribute('data-alpine-init-block', 'faq');
+      alpineInitScript.innerHTML = alpineScript;
+      document.body.appendChild(alpineInitScript);
+    }
+  }
+</script>

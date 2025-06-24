@@ -1,0 +1,170 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import GlobalLayout from '../../layouts/GlobalLayout.astro';
+---
+
+<GlobalLayout
+  lang='nl'
+  title='Algemene Voorwaarden'
+  description='Nederlandse "Algemene Voorwaarden" pagina.'
+>
+  <div
+    class='container mx-auto px-4 py-8 prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-3xl'
+  >
+    <h1 class='text-3xl font-bold mb-6'>Algemene Voorwaarden</h1>
+
+    <p class='text-sm text-gray-600 mb-8'>
+      Laatst bijgewerkt: {new Date().toLocaleDateString('nl-NL')}
+    </p>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>
+        1. Identiteit van de ondernemer
+      </h2>
+      <p>Pixeau</p>
+      <p>KVK-nummer: 95558667</p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>2. Toepasselijkheid</h2>
+      <p class='mb-2'>
+        Deze algemene voorwaarden zijn van toepassing op elk aanbod van de
+        ondernemer en op elke tot stand gekomen overeenkomst op afstand tussen
+        ondernemer en consument/zakelijke klant.
+      </p>
+      <p>
+        Voordat de overeenkomst op afstand wordt gesloten, wordt de tekst van
+        deze algemene voorwaarden aan de consument/zakelijke klant beschikbaar
+        gesteld.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>3. Het aanbod</h2>
+      <p class='mb-2'>
+        Indien een aanbod een beperkte geldigheidsduur heeft of onder
+        voorwaarden geschiedt, wordt dit nadrukkelijk in het aanbod vermeld.
+      </p>
+      <p class='mb-2'>
+        Het aanbod bevat een volledige en nauwkeurige omschrijving van de
+        aangeboden producten en/of diensten. De beschrijving is voldoende
+        gedetailleerd om een goede beoordeling van het aanbod door de
+        consument/zakelijke klant mogelijk te maken.
+      </p>
+      <p>
+        Kennelijke vergissingen of kennelijke fouten in het aanbod binden de
+        ondernemer niet.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>4. De overeenkomst</h2>
+      <p>
+        De overeenkomst komt, onder voorbehoud van het bepaalde in lid [verwijs
+        naar relevant lid, bijv. over aanvaarding], tot stand op het moment van
+        aanvaarding door de consument/zakelijke klant van het aanbod en het
+        voldoen aan de daarbij gestelde voorwaarden.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>5. Intellectueel Eigendom</h2>
+      <p class='mb-2'>
+        Alle rechten van intellectuele eigendom betreffende de materialen
+        (teksten, afbeeldingen, etc.) op deze website berusten bij Pixeau of
+        haar licentiegevers.
+      </p>
+      <p>
+        Kopiëren, verspreiden en elk ander gebruik van deze materialen is niet
+        toegestaan zonder schriftelijke toestemming van Pixeau, behoudens en
+        slechts voor zover anders bepaald in regelingen van dwingend recht
+        (zoals citaatrecht), tenzij bij specifieke materialen anders aangegeven
+        is.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>6. Aansprakelijkheid</h2>
+      <p class='mb-2'>
+        Pixeau is slechts aansprakelijk voor directe schade. Iedere
+        aansprakelijkheid van Pixeau voor indirecte schade, daaronder begrepen
+        gevolgschade, gederfde winst, gemiste besparingen en schade door
+        bedrijfsstagnatie, is uitgesloten.
+      </p>
+      <p>
+        De informatie op deze website is met de grootst mogelijke zorgvuldigheid
+        samengesteld. Desondanks kan Pixeau niet garanderen dat de informatie
+        volledig, juist en/of actueel is. Aan de informatie op deze website
+        kunnen geen rechten worden ontleend.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>7. Overmacht</h2>
+      <p>
+        Pixeau is niet gehouden tot het nakomen van enige verplichting jegens de
+        consument/zakelijke klant indien zij daartoe gehinderd wordt als gevolg
+        van een omstandigheid die niet is te wijten aan schuld, en noch
+        krachtens de wet, een rechtshandeling of in het verkeer geldende
+        opvattingen voor haar rekening komt.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>
+        8. Wijziging van de voorwaarden
+      </h2>
+      <p class='mb-2'>
+        Pixeau behoudt zich het recht voor deze algemene voorwaarden te wijzigen
+        of aan te vullen.
+      </p>
+      <p>
+        Wijzigingen van geringe aard kunnen te allen tijde worden doorgevoerd.
+        Grote inhoudelijke wijzigingen zullen wij waar mogelijk vooraf met de
+        klant communiceren.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>
+        9. Toepasselijk recht en geschillen
+      </h2>
+      <p class='mb-2'>
+        Op alle rechtsbetrekkingen waarbij Pixeau partij is, is uitsluitend het
+        Nederlands recht van toepassing.
+      </p>
+      <p>
+        De rechter in de vestigingsplaats van Pixeau is bij uitsluiting bevoegd
+        van geschillen kennis te nemen, tenzij de wet dwingend anders
+        voorschrijft.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>10. Slotbepalingen</h2>
+      <p>
+        Indien enige bepaling van deze algemene voorwaarden nietig is of
+        vernietigd wordt, zullen de overige bepalingen van deze algemene
+        voorwaarden volledig van kracht blijven.
+      </p>
+    </section>
+
+    <section class='mb-8'>
+      <h2 class='text-2xl font-semibold mb-4'>11. Privacyverklaring</h2>
+      <p class='mb-2'>
+        Pixeau respecteert de privacy van de bezoekers van haar website. Wij
+        dragen er zorg voor dat de persoonlijke informatie die u ons verschaft
+        vertrouwelijk wordt behandeld.
+      </p>
+      <p class='mb-2'>
+        <strong>Cookies:</strong> Onze website maakt geen gebruik van eerste-partij
+        (first-party) of derde-partij (third-party) cookies die persoonlijk identificeerbare
+        informatie verzamelen of opslaan voor trackingdoeleinden. Eventuele cookies
+        die worden gebruikt, zijn strikt noodzakelijk voor de technische werking
+        van de website of voor anonieme, geaggregeerde statistieken die ons helpen
+        de website te verbeteren. Omdat wij geen tracking cookies gebruiken, tonen
+        wij geen cookiebanner.
+      </p>
+    </section>
+  </div>
+</GlobalLayout>

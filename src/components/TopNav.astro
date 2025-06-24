@@ -1,0 +1,450 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+
+const navTexts = {
+  en: {
+    home: 'Home',
+    services: 'Services',
+    subServices: {
+      nearshoring: 'Nearshoring',
+      softwareDevelopment: 'Software Development',
+      aiServices: 'AI for Efficient Organizations',
+    },
+    ourStory: 'Our Story',
+    contact: 'Contact',
+    openMenu: 'Open main menu',
+    closeMenu: 'Close menu',
+    yourCompany: 'Your Company',
+    switchToLangName: 'Nederlands',
+    switchToLangCode: 'nl',
+  },
+  nl: {
+    home: 'Home',
+    services: 'Diensten',
+    subServices: {
+      nearshoring: 'Nearshoring',
+      softwareDevelopment: 'Software ontwikkeling',
+      aiServices: 'AI voor Efficiëntere Organisaties',
+    },
+    ourStory: 'Over Ons',
+    contact: 'Contact',
+    openMenu: 'Hoofdmenu openen',
+    closeMenu: 'Menu sluiten',
+    yourCompany: 'Uw Bedrijf',
+    switchToLangName: 'English',
+    switchToLangCode: 'en',
+  },
+};
+
+const currentTexts = lang === 'nl' ? navTexts.nl : navTexts.en;
+const alternateLangCode = currentTexts.switchToLangCode;
+const alternateLangName = currentTexts.switchToLangName;
+const alternateLangPath = getRelativeLocaleUrl(alternateLangCode, '/'); // Link to homepage of alternate lang
+
+const homePath = getRelativeLocaleUrl(lang, '/');
+const baseServicesPath = lang === 'en' ? 'services' : 'diensten';
+const nearshoringPath = getRelativeLocaleUrl(
+  lang,
+  `${baseServicesPath}/nearshoring`,
+);
+const softwareDevelopmentPath = getRelativeLocaleUrl(
+  lang,
+  `${baseServicesPath}/${lang === 'en' ? 'software-development' : 'softwareontwikkeling'}`,
+);
+const aiServicesPath = getRelativeLocaleUrl(
+  lang,
+  `${baseServicesPath}/${lang === 'en' ? 'ai-for-efficient-organizations' : 'ai-voor-efficientere-organisaties'}`,
+);
+
+const ourStoryPath = getRelativeLocaleUrl(
+  lang,
+  lang === 'en' ? 'our-story' : 'over-ons',
+);
+const contactPath = getRelativeLocaleUrl(lang, 'contact');
+---
+
+<nav class='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8'>
+  <div class='flex flex-1'>
+    <div class='hidden lg:flex lg:gap-x-12'>
+      <a href={homePath} class='text-sm/6 font-semibold text-gray-900'
+        >{currentTexts.home}</a
+      >
+      {/* Services Dropdown Start */}
+      <div class='relative' id='desktop-services-menu'>
+        <div
+          class='relative text-sm/6 font-semibold text-gray-900 cursor-pointer'
+          aria-expanded='false'
+          id='desktop-services-button'
+          role='button'
+          tabindex='0'
+        >
+          {currentTexts.services}
+          <div class='absolute left-full top-0'>
+            <svg
+              id='desktop-services-arrow'
+              class='size-5 flex-none text-gray-400 transition-transform duration-200'
+              viewBox='0 0 20 20'
+              fill='currentColor'
+              aria-hidden='true'
+            >
+              <path
+                fill-rule='evenodd'
+                d='M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z'
+                clip-rule='evenodd'></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          id='desktop-services-flyout'
+          class='absolute top-full -left-8 z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 opacity-0 translate-y-1 transition ease-out duration-200 hidden'
+        >
+          <div class='p-4'>
+            <div
+              class='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50'
+            >
+              <div class='flex-auto'>
+                <a
+                  href={nearshoringPath}
+                  class='block font-semibold text-gray-900'
+                >
+                  {currentTexts.subServices.nearshoring}
+                  <span class='absolute inset-0'></span>
+                </a>
+              </div>
+            </div>
+            <div
+              class='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50'
+            >
+              <div class='flex-auto'>
+                <a
+                  href={softwareDevelopmentPath}
+                  class='block font-semibold text-gray-900'
+                >
+                  {currentTexts.subServices.softwareDevelopment}
+                  <span class='absolute inset-0'></span>
+                </a>
+              </div>
+            </div>
+            <div
+              class='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50'
+            >
+              <div class='flex-auto'>
+                <a
+                  href={aiServicesPath}
+                  class='block font-semibold text-gray-900'
+                >
+                  {currentTexts.subServices.aiServices}
+                  <span class='absolute inset-0'></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Services Dropdown End */}
+      <a href={ourStoryPath} class='text-sm/6 font-semibold text-gray-900'
+        >{currentTexts.ourStory}</a
+      >
+      <a href={contactPath} class='text-sm/6 font-semibold text-gray-900'
+        >{currentTexts.contact}</a
+      >
+    </div>
+    <div class='flex lg:hidden'>
+      <button
+        type='button'
+        class='-m-2.5 inline-flex items-center justify-center cursor-pointer p-2.5 text-gray-700'
+        id='open-mobile-menu-button'
+      >
+        <span class='sr-only'>{currentTexts.openMenu}</span>
+        <svg
+          class='size-6'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='1.5'
+          stroke='currentColor'
+          aria-hidden='true'
+          data-slot='icon'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <a href={homePath} class='-mt-2'>
+    <span class='sr-only'>Pixeau</span>
+    <img class='h-8 w-auto' src='/logo.svg' alt='' />
+  </a>
+  <div class='flex flex-1 justify-end'>
+    <a
+      href={alternateLangPath}
+      class='flex items-baseline gap-2 text-sm/6 font-semibold text-gray-900'
+    >
+      <img
+        src={`/flag-${alternateLangCode}.svg`}
+        alt={`${alternateLangName} flag`}
+        class='w-4 h-3 object-cover'
+      />
+      {alternateLangName}
+    </a>
+  </div>
+</nav>
+
+<!-- Mobile menu, show/hide based on menu open state. -->
+<div
+  class='lg:hidden hidden'
+  role='dialog'
+  aria-modal='true'
+  id='mobile-menu-panel'
+>
+  <!-- Background backdrop, show/hide based on slide-over state. -->
+  <div class='fixed inset-0 z-10' id='mobile-menu-backdrop'></div>
+  <div
+    class='fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-white px-6 py-4'
+  >
+    <div class='flex items-center justify-between'>
+      <div class='flex flex-1'>
+        <button
+          type='button'
+          class='-m-2.5 p-2.5 text-gray-700 cursor-pointer'
+          id='close-mobile-menu-button'
+        >
+          <span class='sr-only'>{currentTexts.closeMenu}</span>
+          <svg
+            class='size-6'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            aria-hidden='true'
+            data-slot='icon'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M6 18 18 6M6 6l12 12'></path>
+          </svg>
+        </button>
+      </div>
+      <a href={homePath} class='-m-1.5 p-1.5'>
+        <span class='sr-only'>Pixeau</span>
+        <img class='h-8 w-auto' src='/logo.svg' alt='' />
+      </a>
+      <div class='flex flex-1 justify-end'>
+        <!-- Language switcher for mobile menu header -->
+        <a
+          href={alternateLangPath}
+          class='flex items-baseline gap-2 text-sm/6 font-semibold text-gray-900 mt-2'
+        >
+          <img
+            src={`/flag-${alternateLangCode}.svg`}
+            alt={`${alternateLangName} flag`}
+            class='w-4 h-3 object-cover'
+          />
+          {alternateLangName}
+        </a>
+      </div>
+    </div>
+    <div class='mt-6 space-y-2'>
+      <a
+        href={homePath}
+        class='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
+        >{currentTexts.home}</a
+      >
+      {/* Mobile Services Accordion Start */}
+      <div class='-mx-3'>
+        <button
+          type='button'
+          class='flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 cursor-pointer'
+          aria-controls='disclosure-services-mobile'
+          aria-expanded='false'
+          id='mobile-services-button'
+        >
+          {currentTexts.services}
+          <svg
+            class='size-5 flex-none transition-transform duration-200'
+            viewBox='0 0 20 20'
+            fill='currentColor'
+            aria-hidden='true'
+            id='mobile-services-arrow'
+          >
+            <path
+              fill-rule='evenodd'
+              d='M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z'
+              clip-rule='evenodd'></path>
+          </svg>
+        </button>
+        <div class='mt-2 space-y-2 hidden' id='disclosure-services-mobile'>
+          <a
+            href={nearshoringPath}
+            class='block rounded-lg py-2 pr-3 pl-9 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50'
+            >{currentTexts.subServices.nearshoring}</a
+          >
+          <a
+            href={softwareDevelopmentPath}
+            class='block rounded-lg py-2 pr-3 pl-9 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50'
+            >{currentTexts.subServices.softwareDevelopment}</a
+          >
+          <a
+            href={aiServicesPath}
+            class='block rounded-lg py-2 pr-3 pl-9 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50'
+            >{currentTexts.subServices.aiServices}</a
+          >
+        </div>
+      </div>
+      {/* Mobile Services Accordion End */}
+      <a
+        href={ourStoryPath}
+        class='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
+        >{currentTexts.ourStory}</a
+      >
+      <a
+        href={contactPath}
+        class='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
+        >{currentTexts.contact}</a
+      >
+    </div>
+  </div>
+</div>
+
+<script>
+  const openButton = document.getElementById('open-mobile-menu-button');
+  const closeButton = document.getElementById('close-mobile-menu-button');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+  // Main mobile menu
+  function openMobileMenu() {
+    if (mobileMenuPanel) mobileMenuPanel.classList.remove('hidden');
+  }
+
+  function closeMobileMenu() {
+    if (mobileMenuPanel) mobileMenuPanel.classList.add('hidden');
+    // Also close any open submenus in mobile
+    if (
+      mobileServicesDisclosure &&
+      !mobileServicesDisclosure.classList.contains('hidden')
+    ) {
+      mobileServicesDisclosure.classList.add('hidden');
+      if (mobileServicesButton) {
+        // Added null check
+        mobileServicesButton.setAttribute('aria-expanded', 'false');
+      }
+      if (mobileServicesArrow)
+        mobileServicesArrow.classList.remove('rotate-180');
+    }
+  }
+
+  if (openButton) {
+    openButton.addEventListener('click', openMobileMenu);
+  }
+  if (closeButton) {
+    closeButton.addEventListener('click', closeMobileMenu);
+  }
+  if (mobileMenuBackdrop) {
+    mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+  }
+
+  // Desktop Services Dropdown
+  const desktopServicesButton = document.getElementById(
+    'desktop-services-button',
+  );
+  const desktopServicesFlyout = document.getElementById(
+    'desktop-services-flyout',
+  );
+  const desktopServicesMenu = document.getElementById('desktop-services-menu');
+  const desktopServicesArrow = document.getElementById(
+    'desktop-services-arrow',
+  ); // Get the arrow
+
+  if (
+    desktopServicesButton &&
+    desktopServicesFlyout &&
+    desktopServicesMenu &&
+    desktopServicesArrow
+  ) {
+    // Added arrow to condition
+    const showFlyout = () => {
+      desktopServicesFlyout.classList.remove(
+        'hidden',
+        'opacity-0',
+        'translate-y-1',
+      );
+      desktopServicesFlyout.classList.add('opacity-100', 'translate-y-0');
+      desktopServicesButton.setAttribute('aria-expanded', 'true');
+      desktopServicesArrow.classList.add('rotate-180'); // Rotate arrow
+    };
+
+    const hideFlyout = () => {
+      desktopServicesFlyout.classList.remove('opacity-100', 'translate-y-0');
+      desktopServicesFlyout.classList.add('opacity-0', 'translate-y-1');
+      // Timeout to allow animation to finish before hiding
+      setTimeout(() => {
+        desktopServicesFlyout.classList.add('hidden');
+      }, 200); // Matches ease-out duration-200
+      desktopServicesButton.setAttribute('aria-expanded', 'false');
+      desktopServicesArrow.classList.remove('rotate-180'); // Un-rotate arrow
+    };
+
+    desktopServicesButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      if (desktopServicesFlyout.classList.contains('hidden')) {
+        showFlyout();
+      } else {
+        hideFlyout();
+      }
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (event) => {
+      if (
+        !desktopServicesMenu.contains(event.target as Node) && // Cast to Node
+        !desktopServicesFlyout.classList.contains('hidden')
+      ) {
+        hideFlyout();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (event) => {
+      if (
+        event.key === 'Escape' &&
+        !desktopServicesFlyout.classList.contains('hidden')
+      ) {
+        hideFlyout();
+      }
+    });
+  }
+
+  // Mobile Services Accordion
+  const mobileServicesButton = document.getElementById(
+    'mobile-services-button',
+  );
+  const mobileServicesDisclosure = document.getElementById(
+    'disclosure-services-mobile',
+  );
+  const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+
+  if (mobileServicesButton && mobileServicesDisclosure && mobileServicesArrow) {
+    mobileServicesButton.addEventListener('click', () => {
+      const isExpanded =
+        mobileServicesButton.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        mobileServicesDisclosure.classList.add('hidden');
+        mobileServicesButton.setAttribute('aria-expanded', 'false');
+        mobileServicesArrow.classList.remove('rotate-180');
+      } else {
+        mobileServicesDisclosure.classList.remove('hidden');
+        mobileServicesButton.setAttribute('aria-expanded', 'true');
+        mobileServicesArrow.classList.add('rotate-180');
+      }
+    });
+  }
+</script>

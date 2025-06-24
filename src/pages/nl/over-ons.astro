@@ -1,0 +1,64 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import GlobalLayout from '@/layouts/GlobalLayout.astro';
+import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
+---
+
+<GlobalLayout lang='nl' title='Over Ons' description='Over Pixeau'>
+  <HeadingBlockSimple
+    title='Over ons'
+    subTitle='Kwaliteit, ervaring en passie voor softwareontwikkeling'
+    background='/images/developers.jpeg'
+  />s
+  <div class='bg-white py-24 sm:py-32'>
+    <div class='mx-auto max-w-7xl px-6 lg:px-8'>
+      <div class='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
+        <p class='text-base/7 font-semibold text-primary-500'>
+          Een partner die u kunt vertrouwen
+        </p>
+        <h1
+          class='mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl'
+        >
+          Wij zijn Pixeau
+        </h1>
+        <div
+          class='mt-10 grid max-w-xl grid-cols-1 gap-8 text-base/7 text-gray-700 lg:max-w-none lg:grid-cols-2'
+        >
+          <div>
+            <p>
+              Wij zijn Pixeau. Met passie en expertise bieden wij advies, bouwen
+              we oplossingen en begeleiden we u bij softwareontwikkeling - van
+              technische uitdagingen tot operationele vraagstukken en
+              management. Onze ondersteuning op maat vormt de perfecte
+              aanvulling op uw interne team.
+            </p>
+            <p class='mt-8'>
+              Al meer dan tien jaar ontwikkelen wij software voor organisaties
+              van elke omvang - van wereldwijde ondernemingen tot ambitieuze
+              start-ups. Elk softwareproject brengt unieke uitdagingen met zich
+              mee: onduidelijke requirements, het vinden van het juiste talent,
+              effectief projectmanagement en de talloze technische beslissingen
+              die genomen moeten worden.
+            </p>
+          </div>
+          <div>
+            <p>
+              Veel bedrijven worstelen met deze complexe uitdagingen, wat ten
+              koste kan gaan van planning, budget en uiteindelijk het succes van
+              uw project. Hier maken wij het verschil.
+            </p>
+            <p class='mt-8'>
+              Het oplossen van ontwikkelingsuitdagingen is waar wij voor staan.
+              Bij Pixeau is het ons doel om u effectiever te maken in
+              softwareontwikkeling. Wij bieden begeleiding op het gebied van
+              technologie, projectmanagement en workflow. Met tactische
+              oplossingen versnellen wij uw ontwikkelproces. Het is onze missie
+              om blijvende verbeteringen te realiseren, op elke manier die wij
+              kunnen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</GlobalLayout>

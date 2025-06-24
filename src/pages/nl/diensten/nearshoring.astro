@@ -1,0 +1,194 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import GlobalLayout from '../../../layouts/GlobalLayout.astro';
+import HeadingBlockSimple from '../../../components/HeadingBlockSimple.astro';
+import Feature4x4Block from '../../../components/Feature4x4Block.astro';
+import UnorderedList from '../../../components/UnorderedList.astro';
+import ListItem from '../../../components/ListItem.astro';
+import CallToActionBlock from '../../../components/CallToActionBlock.astro';
+import LogoCloud from '../../../components/LogoCloud.astro';
+import FrequentlyAskedBlock from '../../../components/FrequentlyAskedBlock.astro';
+
+const features = [
+  {
+    name: 'Kennis van de Nederlandse én Britse markt',
+    description:
+      'We hebben diepgaande kennis van zowel de Nederlandse als de Britse markt. We begrijpen de wensen en werkwijze van Nederlandse bedrijven én weten precies waar in het VK de beste developers te vinden zijn. Deze unieke positie zorgt voor de perfecte match tussen jouw bedrijf en Brits talent.',
+    iconSVG: `<svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A11.978 11.978 0 0 1 12 16.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 0 3 12c0 .778.099 1.533.284 2.253m0 0A11.978 11.978 0 0 0 12 16.5c2.998 0 5.74 1.1 7.843 2.918M12 10.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0Z" />
+              </svg>`,
+  },
+  {
+    name: 'Groot aanbod aan top developers',
+    description:
+      'In het VK is het aanbod van IT-specialisten enorm. Via ons krijg je toegang tot een groot netwerk van hooggekwalificeerde Britse developers. Of je nu een front-end (JavaScript, TypeScript), back-end (Kotlin, Java, Python) of data science expert zoekt – we hebben de juiste mensen beschikbaar.',
+    iconSVG: `<svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A8.962 8.962 0 0 1 6 18.719m12 0a5.002 5.002 0 0 0-10 0m10 0a3 3 0 1 0-5.963-1.584A8.962 8.962 0 0 1 6 18.719M15 11.653c.026-.162.05-.324.072-.486.062-.452.122-.902.18-1.354.06-.451.117-.9.17-1.352A11.94 11.94 0 0 0 12 7.5c-1.051 0-2.06.16-3.009.455a11.903 11.903 0 0 0-1.995 1.039m14.498 2.168c-.283.346-.594.672-.928.972C18.658 15.29 17.386 16.5 15.5 16.5c-1.258 0-2.413-.356-3.397-1.002A9.024 9.024 0 0 0 9 15.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0-3.75 7.153M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+              </svg>`,
+  },
+  {
+    name: 'Geen taalbarrières, vlotte samenwerking',
+    description:
+      'Communicatie verloopt soepel in het Engels – een taal die in de meeste Nederlandse bedrijven dagelijks wordt gebruikt. Bovendien hebben Nederlandse en Britse professionals een vergelijkbare werkcultuur en is het tijdsverschil slechts één uur. Je werkt dus vrijwel real-time samen, zonder miscommunicatie door cultuur- of tijdsverschillen.',
+    iconSVG: `<svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+              </svg>`,
+  },
+  {
+    name: 'Volledig flexibel, geen langdurige verplichtingen',
+    description:
+      'Jij bepaalt hoe lang je een developer nodig hebt – of het nu een paar maanden is of langer, je zit nergens aan vast. Geen gedoe met vaste contracten of lange opzegtermijnen – je kunt opschalen of afschalen wanneer jouw project daarom vraagt.',
+    iconSVG: `<svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>`,
+  },
+];
+---
+
+<!--
+Hero Section:
+Versterk je team met Britse top developers – remote en flexibel inzetbaar
+Inhuren van ervaren Britse developers was nog nooit zo eenvoudig. We verbinden je met gescreende freelance developers die als externe teamleden remote meewerken aan jouw middel- en langlopende projecten. Zo haal je topkwaliteit in huis, met maximale flexibiliteit en zonder langdurige verplichtingen. Neem vandaag nog contact met ons op om direct de juiste developer voor jouw project aan boord te halen!
+
+Features Section:
+Waarom Britse developers inhuren via ons?
+
+Kennis van de Nederlandse én Britse markt: We hebben diepgaande kennis van zowel de Nederlandse als de Britse markt. We begrijpen de wensen en werkwijze van Nederlandse bedrijven én weten precies waar in het VK de beste developers te vinden zijn. Deze unieke positie zorgt voor de perfecte match tussen jouw bedrijf en Brits talent.
+
+Groot aanbod aan top developers: In het VK is het aanbod van IT-specialisten enorm. Via ons krijg je toegang tot een groot netwerk van hooggekwalificeerde Britse developers. Of je nu een front-end (JavaScript, TypeScript), back-end (Kotlin, Java, Python) of data science expert zoekt – we hebben de juiste mensen beschikbaar.
+
+Geen taalbarrières, vlotte samenwerking: Communicatie verloopt soepel in het Engels – een taal die in de meeste Nederlandse bedrijven dagelijks wordt gebruikt. Bovendien hebben Nederlandse en Britse professionals een vergelijkbare werkcultuur en is het tijdsverschil slechts één uur. Je werkt dus vrijwel real-time samen, zonder miscommunicatie door cultuur- of tijdsverschillen.
+
+Volledig flexibel, geen langdurige verplichtingen: Jij bepaalt hoe lang je een developer nodig hebt – of het nu een paar maanden is of langer, je zit nergens aan vast. Geen gedoe met vaste contracten of lange opzegtermijnen – je kunt opschalen of afschalen wanneer jouw project daarom vraagt.
+
+Process Section (Steps):
+Hoe werkt het?
+Contact & inventarisatie: Neem contact met ons op en vertel ons wat voor developer je nodig hebt. We bespreken graag jouw project en specifieke wensen.
+Selectie & kennismaking: We zoeken de best passende kandidaat uit ons uitgebreide netwerk van Britse professionals. Je ontvangt snel één of meerdere profielen en plant een kennismaking om te zien of het klikt.
+Start & flexibiliteit: Is er een match? Dan regelen we de contractuele kant en kan jouw nieuwe developer aan de slag – vaak binnen enkele dagen. Alles gebeurt remote. De samenwerking blijft volledig flexibel: verlengen, uitbreiden of beëindigen kan wanneer jij wilt, zonder gedoe.
+CTA Section:
+Klaar om te starten?
+Verlies geen tijd en mis geen talent. Laat ons de ideale Britse developer voor jouw project vinden, zodat jij direct kunt doorpakken. Neem vandaag nog contact op voor een vrijblijvend gesprek. We bespreken graag jouw wensen en regelen de rest.
+
+ -->
+<GlobalLayout
+  lang='nl'
+  title='Nearshoring Diensten UK Developers'
+  description='Vind Britse topontwikkelaars via onze nearshoring diensten.'
+>
+  <HeadingBlockSimple
+    title='Versterk je team met Britse top developers'
+    subTitle='Remote en flexibel inzetbaar.'
+    background='/images/developers.jpeg'
+  />
+
+  <div class='bg-white px-6 py-32 lg:px-8'>
+    <div class='mx-auto max-w-3xl text-base/7 text-gray-700'>
+      <p class='text-base/7 font-semibold text-primary-500'>Onze Propositie</p>
+      <h1
+        class='mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl'
+      >
+        Toegang tot Top UK Talent voor Nederlandse Bedrijven
+      </h1>
+      <p class='mt-6 text-xl/8'>
+        Wij stellen Nederlandse bedrijven in staat om te profiteren van de
+        sterke en diverse talentenpool in het Verenigd Koninkrijk. Dit doen we
+        door een heldere en efficiënte samenwerkingsstructuur.
+      </p>
+      <div class='mt-10 max-w-2xl'>
+        <p>
+          Onze constructie is eenvoudig: de <strong
+            class='font-semibold text-gray-900'>klant</strong
+          > (met een project of specifieke behoefte) benadert <strong
+            class='font-semibold text-gray-900'>Pixeau</strong
+          >. Vervolgens gaan wij op zoek naar geschikte <strong
+            class='font-semibold text-gray-900'
+            >onafhankelijke contractanten</strong
+          > (developers) in het VK om het project te realiseren.
+        </p>
+        <UnorderedList>
+          <ListItem strongText='Specificatie van Eisen.'>
+            De klant deelt de vereisten voor de developer(s), zoals technische
+            vaardigheden, ervaringsniveau en projectdetails.
+          </ListItem>
+          <ListItem strongText='Matching door Pixeau.'>
+            Wij gebruiken ons netwerk en expertise om de meest geschikte Britse
+            developers te vinden die aan de eisen voldoen.
+          </ListItem>
+          <ListItem strongText='Controle door de Klant.'>
+            De klant heeft volledige controle over het interviewproces en de
+            uiteindelijke keuze wie aan te nemen voor het project.
+          </ListItem>
+        </UnorderedList>
+        <p class='mt-8'>
+          Deze aanpak zorgt ervoor dat u precies het talent krijgt dat u nodig
+          heeft, met de flexibiliteit van onafhankelijke contractanten en de
+          zekerheid van onze bemiddeling.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <Feature4x4Block
+    title='Waarom Britse developers inhuren via ons?'
+    features={features}
+  />
+  <LogoCloud
+    title='Vertrouwd door:'
+    logos={[
+      {
+        src: '/clients/achmea.svg',
+        alt: 'Achmea',
+      },
+      {
+        src: '/clients/rabobank.svg',
+        alt: 'Rabobank',
+      },
+      {
+        src: '/clients/prorail.svg',
+        alt: 'ProRail',
+      },
+      {
+        src: '/clients/npo.svg',
+        alt: 'NPO',
+      },
+      {
+        src: '/clients/sbs.svg',
+        alt: 'SBS',
+      },
+      {
+        src: '/clients/beslistnl.svg',
+        alt: 'Beslist.nl',
+      },
+    ]}
+  />
+  <FrequentlyAskedBlock
+    faqs={[
+      {
+        question: 'Wat is nearshoring precies?',
+        answer:
+          'Nearshoring is het uitbesteden van IT-projecten of -taken aan een team in een nabijgelegen land. Voor Nederlandse bedrijven betekent dit vaak samenwerken met specialisten in landen zoals het VK, vanwege de kleine cultuurverschillen, minimale tijdzoneverschillen en hoge kwaliteit van IT-talent.',
+      },
+      {
+        question: 'Waarom zou ik kiezen voor Britse developers via Pixeau?',
+        answer:
+          'Pixeau combineert kennis van de Nederlandse en Britse markt. We bieden toegang tot een grote pool van hooggekwalificeerde Britse developers, zorgen voor een soepele communicatie in het Engels en een flexibele contractstructuur zonder langdurige verplichtingen. Bovendien is het tijdsverschil slechts één uur.',
+      },
+      {
+        question: 'Hoe verloopt het selectieproces van developers?',
+        answer:
+          'U deelt uw projectvereisten en developer specificaties met ons. Wij zoeken vervolgens de best passende kandidaten uit ons netwerk. U ontvangt profielen en heeft volledige controle over het interviewproces en de uiteindelijke keuze wie u aanneemt.',
+      },
+      {
+        question: 'Wat zijn de contractuele verplichtingen?',
+        answer:
+          'U werkt met onafhankelijke contractanten, wat maximale flexibiliteit biedt. Er zijn geen langdurige verplichtingen of ingewikkelde opzegtermijnen. U kunt de samenwerking opschalen, afschalen of beëindigen wanneer uw project dat vereist.',
+      },
+      {
+        question: 'Hoe snel kan een developer starten?',
+        answer:
+          'Na een succesvolle match en afronding van de contractuele kant, kan een developer vaak binnen enkele dagen al remote aan de slag voor uw project.',
+      },
+    ]}
+  />
+</GlobalLayout>

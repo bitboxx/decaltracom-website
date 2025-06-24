@@ -1,0 +1,192 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import GlobalLayout from '../../layouts/GlobalLayout.astro';
+import HeroBlock from '../../components/HeroBlock.astro';
+import LogoCloud from '../../components/LogoCloud.astro';
+import FeatureBoxes from '../../components/FeatureBoxes.astro';
+
+const logoCloudProps = {
+  title: 'Onze klanten',
+  logos: [
+    {
+      src: '/clients/achmea.svg',
+      alt: 'Achmea',
+    },
+    {
+      src: '/clients/rabobank.svg',
+      alt: 'Rabobank',
+    },
+    {
+      src: '/clients/prorail.svg',
+      alt: 'ProRail',
+    },
+    {
+      src: '/clients/npo.svg',
+      alt: 'NPO',
+    },
+    {
+      src: '/clients/sbs.svg',
+      alt: 'SBS',
+    },
+    {
+      src: '/clients/beslistnl.svg',
+      alt: 'Beslist.nl',
+    },
+  ],
+};
+
+const featureBoxProps = {
+  features: [
+    {
+      title: 'Software Ontwikkeling',
+      description:
+        'Met meer dan 15 jaar ervaring leveren wij op projectbasis digitale oplossingen die precies doen wat uw organisatie nodig heeft.',
+      ctaText: 'Meer informatie',
+      ctaUrl: getRelativeLocaleUrl('nl', 'diensten/softwareontwikkeling'),
+    },
+    {
+      title: 'Nearshoring',
+      description:
+        'Schaal uw ontwikkelteam op met ervaren developers uit Europa die naadloos aansluiten bij uw team en werkwijze.',
+      ctaText: 'Meer informatie',
+      ctaUrl: getRelativeLocaleUrl('nl', 'diensten/nearshoring'),
+    },
+    {
+      title: 'AI voor Efficiëntere Organisaties',
+      description:
+        'Laat AI je team versterken, processen stroomlijnen en kosten verlagen met praktische, direct toepasbare oplossingen.',
+      ctaText: 'Meer informatie',
+      ctaUrl: getRelativeLocaleUrl(
+        'nl',
+        'diensten/ai-voor-efficientere-organisaties',
+      ),
+    },
+  ],
+};
+
+const techLogosProps = {
+  title: 'Technologieën waarmee we werken',
+  logos: [
+    {
+      src: '/tech/android.svg',
+      alt: 'Android',
+    },
+    {
+      src: '/tech/angular.svg',
+      alt: 'Angular',
+    },
+    {
+      src: '/tech/ansible.svg',
+      alt: 'Ansible',
+    },
+    {
+      src: '/tech/aws.svg',
+      alt: 'AWS',
+    },
+    {
+      src: '/tech/azure.svg',
+      alt: 'Azure',
+    },
+    {
+      src: '/tech/css.svg',
+      alt: 'CSS',
+    },
+    {
+      src: '/tech/docker.svg',
+      alt: 'Docker',
+    },
+    {
+      src: '/tech/gcp.svg',
+      alt: 'Google Cloud Platform',
+    },
+    {
+      src: '/tech/git.svg',
+      alt: 'Git',
+    },
+    {
+      src: '/tech/github.svg',
+      alt: 'GitHub',
+    },
+    {
+      src: '/tech/golang.svg',
+      alt: 'Go',
+    },
+    {
+      src: '/tech/html.svg',
+      alt: 'HTML',
+    },
+    {
+      src: '/tech/javascript.svg',
+      alt: 'JavaScript',
+    },
+    {
+      src: '/tech/kotlin.svg',
+      alt: 'Kotlin',
+    },
+    {
+      src: '/tech/kubernetes.svg',
+      alt: 'Kubernetes',
+    },
+    {
+      src: '/tech/mariadb.svg',
+      alt: 'MariaDB',
+    },
+    {
+      src: '/tech/mongodb.svg',
+      alt: 'MongoDB',
+    },
+    {
+      src: '/tech/mysql.svg',
+      alt: 'MySQL',
+    },
+    {
+      src: '/tech/php.svg',
+      alt: 'PHP',
+    },
+    {
+      src: '/tech/postgresql.svg',
+      alt: 'PostgreSQL',
+    },
+    {
+      src: '/tech/python.svg',
+      alt: 'Python',
+    },
+    {
+      src: '/tech/react-native.svg',
+      alt: 'React Native',
+    },
+    {
+      src: '/tech/react.svg',
+      alt: 'React',
+    },
+    {
+      src: '/tech/sass.svg',
+      alt: 'Sass',
+    },
+    {
+      src: '/tech/swift.svg',
+      alt: 'Swift',
+    },
+    {
+      src: '/tech/terraform.svg',
+      alt: 'Terraform',
+    },
+  ],
+};
+---
+
+<GlobalLayout
+  lang='nl'
+  title='Home'
+  description='Welkom op onze Nederlandse homepage.'
+>
+  <HeroBlock
+    title='Data om uw online bedrijf te verrijken'
+    paragraph='Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.'
+    ctaButtonText='Begin nu'
+    learnMoreButtonText='Meer informatie'
+  />
+  <FeatureBoxes {...featureBoxProps} />
+  <LogoCloud {...logoCloudProps} />
+  <LogoCloud {...techLogosProps} />
+</GlobalLayout>

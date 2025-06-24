@@ -1,0 +1,13 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import GlobalLayout from '../../layouts/GlobalLayout.astro';
+import ContactBlock from '../../components/ContactBlock.astro';
+---
+
+<GlobalLayout lang='en' title='Contact Us' description='English contact page.'>
+  <ContactBlock
+    title='Contact sales'
+    subtitle='Aute magna irure deserunt veniam aliqua magna enim voluptate.'
+    submitButtonText="Let's talk"
+  />
+</GlobalLayout>

@@ -1,0 +1,33 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import GlobalLayout from '../../../layouts/GlobalLayout.astro';
+---
+
+<GlobalLayout
+  lang='en'
+  title='Software Development Services'
+  description='Discover our software development services.'
+>
+  <h1>Software Development</h1>
+
+  <p>This is the page for our software development services.</p>
+  <p>
+    We offer custom software solutions perfectly tailored to your business
+    needs. Our team of experienced developers is ready to build innovative and
+    scalable applications.
+  </p>
+
+  <h2>Our Expertise</h2>
+  <ul>
+    <li>Web Applications</li>
+    <li>Mobile Applications</li>
+    <li>Cloud Solutions</li>
+    <li>System Integrations</li>
+    <li>Consulting</li>
+  </ul>
+
+  <p>
+    Please <a href={getRelativeLocaleUrl('en', 'contact')}>contact us</a> for more
+    information.
+  </p>
+</GlobalLayout>

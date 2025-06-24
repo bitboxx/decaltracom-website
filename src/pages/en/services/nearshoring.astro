@@ -1,0 +1,34 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import GlobalLayout from '../../../layouts/GlobalLayout.astro';
+---
+
+<GlobalLayout
+  lang='en'
+  title='Nearshoring Services UK Developers'
+  description='Find top UK developers through our nearshoring services.'
+>
+  <h1>Nearshoring UK Developers</h1>
+
+  <p>This is the page for our nearshoring services for UK developers.</p>
+  <p>
+    We connect you with highly skilled software developers from the United
+    Kingdom. Benefit from the advantages of nearshoring, such as cultural
+    proximity, minimal time zone differences, and access to a large talent pool.
+  </p>
+
+  <h2>Why Nearshore Through Us?</h2>
+  <ul>
+    <li>Access to top IT talent in the UK</li>
+    <li>Flexible collaboration models</li>
+    <li>Cost-effective without compromising on quality</li>
+    <li>Seamless integration with your existing teams</li>
+    <li>Focus on your core business while we handle recruitment</li>
+  </ul>
+
+  <p>
+    Interested in strengthening your team with UK experts? Please <a
+      href={getRelativeLocaleUrl('en', 'contact')}>contact us</a
+    >.
+  </p>
+</GlobalLayout>
