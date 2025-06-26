@@ -73,7 +73,7 @@ const alpineScript = `
   </div>
 </div>
 
-<script define:vars={{ alpineScript }}>
+<script is:inline define:vars={{ alpineScript }}>
   // Inject Alpine.js if not already present (basic check)
   if (typeof Alpine === 'undefined') {
     const script = document.createElement('script');

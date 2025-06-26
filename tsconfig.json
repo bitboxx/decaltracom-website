@@ -5,7 +5,8 @@
     "**/*"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "git-exclude"
   ],
   "compilerOptions": {
     "strictNullChecks": true,

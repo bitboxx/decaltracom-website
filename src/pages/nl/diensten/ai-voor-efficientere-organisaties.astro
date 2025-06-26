@@ -1,8 +1,7 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
 import GlobalLayout from '../../../layouts/GlobalLayout.astro';
 import HeadingBlockSimple from '../../../components/HeadingBlockSimple.astro';
-import LogoCloud from '../../../components/LogoCloud.astro';
+
 ---
 
 <GlobalLayout
@@ -44,7 +43,7 @@ import LogoCloud from '../../../components/LogoCloud.astro';
             </svg>
             <span
               ><strong class='font-semibold text-gray-900'>Efficiëntie</strong>
-              > Automatiseer repeterend werk en win tijd.</span
+              {' > '}Automatiseer repeterend werk en win tijd.</span
             >
           </li>
           <li class='flex gap-x-3'>
@@ -64,7 +63,7 @@ import LogoCloud from '../../../components/LogoCloud.astro';
               ><strong class='font-semibold text-gray-900'
                 >Kostenbesparing</strong
               >
-              > Verlaag personeelsdruk zonder in te leveren op output.</span
+              {' > '}Verlaag personeelsdruk zonder in te leveren op output.</span
             >
           </li>
           <li class='flex gap-x-3'>
@@ -84,7 +83,7 @@ import LogoCloud from '../../../components/LogoCloud.astro';
               ><strong class='font-semibold text-gray-900'
                 >Snelle adoptie</strong
               >
-              > We integreren AI in je bestaande tools en werkwijzen.</span
+              {' > '}We integreren AI in je bestaande tools en werkwijzen.</span
             >
           </li>
         </ul>
@@ -365,7 +364,7 @@ import LogoCloud from '../../../components/LogoCloud.astro';
         </p>
         <div class='mt-10 flex items-center justify-center gap-x-6'>
           <a
-            href={getRelativeLocaleUrl('nl', 'contact')}
+            href='/nl/contact'
             class='rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-primary-500 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
           >
             Plan een verkennend gesprek
