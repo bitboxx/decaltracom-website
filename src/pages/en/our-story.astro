@@ -1,13 +1,59 @@
 ---
-import GlobalLayout from '../../layouts/GlobalLayout.astro';
+import GlobalLayout from '@/layouts/GlobalLayout.astro';
+import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
 ---
 
-<GlobalLayout
-  lang='en'
-  title='Our Story'
-  description='The English "Our Story" page.'
->
-  <h1>Our Story</h1>
-
-  <p>This is the English "Our Story" page.</p>
+<GlobalLayout lang='en' title='About Us' description='About Pixeau'>
+  <HeadingBlockSimple
+    title='About us'
+    subTitle='Quality, experience and passion for software development'
+    background='/images/developers.jpeg'
+  />
+  <div class='bg-white py-24 sm:py-32'>
+    <div class='mx-auto max-w-7xl px-6 lg:px-8'>
+      <div class='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
+        <p class='text-base/7 font-semibold text-primary-500'>
+          A partner you can trust
+        </p>
+        <h1
+          class='mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl'
+        >
+          We are Pixeau
+        </h1>
+        <div
+          class='mt-10 grid max-w-xl grid-cols-1 gap-8 text-base/7 text-gray-700 lg:max-w-none lg:grid-cols-2'
+        >
+          <div>
+            <p>
+              We are Pixeau. With passion and expertise, we provide advice, build
+              solutions and guide you in software development - from technical
+              challenges to operational issues and management. Our bespoke support
+              forms the perfect complement to your internal team.
+            </p>
+            <p class='mt-8'>
+              For more than 15 years, we have been developing software for
+              organisations of all sizes - from global enterprises to ambitious
+              start-ups. Every software project brings unique challenges: unclear
+              requirements, finding the right talent, effective project management
+              and the countless technical decisions that need to be made.
+            </p>
+          </div>
+          <div>
+            <p>
+              Many companies struggle with these complex challenges, which can come
+              at the expense of planning, budget and ultimately the success of your
+              project. This is where we make the difference.
+            </p>
+            <p class='mt-8'>
+              Solving development challenges is what we stand for. At Pixeau, our
+              goal is to make you more effective in software development. We provide
+              guidance in the areas of technology, project management and workflow.
+              With tactical solutions, we accelerate your development process. It is
+              our mission to realise lasting improvements, in every way we can.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </GlobalLayout>

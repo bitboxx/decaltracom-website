@@ -1,4 +1,6 @@
 ---
+import Button from '@/components/Button.astro';
+
 interface Props {
   title: string;
   paragraph: string;
@@ -37,12 +39,9 @@ const { title, paragraph, ctaButtonText, learnMoreButtonText } = Astro.props;
           (ctaButtonText || learnMoreButtonText) && (
             <div class='mt-10 flex items-center justify-center gap-x-6'>
               {ctaButtonText && (
-                <a
-                  href='#'
-                  class='rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:outline-primary-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500'
-                >
+                <Button href='#'>
                   {ctaButtonText}
-                </a>
+                </Button>
               )}
               {learnMoreButtonText && (
                 <a href='#' class='text-sm/6 font-semibold text-gray-900'>

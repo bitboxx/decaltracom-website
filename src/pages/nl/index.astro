@@ -1,9 +1,39 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import GlobalLayout from '../../layouts/GlobalLayout.astro';
-import HeroBlock from '../../components/HeroBlock.astro';
-import LogoCloud from '../../components/LogoCloud.astro';
-import FeatureBoxes from '../../components/FeatureBoxes.astro';
+import GlobalLayout from '@/layouts/GlobalLayout.astro';
+import HeroCarousel from '@/components/HeroCarousel.astro';
+import LogoCloud from '@/components/LogoCloud.astro';
+import FeatureBoxes from '@/components/FeatureBoxes.astro';
+
+const heroCarouselSlides = [
+  {
+    id: 'software-development',
+    title: 'Software Ontwikkeling op Maat',
+    description: 'Met meer dan 15 jaar ervaring leveren wij digitale oplossingen die precies doen wat uw organisatie nodig heeft. Van concept tot oplevering, wij zorgen voor kwalitatieve software die groeit met uw bedrijf.',
+    ctaText: 'Bekijk onze diensten',
+    ctaUrl: getRelativeLocaleUrl('nl', 'diensten/softwareontwikkeling'),
+    learnMoreText: 'Meer over ontwikkeling',
+    learnMoreUrl: getRelativeLocaleUrl('nl', 'diensten/softwareontwikkeling'),
+  },
+  {
+    id: 'nearshoring',
+    title: 'Nearshoring vanuit het VK',
+    description: 'Versterk je team met ervaren Britse developers die remote en flexibel inzetbaar zijn. Geen taalbarrières, vergelijkbare werkcultuur en slechts één uur tijdsverschil voor vlotte samenwerking.',
+    ctaText: 'Ontdek nearshoring',
+    ctaUrl: getRelativeLocaleUrl('nl', 'diensten/nearshoring'),
+    learnMoreText: 'Meer over nearshoring',
+    learnMoreUrl: getRelativeLocaleUrl('nl', 'diensten/nearshoring'),
+  },
+  {
+    id: 'ai-solutions',
+    title: 'AI voor Efficiëntere Organisaties',
+    description: 'Laat AI je team versterken, processen stroomlijnen en kosten verlagen met praktische, direct toepasbare oplossingen. Van automatisering tot intelligente data-analyse.',
+    ctaText: 'Ontdek AI-oplossingen',
+    ctaUrl: getRelativeLocaleUrl('nl', 'diensten/ai-voor-efficientere-organisaties'),
+    learnMoreText: 'Meer over AI',
+    learnMoreUrl: getRelativeLocaleUrl('nl', 'diensten/ai-voor-efficientere-organisaties'),
+  },
+];
 
 const logoCloudProps = {
   title: 'Onze klanten',
@@ -178,14 +208,9 @@ const techLogosProps = {
 <GlobalLayout
   lang='nl'
   title='Home'
-  description='Welkom op onze Nederlandse homepage.'
+  description='Pixeau - Meer dan 15 jaar ervaring in softwareontwikkeling, nearshoring en AI-oplossingen voor Nederlandse bedrijven.'
 >
-  <HeroBlock
-    title='Data om uw online bedrijf te verrijken'
-    paragraph='Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.'
-    ctaButtonText='Begin nu'
-    learnMoreButtonText='Meer informatie'
-  />
+  <HeroCarousel slides={heroCarouselSlides} lang='nl' />
   <FeatureBoxes {...featureBoxProps} />
   <LogoCloud {...logoCloudProps} />
   <LogoCloud {...techLogosProps} />

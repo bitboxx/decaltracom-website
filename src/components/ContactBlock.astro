@@ -1,4 +1,6 @@
 ---
+import Button from '@/components/Button.astro';
+
 interface Props {
   title: string;
   subtitle: string;
@@ -134,11 +136,9 @@ const currentLabels = labels[lang as keyof typeof labels] || labels.en;
       </div>
     </div>
     <div class='mt-10'>
-      <button
-        type='submit'
-        class='block w-full rounded-md bg-primary-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-primary-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500'
-        >{submitButtonText}</button
-      >
+      <Button type='submit' class='block w-full text-center'>
+        {submitButtonText}
+      </Button>
     </div>
   </form>
 

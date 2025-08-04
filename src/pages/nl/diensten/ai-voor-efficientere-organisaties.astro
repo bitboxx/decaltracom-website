@@ -1,7 +1,8 @@
 ---
-import GlobalLayout from '../../../layouts/GlobalLayout.astro';
-import HeadingBlockSimple from '../../../components/HeadingBlockSimple.astro';
-
+import GlobalLayout from '@/layouts/GlobalLayout.astro';
+import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
+import CallToActionSimple from '@/components/CallToActionSimple.astro';
+import Button from '@/components/Button.astro';
 ---
 
 <GlobalLayout
@@ -12,7 +13,8 @@ import HeadingBlockSimple from '../../../components/HeadingBlockSimple.astro';
   <HeadingBlockSimple
     title='Meer doen met minder – dankzij AI'
     subTitle='Laat AI je team versterken, processen stroomlijnen en kosten verlagen. Wij helpen je AI slim te integreren in je bedrijfsvoering – op maat, praktisch, en zonder loze beloftes.'
-    background='/images/grey-with-leaves.jpg'
+    background='/images/do-more.jpg'
+    showDecoration={false}
   />
 
   <div class='bg-white px-6 py-32 lg:px-8'>
@@ -89,8 +91,8 @@ import HeadingBlockSimple from '../../../components/HeadingBlockSimple.astro';
         </ul>
         <div class='mt-10 flex items-center gap-x-6'>
           <a
-            href='#contact'
-            class='rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500'
+            href='/nl/contact'
+            class='rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500'
           >
             Start een AI-project
           </a>
@@ -347,30 +349,20 @@ import HeadingBlockSimple from '../../../components/HeadingBlockSimple.astro';
     </div>
   </div>
 
-  <!-- Call to Action Section -->
-  <div id='contact' class='bg-primary-500'>
-    <div class='px-6 py-24 sm:px-6 sm:py-32 lg:px-8'>
-      <div class='mx-auto max-w-2xl text-center'>
-        <h2 class='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
-          Laat je bedrijf draaien op slimme technologie
-        </h2>
-        <p class='mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-200'>
-          AI is geen toekomstmuziek. Het is er al – en jij kunt er vandaag van
-          profiteren.
-        </p>
-        <p class='mx-auto mt-4 max-w-xl text-lg leading-8 text-indigo-200'>
-          Vraag een vrijblijvende AI-scan aan en ontdek wat "meer doen met
-          minder" in jouw context betekent.
-        </p>
-        <div class='mt-10 flex items-center justify-center gap-x-6'>
-          <a
-            href='/nl/contact'
-            class='rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-primary-500 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
-          >
-            Plan een verkennend gesprek
-          </a>
-        </div>
-      </div>
+  <CallToActionSimple>
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+      Laat je bedrijf draaien op slimme technologie
+    </h2>
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-8">
+      AI is geen toekomstmuziek. Het is er al – en jij kunt er vandaag van profiteren.
+    </p>
+    <p class="mx-auto mt-4 max-w-xl text-lg leading-8">
+      Vraag een vrijblijvende AI-scan aan en ontdek wat "meer doen met minder" in jouw context betekent.
+    </p>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+      <Button href="/nl/contact">
+        Plan een verkennend gesprek
+      </Button>
     </div>
-  </div>
+  </CallToActionSimple>
 </GlobalLayout>

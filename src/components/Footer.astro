@@ -23,7 +23,7 @@ const currentTexts = lang === 'nl' ? footerTexts.nl : footerTexts.en;
 
 const termsPath = getRelativeLocaleUrl(
   lang,
-  lang === 'en' ? 'terms-and-conditions' : 'algemene-voorwaarden',
+  lang === 'en' ? 'terms-and-conditions' : 'algemene-voorwaarden'
 );
 ---
 
@@ -33,11 +33,11 @@ const termsPath = getRelativeLocaleUrl(
   <div
     class='absolute inset-0 mx-auto max-w-7xl px-6 py-12 md:flex md:justify-between md:items-end lg:px-8'
   >
-    <div class='text-sm/6 md:order-2'>
+    <div class='text-sm/6 md:order-2 px-2 pt-1 bg-white/30'>
       <a href={termsPath}>{currentTexts.terms}</a>
     </div>
-    <div class='text-sm/6 md:order-1 md:mt-0'>
-      &copy;&nbsp;{today.getFullYear()}&nbsp;Pixeau. {currentTexts.rights}.
+    <div class='text-sm/6 md:order-1 md:mt-0 px-2 pt-1 bg-white/30'>
+      &copy;&nbsp;{today.getFullYear()}&nbsp;Pixeau. {currentTexts.rights}
     </div>
   </div>
 </footer>

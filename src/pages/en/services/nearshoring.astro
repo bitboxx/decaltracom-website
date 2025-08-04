@@ -1,34 +1,166 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import GlobalLayout from '../../../layouts/GlobalLayout.astro';
+import GlobalLayout from '@/layouts/GlobalLayout.astro';
+import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
+import Feature4x4Block from '@/components/Feature4x4Block.astro';
+import UnorderedList from '@/components/UnorderedList.astro';
+import ListItem from '@/components/ListItem.astro';
+import LogoCloud from '@/components/LogoCloud.astro';
+import FrequentlyAskedBlock from '@/components/FrequentlyAskedBlock.astro';
+
+const features = [
+  {
+    name: 'Knowledge of both Dutch and British markets',
+    description:
+      'We have in-depth knowledge of both the Dutch and British markets. We understand the needs and working methods of Dutch companies and know exactly where to find the best developers in the UK. This unique position ensures the perfect match between your company and British talent.',
+    iconSVG: `<svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A11.978 11.978 0 0 1 12 16.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 0 3 12c0 .778.099 1.533.284 2.253m0 0A11.978 11.978 0 0 0 12 16.5c2.998 0 5.74 1.1 7.843 2.918M12 10.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0Z" />
+              </svg>`,
+  },
+  {
+    name: 'Large pool of top developers',
+    description:
+      'The UK has an enormous supply of IT specialists. Through us, you get access to a large network of highly qualified British developers. Whether you are looking for a front-end (JavaScript, TypeScript), back-end (Kotlin, Java, Python) or data science expert – we have the right people available.',
+    iconSVG: `<svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A8.962 8.962 0 0 1 6 18.719m12 0a5.002 5.002 0 0 0-10 0m10 0a3 3 0 1 0-5.963-1.584A8.962 8.962 0 0 1 6 18.719M15 11.653c.026-.162.05-.324.072-.486.062-.452.122-.902.18-1.354.06-.451.117-.9.17-1.352A11.94 11.94 0 0 0 12 7.5c-1.051 0-2.06.16-3.009.455a11.903 11.903 0 0 0-1.995 1.039m14.498 2.168c-.283.346-.594.672-.928.972C18.658 15.29 17.386 16.5 15.5 16.5c-1.258 0-2.413-.356-3.397-1.002A9.024 9.024 0 0 0 9 15.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0-3.75 7.153M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+              </svg>`,
+  },
+  {
+    name: 'No language barriers, smooth collaboration',
+    description:
+      'Communication flows smoothly in English – a language used daily in most Dutch companies. Moreover, Dutch and British professionals have a similar work culture and the time difference is only one hour. You work almost in real-time, without miscommunication due to cultural or time differences.',
+    iconSVG: `<svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+              </svg>`,
+  },
+  {
+    name: 'Completely flexible, no long-term obligations',
+    description:
+      'You decide how long you need a developer – whether it is a few months or longer, you are not tied to anything. No hassle with fixed contracts or long notice periods – you can scale up or down when your project requires it.',
+    iconSVG: `<svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>`,
+  },
+];
 ---
 
 <GlobalLayout
   lang='en'
   title='Nearshoring Services UK Developers'
-  description='Find top UK developers through our nearshoring services.'
+  description='Strengthen your team with experienced British developers. Remote, flexible and without language barriers from the UK.'
 >
-  <h1>Nearshoring UK Developers</h1>
+  <HeadingBlockSimple
+    title='Strengthen your team with British top developers'
+    subTitle='Remote and flexible deployment.'
+    background='/images/developers.jpeg'
+  />
 
-  <p>This is the page for our nearshoring services for UK developers.</p>
-  <p>
-    We connect you with highly skilled software developers from the United
-    Kingdom. Benefit from the advantages of nearshoring, such as cultural
-    proximity, minimal time zone differences, and access to a large talent pool.
-  </p>
+  <div class='bg-white px-6 py-32 lg:px-8'>
+    <div class='mx-auto max-w-3xl text-base/7 text-gray-700'>
+      <p class='text-base/7 font-semibold text-primary-500'>Our Proposition</p>
+      <h1
+        class='mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl'
+      >
+        Access to Top UK Talent for Dutch Companies
+      </h1>
+      <p class='mt-6 text-xl/8'>
+        We enable Dutch companies to benefit from the strong and diverse talent
+        pool in the United Kingdom. We do this through a clear and efficient
+        collaboration structure.
+      </p>
+      <div class='mt-10 max-w-2xl'>
+        <p>
+          Our structure is simple: the <strong
+            class='font-semibold text-gray-900'>client</strong
+          > (with a project or specific need) approaches <strong
+            class='font-semibold text-gray-900'>Pixeau</strong
+          >. We then search for suitable <strong
+            class='font-semibold text-gray-900'
+            >independent contractors</strong
+          > (developers) in the UK to realise the project.
+        </p>
+        <UnorderedList>
+          <ListItem strongText='Requirements Specification.'>
+            The client shares the requirements for the developer(s), such as
+            technical skills, experience level and project details.
+          </ListItem>
+          <ListItem strongText='Matching by Pixeau.'>
+            We use our network and expertise to find the most suitable British
+            developers who meet the requirements.
+          </ListItem>
+          <ListItem strongText='Control by the Client.'>
+            The client has full control over the interview process and the
+            ultimate choice of who to hire for the project.
+          </ListItem>
+        </UnorderedList>
+        <p class='mt-8'>
+          This approach ensures that you get exactly the talent you need, with
+          the flexibility of independent contractors and the security of our
+          mediation.
+        </p>
+      </div>
+    </div>
+  </div>
 
-  <h2>Why Nearshore Through Us?</h2>
-  <ul>
-    <li>Access to top IT talent in the UK</li>
-    <li>Flexible collaboration models</li>
-    <li>Cost-effective without compromising on quality</li>
-    <li>Seamless integration with your existing teams</li>
-    <li>Focus on your core business while we handle recruitment</li>
-  </ul>
-
-  <p>
-    Interested in strengthening your team with UK experts? Please <a
-      href={getRelativeLocaleUrl('en', 'contact')}>contact us</a
-    >.
-  </p>
+  <Feature4x4Block
+    title='Why hire British developers through us?'
+    features={features}
+  />
+  <LogoCloud
+    title='Trusted by:'
+    logos={[
+      {
+        src: '/clients/achmea.svg',
+        alt: 'Achmea',
+      },
+      {
+        src: '/clients/rabobank.svg',
+        alt: 'Rabobank',
+      },
+      {
+        src: '/clients/prorail.svg',
+        alt: 'ProRail',
+      },
+      {
+        src: '/clients/npo.svg',
+        alt: 'NPO',
+      },
+      {
+        src: '/clients/sbs.svg',
+        alt: 'SBS',
+      },
+      {
+        src: '/clients/beslistnl.svg',
+        alt: 'Beslist.nl',
+      },
+    ]}
+  />
+  <FrequentlyAskedBlock
+    faqs={[
+      {
+        question: 'What exactly is nearshoring?',
+        answer:
+          'Nearshoring is outsourcing IT projects or tasks to a team in a nearby country. For Dutch companies, this often means collaborating with specialists in countries like the UK, due to the small cultural differences, minimal time zone differences and high quality of IT talent.',
+      },
+      {
+        question: 'Why should I choose British developers through Pixeau?',
+        answer:
+          'Pixeau combines knowledge of the Dutch and British markets. We offer access to a large pool of highly qualified British developers, ensure smooth communication in English and a flexible contract structure without long-term obligations. Moreover, the time difference is only one hour.',
+      },
+      {
+        question: 'How does the developer selection process work?',
+        answer:
+          'You share your project requirements and developer specifications with us. We then search for the best matching candidates from our network. You receive profiles and have full control over the interview process and the ultimate choice of who you hire.',
+      },
+      {
+        question: 'What are the contractual obligations?',
+        answer:
+          'You work with independent contractors, which offers maximum flexibility. There are no long-term obligations or complicated notice periods. You can scale up, down or terminate the collaboration when your project requires it.',
+      },
+      {
+        question: 'How quickly can a developer start?',
+        answer:
+          'After a successful match and completion of the contractual side, a developer can often start working remotely on your project within a few days.',
+      },
+    ]}
+  />
 </GlobalLayout>

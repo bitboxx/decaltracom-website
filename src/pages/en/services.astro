@@ -1,13 +1,44 @@
 ---
-import GlobalLayout from '../../layouts/GlobalLayout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import GlobalLayout from '@/layouts/GlobalLayout.astro';
+import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
+import FeatureBoxes from '@/components/FeatureBoxes.astro';
 ---
 
 <GlobalLayout
   lang='en'
   title='Services'
-  description='Our English services page.'
+  description='Discover our software development, nearshoring and AI services for efficient business operations.'
 >
-  <h1>Our Services</h1>
+  <HeadingBlockSimple
+    title='Our Services'
+    subTitle='Comprehensive digital solutions for modern businesses'
+    background='/images/developers.jpeg'
+  />
 
-  <p>This is the English services page.</p>
+  <FeatureBoxes
+    features={[
+      {
+        title: 'Software Development',
+        description:
+          'With over 15 years of experience, we deliver digital solutions on a project basis that do exactly what your organisation needs. From concept to delivery, we provide quality software that grows with your business.',
+        ctaText: 'Learn more',
+        ctaUrl: getRelativeLocaleUrl('en', 'services/software-development'),
+      },
+      {
+        title: 'Nearshoring',
+        description:
+          'Strengthen your team with experienced British developers who can be deployed remotely and flexibly. No language barriers, similar work culture and only one hour time difference for smooth collaboration.',
+        ctaText: 'Learn more',
+        ctaUrl: getRelativeLocaleUrl('en', 'services/nearshoring'),
+      },
+      {
+        title: 'AI for Efficient Organisations',
+        description:
+          'Let AI strengthen your team, streamline processes and reduce costs with practical, directly applicable solutions. From automation to intelligent data analysis.',
+        ctaText: 'Learn more',
+        ctaUrl: getRelativeLocaleUrl('en', 'services/ai-for-efficient-organisations'),
+      },
+    ]}
+  />
 </GlobalLayout>
