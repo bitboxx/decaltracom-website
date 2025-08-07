@@ -38,11 +38,7 @@ const { title, paragraph, ctaButtonText, learnMoreButtonText } = Astro.props;
         {
           (ctaButtonText || learnMoreButtonText) && (
             <div class='mt-10 flex items-center justify-center gap-x-6'>
-              {ctaButtonText && (
-                <Button href='#'>
-                  {ctaButtonText}
-                </Button>
-              )}
+              {ctaButtonText && <Button href='#'>{ctaButtonText}</Button>}
               {learnMoreButtonText && (
                 <a href='#' class='text-sm/6 font-semibold text-gray-900'>
                   {learnMoreButtonText} <span aria-hidden='true'>→</span>

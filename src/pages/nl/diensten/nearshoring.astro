@@ -1,4 +1,5 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import GlobalLayout from '@/layouts/GlobalLayout.astro';
 import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
 import Feature4x4Block from '@/components/Feature4x4Block.astro';
@@ -6,6 +7,7 @@ import UnorderedList from '@/components/UnorderedList.astro';
 import ListItem from '@/components/ListItem.astro';
 import LogoCloud from '@/components/LogoCloud.astro';
 import FrequentlyAskedBlock from '@/components/FrequentlyAskedBlock.astro';
+import CallToActionSimple from '@/components/CallToActionSimple.astro';
 
 const features = [
   {
@@ -43,32 +45,6 @@ const features = [
 ];
 ---
 
-<!--
-Hero Section:
-Versterk je team met Britse top developers – remote en flexibel inzetbaar
-Inhuren van ervaren Britse developers was nog nooit zo eenvoudig. We verbinden je met gescreende freelance developers die als externe teamleden remote meewerken aan jouw middel- en langlopende projecten. Zo haal je topkwaliteit in huis, met maximale flexibiliteit en zonder langdurige verplichtingen. Neem vandaag nog contact met ons op om direct de juiste developer voor jouw project aan boord te halen!
-
-Features Section:
-Waarom Britse developers inhuren via ons?
-
-Kennis van de Nederlandse én Britse markt: We hebben diepgaande kennis van zowel de Nederlandse als de Britse markt. We begrijpen de wensen en werkwijze van Nederlandse bedrijven én weten precies waar in het VK de beste developers te vinden zijn. Deze unieke positie zorgt voor de perfecte match tussen jouw bedrijf en Brits talent.
-
-Groot aanbod aan top developers: In het VK is het aanbod van IT-specialisten enorm. Via ons krijg je toegang tot een groot netwerk van hooggekwalificeerde Britse developers. Of je nu een front-end (JavaScript, TypeScript), back-end (Kotlin, Java, Python) of data science expert zoekt – we hebben de juiste mensen beschikbaar.
-
-Geen taalbarrières, vlotte samenwerking: Communicatie verloopt soepel in het Engels – een taal die in de meeste Nederlandse bedrijven dagelijks wordt gebruikt. Bovendien hebben Nederlandse en Britse professionals een vergelijkbare werkcultuur en is het tijdsverschil slechts één uur. Je werkt dus vrijwel real-time samen, zonder miscommunicatie door cultuur- of tijdsverschillen.
-
-Volledig flexibel, geen langdurige verplichtingen: Jij bepaalt hoe lang je een developer nodig hebt – of het nu een paar maanden is of langer, je zit nergens aan vast. Geen gedoe met vaste contracten of lange opzegtermijnen – je kunt opschalen of afschalen wanneer jouw project daarom vraagt.
-
-Process Section (Steps):
-Hoe werkt het?
-Contact & inventarisatie: Neem contact met ons op en vertel ons wat voor developer je nodig hebt. We bespreken graag jouw project en specifieke wensen.
-Selectie & kennismaking: We zoeken de best passende kandidaat uit ons uitgebreide netwerk van Britse professionals. Je ontvangt snel één of meerdere profielen en plant een kennismaking om te zien of het klikt.
-Start & flexibiliteit: Is er een match? Dan regelen we de contractuele kant en kan jouw nieuwe developer aan de slag – vaak binnen enkele dagen. Alles gebeurt remote. De samenwerking blijft volledig flexibel: verlengen, uitbreiden of beëindigen kan wanneer jij wilt, zonder gedoe.
-CTA Section:
-Klaar om te starten?
-Verlies geen tijd en mis geen talent. Laat ons de ideale Britse developer voor jouw project vinden, zodat jij direct kunt doorpakken. Neem vandaag nog contact op voor een vrijblijvend gesprek. We bespreken graag jouw wensen en regelen de rest.
-
- -->
 <GlobalLayout
   lang='nl'
   title='Nearshoring Diensten UK Developers'
@@ -77,7 +53,7 @@ Verlies geen tijd en mis geen talent. Laat ons de ideale Britse developer voor j
   <HeadingBlockSimple
     title='Versterk je team met Britse top developers'
     subTitle='Remote en flexibel inzetbaar.'
-    background='/images/developers.jpeg'
+    background='/images/london-stpaul-2048x810.jpg'
   />
 
   <div class='bg-white px-6 py-32 lg:px-8'>
@@ -189,4 +165,27 @@ Verlies geen tijd en mis geen talent. Laat ons de ideale Britse developer voor j
       },
     ]}
   />
+  
+  <CallToActionSimple>
+    <h2 class='text-3xl font-bold tracking-tight text-black sm:text-4xl'>
+      Klaar om uw team te versterken met Brits talent?
+    </h2>
+    <p class='mx-auto mt-6 max-w-xl text-lg leading-8 text-black'>
+      Ontdek hoe u toegang krijgt tot hooggekwalificeerde Britse developers
+      zonder langdurige verplichtingen. Flexibel, betrouwbaar en binnen één
+      tijdzone.
+    </p>
+    <p class='mx-auto mt-4 max-w-xl text-lg leading-8 text-black'>
+      Neem contact op en bespreek uw projectbehoeften. Wij zorgen voor de
+      perfecte match.
+    </p>
+    <div class='mt-10 flex items-center justify-center gap-x-6'>
+      <a
+        href={getRelativeLocaleUrl('nl', 'contact')}
+        class='rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500'
+      >
+        Neem contact op
+      </a>
+    </div>
+  </CallToActionSimple>
 </GlobalLayout>

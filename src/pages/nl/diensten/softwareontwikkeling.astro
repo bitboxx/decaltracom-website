@@ -4,6 +4,7 @@ import GlobalLayout from '@/layouts/GlobalLayout.astro';
 import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
 import LogoCloud from '@/components/LogoCloud.astro';
 import Button from '@/components/Button.astro';
+import CallToActionSimple from '@/components/CallToActionSimple.astro';
 ---
 
 <GlobalLayout
@@ -467,31 +468,26 @@ import Button from '@/components/Button.astro';
     </div>
   </div>
 
-  <!-- Call to Action Section -->
-  <div id='contact' class='bg-primary-500'>
-    <div class='px-6 py-24 sm:px-6 sm:py-32 lg:px-8'>
-      <div class='mx-auto max-w-2xl text-center'>
-        <h2 class='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
-          Klaar om uw idee om te zetten in een sterke webapplicatie?
-        </h2>
-        <p class='mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-200'>
-          Neem vandaag nog contact met ons op voor een vrijblijvend gesprek. We
-          bespreken graag uw uitdaging en laten zien hoe onze expertise uw
-          project naar een hoger niveau tilt.
-        </p>
-        <p class='mx-auto mt-4 max-w-xl text-lg leading-8 text-indigo-200'>
-          Of u nu een gevestigd bedrijf bent of een veelbelovende startup, wij
-          staan klaar om samen iets moois te creëren.
-        </p>
-        <div class='mt-10 flex items-center justify-center gap-x-6'>
-          <a
-            href={getRelativeLocaleUrl('nl', 'contact')}
-            class='rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-primary-500 shadow-sm hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
-          >
-            Neem contact op
-          </a>
-        </div>
-      </div>
+  <CallToActionSimple>
+    <h2 class='text-3xl font-bold tracking-tight text-black sm:text-4xl'>
+      Klaar om uw idee om te zetten in een sterke webapplicatie?
+    </h2>
+    <p class='mx-auto mt-6 max-w-xl text-lg leading-8 text-black'>
+      Neem vandaag nog contact met ons op voor een vrijblijvend gesprek. We
+      bespreken graag uw uitdaging en laten zien hoe onze expertise uw
+      project naar een hoger niveau tilt.
+    </p>
+    <p class='mx-auto mt-4 max-w-xl text-lg leading-8 text-black'>
+      Of u nu een gevestigd bedrijf bent of een veelbelovende startup, wij
+      staan klaar om samen iets moois te creëren.
+    </p>
+    <div class='mt-10 flex items-center justify-center gap-x-6'>
+      <a
+        href={getRelativeLocaleUrl('nl', 'contact')}
+        class='rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500'
+      >
+        Neem contact op
+      </a>
     </div>
-  </div>
+  </CallToActionSimple>
 </GlobalLayout>

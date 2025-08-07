@@ -18,6 +18,8 @@ const labels = {
     email: 'Email',
     phoneNumber: 'Phone number',
     message: 'Message',
+    successMessage: 'Thank you! Your message has been sent successfully.',
+    errorMessage: 'Sorry, there was an error sending your message. Please try again.',
   },
   nl: {
     name: 'Naam',
@@ -25,6 +27,8 @@ const labels = {
     email: 'E-mailadres',
     phoneNumber: 'Telefoonnummer',
     message: 'Bericht',
+    successMessage: 'Bedankt! Uw bericht is succesvol verzonden.',
+    errorMessage: 'Sorry, er is een fout opgetreden bij het verzenden van uw bericht. Probeer het opnieuw.',
   },
 };
 
@@ -50,6 +54,27 @@ const currentLabels = labels[lang as keyof typeof labels] || labels.en;
     </h2>
     <p class='mt-2 text-lg/8 text-gray-600'>{subtitle}</p>
   </div>
+  
+  <!-- Success Message -->
+  <div id='successMessage' class='mx-auto mt-16 max-w-xl p-4 rounded-md bg-green-50 border border-green-200 hidden'>
+    <div class='flex'>
+      <svg class='h-5 w-5 text-green-400' viewBox='0 0 20 20' fill='currentColor'>
+        <path fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clip-rule='evenodd' />
+      </svg>
+      <p class='ml-3 text-sm font-medium text-green-800'>{currentLabels.successMessage}</p>
+    </div>
+  </div>
+
+  <!-- Error Message -->
+  <div id='errorMessage' class='mx-auto mt-16 max-w-xl p-4 rounded-md bg-red-50 border border-red-200 hidden'>
+    <div class='flex'>
+      <svg class='h-5 w-5 text-red-400' viewBox='0 0 20 20' fill='currentColor'>
+        <path fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z' clip-rule='evenodd' />
+      </svg>
+      <p class='ml-3 text-sm font-medium text-red-800'>{currentLabels.errorMessage}</p>
+    </div>
+  </div>
+
   <form
     id='contactForm'
     action='#'
@@ -144,12 +169,31 @@ const currentLabels = labels[lang as keyof typeof labels] || labels.en;
 
   <script>
     const form = document.getElementById('contactForm') as HTMLFormElement;
+    const successMessage = document.getElementById('successMessage') as HTMLElement;
+    const errorMessage = document.getElementById('errorMessage') as HTMLElement;
     const initTime = Date.now();
     const MINIMUM_WAIT_MS = 5000;
+
+    function hideMessages() {
+      successMessage.classList.add('hidden');
+      errorMessage.classList.add('hidden');
+    }
+
+    function showSuccess() {
+      hideMessages();
+      successMessage.classList.remove('hidden');
+      form.classList.add('hidden');
+    }
+
+    function showError() {
+      hideMessages();
+      errorMessage.classList.remove('hidden');
+    }
 
     if (form) {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        hideMessages();
 
         const elapsedTime = Date.now() - initTime;
         if (elapsedTime < MINIMUM_WAIT_MS) {
@@ -182,10 +226,11 @@ const currentLabels = labels[lang as keyof typeof labels] || labels.en;
             throw new Error(`HTTP error! status: ${response.status}`);
           }
 
-          // Reset form on success
-          form.reset();
+          // Show success message and hide form
+          showSuccess();
         } catch (error) {
           console.error('Error:', error);
+          showError();
         }
       });
     }

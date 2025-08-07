@@ -1,6 +1,8 @@
 ---
 import GlobalLayout from '@/layouts/GlobalLayout.astro';
 import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
+import CallToActionSimple from '@/components/CallToActionSimple.astro';
+import Button from '@/components/Button.astro';
 ---
 
 <GlobalLayout
@@ -11,7 +13,8 @@ import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
   <HeadingBlockSimple
     title='Do more with less – thanks to AI'
     subTitle='Let AI strengthen your team, streamline processes and reduce costs. We help you integrate AI smartly into your business operations – bespoke, practical, and without empty promises.'
-    background='/images/grey-with-leaves.jpg'
+    background='/images/runners-arrow.jpg'
+    showDecoration={false}
   />
 
   <div class='bg-white px-6 py-32 lg:px-8'>
@@ -346,30 +349,19 @@ import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
     </div>
   </div>
 
-  <!-- Call to Action Section -->
-  <div id='contact' class='bg-primary-500'>
-    <div class='px-6 py-24 sm:px-6 sm:py-32 lg:px-8'>
-      <div class='mx-auto max-w-2xl text-center'>
-        <h2 class='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
-          Let your business run on smart technology
-        </h2>
-        <p class='mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-200'>
-          AI is not future music. It's already here – and you can benefit from
-          it today.
-        </p>
-        <p class='mx-auto mt-4 max-w-xl text-lg leading-8 text-indigo-200'>
-          Request a free AI scan and discover what "doing more with less" means
-          in your context.
-        </p>
-        <div class='mt-10 flex items-center justify-center gap-x-6'>
-          <a
-            href='/en/contact'
-            class='rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-primary-500 shadow-sm hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
-          >
-            Schedule an exploratory conversation
-          </a>
-        </div>
-      </div>
+  <CallToActionSimple>
+    <h2 class='text-3xl font-bold tracking-tight sm:text-4xl'>
+      Let your business run on smart technology
+    </h2>
+    <p class='mx-auto mt-6 max-w-xl text-lg leading-8'>
+      AI is here today – and you can benefit from it today.
+    </p>
+    <p class='mx-auto mt-4 max-w-xl text-lg leading-8'>
+      Request a free AI scan and discover what "doing more with less" means in
+      your context.
+    </p>
+    <div class='mt-10 flex items-center justify-center gap-x-6'>
+      <Button href='/en/contact'> Schedule an exploratory conversation </Button>
     </div>
-  </div>
+  </CallToActionSimple>
 </GlobalLayout>

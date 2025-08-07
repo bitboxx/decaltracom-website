@@ -1,4 +1,5 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import GlobalLayout from '@/layouts/GlobalLayout.astro';
 import HeadingBlockSimple from '@/components/HeadingBlockSimple.astro';
 import Feature4x4Block from '@/components/Feature4x4Block.astro';
@@ -6,6 +7,7 @@ import UnorderedList from '@/components/UnorderedList.astro';
 import ListItem from '@/components/ListItem.astro';
 import LogoCloud from '@/components/LogoCloud.astro';
 import FrequentlyAskedBlock from '@/components/FrequentlyAskedBlock.astro';
+import CallToActionSimple from '@/components/CallToActionSimple.astro';
 
 const features = [
   {
@@ -51,7 +53,7 @@ const features = [
   <HeadingBlockSimple
     title='Strengthen your team with British top developers'
     subTitle='Remote and flexible deployment.'
-    background='/images/developers.jpeg'
+    background='/images/london-stpaul-2048x810.jpg'
   />
 
   <div class='bg-white px-6 py-32 lg:px-8'>
@@ -74,8 +76,7 @@ const features = [
           > (with a project or specific need) approaches <strong
             class='font-semibold text-gray-900'>Pixeau</strong
           >. We then search for suitable <strong
-            class='font-semibold text-gray-900'
-            >independent contractors</strong
+            class='font-semibold text-gray-900'>independent contractors</strong
           > (developers) in the UK to realise the project.
         </p>
         <UnorderedList>
@@ -163,4 +164,27 @@ const features = [
       },
     ]}
   />
+  
+  <CallToActionSimple>
+    <h2 class='text-3xl font-bold tracking-tight text-black sm:text-4xl'>
+      Ready to strengthen your team with British talent?
+    </h2>
+    <p class='mx-auto mt-6 max-w-xl text-lg leading-8 text-black'>
+      Discover how you can access highly qualified British developers
+      without long-term obligations. Flexible, reliable and within one
+      time zone.
+    </p>
+    <p class='mx-auto mt-4 max-w-xl text-lg leading-8 text-black'>
+      Get in touch and discuss your project needs. We ensure the
+      perfect match.
+    </p>
+    <div class='mt-10 flex items-center justify-center gap-x-6'>
+      <a
+        href={getRelativeLocaleUrl('en', 'contact')}
+        class='rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500'
+      >
+        Get in touch
+      </a>
+    </div>
+  </CallToActionSimple>
 </GlobalLayout>
