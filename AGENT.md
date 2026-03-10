@@ -1,7 +1,21 @@
 # Agent Instructions
 
 ## Goal
-To create a marketing website for Pixeau.nl in Dutch and in English (UK).
+To create a marketing website for Veltrax (English only).
+
+## Company — Veltrax
+
+### Purpose Stack
+- **Purpose** (Why should society care?): Improve how capital is provided
+- **Vision** (If we succeed?): A more productive Europe where capital reaches opportunity faster
+- **Mission** (What we do daily?): Empower capital providers to make fast, high-quality decisions by integrating adaptive, explainable AI into their workflows
+- **Category**: AI-enabled decision infrastructure for capital providers
+- **Positioning** (Why choose us?):
+  - **European by design** — Staying in control of data and AI models
+  - **Customer centric** — AI-supported products that adapt to clients' governance frameworks
+  - **Human-led decisions** — AI supports judgment, it never replaces accountability
+  - **Open architecture** — Integrate internal and external data sources
+  - **Impact-driven** — Measurable improvements in speed, quality, and consistency of decisions
 
 ## Multi-Agent System Coordinator
 
@@ -39,24 +53,27 @@ When the user asks for something to be done, you will take on one of two roles: 
 ## Technical Architecture
 
 ### Current Project State
-- **Framework**: Astro 5.8.0 with React components and Tailwind CSS 4.1.7
-- **Internationalization**: Setup for Dutch (nl) and English (en) with proper locale routing
-- **Structure**: Multi-page site with `/nl/` and `/en/` locale prefixes
-- **Components**: Modular component architecture (HeroBlock, LogoCloud, FeatureBoxes, etc.)
-- **Content Management**: Structured content with proper i18n routing
+- **Framework**: Astro 5.8.0 with React components and Tailwind CSS 4
+- **Language**: English only (no i18n/locale routing)
+- **Theme**: TailwindPlus "oatmeal-mist-mona" kit adapted for Astro
+- **Components**: Raw theme components in `src/components/{elements,icons,sections}/`
+- **Page components**: React wrappers in `src/components/pages/` (Navbar, Footer, HomePage, AboutPage, MeridianPage, PrivacyPolicyPage, NotFoundPage)
+- **Dark mode**: Disabled (custom-variant override in global.css makes `dark:` classes inert)
+- **Key dependencies**: `@tailwindplus/elements` (dialog, disclosure, tabs), `clsx`
+- **Fonts**: Mona Sans (display) + Inter (body) via Google Fonts
+- **Color palette**: Custom "mist" palette (cool grey-blue)
+- **Company**: Veltrax — AI-enabled decision infrastructure for capital providers
 
-### Missing Critical Development Tools
-- **Prettier**: No .prettierrc config (only found in git-exclude folder)
-- **ESLint**: No eslint configuration files detected
-- **Type checking**: Available via yarn type-check but no linting in scripts
-- **Testing**: No test framework configured yet
+### Pages
+- `/` — Home (hero, features, stats, FAQs, CTA)
+- `/about` — About (hero, stats, CTA)
+- `/services/meridian` — Meridian: AI-Assisted Credit Memo Intelligence (hero, benefits, how-it-works, capabilities, FAQs, CTA)
+- `/privacy-policy` — Privacy Policy
+- `/404` — Not Found
 
-### Content Status Assessment
-- **Dutch (nl)**: HomePage has real content for services/clients but hero section uses Lorem Ipsum placeholder
-- **English (en)**: Minimal content - only has HeroBlock with placeholder text, missing all sections
-- **Pages Available**: 
-  - Homepage, Contact, About Us (Over Ons), Terms (Algemene Voorwaarden)
-  - Services subdirectory (diensten/) exists for Dutch
+### Content Status
+- All pages have Veltrax-branded content (purpose stack messaging)
+- Demo images from theme still in use (replace with Veltrax assets later)
 
 ### Deployment Status
 - **Current**: Development only (yarn dev on localhost:4321)

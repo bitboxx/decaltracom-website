@@ -1,25 +1,8 @@
 ---
-import { DEFAULT_LOCALE, LOCALES } from '../utils/i18n';
-
-// Get user's preferred language from Accept-Language header
-const acceptLanguage = Astro.request.headers.get('Accept-Language') || '';
-const preferredLanguages = acceptLanguage
-  .split(',')
-  .map(lang => lang.split(';')[0].trim().toLowerCase())
-  .map(lang => lang.split('-')[0]); // Extract just language code (e.g., 'nl' from 'nl-NL')
-
-// Find the first supported language or fall back to default
-const detectedLocale = preferredLanguages.find(lang => LOCALES.includes(lang as any)) || DEFAULT_LOCALE;
-
-// Handle domain redirects with language detection
-const url = new URL(Astro.request.url);
-const hostname = url.hostname;
-
-// Redirect to canonical domain with proper language path
-if (hostname === 'www.pixeau.nl' || hostname === 'pixeau.com' || hostname === 'www.pixeau.com') {
-  return Astro.redirect(`https://pixeau.nl/${detectedLocale}/`, 301);
-}
-
-// Redirect to the detected or default locale
-return Astro.redirect(`/${detectedLocale}/`);
+import Layout from '../layouts/Layout.astro'
+import HomePage from '@/components/pages/HomePage'
 ---
+
+<Layout title="Veltrax — AI-enabled decision infrastructure for capital providers">
+  <HomePage client:load />
+</Layout>

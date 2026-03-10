@@ -1,0 +1,40 @@
+---
+import '../styles/global.css'
+import { Main } from '@/components/elements/main'
+import Navbar from '@/components/pages/Navbar'
+import Footer from '@/components/pages/Footer'
+
+interface Props {
+  title: string
+  description?: string
+}
+
+const { title, description = 'AI-enabled decision infrastructure for capital providers' } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,112.5,200..900;1,112.5,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Navbar client:load />
+    <Main>
+      <slot />
+    </Main>
+    <Footer />
+  </body>
+</html>
