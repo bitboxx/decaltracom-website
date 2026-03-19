@@ -25,7 +25,7 @@ export default function AboutPage() {
         headline="Transforming how capital providers make decisions."
         subheadline={
           <p>
-            Veltrax is building the decision infrastructure that European capital markets need. From credit analysis to
+            DecAltra is building the decision infrastructure that European capital markets need. From credit analysis to
             portfolio allocation, we help teams work smarter and move faster.
           </p>
         }
@@ -38,7 +38,7 @@ export default function AboutPage() {
         id="call-to-action"
         headline="Want to learn more?"
         subheadline={
-          <p>Talk to our team about how Veltrax can transform your capital decision workflows.</p>
+          <p>Talk to our team about how DecAltra can transform your capital decision workflows.</p>
         }
         cta={
           <div className="flex items-center gap-4">

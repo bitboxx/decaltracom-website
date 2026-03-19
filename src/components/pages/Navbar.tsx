@@ -20,7 +20,7 @@ export default function Navbar() {
       }
       logo={
         <NavbarLogo href="/">
-          <span className="text-xl font-display font-bold tracking-tight text-mist-950 dark:text-white">Veltrax</span>
+          <span className="text-xl font-display font-bold tracking-tight text-mist-950 dark:text-white">DecAltra</span>
         </NavbarLogo>
       }
       actions={

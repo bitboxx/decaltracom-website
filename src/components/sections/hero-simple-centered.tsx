@@ -22,7 +22,7 @@ export function HeroSimpleCentered({
       <Container className="flex flex-col items-center gap-6">
         {eyebrow}
         <Heading className="max-w-5xl text-center">{headline}</Heading>
-        <Text size="lg" className="flex max-w-xl flex-col gap-4 text-center">
+        <Text size="lg" className="flex max-w-2xl flex-col gap-4 text-center">
           {subheadline}
         </Text>
         {cta}

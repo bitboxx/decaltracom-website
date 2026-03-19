@@ -8,8 +8,8 @@ To create a marketing website for Veltrax (English only).
 ### Purpose Stack
 - **Purpose** (Why should society care?): Improve how capital is provided
 - **Vision** (If we succeed?): A more productive Europe where capital reaches opportunity faster
-- **Mission** (What we do daily?): Empower capital providers to make fast, high-quality decisions by integrating adaptive, explainable AI into their workflows
-- **Category**: AI-enabled decision infrastructure for capital providers
+- **Mission** (What we do daily?): Empower financial professionals to make fast, high-quality decisions by integrating adaptive, explainable AI into their workflows
+- **Category**: Decision infrastructure for financial professionals
 - **Positioning** (Why choose us?):
   - **European by design** — Staying in control of data and AI models
   - **Customer centric** — AI-supported products that adapt to clients' governance frameworks

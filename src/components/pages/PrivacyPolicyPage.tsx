@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
   return (
     <DocumentCentered id="document" headline="Privacy Policy" subheadline={<p>Last updated on March 10, 2026.</p>}>
       <p>
-        Veltrax B.V. ("<strong>Veltrax</strong>," "<strong>we</strong>," "<strong>us</strong>," or "
+        DecAltra B.V. ("<strong>DecAltra</strong>," "<strong>we</strong>," "<strong>us</strong>," or "
         <strong>our</strong>") respects your privacy and is committed to protecting your personal information. This
         Privacy Policy describes, in general terms, how we collect, use, store, and protect information when you
         interact with our websites, products, or services (collectively, the "<strong>Services</strong>").
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
       </p>
       <p>If you have any questions about this Privacy Policy, please contact us at:</p>
       <p>
-        <strong>Veltrax B.V.</strong>
+        <strong>DecAltra B.V.</strong>
         <br />
         Email: <a href="mailto:privacy@veltrax.eu">privacy@veltrax.eu</a>
       </p>

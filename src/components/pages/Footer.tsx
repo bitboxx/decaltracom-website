@@ -21,7 +21,7 @@ export default function Footer() {
           </FooterCategory>
         </>
       }
-      fineprint={`\u00A9 ${new Date().getFullYear()} Veltrax B.V.`}
+      fineprint={`\u00A9 ${new Date().getFullYear()} DecAltra B.V.`}
     />
   )
 }

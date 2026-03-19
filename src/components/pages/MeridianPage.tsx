@@ -23,7 +23,7 @@ export default function MeridianPage() {
       {/* Hero */}
       <HeroSimpleCentered
         id="hero"
-        eyebrow={<Eyebrow>Veltrax Meridian</Eyebrow>}
+        eyebrow={<Eyebrow>DecAltra Meridian</Eyebrow>}
         headline="Credit memos, reimagined with AI."
         subheadline={
           <p>
