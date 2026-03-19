@@ -7,11 +7,10 @@ import { FingerprintIcon } from '@/components/icons/fingerprint-icon'
 import { LightBulbIcon } from '@/components/icons/light-bulb-icon'
 import { SlidersIcon } from '@/components/icons/sliders-icon'
 import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
-import { ChallengeSolutionTwoColumn } from '@/components/sections/challenge-solution-two-column'
 import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faqs-two-column-accordion'
 import { Feature, FeaturesThreeColumn } from '@/components/sections/features-three-column'
 import { HeroSimpleCentered } from '@/components/sections/hero-simple-centered'
-import { Stat, StatsWithGraph } from '@/components/sections/stats-with-graph'
+import { ProductCompositionSection } from '@/components/sections/product-composition-section'
 
 export default function HomePage() {
   return (
@@ -34,21 +33,18 @@ export default function HomePage() {
           </div>
         }
       />
-      {/* Challenge and solution */}
-      <ChallengeSolutionTwoColumn id="challenge-solution" />
+      {/* Product composition */}
+      <ProductCompositionSection id="product-architecture" className="pt-6 pb-0" />
       {/* Features */}
       <FeaturesThreeColumn
         id="features"
         eyebrow="Why DecAltra"
-        headline={
-          <>
-            Our purpose is to improve <em>HOW</em> capital is provided
-          </>
-        }
+        headline="Built for European financial institutions"
+        headerClassName="max-w-4xl"
         subheadline={
           <p>
-            Together, we ensure that capital reaches opportunity faster, strengthening the productivity of the
-            European economy.
+            DecAltra is not a generic AI layer added on top of some data. We provide financial decision making
+            infrastructure that is needed for the current realities of European financial markets
           </p>
         }
         features={
@@ -57,62 +53,47 @@ export default function HomePage() {
               icon={<BuildingLibraryIcon />}
               headline="European by design"
               subheadline={
-                <p>Stay in control of your data and AI models. Built for European regulatory frameworks from the ground up.</p>
+                <p>Built with European cloud and AI partners, we keep client data in Europe and aligned with the regulatory expectations of European institutions</p>
               }
             />
             <Feature
               icon={<SlidersIcon />}
               headline="Customer centric"
               subheadline={
-                <p>AI-supported products that adapt to your governance frameworks - not the other way around.</p>
-              }
-            />
-            <Feature
-              icon={<LightBulbIcon />}
-              headline="Human-led decisions"
-              subheadline={
-                <p>AI supports judgment, it never replaces accountability. Your experts stay in the driver's seat.</p>
-              }
-            />
-            <Feature
-              icon={<CpuIcon />}
-              headline="Open architecture"
-              subheadline={
-                <p>Integrate internal and external data sources seamlessly into a unified decision workflow.</p>
-              }
-            />
-            <Feature
-              icon={<ChartLineIcon />}
-              headline="Impact-driven"
-              subheadline={
-                <p>Measurable improvements in speed, quality, and consistency of capital allocation decisions.</p>
+                <p>AI-supported modules that can be adapted to your governance frameworks - not the other way around</p>
               }
             />
             <Feature
               icon={<FingerprintIcon />}
               headline="Explainable AI"
               subheadline={
-                <p>Every recommendation comes with transparent reasoning that auditors and regulators can review.</p>
+                <p>Every recommendation comes with transparent reasoning that users, auditors and regulators can review</p>
+              }
+            />
+            <Feature
+              icon={<LightBulbIcon />}
+              headline="Human-led decisions"
+              subheadline={
+                <p>Our AI agents support judgment, they never replace accountability. You remain in control of the decisions</p>
+              }
+            />
+            <Feature
+              icon={<CpuIcon />}
+              headline="Open architecture"
+              subheadline={
+                <p>Integrate internal and external data sources seamlessly into a unified decision workflow</p>
+              }
+            />
+            <Feature
+              icon={<ChartLineIcon />}
+              headline="Impact-driven"
+              subheadline={
+                <p>Measurable improvements in speed, quality, and consistency of financial decisions</p>
               }
             />
           </>
         }
       />
-      {/* Stats */}
-      <StatsWithGraph
-        id="stats"
-        eyebrow="Built for impact"
-        headline="Faster decisions. Better outcomes."
-        subheadline={
-          <p>
-            DecAltra helps capital providers across Europe make higher-quality decisions in less time. From credit
-            analysis to portfolio allocation, our AI infrastructure delivers measurable improvements.
-          </p>
-        }
-      >
-        <Stat stat="10x" text="Faster initial credit analysis compared to traditional manual workflows." />
-        <Stat stat="99.9%" text="Uptime - because capital markets don't wait." />
-      </StatsWithGraph>
       {/* FAQs */}
       <FAQsTwoColumnAccordion id="faqs" headline="Questions & Answers">
         <Faq
@@ -139,10 +120,11 @@ export default function HomePage() {
       {/* Call To Action */}
       <CallToActionSimple
         id="call-to-action"
-        headline="Ready to accelerate your capital decisions?"
+        headline="Ready to accelerate your financial decisions?"
         subheadline={
           <p>
-            See how DecAltra can transform your team's decision-making workflow with adaptive, explainable AI.
+            See how DecAltra can transform your financial decision making workflows to be faster and of higher-quality
+            with adaptive, explainable AI.
           </p>
         }
         cta={
@@ -151,7 +133,7 @@ export default function HomePage() {
               Request a demo
             </ButtonLink>
             <PlainButtonLink href="#" size="lg">
-              Contact sales <ChevronIcon />
+              Contact us <ChevronIcon />
             </PlainButtonLink>
           </div>
         }

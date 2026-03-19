@@ -10,6 +10,7 @@ export function Section({
   headline,
   subheadline,
   cta,
+  headerClassName,
   className,
   children,
   ...props
@@ -18,12 +19,13 @@ export function Section({
   headline?: ReactNode
   subheadline?: ReactNode
   cta?: ReactNode
+  headerClassName?: string
 } & ComponentProps<'section'>) {
   return (
     <section className={clsx('py-16', className)} {...props}>
       <Container className="flex flex-col gap-10 sm:gap-16">
         {headline && (
-          <div className="flex max-w-2xl flex-col gap-6">
+          <div className={clsx('flex max-w-2xl flex-col gap-6', headerClassName)}>
             <div className="flex flex-col gap-2">
               {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
               <Subheading>{headline}</Subheading>

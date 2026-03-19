@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
       <p>
         <strong>DecAltra B.V.</strong>
         <br />
-        Email: <a href="mailto:privacy@veltrax.eu">privacy@veltrax.eu</a>
+        Email: <a href="mailto:Privacy@DecAltra.com">Privacy@DecAltra.com</a>
       </p>
     </DocumentCentered>
   )

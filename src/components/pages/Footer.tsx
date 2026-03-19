@@ -10,8 +10,10 @@ export default function Footer() {
       id="footer"
       links={
         <>
-          <FooterCategory title="Services">
-            <FooterLink href="/services/meridian">Meridian</FooterLink>
+          <FooterCategory title="Products">
+            <FooterLink href="/products/financial-spreading">Financial Spreading</FooterLink>
+            <FooterLink href="/products/risk-rating">Risk Rating</FooterLink>
+            <FooterLink href="/products/memo-generator">Memo Generator</FooterLink>
           </FooterCategory>
           <FooterCategory title="Company">
             <FooterLink href="/about">About</FooterLink>
