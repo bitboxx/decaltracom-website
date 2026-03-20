@@ -11,12 +11,20 @@ export default function Footer() {
       links={
         <>
           <FooterCategory title="Products">
+            <li className="pt-1 text-xs font-semibold uppercase tracking-[0.16em] text-mist-500 underline decoration-mist-300 underline-offset-4">
+              Decision modules
+            </li>
             <FooterLink href="/products/financial-spreading">Financial Spreading</FooterLink>
             <FooterLink href="/products/risk-rating">Risk Rating</FooterLink>
             <FooterLink href="/products/memo-generator">Memo Generator</FooterLink>
+            <li className="pt-4 text-xs font-semibold uppercase tracking-[0.16em] text-mist-500 underline decoration-mist-300 underline-offset-4">
+              Foundation
+            </li>
+            <FooterLink href="/products/decaltra-platform">DecAltra Platform</FooterLink>
           </FooterCategory>
           <FooterCategory title="Company">
-            <FooterLink href="/about">About</FooterLink>
+            <FooterLink href="/about#about">About DecAltra</FooterLink>
+            <FooterLink href="/about#team">The team</FooterLink>
           </FooterCategory>
           <FooterCategory title="Legal">
             <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>

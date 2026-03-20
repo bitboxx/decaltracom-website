@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
+import { DemoRequestButton, PlainButtonLink } from '@/components/elements/button'
 import { Eyebrow } from '@/components/elements/eyebrow'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
 import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
@@ -64,9 +64,9 @@ export default function ProductModulePage({
         subheadline={subheadline}
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <DemoRequestButton size="lg">
               Request a demo
-            </ButtonLink>
+            </DemoRequestButton>
             <PlainButtonLink href="/" size="lg">
               Back to homepage <ChevronIcon />
             </PlainButtonLink>
@@ -119,11 +119,11 @@ export default function ProductModulePage({
         subheadline={ctaSubheadline}
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <DemoRequestButton size="lg">
               Request a demo
-            </ButtonLink>
-            <PlainButtonLink href="#" size="lg">
-              Contact sales <ChevronIcon />
+            </DemoRequestButton>
+            <PlainButtonLink href="/contact" size="lg">
+              Contact us <ChevronIcon />
             </PlainButtonLink>
           </div>
         }

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
+import { DemoRequestButton, PlainButtonLink } from '@/components/elements/button'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
 import { BuildingLibraryIcon } from '@/components/icons/building-library-icon'
 import { ChartLineIcon } from '@/components/icons/chart-line-icon'
@@ -126,7 +126,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="pt-8 pb-16">
+      <section id="about" className="scroll-mt-24 pt-8 pb-16">
         <div className="mx-auto flex w-full max-w-2xl flex-col gap-10 px-6 md:max-w-3xl lg:max-w-7xl lg:px-10">
           <div className="flex max-w-5xl flex-col gap-6">
             <div className="flex flex-col gap-2">
@@ -280,10 +280,10 @@ export default function AboutPage() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <DemoRequestButton size="lg">
               Request a demo
-            </ButtonLink>
-            <PlainButtonLink href="#" size="lg">
+            </DemoRequestButton>
+            <PlainButtonLink href="/contact" size="lg">
               Contact us <ChevronIcon />
             </PlainButtonLink>
           </div>

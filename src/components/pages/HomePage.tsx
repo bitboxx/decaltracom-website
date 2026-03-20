@@ -1,4 +1,4 @@
-import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
+import { DemoRequestButton, PlainButtonLink } from '@/components/elements/button'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
 import { BuildingLibraryIcon } from '@/components/icons/building-library-icon'
 import { ChartLineIcon } from '@/components/icons/chart-line-icon'
@@ -7,7 +7,6 @@ import { FingerprintIcon } from '@/components/icons/fingerprint-icon'
 import { LightBulbIcon } from '@/components/icons/light-bulb-icon'
 import { SlidersIcon } from '@/components/icons/sliders-icon'
 import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
-import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faqs-two-column-accordion'
 import { Feature, FeaturesThreeColumn } from '@/components/sections/features-three-column'
 import { HeroSimpleCentered } from '@/components/sections/hero-simple-centered'
 import { ProductCompositionSection } from '@/components/sections/product-composition-section'
@@ -27,9 +26,9 @@ export default function HomePage() {
         }
         cta={
           <div className="flex items-center justify-center">
-            <ButtonLink href="#" size="lg">
+            <DemoRequestButton size="lg">
               Request a demo
-            </ButtonLink>
+            </DemoRequestButton>
           </div>
         }
       />
@@ -94,29 +93,6 @@ export default function HomePage() {
           </>
         }
       />
-      {/* FAQs */}
-      <FAQsTwoColumnAccordion id="faqs" headline="Questions & Answers">
-        <Faq
-          id="faq-1"
-          question="How does DecAltra integrate with our existing systems?"
-          answer="DecAltra is built on an open architecture that connects to your existing data sources, risk models, and workflow tools via standard APIs. We work alongside your current infrastructure, not against it."
-        />
-        <Faq
-          id="faq-2"
-          question="Is our data safe with DecAltra?"
-          answer="Absolutely. We are European by design - your data stays under your control, processed within EU-compliant infrastructure. We never use client data to train shared models."
-        />
-        <Faq
-          id="faq-3"
-          question="Does DecAltra replace our credit analysts?"
-          answer="No. DecAltra augments your team's expertise. Our AI provides recommendations and analysis, but every decision remains with your people. Human-led decisions are a core principle."
-        />
-        <Faq
-          id="faq-4"
-          question="What types of capital providers does DecAltra serve?"
-          answer="We work with banks, asset managers, institutional lenders, and other capital providers across Europe who need to make faster, more consistent capital allocation decisions."
-        />
-      </FAQsTwoColumnAccordion>
       {/* Call To Action */}
       <CallToActionSimple
         id="call-to-action"
@@ -129,10 +105,10 @@ export default function HomePage() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <DemoRequestButton size="lg">
               Request a demo
-            </ButtonLink>
-            <PlainButtonLink href="#" size="lg">
+            </DemoRequestButton>
+            <PlainButtonLink href="/contact" size="lg">
               Contact us <ChevronIcon />
             </PlainButtonLink>
           </div>

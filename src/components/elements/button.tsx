@@ -59,6 +59,33 @@ export function ButtonLink({
   )
 }
 
+export function DemoRequestButton({
+  size = 'md',
+  color = 'dark/light',
+  className,
+  ...props
+}: {
+  size?: keyof typeof sizes
+  color?: 'dark/light' | 'light'
+} & Omit<ComponentProps<'button'>, 'type'>) {
+  return (
+    <button
+      type="button"
+      command="show-modal"
+      commandfor="demo-request-modal"
+      className={clsx(
+        'inline-flex shrink-0 items-center justify-center gap-1 rounded-full text-sm/7 font-medium',
+        color === 'dark/light' &&
+          'bg-mist-950 text-white hover:bg-mist-800 dark:bg-mist-300 dark:text-mist-950 dark:hover:bg-mist-200',
+        color === 'light' && 'hover bg-white text-mist-950 hover:bg-mist-100 dark:bg-mist-100 dark:hover:bg-white',
+        sizes[size],
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
 export function SoftButton({
   size = 'md',
   type = 'button',

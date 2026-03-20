@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import { Main } from '@/components/elements/main'
+import DemoRequestModal from '@/components/pages/DemoRequestModal'
 import Navbar from '@/components/pages/Navbar'
 import Footer from '@/components/pages/Footer'
 
@@ -35,6 +36,7 @@ const { title, description = 'AI-enabled decision infrastructure for capital pro
     <Main>
       <slot />
     </Main>
+    <DemoRequestModal client:load />
     <Footer />
   </body>
 </html>

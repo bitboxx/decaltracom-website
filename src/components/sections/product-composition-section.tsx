@@ -42,12 +42,15 @@ function ModuleCard({ icon, title, description, points, href, ctaLabel, status, 
       }`}
     >
       <div className="flex items-start justify-between gap-3">
-        <div
-          className={`flex h-11 w-11 items-center justify-center rounded-2xl border ${
-            selected ? 'border-white/15 bg-white/10 text-white' : 'border-mist-200 bg-mist-100 text-mist-700'
-          }`}
-        >
-          {icon}
+        <div className="flex items-center gap-3">
+          <div
+            className={`flex h-11 w-11 items-center justify-center rounded-2xl border ${
+              selected ? 'border-white/15 bg-white/10 text-white' : 'border-mist-200 bg-mist-100 text-mist-700'
+            }`}
+          >
+            {icon}
+          </div>
+          <h3 className="font-display text-xl/7 font-medium tracking-tight">{title}</h3>
         </div>
         {selected ? (
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white">
@@ -61,7 +64,6 @@ function ModuleCard({ icon, title, description, points, href, ctaLabel, status, 
         ) : null}
       </div>
       <div className="mt-5 space-y-4">
-        <h3 className="font-display text-xl/7 font-medium tracking-tight">{title}</h3>
         <p className={`text-sm/6 ${selected ? 'text-mist-300' : 'text-mist-600'}`}>{description}</p>
         <ul className={`space-y-2 text-sm/6 ${selected ? 'text-mist-300' : 'text-mist-600'}`}>
           {points.map((point) => (
@@ -132,7 +134,6 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
                 ]}
                 href="/products/risk-rating"
                 ctaLabel="Explore Risk Rating"
-                status="In development"
               />
               <ModuleCard
                 icon={<DocumentIcon className="size-4" />}

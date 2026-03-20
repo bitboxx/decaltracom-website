@@ -12,7 +12,6 @@ export default function Navbar() {
       id="navbar"
       links={
         <>
-          <NavbarLink href="/about">About</NavbarLink>
           <div className="relative hidden lg:block">
             <div className="group relative">
               <button className="inline-flex items-center gap-2 text-sm/7 font-medium text-mist-950">
@@ -60,6 +59,7 @@ export default function Navbar() {
             <NavbarLink href="/products/memo-generator">Memo Generator</NavbarLink>
             <div className="text-xs font-semibold uppercase tracking-[0.16em] text-mist-500">Foundation</div>
             <NavbarLink href="/products/decaltra-platform">DecAltra Platform</NavbarLink>
+            <NavbarLink href="/about">About us</NavbarLink>
           </div>
           <NavbarLink href="#" className="sm:hidden">
             Log in
@@ -73,7 +73,10 @@ export default function Navbar() {
       }
       actions={
         <>
-          <PlainButtonLink href="#" className="max-sm:hidden">
+          <PlainButtonLink href="/about" className="max-sm:hidden">
+            About us
+          </PlainButtonLink>
+          <PlainButtonLink href="/contact" className="max-sm:hidden">
             Contact us
           </PlainButtonLink>
         </>
