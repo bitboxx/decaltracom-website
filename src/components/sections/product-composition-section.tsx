@@ -179,6 +179,10 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
                 <p className="mt-2 text-sm/6 text-mist-400">Full alignment with internal policies, templates, and risk models</p>
               </div>
             </div>
+
+            <PlainButtonLink href="/products/decaltra-platform" className="w-fit text-white hover:bg-white/10">
+              Explore DecAltra Platform <ArrowNarrowRightIcon />
+            </PlainButtonLink>
           </div>
         </div>
       </div>

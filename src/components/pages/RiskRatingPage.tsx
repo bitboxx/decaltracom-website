@@ -28,7 +28,7 @@ export default function RiskRatingPage() {
         {
           icon: <ClockIcon />,
           headline: 'Accelerate first-pass assessments',
-          subheadline: <p>Move faster on recurring cases while keeping reviewers focused on the cases that need judgment.</p>,
+          subheadline: <p>Move faster on recurring cases while keeping reviewers focused on the cases that need judgement.</p>,
         },
         {
           icon: <FingerprintIcon />,
@@ -41,7 +41,7 @@ export default function RiskRatingPage() {
           subheadline: <p>Use automation to support decisions without giving up oversight over inputs, overrides, and approval logic.</p>,
         },
       ]}
-      workflowHeading="From data and judgment to a governed risk view."
+      workflowHeading="From data and judgement to a governed risk view."
       workflowDescription={
         <p>
           Risk Rating brings your models, analyst inputs, and validation controls into one transparent rating workflow.
@@ -61,7 +61,7 @@ export default function RiskRatingPage() {
         {
           icon: <ShieldExclamationIcon />,
           headline: 'Quantitative + qualitative factors',
-          subheadline: <p>Combine hard metrics with contextual judgment in a single rating view rather than disconnected processes.</p>,
+          subheadline: <p>Combine hard metrics with contextual judgement in a single rating view rather than disconnected processes.</p>,
         },
         {
           icon: <ChatBubbleCircleEllipsisIcon />,

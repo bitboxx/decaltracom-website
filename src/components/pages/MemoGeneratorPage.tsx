@@ -13,7 +13,7 @@ export default function MemoGeneratorPage() {
       headline="Generate decision-ready memos without rebuilding the process around the tool."
       subheadline={
         <p>
-          Assemble fully customizable memos with integrated financials, risk ratings, analysis, and AI-generated
+          Assemble fully customisable memos with integrated financials, risk ratings, analysis, and AI-generated
           narratives across every section.
         </p>
       }
@@ -58,13 +58,13 @@ export default function MemoGeneratorPage() {
       capabilitiesHeadline="Everything needed to move from analysis to final memo."
       capabilitiesSubheadline={
         <p>
-          Purpose-built for customizable templates, narrative generation, review workflows, and source-backed output.
+          Purpose-built for customisable templates, narrative generation, review workflows, and source-backed output.
         </p>
       }
       capabilities={[
         {
           icon: <DocumentIcon />,
-          headline: 'Fully customizable templates',
+          headline: 'Fully customisable templates',
           subheadline: <p>Match your existing memo structures instead of forcing teams into a generic document format.</p>,
         },
         {

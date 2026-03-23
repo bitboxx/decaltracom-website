@@ -39,8 +39,8 @@ export default function PrivacyPolicyPage() {
         Policy, unless a longer retention period is required or permitted by law.
       </p>
       <p>
-        We take reasonable administrative, technical, and organizational measures designed to protect information from
-        unauthorized access, use, alteration, or disclosure. However, no method of transmission over the internet or
+        We take reasonable administrative, technical, and organisational measures designed to protect information from
+        unauthorised access, use, alteration, or disclosure. However, no method of transmission over the internet or
         method of electronic storage is completely secure, and we cannot guarantee absolute security.
       </p>
       <h2>Your Choices, Updates, and Contact Information</h2>

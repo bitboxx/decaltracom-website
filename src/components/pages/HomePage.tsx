@@ -56,14 +56,14 @@ export default function HomePage() {
               icon={<BuildingLibraryIcon />}
               headline="European by design"
               subheadline={
-                <p>Built with European cloud and AI partners, we keep client data in Europe and aligned with the regulatory expectations of European institutions</p>
+                <p>Built in Europe, with European cloud and AI partners. We keep data aligned with European requirements</p>
               }
             />
             <Feature
               icon={<SlidersIcon />}
               headline="Customer centric"
               subheadline={
-                <p>AI-supported modules that can be adapted to your governance frameworks - not the other way around</p>
+                <p>AI supported decision modules that adapt to your governance frameworks - not the other way around</p>
               }
             />
             <Feature
@@ -77,14 +77,14 @@ export default function HomePage() {
               icon={<LightBulbIcon />}
               headline="Human-led decisions"
               subheadline={
-                <p>Our AI agents support judgment, they never replace accountability. You remain in control of the decisions</p>
+                <p>Our AI agents support judgement, they never replace accountability. You remain in control of the decisions</p>
               }
             />
             <Feature
               icon={<CpuIcon />}
               headline="Open architecture"
               subheadline={
-                <p>Integrate internal and external data sources seamlessly into a unified decision workflow</p>
+                <p>Integrate internal and external data sources seamlessly into a unified workflow</p>
               }
             />
             <Feature

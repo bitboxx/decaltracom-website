@@ -45,14 +45,14 @@ export function ChallengeSolutionTwoColumn(props: ComponentProps<typeof Section>
                 enabling professionals to move faster while maintaining full control and accountability.
               </p>
               <div>
-                <p>DecAltra helps organizations:</p>
+                <p>DecAltra helps organisations:</p>
                 <ul className="mt-3 space-y-2 pl-5 marker:text-mist-400 list-disc">
                   <li>integrate internal and external data sources</li>
                   <li>generate transparent, explainable insights</li>
                   <li>improve speed, quality, and consistency of decisions</li>
                 </ul>
               </div>
-              <p>AI supports judgment. Financial professionals remain in control.</p>
+              <p>AI supports judgement. Financial professionals remain in control.</p>
             </div>
           </div>
         </article>
