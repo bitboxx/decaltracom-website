@@ -60,10 +60,8 @@ export default function Navbar() {
             <div className="text-xs font-semibold uppercase tracking-[0.16em] text-mist-500">Foundation</div>
             <NavbarLink href="/products/decaltra-platform">DecAltra Platform</NavbarLink>
             <NavbarLink href="/about">About us</NavbarLink>
+            <NavbarLink href="/contact">Contact us</NavbarLink>
           </div>
-          <NavbarLink href="#" className="sm:hidden">
-            Log in
-          </NavbarLink>
         </>
       }
       logo={

@@ -9,6 +9,7 @@ import { SlidersIcon } from '@/components/icons/sliders-icon'
 import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
 import { Feature, FeaturesThreeColumn } from '@/components/sections/features-three-column'
 import { HeroSimpleCentered } from '@/components/sections/hero-simple-centered'
+import HomeSectionNav from '@/components/pages/HomeSectionNav'
 import { ProductCompositionSection } from '@/components/sections/product-composition-section'
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
       {/* Hero */}
       <HeroSimpleCentered
         id="hero"
+        backgroundImageSrc="/img/photos/Website hero background.png"
         headline="Beyond financial decision making"
         subheadline={
           <p>
@@ -32,11 +34,13 @@ export default function HomePage() {
           </div>
         }
       />
+      <HomeSectionNav />
       {/* Product composition */}
       <ProductCompositionSection id="product-architecture" className="pt-6 pb-0" />
       {/* Features */}
       <FeaturesThreeColumn
         id="features"
+        className="pt-6"
         eyebrow="Why DecAltra"
         headline="Built for European financial institutions"
         headerClassName="max-w-4xl"
@@ -66,7 +70,7 @@ export default function HomePage() {
               icon={<FingerprintIcon />}
               headline="Explainable AI"
               subheadline={
-                <p>Every recommendation comes with transparent reasoning that users, auditors and regulators can review</p>
+                <p>Every output comes with transparent reasoning that users, auditors and regulators can review</p>
               }
             />
             <Feature
@@ -96,11 +100,12 @@ export default function HomePage() {
       {/* Call To Action */}
       <CallToActionSimple
         id="call-to-action"
+        className="pt-0"
         headline="Ready to accelerate your financial decisions?"
         subheadline={
           <p>
-            See how DecAltra can transform your financial decision making workflows to be faster and of higher-quality
-            with adaptive, explainable AI.
+            See how your financial decision making workflows can be faster and of higher-quality with the DecAltra
+            platform and decision modules
           </p>
         }
         cta={

@@ -15,7 +15,6 @@ type ModuleCardProps = {
   icon: ReactNode
   title: string
   description: string
-  points: string[]
   href: string
   ctaLabel: string
   status?: string
@@ -32,7 +31,7 @@ function Tag({ children, className = '' }: { children: ReactNode; className?: st
   )
 }
 
-function ModuleCard({ icon, title, description, points, href, ctaLabel, status, selected = false }: ModuleCardProps) {
+function ModuleCard({ icon, title, description, href, ctaLabel, status, selected = false }: ModuleCardProps) {
   return (
     <article
       className={`group rounded-3xl border p-5 transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
@@ -65,14 +64,6 @@ function ModuleCard({ icon, title, description, points, href, ctaLabel, status, 
       </div>
       <div className="mt-5 space-y-4">
         <p className={`text-sm/6 ${selected ? 'text-mist-300' : 'text-mist-600'}`}>{description}</p>
-        <ul className={`space-y-2 text-sm/6 ${selected ? 'text-mist-300' : 'text-mist-600'}`}>
-          {points.map((point) => (
-            <li key={point} className="flex items-start gap-2">
-              <CheckmarkIcon className={`mt-1 size-3 shrink-0 ${selected ? 'text-white' : 'text-mist-700'}`} />
-              <span>{point}</span>
-            </li>
-          ))}
-        </ul>
         <PlainButtonLink href={href} className={selected ? 'text-white hover:bg-white/10' : ''}>
           {ctaLabel} <ArrowNarrowRightIcon />
         </PlainButtonLink>
@@ -113,12 +104,6 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
                 icon={<ChartLineIcon className="size-4" />}
                 title="Financial Spreading"
                 description="Transform financial statements and raw financials into structured, validated and explainable analysis."
-                points={[
-                  'Multi-year financials and ratio models',
-                  'Automated validation checks',
-                  'Peer benchmarking (tables & visuals)',
-                  'Full traceability to calculations and sources',
-                ]}
                 href="/products/financial-spreading"
                 ctaLabel="Explore Financial Spreading"
               />
@@ -126,12 +111,6 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
                 icon={<ShieldExclamationIcon className="size-4" />}
                 title="Risk Rating"
                 description="Generate automated risk assessments with full transparency through your models, so you keep control over the inputs and results"
-                points={[
-                  'Combine quantitative and qualitative factors',
-                  'AI-supported qualitative inputs',
-                  'Editable inputs with validation checks',
-                  'Full traceability to data, ratios, and sources',
-                ]}
                 href="/products/risk-rating"
                 ctaLabel="Explore Risk Rating"
               />
@@ -139,12 +118,6 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
                 icon={<DocumentIcon className="size-4" />}
                 title="Memo Generator"
                 description="Assemble decision-ready memos with evidence, rationale, and a format your committees recognize"
-                points={[
-                  'Fully customizable templates',
-                  'AI-generated narratives across all sections',
-                  'Status tracking and review workflows',
-                  'Full traceability to sources used',
-                ]}
                 href="/products/memo-generator"
                 ctaLabel="Explore Memo Generator"
               />
@@ -196,7 +169,7 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
                   <ChatBubbleCircleEllipsisIcon className="size-4" />
                   Insight assistant
                 </div>
-                <p className="mt-2 text-sm/6 text-mist-400">Ask natural-language questions and surface insights from your portfolio and data</p>
+                <p className="mt-2 text-sm/6 text-mist-400">Ask questions and surface insights from your portfolio and data</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3.5">
                 <div className="flex items-center gap-3 text-sm font-semibold text-white">

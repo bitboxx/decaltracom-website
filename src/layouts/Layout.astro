@@ -2,6 +2,8 @@
 import '../styles/global.css'
 import { Main } from '@/components/elements/main'
 import DemoRequestModal from '@/components/pages/DemoRequestModal'
+import FeedbackModal from '@/components/pages/FeedbackModal'
+import RequestCallModal from '@/components/pages/RequestCallModal'
 import Navbar from '@/components/pages/Navbar'
 import Footer from '@/components/pages/Footer'
 
@@ -37,6 +39,8 @@ const { title, description = 'AI-enabled decision infrastructure for capital pro
       <slot />
     </Main>
     <DemoRequestModal client:load />
+    <FeedbackModal client:load />
+    <RequestCallModal client:load />
     <Footer />
   </body>
 </html>
