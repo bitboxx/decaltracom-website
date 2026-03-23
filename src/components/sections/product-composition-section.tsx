@@ -80,7 +80,7 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
       headerClassName="max-w-4xl"
       subheadline={
         <p>
-          Select the capabilities you need - they all operate within the DecAltra Platform, providing you with one
+          Select the decision modules you need - they all operate within the DecAltra Platform, providing you with one
           consistent, governed and explainable financial decision making infastructure
         </p>
       }
@@ -103,7 +103,7 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
               <ModuleCard
                 icon={<ChartLineIcon className="size-4" />}
                 title="Financial Spreading"
-                description="Transform financial statements and raw financials into structured, validated and explainable analysis."
+                description="Transform financial statements and raw financials into structured, validated and explainable analysis"
                 href="/products/financial-spreading"
                 ctaLabel="Explore Financial Spreading"
               />
