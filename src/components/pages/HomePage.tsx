@@ -104,7 +104,7 @@ export default function HomePage() {
         headline="Ready to accelerate your financial decisions?"
         subheadline={
           <p>
-            See how your financial decision making workflows can be faster and of higher-quality with the DecAltra
+            See how your financial decision making workflows can be faster and of higher quality with the DecAltra
             platform and decision modules
           </p>
         }
