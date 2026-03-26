@@ -1,6 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import RiskRatingPage from '@/components/pages/RiskRatingPage'
+import { productsPagesEnabled } from '@/lib/site-config'
+
+if (!productsPagesEnabled) {
+  return Astro.redirect('/')
+}
 ---
 
 <Layout

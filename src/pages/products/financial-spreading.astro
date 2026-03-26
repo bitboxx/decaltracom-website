@@ -1,6 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import FinancialSpreadingPage from '@/components/pages/FinancialSpreadingPage'
+import { productsPagesEnabled } from '@/lib/site-config'
+
+if (!productsPagesEnabled) {
+  return Astro.redirect('/')
+}
 ---
 
 <Layout

@@ -1,5 +1,6 @@
 import { type ComponentProps, type ReactNode } from 'react'
 import { PlainButtonLink } from '../elements/button'
+import { productsPagesEnabled } from '@/lib/site-config'
 import { Section } from '../elements/section'
 import { ArrowNarrowRightIcon } from '../icons/arrow-narrow-right-icon'
 import { ChartLineIcon } from '../icons/chart-line-icon'
@@ -15,8 +16,8 @@ type ModuleCardProps = {
   icon: ReactNode
   title: string
   description: string
-  href: string
-  ctaLabel: string
+  href?: string
+  ctaLabel?: string
   status?: string
   selected?: boolean
 }
@@ -64,9 +65,11 @@ function ModuleCard({ icon, title, description, href, ctaLabel, status, selected
       </div>
       <div className="mt-5 space-y-4">
         <p className={`text-sm/6 ${selected ? 'text-mist-300' : 'text-mist-600'}`}>{description}</p>
-        <PlainButtonLink href={href} className={selected ? 'text-white hover:bg-white/10' : ''}>
-          {ctaLabel} <ArrowNarrowRightIcon />
-        </PlainButtonLink>
+        {href && ctaLabel ? (
+          <PlainButtonLink href={href} className={selected ? 'text-white hover:bg-white/10' : ''}>
+            {ctaLabel} <ArrowNarrowRightIcon />
+          </PlainButtonLink>
+        ) : null}
       </div>
     </article>
   )
@@ -104,22 +107,22 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
                 icon={<ChartLineIcon className="size-4" />}
                 title="Financial Spreading"
                 description="Transform financial statements and raw financials into structured, validated and explainable analysis"
-                href="/products/financial-spreading"
-                ctaLabel="Explore Financial Spreading"
+                href={productsPagesEnabled ? '/products/financial-spreading' : undefined}
+                ctaLabel={productsPagesEnabled ? 'Explore Financial Spreading' : undefined}
               />
               <ModuleCard
                 icon={<ShieldExclamationIcon className="size-4" />}
                 title="Risk Rating"
                 description="Generate automated risk assessments with full transparency through your models, so you keep control over the inputs and results"
-                href="/products/risk-rating"
-                ctaLabel="Explore Risk Rating"
+                href={productsPagesEnabled ? '/products/risk-rating' : undefined}
+                ctaLabel={productsPagesEnabled ? 'Explore Risk Rating' : undefined}
               />
               <ModuleCard
                 icon={<DocumentIcon className="size-4" />}
                 title="Memo Generator"
                 description="Assemble decision-ready memos with evidence, rationale, and a format your committees recognize"
-                href="/products/memo-generator"
-                ctaLabel="Explore Memo Generator"
+                href={productsPagesEnabled ? '/products/memo-generator' : undefined}
+                ctaLabel={productsPagesEnabled ? 'Explore Memo Generator' : undefined}
               />
             </div>
           </div>
@@ -179,10 +182,11 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
                 <p className="mt-2 text-sm/6 text-mist-400">Full alignment with internal policies, templates, and risk models</p>
               </div>
             </div>
-
-            <PlainButtonLink href="/products/decaltra-platform" className="w-fit text-white hover:bg-white/10">
-              Explore DecAltra Platform <ArrowNarrowRightIcon />
-            </PlainButtonLink>
+            {productsPagesEnabled ? (
+              <PlainButtonLink href="/products/decaltra-platform" className="w-fit text-white hover:bg-white/10">
+                Explore DecAltra Platform <ArrowNarrowRightIcon />
+              </PlainButtonLink>
+            ) : null}
           </div>
         </div>
       </div>

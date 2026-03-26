@@ -1,6 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import MemoGeneratorPage from '@/components/pages/MemoGeneratorPage'
+import { productsPagesEnabled } from '@/lib/site-config'
+
+if (!productsPagesEnabled) {
+  return Astro.redirect('/')
+}
 ---
 
 <Layout
