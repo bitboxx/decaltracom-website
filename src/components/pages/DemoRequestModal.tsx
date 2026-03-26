@@ -60,7 +60,7 @@ export default function DemoRequestModal() {
       <dialog id="demo-request-modal" className="backdrop:bg-mist-950/40">
         <ElDialogPanel className="fixed inset-0 z-50 overflow-y-auto px-4 py-6 sm:px-6">
           <div className="mx-auto flex min-h-full max-w-5xl items-center justify-center">
-            <div className="grid w-full overflow-hidden rounded-[2rem] border border-mist-200 bg-white shadow-2xl lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+            <div className="grid w-full overflow-hidden rounded-2xl border border-mist-200 bg-white shadow-2xl lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
               <div className="bg-mist-950 p-6 text-white sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -93,7 +93,7 @@ export default function DemoRequestModal() {
                     'Clear next steps based on your current decision workflow',
                     'No spam and no generic product tour',
                   ].map((item) => (
-                    <div key={item} className="flex items-start gap-3 text-sm/6 text-mist-200">
+                    <div key={item} className="flex items-start gap-3 text-base/7 text-mist-200">
                       <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full border border-white/15 bg-white/10">
                         <CheckmarkIcon className="size-3" />
                       </span>
@@ -102,9 +102,9 @@ export default function DemoRequestModal() {
                   ))}
                 </div>
 
-                <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4">
                   <p className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-mist-300">Best results</p>
-                  <p className="mt-2 text-sm/6 text-mist-300">
+                  <p className="mt-2 text-base/7 text-mist-300">
                     Use your work email and the one priority you care about most right now. That gives us enough
                     context to make the demo relevant from the start.
                   </p>
@@ -182,13 +182,13 @@ export default function DemoRequestModal() {
                     </select>
                   </label>
 
-                  <div className="rounded-[1.5rem] border border-mist-200 bg-mist-50 p-4 text-sm/6 text-mist-700">
+                  <div className="rounded-2xl border border-mist-200 bg-mist-50 p-4 text-base/7 text-mist-700">
                     We&apos;ll use this information only to prepare a relevant conversation. You&apos;re not signing up
                     to a mailing list.
                   </div>
 
                   {submitted ? (
-                    <div className="rounded-[1.5rem] border border-emerald-200 bg-emerald-50 p-4 text-sm/6 text-emerald-800">
+                    <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-base/7 text-emerald-800">
                       Your email client should open with the demo request pre-filled. If it doesn&apos;t, send the same
                       details to <strong>{DEMO_REQUEST_EMAIL}</strong>.
                     </div>

@@ -76,7 +76,7 @@ export function PlanComparisonTable<const Plan extends string>({
   return (
     <section className={clsx('py-16', className)} {...props}>
       <Container>
-        <table className="w-full border-collapse text-left text-sm/5 max-sm:hidden">
+        <table className="w-full border-collapse text-left text-sm/6 max-sm:hidden">
           <colgroup>
             <col className="w-2/5" />
             {plans.map((plan) => (
@@ -110,7 +110,7 @@ export function PlanComparisonTable<const Plan extends string>({
                 <button
                   key={plan}
                   type="button"
-                  className="relative -mb-px flex-1 border-b border-b-transparent px-2 py-6 text-sm/5 font-medium text-mist-500 aria-selected:border-mist-950 aria-selected:text-mist-950 dark:aria-selected:border-white dark:aria-selected:text-white"
+                  className="relative -mb-px flex-1 border-b border-b-transparent px-2 py-6 text-sm/6 font-medium text-mist-500 aria-selected:border-mist-950 aria-selected:text-mist-950 dark:aria-selected:border-white dark:aria-selected:text-white"
                 >
                   {plan}
                 </button>
@@ -118,7 +118,7 @@ export function PlanComparisonTable<const Plan extends string>({
             </ElTabList>
             <ElTabPanels>
               {plans.map((plan) => (
-                <table key={plan} className="w-full border-collapse text-left text-sm/5">
+                <table key={plan} className="w-full border-collapse text-left text-sm/6">
                   <colgroup>
                     <col className="w-3/4" />
                     <col className="w-1/4" />

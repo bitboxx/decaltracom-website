@@ -5,7 +5,7 @@ export function ChallengeSolutionTwoColumn(props: ComponentProps<typeof Section>
   return (
     <Section {...props}>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <article className="rounded-3xl border border-mist-200 bg-white p-8 shadow-sm">
+        <article className="rounded-2xl border border-mist-200 bg-white p-6 shadow-sm">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <p className="text-sm/6 font-semibold uppercase tracking-[0.14em] text-mist-500">The challenge</p>
@@ -33,7 +33,7 @@ export function ChallengeSolutionTwoColumn(props: ComponentProps<typeof Section>
             </div>
           </div>
         </article>
-        <article className="rounded-3xl border border-mist-200 bg-mist-950 p-8 shadow-sm">
+        <article className="rounded-2xl border border-mist-200 bg-mist-950 p-6 shadow-sm">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <p className="text-sm/6 font-semibold uppercase tracking-[0.14em] text-mist-300">Our solution</p>

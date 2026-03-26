@@ -17,12 +17,12 @@ export function Feature({
   return (
     <div
       className={clsx(
-        'group grid grid-flow-dense grid-cols-1 gap-2 rounded-lg bg-mist-950/2.5 p-2 lg:grid-cols-2 dark:bg-white/5',
+        'group grid grid-flow-dense grid-cols-1 gap-2 rounded-2xl bg-mist-950/2.5 p-2 lg:grid-cols-2 dark:bg-white/5',
         className,
       )}
     >
-      <div className="flex flex-col justify-between gap-6 p-6 sm:gap-10 sm:p-10 lg:p-6 lg:group-even:col-start-2">
-        <div className="text-xl/8 sm:text-2xl/9">
+      <div className="flex flex-col justify-between gap-6 p-6 sm:gap-8 sm:p-8 lg:p-6 lg:group-even:col-start-2">
+        <div className="text-xl/7 sm:text-2xl/8">
           <h3 className="text-mist-950 dark:text-white">{headline}</h3>
           <div className="flex flex-col gap-4 text-mist-500">{subheadline}</div>
         </div>

@@ -31,7 +31,7 @@ export function Faq({
       <ElDisclosure
         id={`${id}-answer`}
         hidden
-        className="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-mist-700 dark:text-mist-400"
+        className="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-base/7 text-mist-700 dark:text-mist-400"
       >
         {answer}
       </ElDisclosure>

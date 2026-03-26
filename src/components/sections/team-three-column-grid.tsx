@@ -14,7 +14,7 @@ export function TeamMember({
   byline: ReactNode
 } & ComponentProps<'li'>) {
   return (
-    <li className={clsx('flex flex-col gap-4 text-sm/7', className)} {...props}>
+    <li className={clsx('flex flex-col gap-4 text-base/7', className)} {...props}>
       <div className="aspect-3/4 w-full overflow-hidden rounded-sm outline -outline-offset-1 outline-black/5 *:size-full *:object-cover dark:outline-white/5">
         {img}
       </div>

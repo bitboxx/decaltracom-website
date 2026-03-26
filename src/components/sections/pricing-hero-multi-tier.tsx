@@ -27,7 +27,7 @@ export function Plan({
   return (
     <div
       className={clsx(
-        'flex flex-col justify-between gap-6 rounded-xl bg-mist-950/2.5 p-6 sm:items-start dark:bg-white/5',
+        'flex flex-col justify-between gap-6 rounded-2xl bg-mist-950/2.5 p-6 sm:items-start dark:bg-white/5',
         className,
       )}
     >
@@ -45,8 +45,8 @@ export function Plan({
           <span className="text-mist-950 dark:text-white">{price}</span>
           {period && <span className="text-mist-500 dark:text-mist-500">{period}</span>}
         </p>
-        <div className="mt-4 flex flex-col gap-4 text-sm/6 text-mist-700 dark:text-mist-400">{subheadline}</div>
-        <ul className="mt-4 space-y-2 text-sm/6 text-mist-700 dark:text-mist-400">
+        <div className="mt-4 flex flex-col gap-4 text-base/7 text-mist-700 dark:text-mist-400">{subheadline}</div>
+        <ul className="mt-4 space-y-2 text-base/7 text-mist-700 dark:text-mist-400">
           {features.map((feature, index) => (
             <li key={index} className="flex gap-4">
               <CheckmarkIcon className="h-lh shrink-0 stroke-mist-950 dark:stroke-white" />

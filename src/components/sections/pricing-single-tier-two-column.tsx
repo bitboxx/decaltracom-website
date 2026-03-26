@@ -25,15 +25,15 @@ export function PricingSingleTierTwoColumn({
   return (
     <section className={clsx('py-16', className)} {...props}>
       <Container>
-        <div className="grid grid-cols-1 gap-x-2 rounded-xl bg-mist-950/2.5 p-2 lg:grid-cols-2 dark:bg-white/5">
-          <div className="flex flex-col items-start justify-between gap-10 p-6 sm:p-10">
+        <div className="grid grid-cols-1 gap-x-2 rounded-2xl bg-mist-950/2.5 p-2 lg:grid-cols-2 dark:bg-white/5">
+          <div className="flex flex-col items-start justify-between gap-10 p-6 sm:p-8">
             <div className="flex flex-col gap-6">
               <Subheading>{headline}</Subheading>
               <Text className="flex flex-col gap-4 text-pretty">{subheadline}</Text>
             </div>
             {cta}
           </div>
-          <div className="rounded-sm bg-mist-100 p-6 sm:p-10 dark:bg-mist-950">
+          <div className="rounded-xl bg-mist-100 p-6 sm:p-8 dark:bg-mist-950">
             <div className="flex items-baseline gap-2">
               <p className="text-[5rem]/24 font-light tracking-tight text-mist-950 sm:text-8xl/32 dark:text-white">
                 {price}
@@ -42,7 +42,7 @@ export function PricingSingleTierTwoColumn({
             </div>
             <ul className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-1">
               {features.map((feature, index) => (
-                <li key={index} className="flex gap-3 text-sm/5">
+                <li key={index} className="flex gap-3 text-sm/6">
                   <span className="flex size-5 shrink-0 items-center justify-center rounded-xs bg-mist-950 dark:bg-mist-700">
                     <CheckmarkIcon className="size-3 stroke-white" />
                   </span>

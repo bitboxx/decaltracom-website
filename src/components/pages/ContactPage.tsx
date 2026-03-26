@@ -22,7 +22,7 @@ export default function ContactPage() {
         }
       >
         <div className="grid gap-4 lg:grid-cols-2">
-          <article className="flex h-full flex-col rounded-[1.75rem] border border-mist-200 bg-white p-6 shadow-sm">
+          <article className="flex h-full flex-col rounded-2xl border border-mist-200 bg-white p-6 shadow-sm">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-mist-200 bg-mist-100 text-mist-700">
@@ -36,14 +36,14 @@ export default function ContactPage() {
                 <RequestCallButton size="lg">Request a call</RequestCallButton>
               </div>
             </div>
-            <div className="mt-5">
-              <div className="rounded-[1.25rem] border border-mist-200 bg-mist-50 p-4 text-sm/7 text-mist-700 sm:flex-1">
+            <div className="mt-4">
+              <div className="rounded-2xl border border-mist-200 bg-mist-50 p-4 text-base/7 text-mist-700 sm:flex-1">
                 Suitable for new enquiries and existing clients alike.
               </div>
             </div>
           </article>
 
-          <article className="flex h-full flex-col rounded-[1.75rem] border border-mist-200 bg-white p-6 shadow-sm">
+          <article className="flex h-full flex-col rounded-2xl border border-mist-200 bg-white p-6 shadow-sm">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-mist-200 bg-mist-100 text-mist-700">
@@ -59,8 +59,8 @@ export default function ContactPage() {
                 </ButtonLink>
               </div>
             </div>
-            <div className="mt-6 rounded-[1.25rem] border border-mist-200 bg-mist-50 p-4">
-              <p className="text-sm/7 text-mist-600">Include a few lines of context so it reaches the right person.</p>
+            <div className="mt-4 rounded-2xl border border-mist-200 bg-mist-50 p-4">
+              <p className="text-base/7 text-mist-600">Include a few lines of context so it reaches the right person.</p>
             </div>
           </article>
         </div>

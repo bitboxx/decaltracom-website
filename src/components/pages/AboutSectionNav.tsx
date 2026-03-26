@@ -36,7 +36,7 @@ export default function AboutSectionNav() {
   }, [])
 
   return (
-    <div className="pointer-events-none fixed right-6 top-1/2 z-[5] hidden -translate-y-1/2 lg:block">
+    <div className="pointer-events-none fixed right-6 top-1/2 z-5 hidden -translate-y-1/2 lg:block">
       <nav className="pointer-events-auto flex flex-col items-center gap-3 rounded-full border border-mist-200 bg-white/78 px-2 py-3 shadow-sm backdrop-blur">
         {sections.map((section) => {
           const isActive = activeSection === section.id
@@ -50,11 +50,10 @@ export default function AboutSectionNav() {
               className="group flex items-center"
             >
               <span
-                className={`block rounded-full border transition ${
-                  isActive
+                className={`block rounded-full border transition ${isActive
                     ? 'h-3 w-3 border-mist-950 bg-mist-950'
                     : 'h-2.5 w-2.5 border-mist-400 bg-white hover:h-3 hover:w-3 hover:border-mist-600'
-                }`}
+                  }`}
               />
             </a>
           )

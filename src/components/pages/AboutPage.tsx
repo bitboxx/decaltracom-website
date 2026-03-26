@@ -9,7 +9,9 @@ import { FingerprintIcon } from '@/components/icons/fingerprint-icon'
 import { LightBulbIcon } from '@/components/icons/light-bulb-icon'
 import { Section } from '@/components/elements/section'
 import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
+import { HeroAboutWithPhoto } from '@/components/sections/hero-about-with-photo'
 import AboutSectionNav from '@/components/pages/AboutSectionNav'
+import { Feature106, type Feature106Item } from '@/components/shadcnblocks/feature106'
 
 type StorySection = {
   step: string
@@ -159,199 +161,61 @@ export default function AboutPage() {
   return (
     <>
       <AboutSectionNav />
-      <section id="about" className="scroll-mt-24 pt-8 pb-16">
-        <div className="mx-auto flex w-full max-w-2xl flex-col gap-10 px-6 md:max-w-3xl lg:max-w-7xl lg:px-10">
-          <div className="flex max-w-5xl flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <p className="text-sm/7 font-semibold text-mist-700">About DecAltra</p>
-              <h1 className="font-display text-[2rem]/10 font-medium tracking-tight text-mist-950 sm:text-5xl/14 lg:whitespace-nowrap">
-                Financial decision <br className="sm:hidden" />
-                making infrastructure
-              </h1>
-            </div>
-            <p className="text-lg/8 text-mist-700">
-              Learn about our story and what drives us through the sequence below
-            </p>
-          </div>
-
-          <div className="space-y-3 lg:hidden">
-            {storySections.map((section, index) => {
-              const isActive = index === activeIndex
-
-              return (
-                <article
-                  key={section.step}
-                  className={`overflow-hidden rounded-[1.75rem] border transition duration-300 ${
-                    isActive ? 'border-mist-950 bg-white shadow-xl shadow-mist-950/10' : 'border-mist-200 bg-white shadow-sm'
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                    className="flex w-full items-center justify-between gap-4 p-4 text-left"
-                  >
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-3">
-                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-mist-200 bg-mist-100 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-mist-600">
-                          {section.step}
-                        </span>
-                        <p className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-mist-500">
-                          {section.eyebrow}
-                        </p>
-                      </div>
-                      <h2 className="mt-3 font-display text-xl/7 font-medium tracking-tight text-mist-950">
-                        {section.title}
-                      </h2>
-                    </div>
-                    <span className="shrink-0 text-xl leading-none text-mist-500">{isActive ? '−' : '+'}</span>
-                  </button>
-
-                  {isActive ? (
-                    <div className="border-t border-mist-200 px-4 pb-5 pt-4 text-base/8 text-mist-700">
-                      <div className="space-y-5">
-                        {(section.highlights ? section.content.slice(0, -1) : section.content).map((paragraph, paragraphIndex) => (
-                          <p key={`${section.step}-mobile-paragraph-${paragraphIndex}`}>{paragraph}</p>
-                        ))}
-
-                        {section.highlights ? (
-                          <div className="grid gap-3 sm:grid-cols-3">
-                            {section.highlights.map((highlight) => (
-                              <div
-                                key={highlight}
-                                className="flex min-h-24 items-center justify-center rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-center text-sm/6 font-medium text-mist-950"
-                              >
-                                {highlight}
-                              </div>
-                            ))}
-                          </div>
-                        ) : null}
-
-                        {section.highlights ? <p>{section.content.at(-1)}</p> : null}
-
-                        {section.outcomes ? (
-                          <div className="grid gap-3 sm:grid-cols-2">
-                            {section.outcomes.map((outcome) => (
-                              <div
-                                key={outcome}
-                                className="rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-sm/6 font-medium text-mist-950"
-                              >
-                                {outcome}
-                              </div>
-                            ))}
-                          </div>
-                        ) : null}
-
-                        {section.closing ? <p className="text-base/8 font-bold text-mist-950">{section.closing}</p> : null}
-                      </div>
-                    </div>
-                  ) : null}
-                </article>
-              )
-            })}
-          </div>
-
-          <div className="hidden gap-8 lg:grid lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
-            <div className="lg:sticky lg:top-28">
-              <div className="space-y-3">
-                {storySections.map((section, index) => {
-                  const isActive = index === activeIndex
-
-                  return (
-                    <button
-                      key={section.step}
-                      type="button"
-                      onClick={() => setActiveIndex(index)}
-                      className={`group relative flex w-full overflow-hidden rounded-[1.75rem] border p-4 text-left transition duration-300 ${
-                        isActive
-                          ? 'border-mist-950 shadow-2xl shadow-mist-950/20 ring-1 ring-mist-950/10'
-                          : 'border-mist-200 shadow-sm hover:-translate-y-0.5 hover:border-mist-400 hover:shadow-lg'
-                      } ${section.pictureClassName}`}
-                      style={{ minHeight: '102px' }}
-                    >
-                      {isActive ? <div className="absolute inset-y-4 left-0 w-1 rounded-r-full bg-white/85" /> : null}
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(9,15,19,0.38))]" />
-                      <div className="absolute right-5 top-5">
-                        <span
-                          className={`rounded-full border px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] ${
-                            isActive
-                              ? 'border-white/30 bg-white text-mist-950 shadow-md'
-                              : 'border-white/20 bg-white/8 text-white/85'
-                          }`}
-                        >
-                          {section.step}
-                        </span>
-                      </div>
-                      <div className="relative flex w-full items-start gap-4">
-                        <div className="max-w-[19rem]">
-                          <p className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-white/70">
-                            {section.eyebrow}
-                          </p>
-                          <h2 className="mt-1.5 font-display text-xl/7 font-medium tracking-tight text-white lg:whitespace-nowrap">
-                            {section.title}
-                          </h2>
-                        </div>
-                      </div>
-                    </button>
-                  )
-                })}
+      <HeroAboutWithPhoto
+        id="about"
+        className="scroll-mt-24"
+        eyebrow="About DecAltra"
+        headline={<>Financial decision <br className="sm:hidden" />making infrastructure</>}
+        subheadline="Learn about our story and what drives us through the sequence below"
+        photo={<img src="/img/originals/matthias-groeneveld-oeRnTQQKRho-unsplash-cropped.jpg" alt="European cityscape" />}
+      />
+      <Feature106
+        features={storySections.map<Feature106Item>((section, index) => ({
+          id: index + 1,
+          header: section.eyebrow,
+          excerpt: section.title,
+          content: (
+            <>
+              <div className="border-b border-mist-200 pb-5">
+                <h2 className="text-2xl/8 font-medium text-mist-950">{section.title}</h2>
               </div>
-            </div>
-
-            <article className="rounded-[2rem] border border-mist-200 bg-white p-6 shadow-sm sm:p-8">
-              <div className="border-b border-mist-200 pb-6">
-                <div className="flex items-start justify-between gap-4">
-                  <p className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-mist-500">
-                    {activeSection.eyebrow}
-                  </p>
-                  <span className="shrink-0 rounded-full border border-mist-200 bg-mist-100 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-mist-600">
-                    Step {activeSection.step}
-                  </span>
-                </div>
-                <h2 className="mt-2 font-display text-3xl/9 font-medium tracking-tight text-mist-950 lg:whitespace-nowrap">
-                  {activeSection.title}
-                </h2>
-              </div>
-
-              <div className="space-y-5 pt-6 text-base/8 text-mist-700">
-                {(activeSection.highlights ? activeSection.content.slice(0, -1) : activeSection.content).map((paragraph, paragraphIndex) => (
-                  <p key={`${activeSection.step}-desktop-paragraph-${paragraphIndex}`}>{paragraph}</p>
+              <div className="space-y-4">
+                {(section.highlights ? section.content.slice(0, -1) : section.content).map((paragraph, pIdx) => (
+                  <p key={pIdx}>{paragraph}</p>
                 ))}
-
-                {activeSection.highlights ? (
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    {activeSection.highlights.map((highlight) => (
-                      <div
-                        key={highlight}
-                        className="flex min-h-24 items-center justify-center rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-center text-sm/6 font-medium text-mist-950"
-                      >
-                        {highlight}
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
-
-                {activeSection.highlights ? <p>{activeSection.content.at(-1)}</p> : null}
-
-                {activeSection.outcomes ? (
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {activeSection.outcomes.map((outcome) => (
-                      <div
-                        key={outcome}
-                        className="rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-sm/6 font-medium text-mist-950"
-                      >
-                        {outcome}
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
-
-                {activeSection.closing ? <p className="text-base/8 font-bold text-mist-950">{activeSection.closing}</p> : null}
               </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
+              {section.highlights ? (
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {section.highlights.map((highlight) => (
+                    <div
+                      key={highlight}
+                      className="flex min-h-24 items-center justify-center rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-center text-base/7 font-medium text-mist-950"
+                    >
+                      {highlight}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+              {section.highlights ? <p>{section.content.at(-1)}</p> : null}
+              {section.outcomes ? (
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {section.outcomes.map((outcome) => (
+                    <div
+                      key={outcome}
+                      className="rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-base/7 font-medium text-mist-950"
+                    >
+                      {outcome}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+              {section.closing ? (
+                <p className="font-bold text-mist-950">{section.closing}</p>
+              ) : null}
+            </>
+          ),
+        }))}
+      />
       <Section
         id="team"
         eyebrow="The team"

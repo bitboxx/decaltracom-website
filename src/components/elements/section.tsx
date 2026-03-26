@@ -22,19 +22,17 @@ export function Section({
   headerClassName?: string
 } & ComponentProps<'section'>) {
   return (
-    <section className={clsx('py-16', className)} {...props}>
-      <Container className="flex flex-col gap-10 sm:gap-16">
+    <section className={clsx('my-24', className)} {...props}>
+      <Container>
         {headline && (
-          <div className={clsx('flex max-w-2xl flex-col gap-6', headerClassName)}>
-            <div className="flex flex-col gap-2">
-              {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-              <Subheading>{headline}</Subheading>
-            </div>
-            {subheadline && <Text className="text-pretty">{subheadline}</Text>}
+          <div className={clsx('max-w-2xl', headerClassName)}>
+            {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+            <Subheading className="mt-2">{headline}</Subheading>
+            {subheadline && <Text className="mt-2 text-pretty">{subheadline}</Text>}
             {cta}
           </div>
         )}
-        <div>{children}</div>
+        <div className="mt-10">{children}</div>
       </Container>
     </section>
   )

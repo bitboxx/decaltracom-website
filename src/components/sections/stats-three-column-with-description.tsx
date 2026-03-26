@@ -10,9 +10,9 @@ export function Stat({
   ...props
 }: { stat: ReactNode; text: ReactNode } & ComponentProps<'div'>) {
   return (
-    <div className={clsx('rounded-xl bg-mist-950/2.5 p-6 dark:bg-white/5', className)} {...props}>
+    <div className={clsx('rounded-2xl bg-mist-950/2.5 p-6 dark:bg-white/5', className)} {...props}>
       <div className="text-2xl/10 tracking-tight text-mist-950 dark:text-white">{stat}</div>
-      <p className="mt-2 text-sm/7 text-mist-700 dark:text-mist-400">{text}</p>
+      <p className="mt-2 text-base/7 text-mist-700 dark:text-mist-400">{text}</p>
     </div>
   )
 }

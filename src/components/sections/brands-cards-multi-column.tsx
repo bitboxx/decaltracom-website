@@ -15,12 +15,12 @@ export function BrandCard({
 } & ComponentProps<'div'>) {
   return (
     <div
-      className={clsx('flex flex-col justify-between gap-6 rounded-xl bg-mist-950/2.5 p-6 dark:bg-white/5', className)}
+      className={clsx('flex flex-col justify-between gap-6 rounded-2xl bg-mist-950/2.5 p-6 dark:bg-white/5', className)}
       {...props}
     >
       <div className="flex flex-col items-start gap-2">
         <div className="flex h-8 shrink-0">{logo}</div>
-        <p className="text-sm/7 text-mist-700 dark:text-mist-400">{text}</p>
+        <p className="text-base/7 text-mist-700 dark:text-mist-400">{text}</p>
       </div>
       <p className="text-xs/6 text-mist-700 dark:text-mist-400">{footnote}</p>
     </div>

@@ -95,10 +95,10 @@ export default function FinancialSpreadingPage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-mist-200 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(228,237,241,0.96))] p-5 shadow-sm sm:p-6">
+          <div className="relative overflow-hidden rounded-2xl border border-mist-200 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(228,237,241,0.96))] p-6 shadow-sm">
             <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_70%)]" />
             <div className="relative grid gap-4">
-              <div className="rounded-[1.5rem] border border-mist-200 bg-white p-4 shadow-sm">
+              <div className="rounded-2xl border border-mist-200 bg-white p-4 shadow-sm">
                 <div className="flex items-center justify-between">
                   <p className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-mist-500">Spread preview</p>
                   <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-emerald-700">
@@ -163,7 +163,7 @@ export default function FinancialSpreadingPage() {
                         <div className="h-12 w-8 rounded-t-xl bg-white/35" />
                         <div className="h-20 w-8 rounded-t-xl bg-white" />
                       </div>
-                      <p className="mt-3 text-sm/6 text-mist-300">See relative performance instantly, not after a spreadsheet clean-up cycle.</p>
+                      <p className="mt-3 text-base/7 text-mist-300">See relative performance instantly, not after a spreadsheet clean-up cycle.</p>
                     </div>
                   </div>
                 </div>
@@ -202,14 +202,14 @@ export default function FinancialSpreadingPage() {
           {outcomes.map((outcome) => {
             const Icon = outcome.icon
             return (
-              <article key={outcome.title} className="rounded-[1.75rem] border border-mist-200 bg-white p-6 shadow-sm">
+              <article key={outcome.title} className="rounded-2xl border border-mist-200 bg-white p-6 shadow-sm">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-mist-200 bg-mist-100 text-mist-700">
                   <Icon className="size-5" />
                 </div>
                 <h2 className="mt-5 font-display text-2xl/8 font-medium tracking-tight text-mist-950">
                   {outcome.title}
                 </h2>
-                <p className="mt-3 text-sm/7 text-mist-700">{outcome.text}</p>
+                <p className="mt-3 text-base/7 text-mist-700">{outcome.text}</p>
               </article>
             )
           })}
@@ -226,7 +226,7 @@ export default function FinancialSpreadingPage() {
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {workflow.map((item, index) => (
-            <article key={item.step} className="relative rounded-[1.75rem] border border-mist-200 bg-white p-6 shadow-sm">
+            <article key={item.step} className="relative rounded-2xl border border-mist-200 bg-white p-6 shadow-sm">
               {index < workflow.length - 1 ? (
                 <div className="pointer-events-none absolute right-0 top-1/2 hidden translate-x-1/2 -translate-y-1/2 lg:block">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full border border-mist-200 bg-white text-mist-700 shadow-sm">
@@ -238,7 +238,7 @@ export default function FinancialSpreadingPage() {
                 {item.step}
               </span>
               <h2 className="mt-5 font-display text-2xl/8 font-medium tracking-tight text-mist-950">{item.title}</h2>
-              <p className="mt-3 text-sm/7 text-mist-700">{item.text}</p>
+              <p className="mt-3 text-base/7 text-mist-700">{item.text}</p>
             </article>
           ))}
         </div>
@@ -256,14 +256,14 @@ export default function FinancialSpreadingPage() {
           {capabilities.map((capability) => {
             const Icon = capability.icon
             return (
-              <article key={capability.title} className="rounded-[1.75rem] border border-mist-200 bg-white p-6 shadow-sm">
+              <article key={capability.title} className="rounded-2xl border border-mist-200 bg-white p-6 shadow-sm">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-mist-200 bg-mist-100 text-mist-700">
                     <Icon className="size-5" />
                   </div>
                   <div>
                     <h2 className="font-display text-2xl/8 font-medium tracking-tight text-mist-950">{capability.title}</h2>
-                    <p className="mt-3 text-sm/7 text-mist-700">{capability.text}</p>
+                    <p className="mt-3 text-base/7 text-mist-700">{capability.text}</p>
                   </div>
                 </div>
               </article>
@@ -281,25 +281,25 @@ export default function FinancialSpreadingPage() {
         }
       >
         <div className="grid gap-4 lg:grid-cols-3">
-          <article className="overflow-hidden rounded-[1.75rem] border border-mist-200 bg-white shadow-sm">
+          <article className="overflow-hidden rounded-2xl border border-mist-200 bg-white shadow-sm">
             <div className="h-40 bg-[linear-gradient(135deg,rgba(18,27,33,1),rgba(61,90,102,0.92),rgba(157,181,190,0.84))]" />
             <div className="p-6">
               <h2 className="font-display text-2xl/8 font-medium tracking-tight text-mist-950">Structured spread outputs</h2>
-              <p className="mt-3 text-sm/7 text-mist-700">Move from raw financials to analysis your team can immediately work with.</p>
+              <p className="mt-3 text-base/7 text-mist-700">Move from raw financials to analysis your team can immediately work with.</p>
             </div>
           </article>
-          <article className="overflow-hidden rounded-[1.75rem] border border-mist-200 bg-white shadow-sm">
+          <article className="overflow-hidden rounded-2xl border border-mist-200 bg-white shadow-sm">
             <div className="h-40 bg-[linear-gradient(135deg,rgba(25,35,42,1),rgba(88,110,118,0.92),rgba(215,226,231,0.85))]" />
             <div className="p-6">
               <h2 className="font-display text-2xl/8 font-medium tracking-tight text-mist-950">Validation-led review</h2>
-              <p className="mt-3 text-sm/7 text-mist-700">Highlight inconsistencies before they create friction in downstream decisions.</p>
+              <p className="mt-3 text-base/7 text-mist-700">Highlight inconsistencies before they create friction in downstream decisions.</p>
             </div>
           </article>
-          <article className="overflow-hidden rounded-[1.75rem] border border-mist-200 bg-white shadow-sm">
+          <article className="overflow-hidden rounded-2xl border border-mist-200 bg-white shadow-sm">
             <div className="h-40 bg-[linear-gradient(135deg,rgba(20,30,36,1),rgba(70,95,108,0.92),rgba(175,196,205,0.86))]" />
             <div className="p-6">
               <h2 className="font-display text-2xl/8 font-medium tracking-tight text-mist-950">Benchmarking at a glance</h2>
-              <p className="mt-3 text-sm/7 text-mist-700">See relative position and outliers quickly through visual comparison views.</p>
+              <p className="mt-3 text-base/7 text-mist-700">See relative position and outliers quickly through visual comparison views.</p>
             </div>
           </article>
         </div>

@@ -14,7 +14,7 @@ export function Feature({
   subheadline: ReactNode
 } & ComponentProps<'div'>) {
   return (
-    <div className={clsx('flex flex-col gap-2 text-sm/7', className)} {...props}>
+    <div className={clsx('flex flex-col gap-2 text-base/7', className)} {...props}>
       <div className="flex items-center gap-3 text-mist-950 dark:text-white">
         {icon && <div className="size-3.25 h-lh">{icon}</div>}
         <h3 className="font-semibold">{headline}</h3>

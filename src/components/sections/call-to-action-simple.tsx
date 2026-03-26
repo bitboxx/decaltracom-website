@@ -19,7 +19,7 @@ export function CallToActionSimple({
   cta?: ReactNode
 } & ComponentProps<'section'>) {
   return (
-    <section className={clsx('py-16', className)} {...props}>
+    <section className={clsx('my-24', className)} {...props}>
       <Container className="flex flex-col gap-10">
         <div className="flex flex-col gap-6">
           <div className="flex max-w-4xl flex-col gap-2">

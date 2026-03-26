@@ -35,7 +35,7 @@ function Tag({ children, className = '' }: { children: ReactNode; className?: st
 function ModuleCard({ icon, title, description, href, ctaLabel, status, selected = false }: ModuleCardProps) {
   return (
     <article
-      className={`group rounded-3xl border p-5 transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
+      className={`group rounded-2xl border p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
         selected
           ? 'border-mist-950 bg-mist-950 text-white shadow-lg shadow-mist-950/10'
           : 'border-mist-200 bg-white text-mist-950 shadow-sm hover:border-mist-400'
@@ -89,7 +89,7 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
       }
       {...props}
     >
-      <div className="-mt-4 overflow-hidden rounded-[2rem] border border-mist-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(237,242,244,0.92))] shadow-sm sm:-mt-8">
+      <div className="-mt-4 overflow-hidden rounded-2xl border border-mist-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(237,242,244,0.92))] shadow-sm sm:-mt-8">
         <div className="p-6 sm:p-8">
           <div className="space-y-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -129,7 +129,7 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
 
           <div className="h-3" />
 
-          <div className="space-y-4 rounded-[1.6rem] bg-mist-950 p-5 text-white sm:p-6">
+          <div className="space-y-4 rounded-2xl bg-mist-950 p-6 text-white">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div className="space-y-2">
                 <div>
@@ -140,46 +140,46 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
               <Tag className="border-white/15 bg-white/10 text-white">Always included</Tag>
             </div>
 
-            <p className="text-sm/6 text-mist-300 lg:whitespace-nowrap">
+            <p className="text-base/7 text-mist-300 lg:whitespace-nowrap">
               A unified foundation to monitor the portfolio, identify entities, integrate data, and align decisions
               with your internal frameworks
             </p>
 
             <div className="grid gap-2.5 md:grid-cols-2 xl:grid-cols-5">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-3.5">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="flex items-center gap-3 text-sm font-semibold text-white">
                   <CpuIcon className="size-4" />
                   Portfolio visibility
                 </div>
-                <p className="mt-2 text-sm/6 text-mist-400">Portfolio-level visibility with drill-down to entity detail</p>
+                <p className="mt-2 text-base/7 text-mist-400">Portfolio-level visibility with drill-down to entity detail</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-3.5">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="flex items-center gap-3 text-sm font-semibold text-white">
                   <SparklesIcon className="size-4" />
                   Entity identification
                 </div>
-                <p className="mt-2 text-sm/6 text-mist-400">Accurate entity identification, validation, and structuring</p>
+                <p className="mt-2 text-base/7 text-mist-400">Accurate entity identification, validation, and structuring</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-3.5">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="flex items-center gap-3 text-sm font-semibold text-white">
                   <SlidersIcon className="size-4" />
                   Data ingestion
                 </div>
-                <p className="mt-2 text-sm/6 text-mist-400">Centralized ingestion of documents, financials, and internal data</p>
+                <p className="mt-2 text-base/7 text-mist-400">Centralized ingestion of documents, financials, and internal data</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-3.5">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="flex items-center gap-3 text-sm font-semibold text-white">
                   <ChatBubbleCircleEllipsisIcon className="size-4" />
                   Insight assistant
                 </div>
-                <p className="mt-2 text-sm/6 text-mist-400">Ask questions and surface insights from your portfolio and data</p>
+                <p className="mt-2 text-base/7 text-mist-400">Ask questions and surface insights from your portfolio and data</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-3.5">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="flex items-center gap-3 text-sm font-semibold text-white">
                   <ShieldExclamationIcon className="size-4" />
                   Policy alignment
                 </div>
-                <p className="mt-2 text-sm/6 text-mist-400">Full alignment with internal policies, templates, and risk models</p>
+                <p className="mt-2 text-base/7 text-mist-400">Full alignment with internal policies, templates, and risk models</p>
               </div>
             </div>
             {productsPagesEnabled ? (
