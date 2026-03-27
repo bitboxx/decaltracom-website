@@ -3,23 +3,24 @@ import { MailIcon } from '@/components/icons/mail-icon'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
 import { CameraVideoIcon } from '@/components/icons/camera-video-icon'
 import { Section } from '@/components/elements/section'
+import { HeroAboutWithPhoto } from '@/components/sections/hero-about-with-photo'
 import ContactSectionNav from '@/components/pages/ContactSectionNav'
 
 export default function ContactPage() {
   return (
     <>
       <ContactSectionNav />
-      <Section
+      <HeroAboutWithPhoto
         id="contact"
+        className="scroll-mt-24"
         eyebrow="Contact us"
+        headline="Get in touch"
+        subheadline="Whether you have a question about DecAltra or want to speak with us directly, choose the option that suits you best"
+        photo={<img src="/img/originals/jason-leung-BUa1LDeT8PI-unsplash.jpg" alt="Contact" />}
+      />
+      <Section
+        id="contact-options"
         headline="How would you like to get in touch?"
-        headerClassName="max-w-4xl"
-        subheadline={
-          <p>
-            Whether you have a question about DecAltra or want to speak with us directly, choose the option that suits
-            you best.
-          </p>
-        }
       >
         <div className="grid gap-4 lg:grid-cols-2">
           <article className="flex h-full flex-col rounded-2xl border border-mist-200 bg-white p-6 shadow-sm">

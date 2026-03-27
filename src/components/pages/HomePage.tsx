@@ -12,13 +12,13 @@ import { HeroSimpleCentered } from '@/components/sections/hero-simple-centered'
 import HomeSectionNav from '@/components/pages/HomeSectionNav'
 import { ProductCompositionSection } from '@/components/sections/product-composition-section'
 
-export default function HomePage() {
+export default function HomePage({ heroImageSrc }: { heroImageSrc?: string }) {
   return (
     <>
       {/* Hero */}
       <HeroSimpleCentered
         id="hero"
-        backgroundImageSrc="/img/photos/Website hero background.png"
+        backgroundImageSrc={heroImageSrc ?? '/img/originals/european-cityscape-cropped.jpg'}
         headline="Beyond financial decision making"
         subheadline={
           <p>
