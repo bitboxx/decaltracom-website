@@ -212,9 +212,9 @@ export default function AboutPage() {
               {section.highlights ? <p>{section.content.at(-1)}</p> : null}
               {section.outcomes ? (
                 <div className="grid gap-3 sm:grid-cols-3">
-                  {section.outcomes.map((outcome) => (
+                  {section.outcomes.map((outcome, outcomeIndex) => (
                     <div
-                      key={outcome}
+                      key={outcomeIndex}
                       className="rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-center text-base/7 font-medium text-mist-950"
                     >
                       {outcome}
