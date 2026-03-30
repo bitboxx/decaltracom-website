@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { type ReactNode, useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
 
 import {
@@ -24,13 +24,32 @@ interface Feature106Props {
 }
 
 const Feature106 = ({ className, features }: Feature106Props) => {
+  const [mobileValue, setMobileValue] = useState("1");
+  const contentRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  function handleMobileValueChange(value: string) {
+    setMobileValue(value);
+
+    if (!value) {
+      return;
+    }
+
+    window.setTimeout(() => {
+      const index = features.findIndex((feature) => feature.id.toString() === value);
+      const element = contentRefs.current[index];
+
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 200);
+  }
+
   return (
     <section className={cn("my-24", className)}>
       <Container>
         <Accordion
           type="single"
           collapsible
-          defaultValue="1"
+          value={mobileValue}
+          onValueChange={handleMobileValueChange}
           className="overflow-hidden rounded-2xl border border-mist-200 shadow-sm lg:hidden"
         >
           {features.map((feature, index) => (
@@ -55,7 +74,12 @@ const Feature106 = ({ className, features }: Feature106Props) => {
                 </div>
               </AccordionTrigger>
               <AccordionContent className="relative !h-auto px-6 pb-6 [&>div]:!h-auto">
-                <div className="flex flex-col gap-5 rounded-2xl border border-mist-200 bg-white p-6 text-base/7 text-mist-700">
+                <div
+                  ref={(element) => {
+                    contentRefs.current[index] = element;
+                  }}
+                  className="scroll-mt-28 flex flex-col gap-5 rounded-2xl border border-mist-200 bg-white p-6 text-base/7 text-mist-700"
+                >
                   {feature.content}
                 </div>
               </AccordionContent>

@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react'
+import { type ReactNode } from 'react'
 import { DemoRequestButton, PlainButtonLink } from '@/components/elements/button'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
 import { BuildingLibraryIcon } from '@/components/icons/building-library-icon'
@@ -22,7 +22,7 @@ type StorySection = {
   accentClassName: string
   content: ReactNode[]
   highlights?: string[]
-  outcomes?: string[]
+  outcomes?: ReactNode[]
   closing?: string
 }
 
@@ -134,7 +134,23 @@ const storySections: StorySection[] = [
       </>,
       'When financial professionals can make better decisions faster, capital reaches opportunity sooner.',
     ],
-    outcomes: ['Businesses grow', 'Infrastructure develops', 'Innovation accelerates'],
+    outcomes: [
+      <>
+        Businesses
+        <br />
+        grow
+      </>,
+      <>
+        Infrastructure
+        <br />
+        develops
+      </>,
+      <>
+        Innovation
+        <br />
+        accelerates
+      </>,
+    ],
     closing: 'And the entire economy becomes more productive.',
   },
   {
@@ -155,9 +171,6 @@ const storySections: StorySection[] = [
 ]
 
 export default function AboutPage() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const activeSection = storySections[activeIndex ?? 0]
-
   return (
     <>
       <AboutSectionNav />
@@ -198,11 +211,11 @@ export default function AboutPage() {
               ) : null}
               {section.highlights ? <p>{section.content.at(-1)}</p> : null}
               {section.outcomes ? (
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-3 sm:grid-cols-3">
                   {section.outcomes.map((outcome) => (
                     <div
                       key={outcome}
-                      className="rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-base/7 font-medium text-mist-950"
+                      className="rounded-2xl border border-mist-200 bg-mist-50 px-4 py-3 text-center text-base/7 font-medium text-mist-950"
                     >
                       {outcome}
                     </div>
