@@ -30,7 +30,10 @@ export default function Footer() {
             <FooterLink href="/about#team">The team</FooterLink>
           </FooterCategory>
           <FooterCategory title="Legal">
-            <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+            <FooterLink href="/terms-of-use">Terms of use</FooterLink>
+            <FooterLink href="/privacy-policy">Privacy policy</FooterLink>
+            <FooterLink href="/cookie-policy">Cookie policy</FooterLink>
+            <FooterLink href="/vulnerability-disclosure">Vulnerability disclosure</FooterLink>
           </FooterCategory>
         </>
       }
