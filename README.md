@@ -39,14 +39,14 @@ The site is deployed to Cloudflare Pages (project: `decaltra`). The `functions/_
 yarn deploy
 ```
 
-This runs an auth check, builds the site, and deploys `dist/` via `yarn dlx wrangler pages deploy`.
+This runs `scripts/deploy.mjs`, which loads `.env`, checks Cloudflare auth, builds the site, and deploys `dist/` via `yarn wrangler pages deploy`. The script is pure Node and works on macOS, Linux, and Windows.
 
 ### Authentication
 
 You need either of the following before running `yarn deploy`:
 
 - **`CLOUDFLARE_API_TOKEN`** in a local `.env` file (recommended), or
-- An interactive login: `yarn dlx wrangler login`
+- An interactive login: `yarn wrangler login`
 
 The deploy script auto-loads `.env` from the project root before checking for the token. `.env` is gitignored. Create one like:
 
