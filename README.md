@@ -82,7 +82,7 @@ src/
 ## Pages
 
 - `/` — Home
-- `/about` — About Veltrax
+- `/about` — About DecAltra
 - `/services/meridian` — Meridian: AI-Assisted Credit Memo Intelligence
 - `/privacy-policy` — Privacy Policy
 
