@@ -14,7 +14,8 @@
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.7",
