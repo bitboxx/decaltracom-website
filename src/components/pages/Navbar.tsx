@@ -29,19 +29,19 @@ export default function Navbar() {
                       href="/products/financial-spreading"
                       className="block rounded-2xl px-4 py-3 text-sm/6 font-medium text-mist-950 transition hover:bg-mist-100"
                     >
-                      Financial Spreading
+                      Financial spreading
                     </a>
                     <a
                       href="/products/risk-rating"
                       className="block rounded-2xl px-4 py-3 text-sm/6 font-medium text-mist-950 transition hover:bg-mist-100"
                     >
-                      Risk Rating
+                      Analytics
                     </a>
                     <a
                       href="/products/memo-generator"
                       className="block rounded-2xl px-4 py-3 text-sm/6 font-medium text-mist-950 transition hover:bg-mist-100"
                     >
-                      Memo Generator
+                      Memo
                     </a>
                     <div className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-mist-500 underline decoration-mist-300 underline-offset-4">
                       Foundation
@@ -57,9 +57,9 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col gap-6 lg:hidden">
                 <div className="text-xs font-semibold uppercase tracking-[0.16em] text-mist-500">Decision modules</div>
-                <NavbarLink href="/products/financial-spreading">Financial Spreading</NavbarLink>
-                <NavbarLink href="/products/risk-rating">Risk Rating</NavbarLink>
-                <NavbarLink href="/products/memo-generator">Memo Generator</NavbarLink>
+                <NavbarLink href="/products/financial-spreading">Financial spreading</NavbarLink>
+                <NavbarLink href="/products/risk-rating">Analytics</NavbarLink>
+                <NavbarLink href="/products/memo-generator">Memo</NavbarLink>
                 <div className="text-xs font-semibold uppercase tracking-[0.16em] text-mist-500">Foundation</div>
                 <NavbarLink href="/products/decaltra-platform">DecAltra Platform</NavbarLink>
                 <NavbarLink href="/about">About us</NavbarLink>

@@ -16,9 +16,9 @@ export default function Footer() {
               <li className="pt-1 text-xs font-semibold uppercase tracking-[0.16em] text-mist-500 underline decoration-mist-300 underline-offset-4">
                 Decision modules
               </li>
-              <FooterLink href="/products/financial-spreading">Financial Spreading</FooterLink>
-              <FooterLink href="/products/risk-rating">Risk Rating</FooterLink>
-              <FooterLink href="/products/memo-generator">Memo Generator</FooterLink>
+              <FooterLink href="/products/financial-spreading">Financial spreading</FooterLink>
+              <FooterLink href="/products/risk-rating">Analytics</FooterLink>
+              <FooterLink href="/products/memo-generator">Memo</FooterLink>
               <li className="pt-4 text-xs font-semibold uppercase tracking-[0.16em] text-mist-500 underline decoration-mist-300 underline-offset-4">
                 Foundation
               </li>

@@ -9,7 +9,7 @@ import ProductModulePage from './ProductModulePage'
 export default function RiskRatingPage() {
   return (
     <ProductModulePage
-      eyebrow="DecAltra Risk Rating"
+      eyebrow="DecAltra Analytics"
       headline="Automated risk assessments with transparency through your models."
       subheadline={
         <p>
@@ -17,11 +17,11 @@ export default function RiskRatingPage() {
           the inputs, logic, and results.
         </p>
       }
-      benefitsEyebrow="Why Risk Rating"
+      benefitsEyebrow="Why Analytics"
       benefitsHeadline="Consistency, speed, and full visibility into model-driven decisions."
       benefitsSubheadline={
         <p>
-          Risk Rating helps institutions operationalize their frameworks with transparent automation rather than black-box outputs.
+          Analytics helps institutions operationalize their frameworks with transparent automation rather than black-box outputs.
         </p>
       }
       benefits={[
@@ -44,7 +44,7 @@ export default function RiskRatingPage() {
       workflowHeading="From data and judgement to a governed risk view."
       workflowDescription={
         <p>
-          Risk Rating brings your models, analyst inputs, and validation controls into one transparent rating workflow.
+          Analytics brings your models, analyst inputs, and validation controls into one transparent rating workflow.
         </p>
       }
       workflowSteps={[

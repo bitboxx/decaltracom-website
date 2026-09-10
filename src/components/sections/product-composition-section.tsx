@@ -105,24 +105,24 @@ export function ProductCompositionSection(props: ComponentProps<typeof Section>)
             <div className="grid gap-4 xl:grid-cols-3">
               <ModuleCard
                 icon={<ChartLineIcon className="size-4" />}
-                title="Financial Spreading"
+                title="Financial spreading"
                 description="Transform financial statements and raw financials into structured, validated and explainable analysis"
                 href={productsPagesEnabled ? '/products/financial-spreading' : undefined}
-                ctaLabel={productsPagesEnabled ? 'Explore Financial Spreading' : undefined}
+                ctaLabel={productsPagesEnabled ? 'Explore Financial spreading' : undefined}
               />
               <ModuleCard
                 icon={<ShieldExclamationIcon className="size-4" />}
-                title="Risk Rating"
+                title="Analytics"
                 description="Generate automated risk assessments with full transparency through your models, so you keep control over the inputs and results"
                 href={productsPagesEnabled ? '/products/risk-rating' : undefined}
-                ctaLabel={productsPagesEnabled ? 'Explore Risk Rating' : undefined}
+                ctaLabel={productsPagesEnabled ? 'Explore Analytics' : undefined}
               />
               <ModuleCard
                 icon={<DocumentIcon className="size-4" />}
-                title="Memo Generator"
+                title="Memo"
                 description="Assemble decision-ready memos with evidence, rationale, and a format your committees recognize"
                 href={productsPagesEnabled ? '/products/memo-generator' : undefined}
-                ctaLabel={productsPagesEnabled ? 'Explore Memo Generator' : undefined}
+                ctaLabel={productsPagesEnabled ? 'Explore Memo' : undefined}
               />
             </div>
           </div>

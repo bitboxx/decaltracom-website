@@ -9,7 +9,7 @@ import ProductModulePage from './ProductModulePage'
 export default function MemoGeneratorPage() {
   return (
     <ProductModulePage
-      eyebrow="DecAltra Memo Generator"
+      eyebrow="DecAltra Memo"
       headline="Generate decision-ready memos without rebuilding the process around the tool."
       subheadline={
         <p>
@@ -17,11 +17,11 @@ export default function MemoGeneratorPage() {
           narratives across every section.
         </p>
       }
-      benefitsEyebrow="Why Memo Generator"
+      benefitsEyebrow="Why Memo"
       benefitsHeadline="Produce better memos faster, with reviewability built in."
       benefitsSubheadline={
         <p>
-          Memo Generator turns fragmented analysis into a structured output your committees recognize, while preserving
+          Memo turns fragmented analysis into a structured output your committees recognize, while preserving
           status tracking, traceability, and team control.
         </p>
       }
@@ -45,7 +45,7 @@ export default function MemoGeneratorPage() {
       workflowHeading="From approved analysis to committee-ready output."
       workflowDescription={
         <p>
-          Memo Generator orchestrates the last mile of decision preparation by turning structured inputs into a polished
+          Memo orchestrates the last mile of decision preparation by turning structured inputs into a polished
           and reviewable memo package.
         </p>
       }

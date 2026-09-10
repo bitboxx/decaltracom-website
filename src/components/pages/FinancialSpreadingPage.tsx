@@ -78,7 +78,7 @@ export default function FinancialSpreadingPage() {
         <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
           <div className="max-w-2xl space-y-6">
             <div className="space-y-3">
-              <p className="text-sm/7 font-semibold text-mist-700">DecAltra Financial Spreading</p>
+              <p className="text-sm/7 font-semibold text-mist-700">DecAltra Financial spreading</p>
               <h1 className="font-display text-5xl/14 font-medium tracking-tight text-mist-950">
                 Financial spreading your team can trust at speed
               </h1>
@@ -194,7 +194,7 @@ export default function FinancialSpreadingPage() {
         headline="Less spreadsheet work. More decision-ready analysis."
         subheadline={
           <p>
-            Financial Spreading is built to shorten the distance between raw inputs and high-quality financial review.
+            Financial spreading is built to shorten the distance between raw inputs and high-quality financial review.
           </p>
         }
       >
@@ -277,7 +277,7 @@ export default function FinancialSpreadingPage() {
         eyebrow="Outputs your team can review"
         headline="Designed for review, not just generation"
         subheadline={
-          <p>Financial Spreading produces outputs that are structured, benchmarked, and easy to challenge or confirm.</p>
+          <p>Financial spreading produces outputs that are structured, benchmarked, and easy to challenge or confirm.</p>
         }
       >
         <div className="grid gap-4 lg:grid-cols-3">
