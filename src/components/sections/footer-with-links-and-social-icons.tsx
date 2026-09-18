@@ -23,6 +23,7 @@ export function SocialLink({
     <a
       href={href}
       target="_blank"
+      rel="noopener noreferrer"
       aria-label={name}
       className={clsx('text-mist-950 *:size-6 dark:text-white', className)}
       {...props}

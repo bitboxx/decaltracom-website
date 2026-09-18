@@ -1,0 +1,153 @@
+/* Match the Financial Spreading closing card without changing other page CTAs. */
+.closing {
+  color-scheme: light;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 45px;
+  width: min(1280px, calc(100% - 80px));
+  margin: 48px auto;
+  padding: 43px 48px;
+  border: 1px solid #dae1e1;
+  border-radius: 20px;
+  background: #fff;
+  color: #0b1011;
+  font: 15px/1.6 var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.copy {
+  flex: 1 1 max-content;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.heading {
+  margin: 0 0 12px;
+  color: #0b1011;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 450;
+  font-variation-settings: 'wdth' 112.5;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+
+.copy p {
+  max-width: none;
+  margin: 0;
+  color: #526066;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 23px;
+}
+
+.demo,
+.contact {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.6;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.demo {
+  justify-content: center;
+  gap: 20px;
+  padding: 12px 21px;
+  border: 1px solid #0b1011;
+  border-radius: 100px;
+  background: #0b1011;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.demo:hover {
+  background: #303a3c;
+  transform: translateY(-1px);
+}
+
+.contact {
+  gap: 14px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: #0b1011;
+  text-decoration: none;
+}
+
+.demo:focus-visible,
+.contact:focus-visible {
+  outline: 2px solid #477765;
+  outline-offset: 5px;
+}
+
+.arrow {
+  font-family: Arial, sans-serif;
+  font-size: 21px;
+  line-height: 1;
+}
+
+@media (max-width: 1100px) {
+  .closing {
+    width: calc(100% - 48px);
+    padding: 32px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+  }
+}
+
+@media (max-width: 800px) {
+  .heading {
+    font-size: 30px;
+  }
+
+  .copy p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 540px) {
+  .closing {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: calc(100% - 32px);
+    margin: 32px auto 30px;
+    padding: 28px 24px;
+  }
+
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .demo {
+    gap: 12px;
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo {
+    transition: none;
+  }
+}

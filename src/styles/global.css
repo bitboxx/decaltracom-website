@@ -79,6 +79,24 @@
 }
 
 @layer base {
+  /* Typography: Mona Sans for headings; Inter for text and interface controls. */
+  body {
+    @apply font-sans;
+  }
+
+  button, input, select, textarea {
+    @apply font-sans tracking-normal;
+  }
+
+  html :is(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--color-mist-950);
+    outline-offset: 3px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium tracking-tight;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

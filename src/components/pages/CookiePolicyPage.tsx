@@ -1,65 +1,75 @@
-import { DocumentCentered } from '@/components/sections/document-centered'
+import { DocumentCentered } from '@/components/sections/document-centered';
 
 export default function CookiePolicyPage() {
   return (
-    <DocumentCentered id="document" headline="Cookie Policy" subheadline={<p>Last updated on March 27, 2026.</p>}>
+    <DocumentCentered
+      id="document"
+      headline="Cookie Policy"
+      subheadline={<p>Last updated on September 18, 2026</p>}
+    >
       <p>
-        Our websites and direct emails use cookies to distinguish you from other users of our content. This helps us
-        provide you with a better browsing experience and improves our sites.
+        This website does not use tracking cookies. We do not run advertising
+        cookies, we do not profile visitors, and we do not share visitor data
+        with advertising networks. Because nothing on this site requires your
+        consent to be stored on your device, there is no consent banner to
+        accept or reject.
+      </p>
+      <h2>Visitor statistics</h2>
+      <p>
+        We measure how the site is used with Simple Analytics, a Dutch provider
+        that stores its data on servers inside the European Union. Simple
+        Analytics sets no cookies and stores no personal data. It records page
+        views, referrers, approximate country, and the type of device and
+        browser, all in aggregate. Nothing it collects can be traced back to an
+        individual visitor, and nothing follows you across other websites.
       </p>
       <p>
-        Non-essential cookies (including analytical, functionality and targeting cookies) are only placed after you
-        have provided your explicit consent via the cookie banner. You can manage or withdraw your consent at any time
-        via your cookie settings.
+        Simple Analytics acts as our processor for this data. Its privacy policy
+        and data processing terms are published at{' '}
+        <a href="https://www.simpleanalytics.com/privacy-policy">
+          simpleanalytics.com/privacy-policy
+        </a>
+        .
       </p>
-      <p>
-        A cookie is a small file of letters and numbers that we store on your browser or the hard drive of your computer
-        if you agree. Cookies contain information that is transferred to your computer's hard drive.
-      </p>
-      <p>
-        Cookie Expiration: All cookies are set to expire after one year from the first day of acceptance. We
-        periodically review our cookie expiration date, and any changes will be reflected in this privacy policy.
-      </p>
-      <h2>We use the following types of cookies:</h2>
+      <h2>What we do store on your device</h2>
       <ul>
         <li>
-          Strictly necessary cookies: These cookies are processed on the basis of our legitimate interest in ensuring
-          the proper functioning of the Website.
+          A single entry in your browser's local storage that records you have
+          seen the notice at the bottom of this site, so it is not shown again
+          on every page. It contains no personal data and is only written when
+          you dismiss the notice.
         </li>
         <li>
-          Analytical cookies: These cookies allow us to recognize and count the number of visitors and see how visitors
-          move around our website when they are using it. This helps us to improve the way our website works, for example,
-          by ensuring that users find what they are looking for easily.
-        </li>
-        <li>
-          Functionality cookies: These are used to recognize you when you return to our website. This enables us to
-          personalize our content for you, greet you by name, and remember your preferences (for example, your choice of
-          language or region).
-        </li>
-        <li>
-          Targeting cookies: These cookies record your visit to our website, the pages you have visited, and the links
-          you have followed. We will use this information to make our website and the advertising displayed on it more
-          relevant to your interests. We may also share this information with third parties for this purpose.
+          Strictly necessary storage set by our hosting provider to keep the
+          site available and to protect it against abuse. This is used only for
+          security and delivery, never for analysis or advertising.
         </li>
       </ul>
       <p>
-        Cookies will be placed on your device and used for the specific purposes described in our Cookie Disclosure. If
-        you would like more information about the individual cookies we use and the purposes for which we use them,
-        please contact us at <a href="mailto:info@decaltra.com" className="underline" style={{ fontVariant: 'small-caps' }}>
-          info@decaltra.com
-        </a>.
+        You can clear this storage at any time through your browser settings.
+        Blocking it has no effect on the site beyond the notice reappearing.
+      </p>
+      <h2>Third parties</h2>
+      <p>
+        Apart from the visitor statistics described above, this site makes no
+        requests to third-party servers. Fonts, images and every other asset are
+        served from decaltra.com itself, so no other company sees your IP
+        address because you opened a page here.
       </p>
       <p>
-        You can block cookies by activating the setting on your browser that allows you to refuse the setting of all or
-        some cookies. However, if you use your browser settings to block all cookies (including strictly necessary
-        cookies), you may not be able to access all or parts of our site.
+        When you send us a message through one of the forms on this site, your
+        details go to our own mail infrastructure and are used only to answer
+        you. That is covered in our <a href="/privacy-policy">privacy policy</a>
+        .
       </p>
+      <h2>Changes</h2>
       <p>
-        Please note that third parties, including advertising networks and providers of external services like web
-        traffic analysis services, may also use cookies over which we have no control. These cookies are likely to be
-        analytical cookies or targeting cookies.
+        If we ever add a tool that does write cookies to your device, we will
+        place a consent banner before it loads and update this page first.
+        Questions about anything on this page can be addressed to{' '}
+        <a href="mailto:info@DecAltra.com">info@DecAltra.com</a>.
       </p>
       <p>© 2026 DecAltra. All Rights reserved.</p>
     </DocumentCentered>
-  )
+  );
 }

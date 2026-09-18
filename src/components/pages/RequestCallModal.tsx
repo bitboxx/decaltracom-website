@@ -21,7 +21,7 @@ const initialState: FormState = {
   phoneCountryCode: '+31',
   phoneNumber: '',
   message: '',
-  timing: 'Today',
+  timing: 'No preference',
 }
 
 export default function RequestCallModal() {
@@ -194,6 +194,7 @@ export default function RequestCallModal() {
                       onChange={(event) => updateField('timing', event.target.value)}
                       className="rounded-2xl border border-mist-200 bg-white px-4 py-3 text-sm/6 text-mist-950 outline-none transition focus:border-mist-400"
                     >
+                      <option>No preference</option>
                       <option>Today</option>
                       <option>Tomorrow</option>
                       <option>This week</option>

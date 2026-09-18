@@ -6,6 +6,7 @@ export function HeroAboutWithPhoto({
   headline,
   subheadline,
   photo,
+  photoClassName,
   className,
   ...props
 }: {
@@ -13,6 +14,7 @@ export function HeroAboutWithPhoto({
   headline: ReactNode
   subheadline?: ReactNode
   photo: ReactNode
+  photoClassName?: string
 } & ComponentProps<'section'>) {
   return (
     <section className={clsx('my-8', className)} {...props}>
@@ -29,7 +31,7 @@ export function HeroAboutWithPhoto({
           ) : null}
         </div>
       </div>
-      <div className="mt-10 w-full *:size-full *:object-cover">
+      <div className={clsx('mt-10 w-full *:size-full *:object-cover', photoClassName)}>
         {photo}
       </div>
     </section>

@@ -1,15 +1,17 @@
-import { type ReactNode, useRef, useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 
+import { Container } from '@/components/elements/container';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Container } from "@/components/elements/container";
-import { cn } from "@/lib/utils";
+} from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { cn } from '@/lib/utils';
+
+import styles from './feature106.module.css';
 
 export type Feature106Item = {
   id: number;
@@ -19,114 +21,203 @@ export type Feature106Item = {
 };
 
 interface Feature106Props {
+  id?: string;
   className?: string;
   features: Feature106Item[];
 }
 
-const Feature106 = ({ className, features }: Feature106Props) => {
-  const [mobileValue, setMobileValue] = useState("1");
-  const contentRefs = useRef<Array<HTMLDivElement | null>>([]);
+type StorySurface = 'desktop' | 'mobile';
 
-  function handleMobileValueChange(value: string) {
-    setMobileValue(value);
+const Feature106 = ({ id, className, features }: Feature106Props) => {
+  const initialValue = features[0]?.id.toString() ?? '';
+  const [desktopValue, setDesktopValue] = useState(initialValue);
+  const [mobileValue, setMobileValue] = useState(initialValue);
+  const desktopRef = useRef<HTMLDivElement>(null);
+  const mobileRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const scrollFrame = useRef(0);
 
-    if (!value) {
-      return;
-    }
+  useEffect(() => () => window.cancelAnimationFrame(scrollFrame.current), []);
 
-    window.setTimeout(() => {
-      const index = features.findIndex((feature) => feature.id.toString() === value);
-      const element = contentRefs.current[index];
+  function selectFeature(
+    value: string,
+    surface: StorySurface,
+    focusHeading = false
+  ) {
+    if (surface === 'mobile') setMobileValue(value);
+    else setDesktopValue(value);
 
-      element?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 200);
+    window.cancelAnimationFrame(scrollFrame.current);
+    if (!value) return;
+
+    // Wait for the selected content to render before measuring or moving focus.
+    scrollFrame.current = window.requestAnimationFrame(() => {
+      const index = features.findIndex(
+        feature => feature.id.toString() === value
+      );
+      const anchor =
+        surface === 'desktop' ? desktopRef.current : mobileRefs.current[index];
+      const heading = anchor?.querySelector<HTMLHeadingElement>(
+        surface === 'desktop'
+          ? '[role="tabpanel"][data-state="active"] h2'
+          : '[data-story-heading]'
+      );
+      if (!anchor || !heading) return;
+
+      if (focusHeading) heading.focus({ preventScroll: true });
+      const headerSpace =
+        Number.parseFloat(
+          window.getComputedStyle(document.documentElement).scrollPaddingTop
+        ) || 0;
+      const headingBounds = heading.getBoundingClientRect();
+      if (
+        headingBounds.top < headerSpace + 16 ||
+        headingBounds.bottom > window.innerHeight - 24
+      ) {
+        anchor.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)')
+            .matches
+            ? 'instant'
+            : 'smooth',
+          block: 'start',
+        });
+      }
+    });
+  }
+
+  function renderPanel(
+    feature: Feature106Item,
+    index: number,
+    surface: StorySurface
+  ) {
+    const previous = features[index - 1];
+    const next = features[index + 1];
+
+    return (
+      <>
+        <div className={styles.copy}>
+          <h2 className={styles.heading} tabIndex={-1} data-story-heading>
+            {feature.excerpt}
+          </h2>
+          {feature.content}
+        </div>
+        <nav className={styles.footer} aria-label="About story navigation">
+          {previous ? (
+            <button
+              type="button"
+              className={cn(styles.storyLink, styles.previous)}
+              onClick={() =>
+                selectFeature(previous.id.toString(), surface, true)
+              }
+            >
+              <ArrowLeft aria-hidden="true" /> Previous
+            </button>
+          ) : (
+            <span className={styles.previous} />
+          )}
+          <span
+            className={styles.progress}
+            aria-label={'Section ' + (index + 1) + ' of ' + features.length}
+          >
+            {String(index + 1).padStart(2, '0')} /{' '}
+            {String(features.length).padStart(2, '0')}
+          </span>
+          {next ? (
+            <button
+              type="button"
+              className={cn(styles.storyLink, styles.next)}
+              onClick={() => selectFeature(next.id.toString(), surface, true)}
+            >
+              <span>Next: {next.header}</span>
+              <ArrowRight aria-hidden="true" />
+            </button>
+          ) : (
+            <a
+              href="/credit-decisioning"
+              className={cn(styles.storyLink, styles.next)}
+            >
+              <span>Explore Credit Decisioning</span>
+              <ArrowRight aria-hidden="true" />
+            </a>
+          )}
+        </nav>
+      </>
+    );
   }
 
   return (
-    <section className={cn("my-24", className)}>
+    <section id={id} className={cn('my-24', className)} aria-label="The DecAltra story">
       <Container>
         <Accordion
           type="single"
           collapsible
           value={mobileValue}
-          onValueChange={handleMobileValueChange}
-          className="overflow-hidden rounded-2xl border border-mist-200 shadow-sm lg:hidden"
+          onValueChange={value => selectFeature(value, 'mobile')}
+          className={styles.mobile}
         >
           {features.map((feature, index) => (
             <AccordionItem
               key={feature.id}
               value={feature.id.toString()}
-              className={cn(
-                "relative border-0 overflow-hidden",
-                index !== features.length - 1 && "border-b border-white/10",
-              )}
+              className={styles.mobileItem}
+              ref={element => {
+                mobileRefs.current[index] = element;
+              }}
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.28),transparent_40%),linear-gradient(135deg,rgba(18,27,33,1),rgba(57,81,89,0.96)_52%,rgba(134,162,173,0.88))]" />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(9,15,19,0.38))]" />
-              <AccordionTrigger className="relative items-start px-6 py-4 text-left hover:no-underline [&>svg]:text-white/50">
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-white/70">
-                    {feature.header}
+              <AccordionTrigger
+                className={styles.mobileTrigger}
+                aria-label={`${String(index + 1).padStart(2, '0')}. ${feature.header}`}
+              >
+                <span className={styles.navigationLabel}>
+                  <span className={styles.number}>
+                    {String(index + 1).padStart(2, '0')}
                   </span>
-                  <p className="font-display text-xl/7 font-medium text-white">
-                    {feature.excerpt}
-                  </p>
-                </div>
+                  {feature.header}
+                </span>
               </AccordionTrigger>
-              <AccordionContent className="relative !h-auto px-6 pb-6 [&>div]:!h-auto">
-                <div
-                  ref={(element) => {
-                    contentRefs.current[index] = element;
-                  }}
-                  className="scroll-mt-28 flex flex-col gap-5 rounded-2xl border border-mist-200 bg-white p-6 text-base/7 text-mist-700"
-                >
-                  {feature.content}
-                </div>
+              <AccordionContent className={styles.mobileContent}>
+                {renderPanel(feature, index, 'mobile')}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
         <Tabs
-          defaultValue="1"
-          className="hidden grid-cols-[minmax(0,2fr)_minmax(0,3fr)] overflow-hidden rounded-2xl border border-mist-200 shadow-sm lg:grid"
+          value={desktopValue}
+          onValueChange={value => selectFeature(value, 'desktop')}
+          orientation="vertical"
+          className={styles.desktop}
+          ref={desktopRef}
         >
           <TabsList
-            variant="line"
-            className="relative !h-auto !w-full flex-col !gap-0 !rounded-none !border-r-0 !p-0 overflow-hidden !bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.28),transparent_40%),linear-gradient(135deg,rgba(18,27,33,1),rgba(57,81,89,0.96)_52%,rgba(134,162,173,0.88))]"
+            className={styles.navigation}
+            aria-label="About DecAltra sections"
           >
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(9,15,19,0.38))]" />
             {features.map((feature, index) => (
               <TabsTrigger
                 key={feature.id}
                 value={feature.id.toString()}
-                className={cn(
-                  "group relative !h-auto !w-full !flex-col !items-start !justify-start gap-2.5 !rounded-none !border-0 !bg-transparent !px-6 !py-6 !whitespace-normal !text-white !shadow-none !ring-0 transition-all duration-300 after:!hidden data-[state=active]:!bg-white/10 data-[state=active]:!shadow-none data-[state=active]:!ring-0",
-                  index !== features.length - 1 &&
-                  "!border-b-[1px] !border-b-white/10",
-                )}
+                className={styles.navigationItem}
+                aria-label={`${String(index + 1).padStart(2, '0')}. ${feature.header}`}
               >
-                <span className="absolute top-0 bottom-0 left-0 h-full w-[3px] rounded-r-full bg-white/85 transition-opacity duration-300 group-data-[state=inactive]:opacity-0"></span>
-                <div className="relative flex w-full items-center justify-between gap-2">
-                  <div className="flex min-w-0 flex-col items-start gap-2.5">
-                    <span className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-white/70">
-                      {feature.header}
-                    </span>
-                    <p className="w-full text-left font-display text-xl/7 font-medium text-white">
-                      {feature.excerpt}
-                    </p>
-                  </div>
-                  <ChevronRight className="my-auto h-auto w-4 shrink-0 text-white/50" />
-                </div>
+                <span className={styles.navigationLabel}>
+                  <span className={styles.number}>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  {feature.header}
+                </span>
+                <ChevronRight aria-hidden="true" className={styles.chevron} />
               </TabsTrigger>
             ))}
           </TabsList>
-          {features.map((feature) => (
+          {features.map((feature, index) => (
             <TabsContent
-              value={feature.id.toString()}
               key={feature.id}
-              className="flex flex-col gap-5 bg-white p-6 text-base/7 text-mist-700 sm:p-8 data-[state=inactive]:hidden"
+              value={feature.id.toString()}
+              forceMount
+              inert={desktopValue !== feature.id.toString()}
+              aria-hidden={desktopValue !== feature.id.toString()}
+              className={styles.panel}
             >
-              {feature.content}
+              {renderPanel(feature, index, 'desktop')}
             </TabsContent>
           ))}
         </Tabs>

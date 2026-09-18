@@ -1,0 +1,254 @@
+.section {
+  background: #f1f3f3;
+  padding: clamp(40px, 5vw, 72px) 0 48px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+  align-items: start;
+  gap: clamp(40px, 6vw, 96px);
+}
+.intro {
+  min-width: 0;
+}
+.eyebrow {
+  margin: 0 0 18px;
+  color: #55675e;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.intro h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4.5vw, 60px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+.description {
+  margin-top: 26px;
+  max-width: 450px;
+  color: #5c686d;
+  font-size: 20px;
+  line-height: 1.6;
+}
+.email {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 42px;
+}
+.email > span {
+  font-size: 14px;
+  color: #69757a;
+}
+.email a {
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 550;
+  color: #171b1d;
+}
+.email a span {
+  margin-left: 12px;
+  color: #527560;
+}
+.email a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.next {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 38px;
+  max-width: 385px;
+  color: #66756d;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 9px;
+  border-radius: 50%;
+  background: #5d816d;
+}
+.card {
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid #dce3df;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 12px 35px #21372c06;
+}
+.card h2 {
+  margin: 0;
+  font: 500 26px/1.25 var(--font-display);
+  letter-spacing: -0.035em;
+}
+.formIntro {
+  color: #69757a;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 10px 0 26px;
+}
+.form fieldset {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 550;
+  color: #27352e;
+}
+.form input:not([type='checkbox']),
+.form textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d4ddd7;
+  border-radius: 8px;
+  background: #fff;
+  padding: 11px 12px;
+  color: #17241e;
+  font: 400 16px/1.5 var(--font-sans);
+}
+.form textarea {
+  resize: vertical;
+  min-height: 112px;
+}
+.form textarea::placeholder,
+.form input::placeholder {
+  color: #7b8780;
+  font-size: 14px;
+}
+.form input:focus-visible,
+.form textarea:focus-visible,
+.section a:focus-visible,
+.submit:focus-visible {
+  outline: 2px solid #527560;
+  outline-offset: 3px;
+}
+.form .callPreference {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+  cursor: pointer;
+}
+.callPreference input {
+  width: 17px;
+  height: 17px;
+  accent-color: #42664f;
+}
+.callDetails {
+  padding: 16px;
+  border-radius: 8px;
+  background: #f3f6f4;
+}
+.callDetails label {
+  display: block;
+}
+.callDetails input {
+  margin-top: 8px;
+}
+.optional {
+  color: #69776e;
+  font-weight: 400;
+}
+.callDetails p {
+  margin-top: 8px;
+  color: #66756d;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.privacy {
+  color: #718078;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 20px 0;
+}
+.privacy a,
+.error a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.submit {
+  padding: 11px 23px;
+  cursor: pointer;
+}
+.submit:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.success {
+  padding: 22px;
+  margin-top: 24px;
+  border: 1px solid #d5e3d9;
+  border-radius: 10px;
+  background: #f0f6f2;
+  color: #365640;
+}
+.success h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.success p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.error {
+  color: #9b3131;
+  background: #fff3f3;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .description {
+    max-width: 600px;
+  }
+  .email {
+    margin-top: 24px;
+  }
+  .next {
+    max-width: 500px;
+    margin-top: 22px;
+  }
+}
+@media (max-width: 540px) {
+  .card {
+    padding: 23px 20px;
+  }
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 19px;
+  }
+  .description {
+    font-size: 18px;
+  }
+  .submit {
+    width: 100%;
+  }
+}

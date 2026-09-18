@@ -9,29 +9,28 @@ export default function ContactSectionNav() {
   const [activeSection, setActiveSection] = useState<(typeof sections)[number]['id']>('contact')
 
   useEffect(() => {
-    const elements = sections
-      .map((section) => document.getElementById(section.id))
-      .filter((element): element is HTMLElement => element instanceof HTMLElement)
+    const updateActiveSection = () => {
+      const marker = window.innerHeight * 0.35
+      const closestSection = sections
+        .map((section) => ({
+          id: section.id,
+          distance: Math.abs(
+            (document.getElementById(section.id)?.getBoundingClientRect().top ?? Infinity) - marker,
+          ),
+        }))
+        .sort((sectionA, sectionB) => sectionA.distance - sectionB.distance)[0]
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((entryA, entryB) => entryA.boundingClientRect.top - entryB.boundingClientRect.top)
+      if (closestSection) setActiveSection(closestSection.id)
+    }
 
-        if (visibleEntries.length > 0) {
-          setActiveSection(visibleEntries[0].target.id as (typeof sections)[number]['id'])
-        }
-      },
-      {
-        rootMargin: '-25% 0px -55% 0px',
-        threshold: [0.1, 0.3, 0.6],
-      },
-    )
+    updateActiveSection()
+    window.addEventListener('scroll', updateActiveSection, { passive: true })
+    window.addEventListener('resize', updateActiveSection)
 
-    for (const element of elements) observer.observe(element)
-
-    return () => observer.disconnect()
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection)
+      window.removeEventListener('resize', updateActiveSection)
+    }
   }, [])
 
   return (
@@ -47,6 +46,15 @@ export default function ContactSectionNav() {
               aria-label={section.label}
               title={section.label}
               className="group flex items-center"
+              onClick={(event) => {
+                event.preventDefault()
+                setActiveSection(section.id)
+                document.getElementById(section.id)?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                })
+                window.history.replaceState(null, '', `#${section.id}`)
+              }}
             >
               <span
                 className={`block rounded-full border transition ${

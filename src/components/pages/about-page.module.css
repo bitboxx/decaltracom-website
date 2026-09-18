@@ -1,0 +1,366 @@
+/* About-only styling leaves the shared sections and module pages unchanged. */
+.page {
+  color-scheme: light;
+}
+
+.page .hero {
+  margin: 32px 0 0;
+  scroll-margin-top: 16px;
+}
+
+.hero .heroPhoto {
+  height: 320px;
+  margin-top: 32px;
+}
+
+.page .section {
+  margin: 72px 0;
+  scroll-margin-top: 16px;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 40px;
+}
+
+.benefit {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  column-gap: 16px;
+  row-gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-mist-300);
+}
+
+.benefitIcon {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #d6dfda;
+  border-radius: 12px;
+  background: #e8efeb;
+  color: #496453;
+}
+
+.benefitIcon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.benefit h3 {
+  grid-column: 2;
+  margin: 0;
+  color: var(--color-mist-950);
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+.benefit p {
+  grid-column: 2;
+  margin: 0;
+  color: var(--color-mist-700);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.teamSection h2 {
+  text-wrap: balance;
+}
+
+.teamCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--color-mist-200);
+  border-radius: 20px;
+  background: white;
+}
+
+.teamIdentity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.teamIdentity > div:first-child {
+  min-width: 0;
+}
+
+.teamPortrait {
+  flex: none;
+  overflow: hidden;
+  width: 104px;
+  height: 104px;
+  border: 1px solid #d6dfda;
+  border-radius: 50%;
+  background: #e8efeb;
+}
+
+/* Frame the two supplied portraits without modifying the source image. */
+.teamPortrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.teamBio {
+  margin: 24px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-mist-200);
+  color: var(--color-mist-700);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.teamName {
+  margin: 0;
+  color: var(--color-mist-950);
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.teamRole {
+  margin: 6px 0 0;
+  color: #496453;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.teamExpertise {
+  color: var(--color-mist-700);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.teamExperience {
+  margin-top: 16px;
+  color: var(--color-mist-950);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.teamBackground {
+  margin-top: 12px;
+  color: var(--color-mist-600);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 12px;
+  min-height: 44px;
+  margin-top: auto;
+  padding-top: 24px;
+  color: #355b45;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.profileLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.profileLink:focus-visible {
+  outline: 2px solid #477765;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+.page .closingSection {
+  margin-bottom: 56px;
+}
+
+.closing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px 48px;
+  padding: 40px;
+  border: 1px solid #dae1e1;
+  border-radius: 20px;
+  background: white;
+}
+
+.closingCopy {
+  flex: 1;
+  min-width: 0;
+}
+
+.closingCopy h2 {
+  margin: 0 0 12px;
+  color: #0b1011;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 450;
+  font-variation-settings: 'wdth' 112.5;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+
+.closingCopy p {
+  max-width: none;
+  margin: 0;
+  color: #526066;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.closingActions {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.closing .demo,
+.contact {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.closing .demo {
+  padding: 12px 21px;
+  border: 1px solid #0b1011;
+  border-radius: 100px;
+  background: #0b1011;
+  color: white;
+  cursor: pointer;
+  transition: background 160ms;
+}
+
+.closing .demo:hover {
+  background: #303a3c;
+}
+
+.contact {
+  min-height: 44px;
+  gap: 12px;
+  color: #0b1011;
+  text-decoration: none;
+}
+
+.contact span {
+  font-family: Arial, sans-serif;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.contact:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.closing .demo:focus-visible,
+.contact:focus-visible {
+  outline: 2px solid #477765;
+  outline-offset: 5px;
+}
+
+@media (max-width: 1023px) {
+  .hero .heroPhoto {
+    height: 280px;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+
+  .teamIdentity {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .closing {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+  }
+}
+
+@media (max-width: 639px) {
+  .page .section {
+    margin: 56px 0;
+  }
+
+  .hero .heroPhoto {
+    height: 240px;
+  }
+
+  .benefits,
+  .teamGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .teamCard {
+    padding: 24px;
+  }
+
+  .teamPortrait {
+    width: 88px;
+    height: 88px;
+  }
+
+  .page .closingSection {
+    margin-bottom: 40px;
+  }
+
+  .closing {
+    gap: 24px;
+    padding: 28px 24px;
+  }
+
+  .closingCopy h2 {
+    font-size: 30px;
+  }
+
+  .closingActions {
+    gap: 12px 20px;
+  }
+
+  .closing .demo {
+    padding: 12px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .closing .demo {
+    transition: none;
+  }
+}

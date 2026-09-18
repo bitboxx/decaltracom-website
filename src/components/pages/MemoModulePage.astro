@@ -1,0 +1,2409 @@
+---
+import MemoWorkspace from '../illustrations/MemoWorkspace.astro';
+---
+
+<div id="memo-module-page" class="memo-module-page wrap" data-memo-page="">
+  <section class="hero" aria-labelledby="memo-page-title">
+    <div class="hero-header">
+      <span class="eyebrow">Credit Decisioning</span>
+      <h1 id="memo-page-title">Memo</h1>
+      <p class="hero-subtitle">
+        Assemble preceding analyses and additional evidence into decision-ready
+        credit memos
+      </p>
+    </div>
+    <figure data-screenshot-slot="01">
+      <div class="hero-stage memo-hero">
+        <div class="hero-story">
+          <span class="eyebrow">Make the case with confidence</span>
+          <h2>From analysis<br />to a clear decision</h2>
+          <p>
+            Bring your analysis together in an AI-assisted memo your team can
+            review and refine
+          </p>
+          <a class="text-link" href="#memo-workflow"
+            >See how it works <span class="arrow" aria-hidden="true">↗</span></a
+          >
+          <div class="quiet-line">
+            <span class="check-circle" aria-hidden="true">✓</span> AI-assisted drafting
+            · Analyst review
+          </div>
+        </div>
+        <MemoWorkspace />
+      </div>
+      <figcaption class="figure-caption">
+        Illustrative views · Not actual screenshot · Fictional data
+      </figcaption>
+      <!-- Screenshot 01 · Memo workspace. Show a real memo in your template with the executive summary, key financials, source references and draft / review status. Replace the interface on the right while retaining the headline on the left. -->
+    </figure>
+    <div class="outcomes" aria-label="Key benefits">
+      <div class="outcome">
+        <div class="outcome-top">
+          <span class="index">01</span><h3>Less drafting from scratch</h3>
+        </div><p>
+          Bring financials and credit analysis into the memo without rebuilding
+          the story by hand
+        </p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-top">
+          <span class="index">02</span><h3>A familiar format</h3>
+        </div><p>
+          Use your own memo structures so every draft meets your standard
+        </p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-top">
+          <span class="index">03</span><h3>Citations that aid review</h3>
+        </div><p>
+          AI cites the information used so your analysts can check the evidence
+          behind the draft
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="memo-workflow"
+    class="workflow"
+    aria-labelledby="memo-workflow-title"
+  >
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">From analysis to decision-ready</span><h2
+          id="memo-workflow-title"
+        >
+          Build the memo<br />Keep the reasoning in view
+        </h2>
+      </div><span class="pill">Your team owns the final view</span>
+    </div>
+    <div class="workflow-grid">
+      <div
+        class="step-list"
+        role="tablist"
+        aria-label="Explore the Memo workflow"
+        aria-orientation="vertical"
+      >
+        <button
+          class="step-tab"
+          id="memo-assemble-tab"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="memo-assemble-panel"
+          tabindex="0"
+          ><span class="step-title"
+            ><span class="step-number">01</span><span class="step-label"
+              >Bring the analysis together</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >Bring reviewed financials and credit scores together with
+            supporting evidence in your own memo structure</span
+          ></button
+        >
+        <button
+          class="step-tab"
+          id="memo-draft-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="memo-draft-panel"
+          tabindex="-1"
+          ><span class="step-title"
+            ><span class="step-number">02</span><span class="step-label"
+              >Generate the first draft</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >Let AI draft each section and cite the information used so your
+            analysts can trace the narrative back to its sources</span
+          ></button
+        >
+        <button
+          class="step-tab"
+          id="memo-review-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="memo-review-panel"
+          tabindex="-1"
+          ><span class="step-title"
+            ><span class="step-number">03</span><span class="step-label"
+              >Review and refine</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >Check the evidence and sharpen the recommendation with clear
+            responsibilities across the review process</span
+          ></button
+        >
+      </div>
+      <div class="workflow-panels">
+        <div
+          id="memo-assemble-panel"
+          data-screenshot-slot="02"
+          role="tabpanel"
+          aria-labelledby="memo-assemble-tab"
+        >
+          <div class="detail-window">
+            <div class="detail-top">
+              <strong>Your analysis in your structure</strong><small
+                >Assemble the inputs</small
+              >
+            </div>
+            <div class="detail-body">
+              <div class="source-to-memo">
+                <div class="input-stack">
+                  <div class="input-source">
+                    <div class="input-source-top">
+                      <strong>Financial spreading</strong><span
+                        aria-hidden="true">✓</span
+                      >
+                    </div><p>
+                      Reviewed financials and credit-adjusted metrics
+                    </p><div class="input-value">
+                      Adjusted EBITDA <strong>€13.6m</strong>
+                    </div>
+                  </div>
+                  <div class="input-source">
+                    <div class="input-source-top">
+                      <strong>Analytics</strong><span aria-hidden="true">✓</span
+                      >
+                    </div><p>Quantitative and qualitative credit scores</p><div
+                      class="input-value"
+                    >
+                      Internal model result <strong>BBB−</strong>
+                    </div>
+                  </div>
+                  <div class="input-source">
+                    <div class="input-source-top">
+                      <strong>Supporting evidence</strong><span
+                        aria-hidden="true">✓</span
+                      >
+                    </div><p>
+                      Company documents and professional judgement
+                    </p><div class="input-value">
+                      Annual report · Management discussion
+                    </div>
+                  </div>
+                </div>
+                <div class="transfer" aria-hidden="true">→</div>
+                <div class="template-paper">
+                  <span class="eyebrow">Your memo template</span><h3>
+                    Corporate lending
+                  </h3><p>Annual review · Institution-specific structure</p>
+                  <ol class="template-outline">
+                    <li><span>01</span> Executive summary</li><li>
+                      <span>02</span> Financial analysis
+                    </li><li><span>03</span> Risk assessment</li><li>
+                      <span>04</span> Recommendation
+                    </li><li><span>05</span> Supporting evidence</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <div class="detail-foot">
+              <span class="check-circle" aria-hidden="true">✓</span> Start with the
+              analysis you have already built
+            </div>
+          </div>
+          <p class="panel-caption">
+            Illustrative views · Not actual screenshot · Fictional data
+          </p>
+          <!-- Screenshot 02 · Memo inputs and template. Show how Financial spreading, Analytics and supporting documents feed into your custom memo sections. Include the selected template or section outline. -->
+        </div>
+        <div
+          id="memo-draft-panel"
+          data-screenshot-slot="03"
+          role="tabpanel"
+          aria-labelledby="memo-draft-tab"
+          hidden
+        >
+          <div class="detail-window">
+            <div class="detail-top">
+              <strong>An AI-generated draft with citations</strong><small
+                >Built to support review</small
+              >
+            </div>
+            <div class="draft-body">
+              <div class="draft-layout">
+                <div class="draft-document">
+                  <div class="draft-label">Northstar Manufacturing · Draft</div>
+                  <h3>02 Financial analysis</h3>
+                  <p>
+                    Revenue increased to €63.7m in FY 2024 while reported EBITDA
+                    reached €12.4m <button
+                      class="citation"
+                      type="button"
+                      data-source-target="memo-financial-source"
+                      aria-controls="memo-financial-source"
+                      aria-pressed="true"
+                      aria-label="Show financial spreading source">1</button
+                    >
+                  </p>
+                  <p>
+                    Credit-adjusted EBITDA of €13.6m results in net debt /
+                    EBITDA of 2.50× <button
+                      class="citation"
+                      type="button"
+                      data-source-target="memo-financial-source"
+                      aria-controls="memo-financial-source"
+                      aria-pressed="true"
+                      aria-label="Show credit-adjusted metrics source">1</button
+                    >
+                  </p>
+                  <p>
+                    The internal model result is BBB− based on a combined score
+                    of 68 / 100 <button
+                      class="citation"
+                      type="button"
+                      data-source-target="memo-analytics-source"
+                      aria-controls="memo-analytics-source"
+                      aria-pressed="false"
+                      aria-label="Show Analytics source">2</button
+                    >
+                  </p>
+                  <div class="draft-tag">
+                    <span class="tiny-dot"></span> AI-generated content · Awaiting
+                    analyst review
+                  </div>
+                </div>
+                <aside
+                  class="source-pane"
+                  aria-label="Evidence supporting the draft"
+                >
+                  <div class="source-kicker">
+                    <span class="tiny-dot"></span> Cited information
+                  </div>
+                  <div aria-live="polite" aria-atomic="true">
+                    <div id="memo-financial-source" data-source-panel>
+                      <h3>Financial spreading</h3><p class="source-meta">
+                        Northstar Manufacturing<br />FY 2024 · Reviewed
+                        financials
+                      </p>
+                      <div class="source-values">
+                        <div class="source-value">
+                          <span>Credit-adjusted EBITDA</span><strong
+                            >€13.6m</strong
+                          >
+                        </div><div class="source-value">
+                          <span>Net debt / EBITDA</span><strong>2.50×</strong>
+                        </div>
+                      </div>
+                      <div class="source-status">
+                        Net debt €34.0m / Adjusted EBITDA €13.6m
+                      </div>
+                    </div>
+                    <div id="memo-analytics-source" data-source-panel hidden>
+                      <h3>Analytics</h3><p class="source-meta">
+                        Corporate credit model<br />v2.1 · Internal scoring
+                        scale
+                      </p>
+                      <div class="source-values">
+                        <div class="source-value">
+                          <span>Internal model result</span><strong>BBB−</strong
+                          >
+                        </div><div class="source-value">
+                          <span>Combined score</span><strong>68 / 100</strong>
+                        </div>
+                      </div>
+                      <div class="source-status">
+                        Quantitative factors and qualitative assessments
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+              <div class="draft-review-note">
+                <span class="check-circle" aria-hidden="true">✓</span><div>
+                  <strong>Review with the source in view</strong><p>
+                    Follow the AI’s citations to check the information used and
+                    refine the narrative before finalising the memo
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="detail-foot">
+              <span class="check-circle" aria-hidden="true">✓</span> Select a citation
+              to see the information used by the AI
+            </div>
+          </div>
+          <p class="panel-caption">
+            Illustrative views · Not actual screenshot · Fictional data
+          </p>
+          <!-- Screenshot 03 · AI-generated draft with citations. Show a selected AI citation opening the information used to draft the section. Keep the cited source, draft status and analyst review controls visible so the review benefit is clear. -->
+        </div>
+        <div
+          id="memo-review-panel"
+          data-screenshot-slot="04"
+          role="tabpanel"
+          aria-labelledby="memo-review-tab"
+          hidden
+        >
+          <div class="detail-window">
+            <div class="detail-top">
+              <strong>Your team shapes the final view</strong><small
+                >Review and collaboration</small
+              >
+            </div>
+            <div class="detail-body">
+              <div class="model-meta">
+                <div>
+                  <strong>Northstar Manufacturing</strong><p>
+                    Credit memo · v1.2
+                  </p>
+                </div><span class="pill">2 of 4 sections reviewed</span>
+              </div>
+              <table class="review-table">
+                <caption hidden
+                  >Illustrative review status for four sections of the memo</caption
+                ><thead
+                  ><tr
+                    ><th scope="col">Section</th><th scope="col">Reviewer</th
+                    ><th scope="col">Status</th></tr
+                  ></thead
+                ><tbody>
+                  <tr
+                    ><td>Executive summary</td><td>Credit analyst</td><td
+                      ><span class="status-tag">Reviewed</span></td
+                    ></tr
+                  >
+                  <tr
+                    ><td>Financial analysis</td><td>Credit analyst</td><td
+                      ><span class="status-tag">Reviewed</span></td
+                    ></tr
+                  >
+                  <tr
+                    ><td>Risk assessment</td><td>Risk reviewer</td><td
+                      ><span class="status-tag pending">In review</span></td
+                    ></tr
+                  >
+                  <tr
+                    ><td>Recommendation</td><td>Credit analyst</td><td
+                      ><span class="status-tag draft">Draft</span></td
+                    ></tr
+                  >
+                </tbody>
+              </table>
+              <div class="review-comment">
+                <span class="avatar" aria-hidden="true">RR</span><div>
+                  <strong>Risk reviewer <small>Risk assessment</small></strong
+                  ><p>
+                    Explain how customer concentration has been reflected in the
+                    recommendation
+                  </p>
+                </div>
+              </div>
+              <div class="draft-review-note">
+                <span class="check-circle" aria-hidden="true">✓</span><div>
+                  <strong>Decision-ready follows review</strong><p>
+                    Your team reviews the draft and resolves open points before
+                    finalising the memo
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="detail-foot">
+              <span class="check-circle" aria-hidden="true">✓</span> Keep responsibilities
+              and review progress visible
+            </div>
+          </div>
+          <p class="panel-caption">
+            Illustrative views · Not actual screenshot · Fictional data
+          </p>
+          <!-- Screenshot 04 · Analyst review and collaboration. Show section owners or reviewers, review status and an open comment. Make it clear how the team moves from a draft to a decision-ready memo. -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="governance" aria-labelledby="memo-governance-title">
+    <div>
+      <span class="eyebrow">Built around your process</span><h2
+        id="memo-governance-title"
+      >
+        Your memo<br />Your standard
+      </h2><p>
+        Use AI to accelerate the drafting while keeping your format and your
+        team’s judgement at the centre
+      </p>
+    </div>
+    <div class="governance-list">
+      <div class="governance-item">
+        <span class="check-circle" aria-hidden="true">✓</span><div>
+          <h3>Templates that fit</h3><p>
+            Build memos around your structure and the way your institution makes
+            decisions
+          </p>
+        </div>
+      </div>
+      <div class="governance-item">
+        <span class="check-circle" aria-hidden="true">✓</span><div>
+          <h3>A draft your team can own</h3><p>
+            Review and refine AI-generated narratives before finalising the
+            recommendation
+          </p>
+        </div>
+      </div>
+      <div class="governance-item">
+        <span class="check-circle" aria-hidden="true">✓</span><div>
+          <h3>Clear review responsibilities</h3><p>
+            Keep contributors and reviewers aligned as the memo moves towards
+            completion
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="memo-connected"
+    class="connected"
+    aria-labelledby="memo-connected-title"
+  >
+    <div class="connected-copy">
+      <span class="eyebrow">Part of the bigger decision</span><h2
+        id="memo-connected-title"
+      >
+        The analysis connected<br />The decision informed
+      </h2><p>
+        Bring reviewed financials and credit scores into one memo so the
+        recommendation builds on the same underlying evidence
+      </p>
+    </div>
+    <div class="module-flow">
+      <div class="module-flow-grid">
+        <a class="module" href="/credit-decisioning/financial-spreading"
+          ><div class="module-symbol">
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><rect x="4" y="4" width="16" height="16" rx="1"></rect><path
+                d="m5 16 5-6 4 4 5-7"></path></svg
+            >
+          </div><h3>Financial spreading</h3><p>
+            Reviewed financials and credit-adjusted metrics
+          </p></a
+        >
+        <a class="module" href="/credit-decisioning/analytics"
+          ><div class="module-symbol">
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path d="M6 20v-6m6 6V8m6 12V3"></path></svg
+            >
+          </div><h3>Analytics</h3><p>
+            Transparent quantitative and qualitative scores
+          </p></a
+        >
+        <div class="module active">
+          <div class="module-symbol">
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path d="M6 3h8l4 4v14H6V3Z"></path><path
+                d="M14 3v5h4M9 12h6m-6 4h6"></path></svg
+            >
+          </div><h3>Memo</h3><p>Decision-ready credit memos</p>
+        </div>
+      </div>
+      <div class="flow-footnote">
+        <span class="check-circle" aria-hidden="true">✓</span> Connected modules on
+        one governed foundation
+      </div>
+      <div class="memory-note">
+        <span class="memory-symbol"
+          ><svg viewBox="0 0 24 24" aria-hidden="true"
+            ><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path
+              d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"></path></svg
+          ></span
+        ><div>
+          <strong>A decision record that grows in value</strong><p>
+            Each decision process adds to the institutional intelligence that
+            the Insights Assistant in DecAltra’s Foundation layer can draw on
+            over time
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="closing" aria-labelledby="memo-closing-title">
+    <div class="closing-copy">
+      <h2 id="memo-closing-title">Interested?</h2><p>
+        See how DecAltra can turn your analysis into a memo your team can stand
+        behind
+      </p>
+    </div>
+    <div class="closing-actions">
+      <button
+        class="button"
+        type="button"
+        command="show-modal"
+        commandfor="demo-request-modal">Request a demo</button
+      ><a class="text-link" href="/contact"
+        >Contact us <span class="arrow" aria-hidden="true">→</span></a
+      >
+    </div>
+  </section>
+</div>
+
+<!-- Scoped to Memo so the existing website layout and other pages remain unchanged. -->
+<style>
+  .memo-module-page {
+    color-scheme: light;
+    --page: #f1f3f3;
+    --paper: #fff;
+    --ink: #0b1011;
+    --body: #526066;
+    --muted: #6b787d;
+    --line: #dbe1e1;
+    --soft: #f7f9f9;
+    --green: #396456;
+    --green-bg: #edf4f0;
+    --display: var(--font-display);
+    --sans: var(--font-sans);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .memo-module-page {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  button,
+  input {
+    font: inherit;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  figure {
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--display);
+    font-variation-settings: 'wdth' 112.5;
+    font-weight: 450;
+    letter-spacing: -0.045em;
+  }
+  p {
+    color: var(--body);
+  }
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid #477765;
+    outline-offset: 5px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  .wrap {
+    width: min(1280px, calc(100% - 80px));
+    margin-inline: auto;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    font-size: 11px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 21px;
+    border: 1px solid var(--ink);
+    border-radius: 99px;
+    background: var(--ink);
+    color: white;
+    font-size: 13px;
+    font-weight: 550;
+    line-height: 1.6;
+    white-space: nowrap;
+    transition:
+      background 0.2s,
+      transform 0.2s;
+  }
+  .button:hover {
+    background: #303a3c;
+    transform: translateY(-1px);
+  }
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 550;
+    white-space: nowrap;
+  }
+  .arrow {
+    font:
+      21px/1 Arial,
+      sans-serif;
+  }
+  .hero {
+    padding-top: 46px;
+  }
+  .hero-header {
+    text-align: center;
+    margin-bottom: 42px;
+  }
+  .hero-header .eyebrow {
+    display: inline-flex;
+    border: 1px solid #d3dada;
+    border-radius: 99px;
+    background: #ffffff80;
+    padding: 5px 12px;
+    font-weight: 500;
+  }
+  h1 {
+    margin: 21px 0 15px;
+    font-size: clamp(38px, 4.5vw, 60px);
+    line-height: 1.15;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .hero-stage {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.7fr);
+    gap: 38px;
+    align-items: center;
+    background: linear-gradient(122deg, #e8ecec, #e4e9e7 70%, #edf0ef);
+    border: 1px solid #dce2e0;
+    border-radius: 22px;
+    padding: 38px 0 38px 40px;
+    overflow: hidden;
+  }
+  .hero-story .eyebrow {
+    color: #5e6d6a;
+    font-size: 10px;
+  }
+  .hero-story h2 {
+    font-size: 37px;
+    line-height: 1.17;
+    margin: 16px 0 20px;
+  }
+  .hero-story p {
+    max-width: 290px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .hero-story .text-link {
+    margin-top: 23px;
+  }
+  .quiet-line {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #cad4d0;
+    font-size: 11px;
+    color: #52675f;
+  }
+  .check-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 19px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .workspace {
+    min-width: 0;
+    border: 1px solid #cbd4cf;
+    border-right: 0;
+    border-radius: 13px 0 0 13px;
+    background: white;
+    box-shadow: 0 18px 44px #173b2920;
+    overflow: hidden;
+  }
+  .workspace-head {
+    min-height: 47px;
+    padding: 12px 19px;
+    border-bottom: 1px solid #e4e9e7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .workspace-mark {
+    font: 650 15px/1 var(--display);
+    letter-spacing: -0.5px;
+  }
+  .workspace-label {
+    font-size: 10px;
+    color: #65746e;
+  }
+  .workspace-body {
+    display: grid;
+    grid-template-columns: 125px minmax(0, 1fr);
+  }
+  .app-sidebar {
+    background: #f8faf9;
+    border-right: 1px solid #e6ebe8;
+    padding: 20px 9px;
+  }
+  .company {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 3px 25px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #d4dfda;
+    background: #e5ece8;
+    border-radius: 7px;
+    flex-shrink: 0;
+    font-size: 10px;
+  }
+  .app-menu {
+    font-size: 10px;
+    color: #6a7872;
+    padding: 9px 8px;
+    margin: 3px 0;
+    border-radius: 6px;
+  }
+  .app-menu.active {
+    background: #e7eeea;
+    color: #173f2e;
+    font-weight: 600;
+  }
+  .tiny-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #668570;
+    flex-shrink: 0;
+  }
+  .figure-caption {
+    display: flex;
+    justify-content: flex-end;
+    color: #6f7c80;
+    font-size: 10px;
+    margin: 10px 2px 0;
+  }
+  .outcomes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+    padding: 40px 0 45px;
+    border-bottom: 1px solid var(--line);
+  }
+  .outcome-top {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 9px;
+  }
+  .index {
+    color: #829094;
+    font-size: 12px;
+  }
+  .outcome h3 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+  .outcome p {
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 345px;
+  }
+  .workflow {
+    padding: 70px 0 64px;
+  }
+  .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 29px;
+  }
+  .section-heading .eyebrow,
+  .connected-copy .eyebrow {
+    color: var(--muted);
+  }
+  .section-heading h2,
+  .connected-copy h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-top: 13px;
+  }
+  .section-heading .pill {
+    margin-bottom: 4px;
+    background: #ffffff70;
+  }
+  .workflow-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.7fr);
+    gap: 42px;
+    align-items: start;
+  }
+  .step-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .step-tab {
+    text-align: left;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #d4dbda;
+    border-left: 2px solid transparent;
+    background: transparent;
+    padding: 21px 16px;
+    color: var(--body);
+  }
+  .step-tab:first-child {
+    border-top: 1px solid #d4dbda;
+  }
+  .step-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .step-number {
+    color: #8a9792;
+    font-size: 12px;
+  }
+  .step-label {
+    font: 450 20px/1.4 var(--display);
+    letter-spacing: -0.035em;
+  }
+  .step-arrow {
+    margin-left: auto;
+    font:
+      18px/1 Arial,
+      sans-serif;
+    color: #84968b;
+  }
+  .step-tab[aria-selected='true'] {
+    background: #e8eeea;
+    border-left-color: #466b56;
+    color: var(--ink);
+  }
+  .step-tab[aria-selected='true'] .step-arrow {
+    color: #315740;
+  }
+  .step-copy {
+    display: none;
+    margin: 12px 0 0 28px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #53655b;
+  }
+  .step-tab[aria-selected='true'] .step-copy {
+    display: block;
+  }
+  .detail-window {
+    border: 1px solid #d4dcd8;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 8px 24px #193d2a08;
+    overflow: hidden;
+  }
+  .detail-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 19px 23px;
+    border-bottom: 1px solid #e4e9e6;
+  }
+  .detail-top strong {
+    font-size: 13px;
+    font-weight: 550;
+  }
+  .detail-top small {
+    color: #7b8780;
+    font-size: 10px;
+  }
+  .detail-body {
+    padding: 25px 24px;
+    min-height: 310px;
+  }
+  .model-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .model-meta strong {
+    font-size: 12px;
+    font-weight: 550;
+  }
+  .model-meta p {
+    font-size: 11px;
+    margin-top: 4px;
+    color: #74817a;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  .detail-foot {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 15px 23px;
+    background: #f7f9f8;
+    border-top: 1px solid #e4eae6;
+    font-size: 11px;
+    color: #617b69;
+  }
+  .panel-caption {
+    font-size: 10px;
+    color: #718078;
+    text-align: right;
+    margin: 11px 2px 0;
+  }
+  .governance {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    align-items: center;
+    gap: 65px;
+    padding: 42px 44px;
+    background: #0c1010;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .governance .eyebrow {
+    color: #9dafa7;
+    font-size: 10px;
+  }
+  .governance h2 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin: 12px 0 14px;
+  }
+  .governance p {
+    max-width: 365px;
+    color: #aab9b2;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+  .governance-list {
+    display: grid;
+    gap: 0;
+  }
+  .governance-item {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid #29322e;
+  }
+  .governance-item:first-child {
+    padding-top: 0;
+  }
+  .governance-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .governance-item .check-circle {
+    margin-top: 3px;
+    width: 19px;
+    height: 19px;
+    color: #8fae9e;
+  }
+  .governance-item h3 {
+    font: 550 14px/1.6 var(--sans);
+    letter-spacing: 0;
+  }
+  .governance-item p {
+    margin-top: 2px;
+    font-size: 12px;
+    max-width: none;
+  }
+  .connected {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 70px;
+    align-items: center;
+    padding: 74px 0;
+  }
+  .connected-copy h2 {
+    margin-bottom: 20px;
+  }
+  .connected-copy p {
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 395px;
+  }
+  .module-flow {
+    position: relative;
+  }
+  .module-flow::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    right: 72px;
+    top: 32px;
+    height: 1px;
+    background: #cbd4cf;
+  }
+  .module-flow-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+  }
+  .module-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 18px;
+    background: #f9fbfa;
+    border: 1px solid #d6dfd9;
+    border-radius: 16px;
+    color: #74867a;
+  }
+  .module.active .module-symbol {
+    background: #0c1110;
+    border-color: #0c1110;
+    color: white;
+    box-shadow: 0 0 0 6px #f1f3f3;
+  }
+  .module-symbol svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .module h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .module p {
+    color: #75837b;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .module.active h3 {
+    color: #244631;
+  }
+  .module.active p {
+    color: #58725f;
+  }
+  .flow-footnote {
+    border-top: 1px solid #d8e0da;
+    margin-top: 27px;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #6e8274;
+    font-size: 11px;
+  }
+  .closing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 45px;
+    border: 1px solid #dae1e1;
+    border-radius: 20px;
+    background: white;
+    padding: 43px 48px;
+    margin-bottom: 48px;
+  }
+  .closing-copy {
+    flex: 1 1 max-content;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .closing h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .closing p {
+    font-size: 15px;
+  }
+  .closing-actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 23px;
+  }
+  @media (min-width: 1450px) {
+    .hero-stage {
+      gap: 48px;
+    }
+    .hero-story h2 {
+      font-size: 42px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .wrap {
+      width: calc(100% - 48px);
+    }
+    .hero-stage {
+      grid-template-columns: minmax(225px, 0.85fr) minmax(0, 1.7fr);
+      padding-left: 28px;
+      gap: 28px;
+    }
+    .hero-story h2 {
+      font-size: 32px;
+    }
+    .workspace-body {
+      grid-template-columns: 1fr;
+    }
+    .app-sidebar {
+      display: none;
+    }
+    .outcome h3 {
+      font-size: 19px;
+    }
+    .outcomes {
+      gap: 24px;
+    }
+    .workflow-grid {
+      gap: 25px;
+      grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.7fr);
+    }
+    .step-label {
+      font-size: 18px;
+    }
+    .step-tab {
+      padding: 19px 13px;
+    }
+    .step-copy {
+      margin-left: 0;
+    }
+    .governance {
+      gap: 38px;
+      padding: 35px;
+    }
+    .connected {
+      gap: 40px;
+    }
+    .connected-copy h2,
+    .section-heading h2 {
+      font-size: 32px;
+    }
+    .module-flow-grid {
+      gap: 18px;
+    }
+    .module h3 {
+      font-size: 15px;
+    }
+    .closing {
+      padding: 32px;
+    }
+    .closing-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 9px;
+    }
+  }
+  @media (max-width: 800px) {
+    .hero-stage {
+      grid-template-columns: 1fr;
+      padding: 30px 24px 0;
+      gap: 30px;
+    }
+    .hero-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 35px;
+    }
+    .hero-story .eyebrow {
+      grid-column: 1/-1;
+    }
+    .hero-story h2 {
+      grid-row: 2/4;
+      margin-bottom: 0;
+    }
+    .hero-story p {
+      margin-top: 14px;
+      max-width: none;
+    }
+    .hero-story .text-link {
+      margin-top: 8px;
+      justify-self: start;
+    }
+    .quiet-line {
+      grid-column: 1/-1;
+      margin-top: 23px;
+    }
+    .workspace {
+      border: 1px solid #cbd4cf;
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+    }
+    .workspace-body {
+      grid-template-columns: 125px minmax(0, 1fr);
+    }
+    .app-sidebar {
+      display: block;
+    }
+    .hero-subtitle {
+      font-size: 16px;
+      max-width: 640px;
+      margin: auto;
+    }
+    .outcomes {
+      gap: 22px;
+      padding: 32px 0;
+    }
+    .outcome-top {
+      display: block;
+    }
+    .outcome h3 {
+      margin-top: 6px;
+      font-size: 18px;
+    }
+    .outcome p {
+      padding-left: 0;
+      font-size: 12px;
+    }
+    .workflow {
+      padding: 49px 0;
+    }
+    .section-heading {
+      align-items: flex-start;
+    }
+    .section-heading .pill {
+      display: none;
+    }
+    .section-heading h2 {
+      font-size: 30px;
+    }
+    .workflow-grid {
+      grid-template-columns: 1fr;
+      gap: 23px;
+    }
+    .step-list {
+      flex-direction: row;
+      gap: 8px;
+    }
+    .step-tab {
+      flex: 1;
+      width: auto;
+      border: 1px solid #d4dbda;
+      border-bottom: 2px solid transparent;
+      border-radius: 8px;
+      padding: 13px;
+    }
+    .step-tab[aria-selected='true'] {
+      border-left-color: #d4dbda;
+      border-bottom-color: #466b56;
+    }
+    .step-title {
+      gap: 8px;
+    }
+    .step-label {
+      font: 500 13px/1.5 var(--sans);
+      letter-spacing: 0;
+    }
+    .step-arrow,
+    .step-copy,
+    .step-tab[aria-selected='true'] .step-copy {
+      display: none;
+    }
+    .detail-body {
+      min-height: 310px;
+    }
+    .governance {
+      gap: 30px;
+      padding: 32px;
+      grid-template-columns: 1fr 1.2fr;
+    }
+    .governance h2 {
+      font-size: 27px;
+    }
+    .connected {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 50px 0;
+    }
+    .connected-copy {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+    .connected-copy .eyebrow {
+      grid-column: 1/-1;
+    }
+    .connected-copy p {
+      margin-top: 14px;
+      font-size: 13px;
+    }
+    .connected-copy h2 {
+      margin-bottom: 0;
+      font-size: 30px;
+    }
+    .module-flow::before {
+      right: 90px;
+    }
+    .module h3 {
+      font-size: 18px;
+    }
+    .module p {
+      max-width: 185px;
+    }
+    .closing h2 {
+      font-size: 30px;
+    }
+    .closing p {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 540px) {
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .hero {
+      padding-top: 33px;
+    }
+    .hero-header {
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 18px 0 12px;
+    }
+    .hero-subtitle {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .hero-stage {
+      padding: 26px 16px 0;
+      gap: 24px;
+      border-radius: 18px;
+    }
+    .hero-story {
+      display: block;
+      padding-inline: 5px;
+    }
+    .hero-story h2 {
+      font-size: 34px;
+      margin: 14px 0;
+    }
+    .hero-story p {
+      font-size: 14px;
+      margin-top: 0;
+    }
+    .hero-story .text-link {
+      margin-top: 15px;
+    }
+    .quiet-line {
+      margin-top: 19px;
+      font-size: 11px;
+    }
+    .workspace-head {
+      padding: 13px;
+    }
+    .workspace-label {
+      font-size: 9px;
+    }
+    .workspace-body {
+      display: block;
+    }
+    .app-sidebar {
+      display: none;
+    }
+    .figure-caption {
+      font-size: 9px;
+    }
+    .outcomes {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 28px 5px 33px;
+    }
+    .outcome-top {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 5px;
+    }
+    .outcome h3 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+    .outcome p {
+      padding-left: 29px;
+      font-size: 13px;
+      max-width: none;
+    }
+    .workflow {
+      padding: 38px 0;
+    }
+    .section-heading h2 {
+      font-size: 28px;
+    }
+    .step-list {
+      gap: 6px;
+    }
+    .step-tab {
+      padding: 12px 7px;
+    }
+    .step-number {
+      display: none;
+    }
+    .step-label {
+      font-size: 11px;
+    }
+    .step-title {
+      justify-content: center;
+    }
+    .detail-top {
+      padding: 15px;
+      gap: 12px;
+    }
+    .detail-top strong {
+      font-size: 12px;
+    }
+    .detail-top small {
+      font-size: 9px;
+    }
+    .detail-body {
+      padding: 19px 14px;
+      min-height: 0;
+    }
+    .model-meta {
+      gap: 10px;
+      margin-bottom: 21px;
+    }
+    .model-meta .pill {
+      padding: 4px 7px;
+      font-size: 9px;
+    }
+    .model-meta strong {
+      font-size: 11px;
+    }
+    .model-meta p {
+      font-size: 10px;
+    }
+    .detail-foot {
+      padding: 13px 14px;
+      font-size: 10px;
+    }
+    .detail-foot .check-circle {
+      width: 17px;
+      height: 17px;
+      font-size: 10px;
+    }
+    .governance {
+      grid-template-columns: 1fr;
+      padding: 28px 24px;
+      gap: 28px;
+      border-radius: 18px;
+    }
+    .governance h2 {
+      font-size: 29px;
+    }
+    .governance p {
+      font-size: 13px;
+    }
+    .governance-item p {
+      font-size: 12px;
+    }
+    .connected {
+      padding: 43px 0;
+      gap: 30px;
+    }
+    .connected-copy {
+      display: block;
+    }
+    .connected-copy h2 {
+      font-size: 29px;
+      margin: 13px 0;
+    }
+    .connected-copy p {
+      margin-top: 0;
+    }
+    .module-flow-grid {
+      gap: 12px;
+    }
+    .module-symbol {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      margin-bottom: 15px;
+    }
+    .module-symbol svg {
+      width: 22px;
+      height: 22px;
+    }
+    .module-flow::before {
+      top: 24px;
+      left: 28px;
+      right: 40px;
+    }
+    .module h3 {
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 7px;
+    }
+    .module p {
+      font-size: 10px;
+    }
+    .flow-footnote {
+      font-size: 10px;
+      margin-top: 22px;
+    }
+    .closing {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px 24px;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .closing-actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .closing .button {
+      padding: 12px 16px;
+      font-size: 12px;
+    }
+    .closing .text-link {
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 360px) {
+    .hero-story h2 {
+      font-size: 30px;
+    }
+    .workspace-label {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .button {
+      transition: none;
+    }
+  }
+  @media print {
+    .wrap {
+      width: 100%;
+    }
+    .hero {
+      padding: 0;
+    }
+    .workflow,
+    .connected {
+      break-inside: avoid;
+    }
+  }
+
+  /* Memo-specific product illustrations. */
+  .memo-canvas {
+    min-width: 0;
+    padding: 20px 24px;
+    background: #edf1ef;
+  }
+  .memo-paper {
+    position: relative;
+    padding: 23px 23px 16px;
+    background: #fff;
+    border: 1px solid #d5ddd8;
+    border-radius: 4px;
+    box-shadow: 0 7px 20px #1d3e2c0a;
+  }
+  .memo-paper-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid #dce3de;
+  }
+  .memo-paper-top span {
+    font-size: 9px;
+    font-weight: 650;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .memo-paper-top small {
+    color: #7b8980;
+    font-size: 9px;
+  }
+  .memo-paper h3 {
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+  .memo-paper .paper-meta {
+    font-size: 9px;
+    color: #76857b;
+    margin-bottom: 16px;
+  }
+  .memo-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 12px 13px;
+    background: #f2f6f3;
+    border: 1px solid #e0e8e2;
+    border-radius: 7px;
+  }
+  .memo-fact span {
+    display: block;
+    color: #6c7e71;
+    font-size: 9px;
+  }
+  .memo-fact strong {
+    display: block;
+    font: 500 20px/1.4 var(--display);
+    letter-spacing: -0.5px;
+    color: #2e4d38;
+    margin-top: 3px;
+  }
+  .memo-section-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #304b39;
+    margin-bottom: 8px;
+  }
+  .memo-section-label small {
+    color: #6e8476;
+    font-size: 8px;
+    font-weight: 450;
+  }
+  .memo-paper p {
+    font-size: 10px;
+    line-height: 1.85;
+    color: #617368;
+  }
+  .paper-cite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 15px;
+    height: 15px;
+    background: #e6eee8;
+    color: #3f674d;
+    font: 500 8px/1 var(--sans);
+    border-radius: 3px;
+    vertical-align: 1px;
+  }
+  .memo-mini-table {
+    margin-top: 13px;
+    font-size: 9px;
+  }
+  .memo-mini-table div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid #e9eeeb;
+  }
+  .memo-mini-table span {
+    color: #758179;
+  }
+  .memo-mini-table strong {
+    color: #3c5143;
+    font-weight: 500;
+  }
+  .memo-paper-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 8px;
+    color: #859188;
+    margin-top: 13px;
+  }
+  .memo-workspace-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 2px 0;
+    font-size: 9px;
+    color: #668071;
+  }
+  .memo-workspace-status .pill {
+    font-size: 9px;
+    padding: 4px 8px;
+    background: white;
+  }
+  .app-sidebar .outline-label {
+    color: #9aa69f;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 26px 8px 9px;
+  }
+  .source-to-memo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 23px minmax(0, 1.06fr);
+    gap: 15px;
+    align-items: center;
+  }
+  .input-stack {
+    display: grid;
+    gap: 11px;
+  }
+  .input-source {
+    padding: 14px;
+    background: #f6f9f7;
+    border: 1px solid #dce6df;
+    border-radius: 8px;
+  }
+  .input-source-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .input-source-top strong {
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .input-source-top span {
+    color: #688b74;
+    font-size: 12px;
+  }
+  .input-source p {
+    font-size: 10px;
+    line-height: 1.8;
+    color: #6d7f72;
+    margin: 5px 0 8px;
+  }
+  .input-value {
+    font-size: 10px;
+    color: #466650;
+  }
+  .input-value strong {
+    font-weight: 600;
+  }
+  .transfer {
+    text-align: center;
+    color: #8ba293;
+    font:
+      25px/1 Arial,
+      sans-serif;
+  }
+  .template-paper {
+    min-width: 0;
+    border: 1px solid #dce3de;
+    border-radius: 6px;
+    padding: 18px 16px;
+    background: #fff;
+    box-shadow: 0 4px 16px #14382108;
+  }
+  .template-paper .eyebrow {
+    font-size: 8px;
+    color: #788b7e;
+    letter-spacing: 0.12em;
+  }
+  .template-paper h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    margin: 8px 0 7px;
+  }
+  .template-paper > p {
+    font-size: 9px;
+    color: #819084;
+    margin-bottom: 15px;
+  }
+  .template-outline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .template-outline li {
+    display: flex;
+    gap: 10px;
+    padding: 9px 0;
+    border-top: 1px solid #e8eee9;
+    font-size: 10px;
+    color: #5e7264;
+  }
+  .template-outline span {
+    font-size: 9px;
+    color: #8c9b90;
+  }
+  .draft-body {
+    padding: 24px;
+  }
+  .draft-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+    gap: 25px;
+    align-items: start;
+  }
+  .draft-document {
+    min-width: 0;
+  }
+  .draft-label {
+    color: #769080;
+    font-size: 9px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    margin-bottom: 11px;
+  }
+  .draft-document h3 {
+    font-size: 20px;
+    line-height: 1.35;
+    margin-bottom: 14px;
+  }
+  .draft-document p {
+    color: #5b7062;
+    font-size: 12px;
+    line-height: 1.95;
+    margin-bottom: 16px;
+  }
+  .citation {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    min-height: 21px;
+    padding: 3px 6px;
+    border: 1px solid #d3e0d6;
+    border-radius: 4px;
+    background: #eff5f1;
+    color: #4a6c55;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+    vertical-align: 1px;
+  }
+  .citation[aria-pressed='true'] {
+    border-color: #527661;
+    background: #e0ebe3;
+    color: #2c543b;
+  }
+  .citation:hover {
+    background: #dce8df;
+  }
+  .draft-tag {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #6a8774;
+    font-size: 10px;
+    padding-top: 12px;
+    border-top: 1px solid #e0e8e2;
+  }
+  .source-pane {
+    min-width: 0;
+    background: #f3f7f4;
+    border: 1px solid #dce7df;
+    border-radius: 9px;
+    padding: 15px;
+  }
+  .source-pane .source-kicker {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    color: #64816e;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+  }
+  .source-pane h3 {
+    font: 550 12px/1.5 var(--sans);
+    letter-spacing: 0;
+    margin-bottom: 5px;
+  }
+  .source-pane .source-meta {
+    color: #819385;
+    font-size: 9px;
+    line-height: 1.8;
+    margin-bottom: 17px;
+  }
+  .source-value {
+    padding: 10px 0;
+    border-top: 1px solid #dae5dd;
+  }
+  .source-value span {
+    display: block;
+    color: #73877a;
+    font-size: 9px;
+    margin-bottom: 4px;
+  }
+  .source-value strong {
+    font: 500 18px/1.3 var(--display);
+    color: #31533b;
+    letter-spacing: -0.4px;
+  }
+  .source-status {
+    margin-top: 13px;
+    font-size: 9px;
+    color: #6a8873;
+  }
+  .draft-review-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 15px;
+    margin-top: 23px;
+    background: #f5f7f5;
+    border: 1px solid #e1e7e2;
+    border-radius: 8px;
+  }
+  .draft-review-note .check-circle {
+    color: #6d8b78;
+    margin-top: 2px;
+  }
+  .draft-review-note strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 550;
+    color: #385d44;
+    margin-bottom: 4px;
+  }
+  .draft-review-note p {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #6d7f72;
+  }
+  .review-table {
+    font-size: 11px;
+  }
+  .review-table th {
+    color: #7d8d81;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: left;
+    padding: 0 9px 11px;
+    border-bottom: 1px solid #dce5de;
+  }
+  .review-table td {
+    padding: 13px 9px;
+    border-bottom: 1px solid #e6ece7;
+    color: #667b6c;
+  }
+  .review-table td:first-child,
+  .review-table th:first-child {
+    padding-left: 0;
+  }
+  .review-table td:last-child,
+  .review-table th:last-child {
+    text-align: right;
+    padding-right: 0;
+  }
+  .status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 7px;
+    background: #edf3ef;
+    border-radius: 4px;
+    color: #51745b;
+    font-size: 9px;
+    white-space: nowrap;
+  }
+  .status-tag.pending {
+    background: #f2f1eb;
+    color: #7e7557;
+  }
+  .status-tag.draft {
+    background: #f0f2f1;
+    color: #7b8580;
+  }
+  .review-comment {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    align-items: start;
+    gap: 12px;
+    margin-top: 21px;
+    border: 1px solid #e0e6e1;
+    background: #fafcfb;
+    border-radius: 9px;
+    padding: 15px;
+  }
+  .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #e6ede7;
+    color: #55725e;
+    font-size: 9px;
+    font-weight: 600;
+  }
+  .review-comment strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 550;
+    color: #3b5945;
+  }
+  .review-comment small {
+    color: #8b988f;
+    font-size: 9px;
+    font-weight: 400;
+    margin-left: 7px;
+  }
+  .review-comment p {
+    font-size: 11px;
+    line-height: 1.8;
+    margin-top: 6px;
+    color: #64796b;
+  }
+  .memory-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    margin-top: 28px;
+    padding: 10px 0;
+  }
+  .memory-note > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .memory-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border: 1px solid #d5dfd8;
+    border-radius: 16px;
+    background: #f9fbfa;
+    color: #698372;
+    flex-shrink: 0;
+  }
+  .memory-symbol svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .memory-note strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 550;
+    color: #506b58;
+  }
+  .memory-note p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #788b7d;
+    margin-top: 6px;
+    max-width: none;
+  }
+  @media (max-width: 1100px) {
+    .memo-canvas {
+      padding: 20px 23px;
+    }
+    .memo-paper {
+      padding: 20px 22px 16px;
+    }
+    .draft-layout {
+      gap: 19px;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    }
+    .source-pane {
+      padding: 13px;
+    }
+    .source-to-memo {
+      gap: 11px;
+      grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr);
+    }
+    .input-source {
+      padding: 12px;
+    }
+    .template-paper {
+      padding: 16px 13px;
+    }
+  }
+  @media (max-width: 800px) {
+    .memo-canvas {
+      padding: 19px;
+    }
+    .memo-paper {
+      padding: 20px;
+    }
+    .draft-layout {
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+    }
+    .source-to-memo {
+      grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+      gap: 20px;
+    }
+  }
+  @media (max-width: 620px) {
+    .memo-hero .workspace-body {
+      display: block;
+    }
+    .memo-hero .app-sidebar {
+      display: none;
+    }
+    .draft-layout {
+      gap: 17px;
+    }
+    .draft-document p {
+      font-size: 11px;
+    }
+    .source-pane {
+      padding: 11px;
+    }
+    .source-value strong {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 540px) {
+    .memo-canvas {
+      padding: 16px 13px;
+    }
+    .memo-paper {
+      padding: 17px 16px 14px;
+    }
+    .memo-paper h3 {
+      font-size: 17px;
+    }
+    .memo-paper .paper-meta {
+      font-size: 9px;
+    }
+    .memo-workspace-status {
+      font-size: 8px;
+    }
+    .memo-workspace-status .pill {
+      font-size: 8px;
+    }
+    .source-to-memo {
+      grid-template-columns: 1fr;
+      gap: 17px;
+    }
+    .transfer {
+      transform: rotate(90deg);
+    }
+    .input-stack {
+      gap: 8px;
+    }
+    .input-source {
+      padding: 12px 14px;
+    }
+    .input-source p {
+      margin-bottom: 5px;
+    }
+    .template-paper {
+      padding: 17px 18px;
+    }
+    .template-outline li {
+      padding: 8px 0;
+    }
+    .draft-body {
+      padding: 20px 15px;
+    }
+    .draft-layout {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+    .draft-document p {
+      font-size: 12px;
+    }
+    .draft-document h3 {
+      font-size: 21px;
+    }
+    .source-pane {
+      padding: 15px;
+    }
+    .source-pane .source-kicker {
+      margin-bottom: 12px;
+    }
+    .source-pane .source-meta {
+      margin-bottom: 12px;
+    }
+    .source-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .source-value {
+      min-width: 0;
+    }
+    .source-value strong {
+      font-size: 18px;
+    }
+    .draft-review-note {
+      margin-top: 19px;
+      padding: 12px;
+      gap: 9px;
+    }
+    .review-table {
+      font-size: 10px;
+    }
+    .review-table th {
+      font-size: 9px;
+    }
+    .review-table td,
+    .review-table th {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .status-tag {
+      font-size: 8px;
+      padding: 3px 5px;
+    }
+    .review-comment {
+      padding: 12px;
+      gap: 10px;
+      grid-template-columns: 24px 1fr;
+    }
+    .avatar {
+      width: 24px;
+      height: 24px;
+      font-size: 8px;
+    }
+    .review-comment small {
+      display: block;
+      margin: 2px 0 0;
+    }
+    .memory-note {
+      margin-top: 24px;
+      gap: 12px;
+    }
+    .memory-symbol {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+    }
+    .memory-symbol svg {
+      width: 22px;
+      height: 22px;
+    }
+    .memory-note p {
+      font-size: 12px;
+    }
+  }
+  @media (pointer: coarse) {
+    .citation {
+      min-width: 44px;
+      min-height: 44px;
+    }
+  }
+  #memo-workflow,
+  #memo-connected {
+    scroll-margin-top: 28px;
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-memo-page]');
+  if (root) {
+    const tabs = Array.from(
+      root.querySelectorAll<HTMLButtonElement>('.step-tab')
+    );
+    const panels = Array.from(
+      root.querySelectorAll<HTMLElement>('[role="tabpanel"]')
+    );
+    const tablist = root.querySelector<HTMLElement>('.step-list');
+    const orientation = window.matchMedia('(max-width:800px)');
+    function selectTab(tab: HTMLButtonElement, focus = false) {
+      for (const item of tabs) {
+        const active = item === tab;
+        item.setAttribute('aria-selected', String(active));
+        item.tabIndex = active ? 0 : -1;
+      }
+      for (const panel of panels)
+        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+      if (focus) tab.focus();
+    }
+    function resetTabs() {
+      if (tabs[0]) selectTab(tabs[0]);
+    }
+    resetTabs();
+    // A browser Back/Forward restore should also start at the first option.
+    window.addEventListener('pageshow', resetTabs);
+    for (const [index, tab] of tabs.entries()) {
+      tab.addEventListener('click', () => selectTab(tab));
+      tab.addEventListener('keydown', event => {
+        let next: number;
+        if (event.key === 'ArrowDown' || event.key === 'ArrowRight')
+          next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft')
+          next = (index + tabs.length - 1) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectTab(tabs[next], true);
+      });
+    }
+    function updateOrientation() {
+      tablist?.setAttribute(
+        'aria-orientation',
+        orientation.matches ? 'horizontal' : 'vertical'
+      );
+    }
+    orientation.addEventListener('change', updateOrientation);
+    updateOrientation();
+    const citations = Array.from(
+      root.querySelectorAll<HTMLButtonElement>('[data-source-target]')
+    );
+    const sources = Array.from(
+      root.querySelectorAll<HTMLElement>('[data-source-panel]')
+    );
+    for (const citation of citations) {
+      citation.addEventListener('click', () => {
+        const target = citation.dataset.sourceTarget;
+        if (!target) return;
+        for (const button of citations)
+          button.setAttribute(
+            'aria-pressed',
+            String(button.dataset.sourceTarget === target)
+          );
+        for (const source of sources) source.hidden = source.id !== target;
+      });
+    }
+  }
+</script>

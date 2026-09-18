@@ -1,0 +1,2035 @@
+---
+import AnalyticsWorkspace from '../illustrations/AnalyticsWorkspace.astro';
+---
+
+<div
+  id="analytics-module-page"
+  class="analytics-module-page wrap"
+  data-analytics-page=""
+>
+  <section class="hero" aria-labelledby="an-page-title">
+    <div class="hero-header">
+      <span class="eyebrow">Credit Decisioning</span>
+      <h1 id="an-page-title">Analytics</h1>
+      <p class="hero-subtitle">
+        Generate transparent quantitative and qualitative scores from your
+        credit models
+      </p>
+    </div>
+    <figure data-screenshot-slot="01">
+      <div class="hero-stage">
+        <div class="hero-story">
+          <span class="eyebrow">Your models. Clearer decisions.</span>
+          <h2>Every score<br />has a story</h2>
+          <p>
+            Combine your numbers with AI-generated qualitative assessments that
+            your analysts can review and refine
+          </p>
+          <a class="text-link" href="#an-workflow"
+            >See how it works <span class="arrow" aria-hidden="true">↗</span></a
+          >
+          <div class="quiet-line">
+            <span class="check-circle" aria-hidden="true">✓</span> Automated first
+            pass · Analyst review
+          </div>
+        </div>
+        <AnalyticsWorkspace />
+      </div>
+      <figcaption class="figure-caption">
+        Illustrative views · Not actual screenshot · Fictional data
+      </figcaption>
+      <!-- Screenshot 01 · Analytics overview. Show a real company assessment with the model name, overall result and quantitative / qualitative score breakdown. Replace the interface on the right while retaining the headline on the left. -->
+    </figure>
+    <div class="outcomes" aria-label="Key benefits">
+      <div class="outcome">
+        <div class="outcome-top">
+          <span class="index">01</span><h3>Your models in practice</h3>
+        </div><p>
+          Apply your credit approach consistently across companies and teams
+        </p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-top">
+          <span class="index">02</span><h3>Automate the first pass</h3>
+        </div><p>
+          Let AI prepare qualitative assessments so your analysts can focus on
+          review and refinement
+        </p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-top">
+          <span class="index">03</span><h3>Clarity behind the score</h3>
+        </div><p>
+          See what drives each result so your team can review it with confidence
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="an-workflow"
+    class="workflow"
+    aria-labelledby="an-workflow-title"
+  >
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">From inputs to understanding</span><h2
+          id="an-workflow-title"
+        >
+          See the score<br />Understand what’s behind it
+        </h2>
+      </div><span class="pill">Your analysts stay in control</span>
+    </div>
+    <div class="workflow-grid">
+      <div
+        class="step-list"
+        role="tablist"
+        aria-label="Explore the Analytics workflow"
+        aria-orientation="vertical"
+      >
+        <button
+          class="step-tab"
+          id="an-numbers-tab"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="an-numbers-panel"
+          tabindex="0"
+          ><span class="step-title"
+            ><span class="step-number">01</span><span class="step-label"
+              >Start with the numbers</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >Use reviewed financials and credit-adjusted metrics as the
+            foundation for your quantitative score</span
+          ></button
+        >
+        <button
+          class="step-tab"
+          id="an-judgement-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="an-judgement-panel"
+          tabindex="-1"
+          ><span class="step-title"
+            ><span class="step-number">02</span><span class="step-label"
+              >Automate and review</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >Let AI prepare qualitative assessments with supporting evidence so
+            analysts can review the answer and refine the rationale</span
+          ></button
+        >
+        <button
+          class="step-tab"
+          id="an-result-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="an-result-panel"
+          tabindex="-1"
+          ><span class="step-title"
+            ><span class="step-number">03</span><span class="step-label"
+              >Understand the result</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >See how inputs and model weights shape the score before carrying
+            the result into your decision</span
+          ></button
+        >
+      </div>
+      <div class="workflow-panels">
+        <div
+          id="an-numbers-panel"
+          data-screenshot-slot="02"
+          role="tabpanel"
+          aria-labelledby="an-numbers-tab"
+        >
+          <div class="detail-window">
+            <div class="detail-top">
+              <strong>A clear starting point</strong><small
+                >Quantitative inputs</small
+              >
+            </div>
+            <div class="detail-body">
+              <div class="model-meta">
+                <div>
+                  <strong>Northstar Manufacturing</strong><p>
+                    FY 2024 · Credit-adjusted metrics
+                  </p>
+                </div><span class="pill good">Reviewed financials</span>
+              </div>
+              <table class="input-table">
+                <caption hidden
+                  >Illustrative quantitative factors and weights in the total
+                  score</caption
+                ><thead
+                  ><tr
+                    ><th scope="col">Model input</th><th scope="col">Value</th
+                    ><th scope="col">Score / 100</th><th scope="col">Weight</th
+                    ></tr
+                  ></thead
+                ><tbody>
+                  <tr class="selected"
+                    ><td>Net debt / EBITDA</td><td>2.50×</td><td>60</td><td
+                      >25%</td
+                    ></tr
+                  >
+                  <tr
+                    ><td>Interest coverage</td><td>6.20×</td><td>72</td><td
+                      >25%</td
+                    ></tr
+                  >
+                  <tr
+                    ><td>EBITDA margin</td><td>19.5%</td><td>80</td><td>15%</td
+                    ></tr
+                  >
+                  <tr
+                    ><td>Current ratio</td><td>1.45×</td><td>70</td><td>10%</td
+                    ></tr
+                  >
+                </tbody>
+              </table>
+              <div class="evidence-line">
+                <span aria-hidden="true">↳</span> Net debt €34.0m / Adjusted EBITDA
+                €13.6m · From Financial spreading
+              </div>
+            </div>
+            <div class="detail-foot">
+              <span class="check-circle" aria-hidden="true">✓</span> Follow each input
+              back to the financials behind it
+            </div>
+          </div>
+          <p class="panel-caption">
+            Illustrative views · Not actual screenshot · Fictional data
+          </p>
+          <!-- Screenshot 02 · Quantitative inputs. Show the ratios used in the model with their values and weights. Include the connection to reviewed or credit-adjusted financials. -->
+        </div>
+        <div
+          id="an-judgement-panel"
+          data-screenshot-slot="03"
+          role="tabpanel"
+          aria-labelledby="an-judgement-tab"
+          hidden
+        >
+          <div class="detail-window">
+            <div class="detail-top">
+              <strong>AI prepares the assessment</strong><small
+                >Your analyst reviews it</small
+              >
+            </div>
+            <div class="detail-body">
+              <div
+                class="review-path"
+                aria-label="Qualitative workflow: AI generates a draft, then the analyst reviews and refines it"
+              >
+                <strong>AI-generated draft</strong><span
+                  class="arrow"
+                  aria-hidden="true">→</span
+                ><span>Analyst review and refinement</span>
+              </div>
+              <div class="judgement-grid">
+                <div>
+                  <div class="assessment-label">
+                    Business profile · Competitive position
+                  </div><div class="assessment-title">
+                    How resilient is the company’s market position?
+                  </div><div
+                    class="rating-options"
+                    aria-label="Illustrative AI-suggested assessment awaiting analyst review: Established"
+                  >
+                    <span>Leading</span><span class="selected">Established</span
+                    ><span>Challenged</span>
+                  </div><div class="rationale">
+                    <strong>AI-generated rationale · Draft</strong><p>
+                      An established supplier with long-standing customer
+                      relationships. Exposure to a small number of customers
+                      remains a consideration.
+                    </p>
+                  </div>
+                </div>
+                <aside class="evidence-card">
+                  <h3>Supporting context</h3><p>
+                    The five largest customers account for 42% of revenue
+                  </p><div class="evidence-ref">
+                    Annual report 2024<br />Business review · Page 12
+                  </div><div class="evidence-ref">
+                    Management discussion<br />Customer relationships
+                  </div>
+                </aside>
+              </div>
+              <div class="assessment-summary">
+                <span>Suggested score <strong>60 / 100</strong></span><span
+                  >Model weight <strong>15%</strong></span
+                >
+              </div>
+              <div class="review-note">
+                <strong>Ready for analyst review</strong><p>
+                  Your analyst can check the evidence and confirm or refine the
+                  suggested assessment and rationale
+                </p>
+              </div>
+            </div>
+            <div class="detail-foot">
+              <span class="check-circle" aria-hidden="true">✓</span> Automate the
+              first pass while keeping analysts in control
+            </div>
+          </div>
+          <p class="panel-caption">
+            Illustrative views · Not actual screenshot · Fictional data
+          </p>
+          <!-- Screenshot 03 · Automated assessment and analyst review. Show an AI-generated answer with its supporting evidence and draft rationale. Include the analyst’s review controls so it is clear they can confirm or refine the assessment. -->
+        </div>
+        <div
+          id="an-result-panel"
+          data-screenshot-slot="04"
+          role="tabpanel"
+          aria-labelledby="an-result-tab"
+          hidden
+        >
+          <div class="detail-window">
+            <div class="detail-top">
+              <strong>Make the result explainable</strong><small
+                >Corporate credit model · v2.1</small
+              >
+            </div>
+            <div class="detail-body">
+              <table class="input-table compact">
+                <caption hidden>Example model score calculation</caption><thead
+                  ><tr
+                    ><th scope="col">Factor</th><th scope="col">Score / 100</th
+                    ><th scope="col">Weight</th><th scope="col">Points</th></tr
+                  ></thead
+                ><tbody>
+                  <tr><td>Leverage</td><td>60</td><td>25%</td><td>15.0</td></tr>
+                  <tr
+                    ><td>Debt service</td><td>72</td><td>25%</td><td>18.0</td
+                    ></tr
+                  >
+                  <tr
+                    ><td>Profitability</td><td>80</td><td>15%</td><td>12.0</td
+                    ></tr
+                  >
+                  <tr><td>Liquidity</td><td>70</td><td>10%</td><td>7.0</td></tr>
+                  <tr
+                    ><td>Business profile</td><td>60</td><td>15%</td><td>9.0</td
+                    ></tr
+                  >
+                  <tr><td>Management</td><td>70</td><td>10%</td><td>7.0</td></tr
+                  >
+                  <tr class="sum"
+                    ><td>Combined score</td><td></td><td>100%</td><td>68.0</td
+                    ></tr
+                  >
+                </tbody>
+              </table>
+              <div class="score-result">
+                <span>Model result <small>· Internal scale</small></span><strong
+                  >BBB−</strong
+                >
+              </div>
+            </div>
+            <div class="detail-foot">
+              <span class="check-circle" aria-hidden="true">✓</span> From each factor
+              to its contribution to the score
+            </div>
+          </div>
+          <p class="panel-caption">
+            Illustrative views · Not actual screenshot · Fictional data
+          </p>
+          <!-- Screenshot 04 · Score breakdown. Show the actual model result with its factor scores, weights and contributions. Use your own internal rating scale. -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="governance" aria-labelledby="an-governance-title">
+    <div>
+      <span class="eyebrow">Transparent by design</span><h2
+        id="an-governance-title"
+      >
+        Your framework<br />Not a black box
+      </h2><p>
+        Bring automation to your credit approach while keeping the logic and the
+        judgement open to review
+      </p>
+    </div>
+    <div class="governance-list">
+      <div class="governance-item">
+        <span class="check-circle" aria-hidden="true">✓</span><div>
+          <h3>Your model logic</h3><p>
+            Use the factors and weights that reflect how you assess credit
+          </p>
+        </div>
+      </div>
+      <div class="governance-item">
+        <span class="check-circle" aria-hidden="true">✓</span><div>
+          <h3>Automation with analyst review</h3><p>
+            Let AI prepare the qualitative assessment for your analysts to
+            review and refine
+          </p>
+        </div>
+      </div>
+      <div class="governance-item">
+        <span class="check-circle" aria-hidden="true">✓</span><div>
+          <h3>A traceable result</h3><p>
+            Connect the score to the inputs and evidence that support it
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="an-connected"
+    class="connected"
+    aria-labelledby="an-connected-title"
+  >
+    <div class="connected-copy">
+      <span class="eyebrow">Part of the bigger decision</span><h2
+        id="an-connected-title"
+      >
+        From a clear score<br />to a stronger decision
+      </h2><p>
+        Build on reviewed financials and credit-adjusted metrics from Financial
+        spreading and carry the score and its rationale into Memo
+      </p>
+    </div>
+    <div class="module-flow">
+      <div class="module-flow-grid">
+        <a class="module" href="/credit-decisioning/financial-spreading"
+          ><div class="module-symbol">
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><rect x="4" y="4" width="16" height="16" rx="1"></rect><path
+                d="m5 16 5-6 4 4 5-7"></path></svg
+            >
+          </div><h3>Financial spreading</h3><p>
+            Reviewed financials and credit-adjusted metrics
+          </p></a
+        >
+        <div class="module active">
+          <div class="module-symbol">
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path d="M6 20v-6m6 6V8m6 12V3"></path></svg
+            >
+          </div><h3>Analytics</h3><p>
+            Transparent quantitative and qualitative scores
+          </p>
+        </div>
+        <a class="module" href="/credit-decisioning/memo"
+          ><div class="module-symbol">
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path d="M6 3h8l4 4v14H6V3Z"></path><path
+                d="M14 3v5h4M9 12h6m-6 4h6"></path></svg
+            >
+          </div><h3>Memo</h3><p>Decision-ready credit memos</p></a
+        >
+      </div>
+      <div class="flow-footnote">
+        <span class="check-circle" aria-hidden="true">✓</span> Connected modules on
+        one governed foundation
+      </div>
+    </div>
+  </section>
+  <section class="closing" aria-labelledby="an-closing-title">
+    <div class="closing-copy">
+      <h2 id="an-closing-title">Interested?</h2><p>
+        See how DecAltra can bring your credit models into a clearer decision
+        process
+      </p>
+    </div>
+    <div class="closing-actions">
+      <button
+        class="button"
+        type="button"
+        command="show-modal"
+        commandfor="demo-request-modal">Request a demo</button
+      ><a class="text-link" href="/contact"
+        >Contact us <span class="arrow" aria-hidden="true">→</span></a
+      >
+    </div>
+  </section>
+</div>
+
+<!-- Scoped to Analytics so the existing website layout and other pages remain unchanged. -->
+<style>
+  .analytics-module-page {
+    color-scheme: light;
+    --page: #f1f3f3;
+    --paper: #fff;
+    --ink: #0b1011;
+    --body: #526066;
+    --muted: #6b787d;
+    --line: #dbe1e1;
+    --soft: #f7f9f9;
+    --green: #396456;
+    --green-bg: #edf4f0;
+    --display: var(--font-display);
+    --sans: var(--font-sans);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .analytics-module-page {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  button,
+  input {
+    font: inherit;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  figure {
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--display);
+    font-variation-settings: 'wdth' 112.5;
+    font-weight: 450;
+    letter-spacing: -0.045em;
+  }
+  p {
+    color: var(--body);
+  }
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid #477765;
+    outline-offset: 5px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  .wrap {
+    width: min(1280px, calc(100% - 80px));
+    margin-inline: auto;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    font-size: 11px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .pill.good {
+    background: var(--green-bg);
+    border-color: #d8e6dd;
+    color: var(--green);
+  }
+  .pill.good::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 21px;
+    border: 1px solid var(--ink);
+    border-radius: 99px;
+    background: var(--ink);
+    color: white;
+    font-size: 13px;
+    font-weight: 550;
+    line-height: 1.6;
+    white-space: nowrap;
+    transition:
+      background 0.2s,
+      transform 0.2s;
+  }
+  .button:hover {
+    background: #303a3c;
+    transform: translateY(-1px);
+  }
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 550;
+    white-space: nowrap;
+  }
+  .arrow {
+    font:
+      21px/1 Arial,
+      sans-serif;
+  }
+  .hero {
+    padding-top: 46px;
+  }
+  .hero-header {
+    text-align: center;
+    margin-bottom: 42px;
+  }
+  .hero-header .eyebrow {
+    display: inline-flex;
+    border: 1px solid #d3dada;
+    border-radius: 99px;
+    background: #ffffff80;
+    padding: 5px 12px;
+    font-weight: 500;
+  }
+  h1 {
+    margin: 21px 0 15px;
+    font-size: clamp(38px, 4.5vw, 60px);
+    line-height: 1.15;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .hero-stage {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.7fr);
+    gap: 38px;
+    align-items: center;
+    background: linear-gradient(122deg, #e8ecec, #e4e9e7 70%, #edf0ef);
+    border: 1px solid #dce2e0;
+    border-radius: 22px;
+    padding: 38px 0 38px 40px;
+    overflow: hidden;
+  }
+  .hero-story .eyebrow {
+    color: #5e6d6a;
+    font-size: 10px;
+  }
+  .hero-story h2 {
+    font-size: 37px;
+    line-height: 1.17;
+    margin: 16px 0 20px;
+  }
+  .hero-story p {
+    max-width: 290px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .hero-story .text-link {
+    margin-top: 23px;
+  }
+  .quiet-line {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #cad4d0;
+    font-size: 11px;
+    color: #52675f;
+  }
+  .check-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 19px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .workspace {
+    min-width: 0;
+    border: 1px solid #cbd4cf;
+    border-right: 0;
+    border-radius: 13px 0 0 13px;
+    background: white;
+    box-shadow: 0 18px 44px #173b2920;
+    overflow: hidden;
+  }
+  .workspace-head {
+    min-height: 47px;
+    padding: 12px 19px;
+    border-bottom: 1px solid #e4e9e7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .workspace-mark {
+    font: 650 15px/1 var(--display);
+    letter-spacing: -0.5px;
+  }
+  .workspace-label {
+    font-size: 10px;
+    color: #65746e;
+  }
+  .workspace-body {
+    display: grid;
+    grid-template-columns: 125px minmax(0, 1fr);
+  }
+  .app-sidebar {
+    background: #f8faf9;
+    border-right: 1px solid #e6ebe8;
+    padding: 20px 9px;
+  }
+  .company {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 3px 25px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #d4dfda;
+    background: #e5ece8;
+    border-radius: 7px;
+    flex-shrink: 0;
+    font-size: 10px;
+  }
+  .app-menu {
+    font-size: 10px;
+    color: #6a7872;
+    padding: 9px 8px;
+    margin: 3px 0;
+    border-radius: 6px;
+  }
+  .app-menu.active {
+    background: #e7eeea;
+    color: #173f2e;
+    font-weight: 600;
+  }
+  .workspace-content {
+    min-width: 0;
+    padding: 20px;
+  }
+  .workspace-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .workspace-title strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+  .workspace-title small {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 10px;
+  }
+  .workspace-title .pill {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  .app-tabs {
+    display: flex;
+    gap: 23px;
+    border-bottom: 1px solid #e5eae7;
+    color: #66776d;
+    font-size: 10px;
+    margin-bottom: 17px;
+  }
+  .app-tabs span {
+    padding-bottom: 8px;
+  }
+  .app-tabs .active {
+    border-bottom: 2px solid var(--green);
+    color: #224c39;
+    font-weight: 600;
+  }
+  .rating-overview {
+    display: grid;
+    grid-template-columns: 1fr 1.22fr;
+    gap: 22px;
+    align-items: center;
+    padding: 17px 18px;
+    border: 1px solid #dce5df;
+    border-radius: 10px;
+    background: #f5f8f6;
+  }
+  .rating-title {
+    font-size: 10px;
+    color: #587161;
+  }
+  .rating {
+    font: 450 43px/1.25 var(--display);
+    letter-spacing: -2px;
+  }
+  .rating-bottom {
+    font-size: 10px;
+    color: #63776a;
+    margin-top: 4px;
+  }
+  .rating-bottom strong {
+    font-weight: 600;
+    color: #203f2e;
+  }
+  .factor {
+    margin: 10px 0;
+  }
+  .factor-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 10px;
+    color: #55685c;
+    margin-bottom: 7px;
+  }
+  .factor-label strong {
+    font-weight: 600;
+    color: #243b2c;
+  }
+  .factor-track {
+    height: 5px;
+    background: #e0e8e2;
+    border-radius: 3px;
+  }
+  .factor-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: #638273;
+  }
+  .factor-fill.secondary {
+    background: #98aea2;
+  }
+  .factor-note {
+    font-size: 9px;
+    color: #677b6d;
+    margin-top: 10px;
+  }
+  .score-driver {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf0ee;
+    font-size: 10px;
+  }
+  .score-driver span {
+    color: #67746d;
+  }
+  .score-driver strong {
+    color: #283b30;
+    font-weight: 500;
+  }
+  .workspace-foot {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 15px;
+    font-size: 10px;
+    color: #55705f;
+  }
+  .tiny-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #668570;
+    flex-shrink: 0;
+  }
+  .figure-caption {
+    display: flex;
+    justify-content: flex-end;
+    color: #6f7c80;
+    font-size: 10px;
+    margin: 10px 2px 0;
+  }
+  .outcomes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+    padding: 40px 0 45px;
+    border-bottom: 1px solid var(--line);
+  }
+  .outcome-top {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 9px;
+  }
+  .index {
+    color: #829094;
+    font-size: 12px;
+  }
+  .outcome h3 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+  .outcome p {
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 345px;
+  }
+  .workflow {
+    padding: 70px 0 64px;
+  }
+  .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 29px;
+  }
+  .section-heading .eyebrow,
+  .connected-copy .eyebrow {
+    color: var(--muted);
+  }
+  .section-heading h2,
+  .connected-copy h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-top: 13px;
+  }
+  .section-heading .pill {
+    margin-bottom: 4px;
+    background: #ffffff70;
+  }
+  .workflow-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.7fr);
+    gap: 42px;
+    align-items: start;
+  }
+  .step-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .step-tab {
+    text-align: left;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #d4dbda;
+    border-left: 2px solid transparent;
+    background: transparent;
+    padding: 21px 16px;
+    color: var(--body);
+  }
+  .step-tab:first-child {
+    border-top: 1px solid #d4dbda;
+  }
+  .step-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .step-number {
+    color: #8a9792;
+    font-size: 12px;
+  }
+  .step-label {
+    font: 450 20px/1.4 var(--display);
+    letter-spacing: -0.035em;
+  }
+  .step-arrow {
+    margin-left: auto;
+    font:
+      18px/1 Arial,
+      sans-serif;
+    color: #84968b;
+  }
+  .step-tab[aria-selected='true'] {
+    background: #e8eeea;
+    border-left-color: #466b56;
+    color: var(--ink);
+  }
+  .step-tab[aria-selected='true'] .step-arrow {
+    color: #315740;
+  }
+  .step-copy {
+    display: none;
+    margin: 12px 0 0 28px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #53655b;
+  }
+  .step-tab[aria-selected='true'] .step-copy {
+    display: block;
+  }
+  .detail-window {
+    border: 1px solid #d4dcd8;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 8px 24px #193d2a08;
+    overflow: hidden;
+  }
+  .detail-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 19px 23px;
+    border-bottom: 1px solid #e4e9e6;
+  }
+  .detail-top strong {
+    font-size: 13px;
+    font-weight: 550;
+  }
+  .detail-top small {
+    color: #7b8780;
+    font-size: 10px;
+  }
+  .detail-body {
+    padding: 25px 24px;
+    min-height: 310px;
+  }
+  .model-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .model-meta strong {
+    font-size: 12px;
+    font-weight: 550;
+  }
+  .model-meta p {
+    font-size: 11px;
+    margin-top: 4px;
+    color: #74817a;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  .input-table {
+    font-size: 12px;
+  }
+  .input-table th {
+    color: #6a7b70;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 0 9px 10px;
+    border-bottom: 1px solid #dfe6e1;
+    text-align: right;
+  }
+  .input-table td {
+    border-bottom: 1px solid #e8eee9;
+    padding: 13px 9px;
+    text-align: right;
+  }
+  .input-table th:first-child,
+  .input-table td:first-child {
+    text-align: left;
+    padding-left: 0;
+  }
+  .input-table td:last-child,
+  .input-table th:last-child {
+    padding-right: 0;
+  }
+  .input-table .selected td {
+    color: #2c5941;
+    background: #f0f5f2;
+  }
+  .input-table .selected td:first-child {
+    padding-left: 9px;
+    border-radius: 5px 0 0 5px;
+  }
+  .input-table .selected td:last-child {
+    padding-right: 9px;
+    border-radius: 0 5px 5px 0;
+  }
+  .input-table .sum td {
+    border-bottom: 0;
+    font-weight: 600;
+    color: #284734;
+  }
+  .input-table.compact td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .evidence-line {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #6b7e71;
+    margin-top: 19px;
+    font-size: 10px;
+  }
+  .detail-foot {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 15px 23px;
+    background: #f7f9f8;
+    border-top: 1px solid #e4eae6;
+    font-size: 11px;
+    color: #617b69;
+  }
+  .judgement-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 0.8fr;
+    gap: 20px;
+  }
+  .review-path {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    margin-bottom: 22px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #e1e7e3;
+    font-size: 11px;
+    color: #61776a;
+  }
+  .review-path strong {
+    color: #30583f;
+    font-weight: 600;
+  }
+  .review-path .arrow {
+    color: #84958a;
+    font-size: 18px;
+  }
+  .review-note {
+    margin-top: 18px;
+    padding: 13px 14px;
+    background: #edf4f0;
+    border-radius: 8px;
+  }
+  .review-note strong {
+    display: block;
+    color: #355a43;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .review-note p {
+    margin-top: 4px;
+    color: #607367;
+    font-size: 11px;
+    line-height: 1.75;
+  }
+  .assessment-label {
+    font-size: 10px;
+    color: #6b7a70;
+  }
+  .assessment-title {
+    font-size: 14px;
+    font-weight: 550;
+    margin: 8px 0 12px;
+  }
+  .rating-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .rating-options span {
+    display: inline-flex;
+    padding: 5px 11px;
+    border-radius: 5px;
+    border: 1px solid #e1e7e3;
+    font-size: 10px;
+    color: #718075;
+  }
+  .rating-options .selected {
+    background: #e8f0eb;
+    border-color: #b8cdbf;
+    color: #30583f;
+  }
+  .rationale {
+    border: 1px solid #e1e7e3;
+    border-radius: 8px;
+    padding: 13px 14px;
+    margin-top: 18px;
+    background: #fafcfb;
+  }
+  .rationale strong {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #3a5744;
+  }
+  .rationale p {
+    font-size: 11px;
+    line-height: 1.85;
+    color: #607367;
+  }
+  .evidence-card {
+    border-left: 1px solid #e0e7e2;
+    padding-left: 19px;
+  }
+  .evidence-card h3 {
+    font: 600 11px/1.5 var(--sans);
+    letter-spacing: 0;
+    margin: 0 0 14px;
+  }
+  .evidence-card p {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .evidence-ref {
+    margin-top: 15px;
+    border-top: 1px solid #e1e7e3;
+    padding-top: 12px;
+    color: #547260;
+    font-size: 10px;
+  }
+  .assessment-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 20px;
+    margin-top: 22px;
+    border-top: 1px solid #e1e7e3;
+    font-size: 11px;
+    color: #6b7d70;
+  }
+  .assessment-summary strong {
+    font-weight: 600;
+    color: #2b4936;
+  }
+  .score-result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #eef4f0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 17px;
+  }
+  .score-result span {
+    color: #5a7463;
+    font-size: 11px;
+  }
+  .score-result strong {
+    font: 450 26px/1 var(--display);
+    letter-spacing: -0.7px;
+  }
+  .score-result small {
+    font-size: 10px;
+    color: #6c8173;
+  }
+  .panel-caption {
+    font-size: 10px;
+    color: #718078;
+    text-align: right;
+    margin: 11px 2px 0;
+  }
+  .governance {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    align-items: center;
+    gap: 65px;
+    padding: 42px 44px;
+    background: #0c1010;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .governance .eyebrow {
+    color: #9dafa7;
+    font-size: 10px;
+  }
+  .governance h2 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin: 12px 0 14px;
+  }
+  .governance p {
+    max-width: 365px;
+    color: #aab9b2;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+  .governance-list {
+    display: grid;
+    gap: 0;
+  }
+  .governance-item {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid #29322e;
+  }
+  .governance-item:first-child {
+    padding-top: 0;
+  }
+  .governance-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .governance-item .check-circle {
+    margin-top: 3px;
+    width: 19px;
+    height: 19px;
+    color: #8fae9e;
+  }
+  .governance-item h3 {
+    font: 550 14px/1.6 var(--sans);
+    letter-spacing: 0;
+  }
+  .governance-item p {
+    margin-top: 2px;
+    font-size: 12px;
+    max-width: none;
+  }
+  .connected {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 70px;
+    align-items: center;
+    padding: 74px 0;
+  }
+  .connected-copy h2 {
+    margin-bottom: 20px;
+  }
+  .connected-copy p {
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 395px;
+  }
+  .module-flow {
+    position: relative;
+  }
+  .module-flow::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    right: 72px;
+    top: 32px;
+    height: 1px;
+    background: #cbd4cf;
+  }
+  .module-flow-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+  }
+  .module-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 18px;
+    background: #f9fbfa;
+    border: 1px solid #d6dfd9;
+    border-radius: 16px;
+    color: #74867a;
+  }
+  .module.active .module-symbol {
+    background: #0c1110;
+    border-color: #0c1110;
+    color: white;
+    box-shadow: 0 0 0 6px #f1f3f3;
+  }
+  .module-symbol svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .module h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .module p {
+    color: #75837b;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .module.active h3 {
+    color: #244631;
+  }
+  .module.active p {
+    color: #58725f;
+  }
+  .flow-footnote {
+    border-top: 1px solid #d8e0da;
+    margin-top: 27px;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #6e8274;
+    font-size: 11px;
+  }
+  .closing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 45px;
+    border: 1px solid #dae1e1;
+    border-radius: 20px;
+    background: white;
+    padding: 43px 48px;
+    margin-bottom: 48px;
+  }
+  .closing-copy {
+    flex: 1 1 max-content;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .closing h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .closing p {
+    font-size: 15px;
+  }
+  .closing-actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 23px;
+  }
+  @media (min-width: 1450px) {
+    .hero-stage {
+      gap: 48px;
+    }
+    .hero-story h2 {
+      font-size: 42px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .wrap {
+      width: calc(100% - 48px);
+    }
+    .hero-stage {
+      grid-template-columns: minmax(225px, 0.85fr) minmax(0, 1.7fr);
+      padding-left: 28px;
+      gap: 28px;
+    }
+    .hero-story h2 {
+      font-size: 32px;
+    }
+    .workspace-body {
+      grid-template-columns: 1fr;
+    }
+    .app-sidebar {
+      display: none;
+    }
+    .outcome h3 {
+      font-size: 19px;
+    }
+    .outcomes {
+      gap: 24px;
+    }
+    .workflow-grid {
+      gap: 25px;
+      grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.7fr);
+    }
+    .step-label {
+      font-size: 18px;
+    }
+    .step-tab {
+      padding: 19px 13px;
+    }
+    .step-copy {
+      margin-left: 0;
+    }
+    .governance {
+      gap: 38px;
+      padding: 35px;
+    }
+    .connected {
+      gap: 40px;
+    }
+    .connected-copy h2,
+    .section-heading h2 {
+      font-size: 32px;
+    }
+    .module-flow-grid {
+      gap: 18px;
+    }
+    .module h3 {
+      font-size: 15px;
+    }
+    .closing {
+      padding: 32px;
+    }
+    .closing-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 9px;
+    }
+  }
+  @media (max-width: 800px) {
+    .hero-stage {
+      grid-template-columns: 1fr;
+      padding: 30px 24px 0;
+      gap: 30px;
+    }
+    .hero-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 35px;
+    }
+    .hero-story .eyebrow {
+      grid-column: 1/-1;
+    }
+    .hero-story h2 {
+      grid-row: 2/4;
+      margin-bottom: 0;
+    }
+    .hero-story p {
+      margin-top: 14px;
+      max-width: none;
+    }
+    .hero-story .text-link {
+      margin-top: 8px;
+      justify-self: start;
+    }
+    .quiet-line {
+      grid-column: 1/-1;
+      margin-top: 23px;
+    }
+    .workspace {
+      border: 1px solid #cbd4cf;
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+    }
+    .workspace-body {
+      grid-template-columns: 125px minmax(0, 1fr);
+    }
+    .app-sidebar {
+      display: block;
+    }
+    .hero-subtitle {
+      font-size: 16px;
+      max-width: 640px;
+      margin: auto;
+    }
+    .outcomes {
+      gap: 22px;
+      padding: 32px 0;
+    }
+    .outcome-top {
+      display: block;
+    }
+    .outcome h3 {
+      margin-top: 6px;
+      font-size: 18px;
+    }
+    .outcome p {
+      padding-left: 0;
+      font-size: 12px;
+    }
+    .workflow {
+      padding: 49px 0;
+    }
+    .section-heading {
+      align-items: flex-start;
+    }
+    .section-heading .pill {
+      display: none;
+    }
+    .section-heading h2 {
+      font-size: 30px;
+    }
+    .workflow-grid {
+      grid-template-columns: 1fr;
+      gap: 23px;
+    }
+    .step-list {
+      flex-direction: row;
+      gap: 8px;
+    }
+    .step-tab {
+      flex: 1;
+      width: auto;
+      border: 1px solid #d4dbda;
+      border-bottom: 2px solid transparent;
+      border-radius: 8px;
+      padding: 13px;
+    }
+    .step-tab[aria-selected='true'] {
+      border-left-color: #d4dbda;
+      border-bottom-color: #466b56;
+    }
+    .step-title {
+      gap: 8px;
+    }
+    .step-label {
+      font: 500 13px/1.5 var(--sans);
+      letter-spacing: 0;
+    }
+    .step-arrow,
+    .step-copy,
+    .step-tab[aria-selected='true'] .step-copy {
+      display: none;
+    }
+    .detail-body {
+      min-height: 310px;
+    }
+    .governance {
+      gap: 30px;
+      padding: 32px;
+      grid-template-columns: 1fr 1.2fr;
+    }
+    .governance h2 {
+      font-size: 27px;
+    }
+    .connected {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 50px 0;
+    }
+    .connected-copy {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+    .connected-copy .eyebrow {
+      grid-column: 1/-1;
+    }
+    .connected-copy p {
+      margin-top: 14px;
+      font-size: 13px;
+    }
+    .connected-copy h2 {
+      margin-bottom: 0;
+      font-size: 30px;
+    }
+    .module-flow::before {
+      right: 90px;
+    }
+    .module h3 {
+      font-size: 18px;
+    }
+    .module p {
+      max-width: 185px;
+    }
+    .closing h2 {
+      font-size: 30px;
+    }
+    .closing p {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 540px) {
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .hero {
+      padding-top: 33px;
+    }
+    .hero-header {
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 18px 0 12px;
+    }
+    .hero-subtitle {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .hero-stage {
+      padding: 26px 16px 0;
+      gap: 24px;
+      border-radius: 18px;
+    }
+    .hero-story {
+      display: block;
+      padding-inline: 5px;
+    }
+    .hero-story h2 {
+      font-size: 34px;
+      margin: 14px 0;
+    }
+    .hero-story p {
+      font-size: 14px;
+      margin-top: 0;
+    }
+    .hero-story .text-link {
+      margin-top: 15px;
+    }
+    .quiet-line {
+      margin-top: 19px;
+      font-size: 11px;
+    }
+    .workspace-head {
+      padding: 13px;
+    }
+    .workspace-label {
+      font-size: 9px;
+    }
+    .workspace-body {
+      display: block;
+    }
+    .app-sidebar {
+      display: none;
+    }
+    .workspace-content {
+      padding: 16px 13px;
+    }
+    .workspace-title strong {
+      font-size: 12px;
+    }
+    .workspace-title small {
+      font-size: 9px;
+    }
+    .workspace-title .pill {
+      font-size: 9px;
+    }
+    .rating-overview {
+      padding: 15px 12px;
+      gap: 14px;
+    }
+    .rating {
+      font-size: 37px;
+    }
+    .factor-label {
+      font-size: 9px;
+    }
+    .factor-note {
+      font-size: 9px;
+      line-height: 1.5;
+    }
+    .figure-caption {
+      font-size: 9px;
+    }
+    .outcomes {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 28px 5px 33px;
+    }
+    .outcome-top {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 5px;
+    }
+    .outcome h3 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+    .outcome p {
+      padding-left: 29px;
+      font-size: 13px;
+      max-width: none;
+    }
+    .workflow {
+      padding: 38px 0;
+    }
+    .section-heading h2 {
+      font-size: 28px;
+    }
+    .step-list {
+      gap: 6px;
+    }
+    .step-tab {
+      padding: 12px 7px;
+    }
+    .step-number {
+      display: none;
+    }
+    .step-label {
+      font-size: 11px;
+    }
+    .step-title {
+      justify-content: center;
+    }
+    .detail-top {
+      padding: 15px;
+      gap: 12px;
+    }
+    .detail-top strong {
+      font-size: 12px;
+    }
+    .detail-top small {
+      font-size: 9px;
+    }
+    .detail-body {
+      padding: 19px 14px;
+      min-height: 0;
+    }
+    .model-meta {
+      gap: 10px;
+      margin-bottom: 21px;
+    }
+    .model-meta .pill {
+      padding: 4px 7px;
+      font-size: 9px;
+    }
+    .model-meta strong {
+      font-size: 11px;
+    }
+    .model-meta p {
+      font-size: 10px;
+    }
+    .input-table {
+      font-size: 10px;
+    }
+    .input-table th {
+      font-size: 9px;
+    }
+    .input-table th,
+    .input-table td {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+    .input-table.compact td {
+      padding-block: 10px;
+    }
+    .evidence-line {
+      align-items: flex-start;
+      font-size: 10px;
+    }
+    .detail-foot {
+      padding: 13px 14px;
+      font-size: 10px;
+    }
+    .detail-foot .check-circle {
+      width: 17px;
+      height: 17px;
+      font-size: 10px;
+    }
+    .judgement-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .evidence-card {
+      border-left: 0;
+      border-top: 1px solid #e0e7e2;
+      padding: 16px 0 0;
+    }
+    .evidence-card h3 {
+      margin-bottom: 7px;
+    }
+    .evidence-ref {
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+    .assessment-summary {
+      margin-top: 16px;
+      padding-top: 15px;
+      font-size: 10px;
+    }
+    .score-result {
+      gap: 10px;
+      padding: 12px;
+    }
+    .score-result strong {
+      font-size: 23px;
+    }
+    .score-result small {
+      font-size: 9px;
+    }
+    .governance {
+      grid-template-columns: 1fr;
+      padding: 28px 24px;
+      gap: 28px;
+      border-radius: 18px;
+    }
+    .governance h2 {
+      font-size: 29px;
+    }
+    .governance p {
+      font-size: 13px;
+    }
+    .governance-item p {
+      font-size: 12px;
+    }
+    .connected {
+      padding: 43px 0;
+      gap: 30px;
+    }
+    .connected-copy {
+      display: block;
+    }
+    .connected-copy h2 {
+      font-size: 29px;
+      margin: 13px 0;
+    }
+    .connected-copy p {
+      margin-top: 0;
+    }
+    .module-flow-grid {
+      gap: 12px;
+    }
+    .module-symbol {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      margin-bottom: 15px;
+    }
+    .module-symbol svg {
+      width: 22px;
+      height: 22px;
+    }
+    .module-flow::before {
+      top: 24px;
+      left: 28px;
+      right: 40px;
+    }
+    .module h3 {
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 7px;
+    }
+    .module p {
+      font-size: 10px;
+    }
+    .flow-footnote {
+      font-size: 10px;
+      margin-top: 22px;
+    }
+    .closing {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px 24px;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .closing-actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .closing .button {
+      padding: 12px 16px;
+      font-size: 12px;
+    }
+    .closing .text-link {
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 360px) {
+    .hero-story h2 {
+      font-size: 30px;
+    }
+    .workspace-label {
+      display: none;
+    }
+    .workspace-title {
+      flex-wrap: wrap;
+    }
+    .factor-label {
+      gap: 5px;
+    }
+    .input-table {
+      font-size: 9px;
+    }
+    .input-table td,
+    .input-table th {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .button {
+      transition: none;
+    }
+  }
+  @media print {
+    .wrap {
+      width: 100%;
+    }
+    .hero {
+      padding: 0;
+    }
+    .workflow,
+    .connected {
+      break-inside: avoid;
+    }
+  }
+  #an-workflow,
+  #an-connected {
+    scroll-margin-top: 28px;
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-analytics-page]');
+  if (root) {
+    const tabs = Array.from(
+      root.querySelectorAll<HTMLButtonElement>('.step-tab')
+    );
+    const panels = Array.from(
+      root.querySelectorAll<HTMLElement>('[role="tabpanel"]')
+    );
+    const tablist = root.querySelector<HTMLElement>('.step-list');
+    const orientation = window.matchMedia('(max-width:800px)');
+    function selectTab(tab: HTMLButtonElement, focus = false) {
+      for (const item of tabs) {
+        const active = item === tab;
+        item.setAttribute('aria-selected', String(active));
+        item.tabIndex = active ? 0 : -1;
+      }
+      for (const panel of panels) {
+        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+      }
+      if (focus) tab.focus();
+    }
+    function resetTabs() {
+      if (tabs[0]) selectTab(tabs[0]);
+    }
+    resetTabs();
+    // A browser Back/Forward restore should also start at the first option.
+    window.addEventListener('pageshow', resetTabs);
+    for (const [index, tab] of tabs.entries()) {
+      tab.addEventListener('click', () => selectTab(tab));
+      tab.addEventListener('keydown', event => {
+        let next: number;
+        if (event.key === 'ArrowDown' || event.key === 'ArrowRight')
+          next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft')
+          next = (index + tabs.length - 1) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectTab(tabs[next], true);
+      });
+    }
+    function updateOrientation() {
+      tablist?.setAttribute(
+        'aria-orientation',
+        orientation.matches ? 'horizontal' : 'vertical'
+      );
+    }
+    orientation.addEventListener('change', updateOrientation);
+    updateOrientation();
+  }
+</script>

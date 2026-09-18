@@ -1,0 +1,348 @@
+<div class="financial-spreading-page shared-workspace">
+  <div
+    class="workspace"
+    role="img"
+    aria-label="Illustrative financial spreading workspace showing reviewed financials for a fictional company across three years"
+  >
+    <div class="workspace-head">
+      <span class="workspace-mark">DecAltra</span><span class="workspace-label"
+        >Credit Decisioning / Financial spreading</span
+      >
+    </div>
+    <div class="workspace-body">
+      <div class="app-sidebar">
+        <div class="company-monogram">
+          <span class="monogram">NM</span> Northstar<br />Manufacturing
+        </div>
+        <div class="app-menu-item">Company overview</div>
+        <div class="app-menu-item">Documents &amp; data</div>
+        <div class="app-menu-item active">Financial spreading</div>
+        <div class="app-menu-item">Analytics</div>
+        <div class="app-menu-item">Memo</div>
+      </div>
+      <div class="workspace-content">
+        <div class="workspace-title">
+          <div>
+            <strong>Northstar Manufacturing</strong><small
+              >Consolidated financials · EUR million</small
+            >
+          </div><span class="pill good">Reviewed</span>
+        </div>
+        <div class="app-tabs">
+          <span class="active">Financials</span><span>Ratios</span><span
+            >Adjustments</span
+          >
+        </div>
+        <table class="spread-table">
+          <thead
+            ><tr
+              ><th>Income statement</th><th>FY 2022</th><th>FY 2023</th><th
+                >FY 2024</th
+              ></tr
+            ></thead
+          ><tbody>
+            <tr><td>Revenue</td><td>52.4</td><td>58.1</td><td>63.7</td></tr>
+            <tr
+              ><td>Cost of sales</td><td>(31.6)</td><td>(35.2)</td><td
+                >(38.4)</td
+              ></tr
+            >
+            <tr><td>Gross profit</td><td>20.8</td><td>22.9</td><td>25.3</td></tr
+            >
+            <tr class="highlight"
+              ><td>EBITDA</td><td>9.8</td><td>10.6</td><td>12.4</td></tr
+            >
+            <tr
+              ><td>EBITDA margin</td><td>18.7%</td><td>18.2%</td><td>19.5%</td
+              ></tr
+            >
+            <tr><td>Net debt</td><td>30.8</td><td>32.7</td><td>34.0</td></tr>
+          </tbody>
+        </table>
+        <div class="workspace-bottom">
+          <span class="tiny-dot"></span> Source linked &nbsp; · &nbsp; Analyst reviewed
+          &nbsp; · &nbsp; Credit adjusted
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .financial-spreading-page {
+    color-scheme: light;
+    --page: #f1f3f3;
+    --paper: #ffffff;
+    --ink: #0b1011;
+    --body: #526066;
+    --muted: #69757a;
+    --line: #dbe0e1;
+    --soft: #f7f9f9;
+    --dark: #0b0f10;
+    --success: #396456;
+    --success-bg: #edf4f0;
+    --display: var(--font-display);
+    --sans: var(--font-sans);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .financial-spreading-page {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 5px 11px;
+    font-size: 11px;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+  .pill.good {
+    color: var(--success);
+    background: var(--success-bg);
+    border-color: #dae8df;
+  }
+  .pill.good::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .workspace {
+    min-width: 0;
+    background: white;
+    border: 1px solid #ccd3d3;
+    border-radius: 13px 0 0 13px;
+    box-shadow: 0 20px 50px #1b32331a;
+    margin-right: -1px;
+    overflow: hidden;
+  }
+  .workspace-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    min-height: 49px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e6eaea;
+  }
+  .workspace-mark {
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 650;
+    letter-spacing: -0.6px;
+  }
+  .workspace-label {
+    font-size: 10px;
+    color: #6a777c;
+  }
+  .workspace-body {
+    display: grid;
+    grid-template-columns: 133px minmax(0, 1fr);
+    min-height: 318px;
+  }
+  .app-sidebar {
+    border-right: 1px solid #e8ebeb;
+    padding: 19px 10px;
+    background: #fafbfb;
+  }
+  .company-monogram {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0 5px 23px;
+  }
+  .monogram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    background: #e3e9e7;
+    border: 1px solid #d4dfda;
+    border-radius: 7px;
+    font-size: 10px;
+  }
+  .app-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    padding: 9px 8px;
+    color: #68777c;
+    margin-bottom: 3px;
+    border-radius: 6px;
+  }
+  .app-menu-item.active {
+    background: #e9eeee;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .app-menu-item svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+  .workspace-content {
+    padding: 19px 21px 17px;
+    min-width: 0;
+  }
+  .workspace-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 17px;
+  }
+  .workspace-title strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.35px;
+  }
+  .workspace-title small {
+    display: block;
+    font-size: 10px;
+    color: #708087;
+    margin-top: 2px;
+  }
+  .workspace-title .pill {
+    font-size: 9px;
+    padding: 4px 7px;
+  }
+  .app-tabs {
+    display: flex;
+    gap: 22px;
+    border-bottom: 1px solid #e2e7e7;
+    margin-bottom: 13px;
+    font-size: 10px;
+    color: #758188;
+  }
+  .app-tabs span {
+    padding: 0 0 9px;
+  }
+  .app-tabs .active {
+    border-bottom: 2px solid var(--ink);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  .spread-table {
+    font-size: 10px;
+  }
+  th {
+    font-weight: 500;
+    color: #728086;
+  }
+  .spread-table th,
+  .spread-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #edf0f0;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .spread-table th:first-child,
+  .spread-table td:first-child {
+    text-align: left;
+    padding-left: 0;
+  }
+  .spread-table .highlight {
+    background: #edf3f0;
+  }
+  .spread-table .highlight td:first-child {
+    padding-left: 8px;
+  }
+  .spread-table .highlight td {
+    font-weight: 600;
+    color: #244d40;
+  }
+  .workspace-bottom {
+    margin-top: 15px;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #62756a;
+  }
+  .workspace-bottom .tiny-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #6b927d;
+  }
+  @media (max-width: 1100px) {
+    .app-sidebar {
+      display: none;
+    }
+    .workspace-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 800px) {
+    .workspace {
+      border-radius: 12px 12px 0 0;
+      margin: 0 0 -1px;
+    }
+    .workspace-body {
+      min-height: 0;
+    }
+    .spread-table {
+      font-size: 11px;
+    }
+    .workspace-label {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 540px) {
+    .workspace-head {
+      padding: 12px;
+      gap: 5px;
+    }
+    .workspace-label {
+      font-size: 8px;
+    }
+    .workspace-content {
+      padding: 16px 12px;
+    }
+    .workspace-title strong {
+      font-size: 11px;
+    }
+    .workspace-title small {
+      font-size: 8px;
+    }
+    .workspace-title .pill {
+      font-size: 8px;
+      padding: 3px 6px;
+    }
+    .app-tabs {
+      gap: 16px;
+      font-size: 9px;
+    }
+    .spread-table {
+      font-size: 9px;
+    }
+    .spread-table td,
+    .spread-table th {
+      padding: 8px 5px;
+    }
+  }
+
+  .shared-workspace {
+    background: transparent;
+    min-width: 0;
+  }
+</style>

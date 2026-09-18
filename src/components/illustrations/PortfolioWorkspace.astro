@@ -1,0 +1,350 @@
+<div
+  class="portfolio"
+  role="img"
+  aria-label="Illustrative portfolio dashboard with fictional companies moving through Financial Spreading, Analytics and Memo review, an Action centre for pending reviews, and an Insights assistant summarising portfolio priorities"
+>
+  <div class="topbar">
+    <b>DecAltra</b><span>Credit Decisioning / Portfolio</span><span
+      class="avatar">AM</span
+    >
+  </div>
+  <div class="body">
+    <aside>
+      <strong>Your workspace</strong><span class="active"
+        >Portfolio overview</span
+      ><span>Financial spreading</span><span>Analytics</span><span>Memo</span
+      ><div class="sidebar-note">One connected<br />decision process</div>
+    </aside>
+    <div class="portfolio-content">
+      <div class="heading">
+        <div>
+          <h2>Portfolio overview</h2><p>Your credit workflow, in one view</p>
+        </div><span class="badge">Team workspace</span>
+      </div>
+      <div class="metrics">
+        <div>
+          <span>Companies</span><strong>24</strong><small
+            >Across your portfolio</small
+          >
+        </div><div>
+          <span>In progress</span><strong>9</strong><small
+            >From source to decision</small
+          >
+        </div><div>
+          <span>Ready for review</span><strong>4</strong><small
+            >Your team takes the lead</small
+          >
+        </div>
+      </div>
+      <div class="table-title">
+        <strong>Company activity</strong><span>Latest assessments</span>
+      </div>
+      <table>
+        <thead
+          ><tr
+            ><th>Company</th><th>Financials</th><th>Analytics</th><th>Memo</th
+            ></tr
+          ></thead
+        ><tbody>
+          <tr
+            ><td
+              ><b>Northstar Manufacturing</b><small
+                >Industrials · Annual review</small
+              ></td
+            ><td><span class="done">Reviewed</span></td><td
+              ><span class="done">Reviewed</span></td
+            ><td><span class="review">In review</span></td></tr
+          >
+          <tr
+            ><td
+              ><b>Harbour Logistics</b><small>Transport · New assessment</small
+              ></td
+            ><td><span class="done">Reviewed</span></td><td
+              ><span class="review">In review</span></td
+            ><td><span class="pending">Not started</span></td></tr
+          >
+        </tbody>
+      </table>
+      <div class="support-panels">
+        <section class="action-centre">
+          <div class="panel-heading">
+            <strong>Action centre</strong><span class="count">4</span>
+          </div><p>
+            <span class="dot"></span> Northstar memo ready
+          </p><small>Annual review · Assigned to you</small><div
+            class="panel-link"
+          >
+            View review queue <span>↗</span>
+          </div>
+        </section>
+        <section class="assistant">
+          <div class="panel-heading">
+            <strong><span aria-hidden="true">✧</span> Insights assistant</strong
+            ><span class="ai-label">AI</span>
+          </div><p class="question">What needs my attention?</p><p
+            class="answer"
+          >
+            4 assessments await review. Northstar’s memo is ready.
+          </p>
+        </section>
+      </div>
+      <div class="footer">
+        <span class="dot"></span> Connected evidence · Human-led decisions
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .portfolio {
+    color: #17241e;
+    background: white;
+    font: 11px/1.5 var(--font-sans);
+    height: 520px;
+  }
+  .topbar {
+    height: 49px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 20px;
+    border-bottom: 1px solid #e3e9e5;
+  }
+  .topbar b {
+    font: 650 15px var(--font-display);
+    letter-spacing: -0.6px;
+  }
+  .topbar > span {
+    color: #728079;
+    font-size: 10px;
+  }
+  .topbar .avatar {
+    margin-left: auto;
+    background: #e9efec;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 9px;
+  }
+  .body {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    height: calc(100% - 49px);
+  }
+  aside {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 22px 10px;
+    background: #f8faf9;
+    border-right: 1px solid #e3e9e5;
+    font-size: 10px;
+  }
+  aside strong {
+    padding: 0 8px;
+    margin-bottom: 16px;
+    font-size: 10px;
+  }
+  aside > span {
+    padding: 9px 8px;
+    color: #748279;
+    border-radius: 6px;
+  }
+  aside .active {
+    color: #244d40;
+    background: #e7eeea;
+    font-weight: 600;
+  }
+  .sidebar-note {
+    margin-top: auto;
+    padding: 8px;
+    color: #7d8b82;
+    line-height: 1.8;
+  }
+  .portfolio-content {
+    min-width: 0;
+    padding: 22px 24px;
+  }
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  h2 {
+    margin: 0;
+    font: 550 20px/1.2 var(--font-display);
+    letter-spacing: -0.5px;
+  }
+  p {
+    margin: 5px 0 0;
+    color: #78867d;
+    font-size: 10px;
+  }
+  .badge {
+    border: 1px solid #dce6df;
+    border-radius: 20px;
+    padding: 4px 7px;
+    color: #52705e;
+    font-size: 8px;
+  }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .metrics > div {
+    border: 1px solid #dfe7e2;
+    border-radius: 8px;
+    padding: 12px;
+    background: #fbfcfb;
+  }
+  .metrics span,
+  .metrics small {
+    display: block;
+    color: #728478;
+    font-size: 9px;
+  }
+  .metrics strong {
+    display: block;
+    font: 500 25px/1.35 var(--font-display);
+    color: #315440;
+  }
+  .metrics small {
+    font-size: 8px;
+  }
+  .table-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 12px;
+    font-size: 10px;
+  }
+  .table-title span {
+    color: #829087;
+    font-size: 9px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+  }
+  th {
+    font-weight: 400;
+    color: #829087;
+    text-align: left;
+    padding: 0 5px 8px;
+  }
+  td {
+    border-top: 1px solid #e9eeeb;
+    padding: 12px 5px;
+  }
+  td:first-child,
+  th:first-child {
+    padding-left: 0;
+  }
+  td b {
+    font-size: 10px;
+    font-weight: 550;
+  }
+  td small {
+    display: block;
+    color: #849088;
+    font-size: 8px;
+    margin-top: 3px;
+  }
+  td span {
+    white-space: nowrap;
+    font-size: 8px;
+    border-radius: 4px;
+    padding: 4px 5px;
+  }
+  .done {
+    background: #edf4ef;
+    color: #50725b;
+  }
+  .review {
+    background: #f5f1e8;
+    color: #88774e;
+  }
+  .pending {
+    color: #89938d;
+  }
+  .support-panels {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .support-panels section {
+    border: 1px solid #dce6df;
+    border-radius: 8px;
+    padding: 12px;
+    min-width: 0;
+    background: #fbfcfb;
+  }
+  .support-panels .assistant {
+    background: #eef4f0;
+  }
+  .panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .panel-heading strong {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .count,
+  .ai-label {
+    font-size: 8px;
+    color: #52705e;
+    background: #e2ece5;
+    border-radius: 4px;
+    padding: 2px 5px;
+  }
+  .action-centre p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #465e4e;
+    font-size: 10px;
+  }
+  .action-centre small {
+    display: block;
+    color: #88938c;
+    font-size: 8px;
+    margin: 4px 0 0 10px;
+  }
+  .panel-link {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+    color: #547460;
+    margin-top: 9px;
+  }
+  .assistant .question {
+    font-size: 10px;
+    color: #365740;
+    font-weight: 550;
+    margin-bottom: 5px;
+  }
+  .assistant .answer {
+    font-size: 10px;
+    color: #69816f;
+    line-height: 1.6;
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 7px;
+    color: #76877c;
+    font-size: 8px;
+  }
+  .dot {
+    width: 5px;
+    height: 5px;
+    background: #749781;
+    border-radius: 50%;
+  }
+</style>

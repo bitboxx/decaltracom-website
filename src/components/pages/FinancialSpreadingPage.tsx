@@ -172,15 +172,15 @@ export default function FinancialSpreadingPage() {
               <div className="grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-mist-200 bg-white p-4 shadow-sm">
                   <p className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-mist-500">Output</p>
-                  <p className="mt-2 font-display text-2xl/8 tracking-tight text-mist-950">Structured</p>
+                  <p className="mt-2 font-sans text-2xl/8 tracking-tight text-mist-950">Structured</p>
                 </div>
                 <div className="rounded-2xl border border-mist-200 bg-white p-4 shadow-sm">
                   <p className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-mist-500">Review</p>
-                  <p className="mt-2 font-display text-2xl/8 tracking-tight text-mist-950">Explainable</p>
+                  <p className="mt-2 font-sans text-2xl/8 tracking-tight text-mist-950">Explainable</p>
                 </div>
                 <div className="rounded-2xl border border-mist-200 bg-white p-4 shadow-sm">
                   <p className="text-sm/6 font-semibold uppercase tracking-[0.16em] text-mist-500">Process</p>
-                  <p className="mt-2 font-display text-2xl/8 tracking-tight text-mist-950">Traceable</p>
+                  <p className="mt-2 font-sans text-2xl/8 tracking-tight text-mist-950">Traceable</p>
                 </div>
               </div>
             </div>

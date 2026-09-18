@@ -1,0 +1,247 @@
+.desktop,
+.mobile {
+  overflow: hidden;
+  border: 1px solid var(--color-mist-200);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 2px 3px rgb(0 0 0 / 4%);
+}
+
+.desktop {
+  display: none;
+  scroll-margin-top: 16px;
+}
+
+.navigation,
+.mobile {
+  background: linear-gradient(145deg, #26373e, #425961);
+}
+
+.navigation {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  padding: 16px 0;
+  border-radius: 0;
+}
+
+.navigationItem,
+.mobileTrigger {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  min-height: 64px;
+  width: 100%;
+  padding: 16px 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #e1e8e9;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: pointer;
+  transition:
+    background-color 160ms,
+    color 160ms;
+}
+
+.navigationItem:hover,
+.mobileTrigger:hover {
+  background: rgb(255 255 255 / 9%);
+  text-decoration: none;
+}
+
+.navigationItem[data-state='active'],
+.mobileTrigger[data-state='open'] {
+  background: #e8efeb;
+  color: #172820;
+  box-shadow: inset 4px 0 #597b65;
+}
+
+.navigationItem:focus-visible,
+.mobileTrigger:focus-visible {
+  outline: 2px solid #a7c2b1;
+  outline-offset: -6px;
+  --tw-ring-shadow: 0 0 #0000;
+}
+
+.navigationItem[data-state='active']:focus-visible,
+.mobileTrigger[data-state='open']:focus-visible {
+  outline-color: #365a45;
+}
+
+.navigationLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.number {
+  flex: none;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+.chevron {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  opacity: 0.65;
+}
+.mobileTrigger > svg {
+  color: currentColor;
+}
+
+.panel,
+.mobileContent {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px;
+  background: white;
+  color: var(--color-mist-700);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* All panels share one grid cell, so the tallest sets a stable, natural height.
+   Inactive panels remain unpainted and inert, including their footer links. */
+.panel {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 27rem;
+  margin: 0;
+}
+.panel[data-state='inactive'] {
+  visibility: hidden;
+  pointer-events: none;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.heading {
+  margin: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-mist-200);
+  color: var(--color-mist-950);
+  font-size: 26px;
+  line-height: 1.3;
+}
+.heading:focus {
+  outline: none;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-mist-200);
+}
+.storyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 4px 0;
+  background: none;
+  border: 0;
+  border-radius: 3px;
+  color: #355b45;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.storyLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.storyLink svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+.previous {
+  justify-self: start;
+}
+.next {
+  justify-self: end;
+  text-align: right;
+}
+.progress {
+  color: var(--color-mist-500);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.mobileItem {
+  border: 0;
+  scroll-margin-top: 16px;
+}
+.mobileItem + .mobileItem {
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
+.mobileItem > [data-state] {
+  animation: none;
+}
+.mobileContent {
+  padding: 24px;
+}
+
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .mobileTrigger {
+    padding: 16px 20px;
+  }
+  .mobileContent {
+    padding: 24px 20px 16px;
+  }
+  .heading {
+    font-size: 23px;
+  }
+  .footer {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 4px 16px;
+  }
+  .progress {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+  }
+  .previous,
+  .next {
+    grid-row: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigationItem,
+  .mobileTrigger {
+    transition: none;
+  }
+}

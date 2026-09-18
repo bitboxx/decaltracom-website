@@ -46,9 +46,15 @@ function FeatureGroup<Plan extends string>({
                 className="border-t border-mist-950/5 px-3 py-4 text-center text-mist-700 group-first:border-mist-950/10 dark:border-white/10 dark:text-mist-400 dark:group-first:border-white/10"
               >
                 {value === true ? (
-                  <CheckmarkIcon aria-label="Included" className="stroke-mist-950 dark:stroke-white" />
+                  <>
+                    <CheckmarkIcon className="stroke-mist-950 dark:stroke-white" />
+                    <span className="sr-only">Included</span>
+                  </>
                 ) : value === false ? (
-                  <MinusIcon aria-label="Not included" className="stroke-mist-950 dark:stroke-white" />
+                  <>
+                    <MinusIcon className="stroke-mist-950 dark:stroke-white" />
+                    <span className="sr-only">Not included</span>
+                  </>
                 ) : (
                   value
                 )}

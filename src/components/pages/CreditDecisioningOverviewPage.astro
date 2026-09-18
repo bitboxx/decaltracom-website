@@ -1,0 +1,1695 @@
+---
+import CreditDecisioningSectionNav from '@/components/pages/CreditDecisioningSectionNav';
+import { CreditDecisioningBanner } from '@/components/sections/credit-decisioning-banner';
+import { ProductCompositionCard } from '@/components/sections/product-composition-section';
+---
+
+<CreditDecisioningSectionNav client:load />
+<div
+  id="credit-decisioning-overview"
+  class="credit-decisioning-overview wrap"
+  data-credit-overview=""
+>
+  <section class="hero overview-hero" aria-labelledby="page-title">
+    <div id="hero" class="hero-header">
+      <span class="eyebrow">Intelligent decision infrastructure</span>
+      <h1 id="page-title">Credit Decisioning</h1>
+      <p class="hero-subtitle">
+        Move faster from source data to credit decisions with AI assistance and
+        analyst control
+      </p>
+    </div>
+    <div class="original-banner"><CreditDecisioningBanner /></div>
+  </section>
+
+  <section
+    class="outcomes overview-outcomes"
+    aria-label="Benefits across the modules"
+  >
+    <article id="benefits" class="outcome">
+      <div class="outcome-top">
+        <span class="index">01</span><h3>Less prep and rework</h3>
+      </div><p>
+        Use AI to extract financials and carry reviewed numbers across modules
+        so your team can focus on the credit view
+      </p>
+    </article>
+    <article class="outcome">
+      <div class="outcome-top">
+        <span class="index">02</span><h3>Faster analyst review</h3>
+      </div><p>
+        Use AI-assisted assessments and cited memo drafts to help analysts reach
+        a well-supported recommendation sooner
+      </p>
+    </article>
+    <article class="outcome">
+      <div class="outcome-top">
+        <span class="index">03</span><h3>More value over time</h3>
+      </div><p>
+        Build a decision record that the Insights Assistant can draw on as your
+        institutional intelligence grows
+      </p>
+    </article>
+  </section>
+
+  <section
+    class="workflow overview-workflow"
+    aria-labelledby="workflow-heading"
+  >
+    <div id="connected" class="section-heading">
+      <div>
+        <span class="eyebrow">Better together</span><h2 id="workflow-heading">
+          One analysis that carries through
+        </h2>
+      </div>
+      <p>
+        Let AI handle more of the preparation while connected modules reduce
+        handoffs and keep your analysts in control
+      </p>
+    </div>
+    <div class="workflow-grid">
+      <div
+        class="step-list"
+        role="tablist"
+        aria-label="Cross-module benefits"
+        aria-orientation="vertical"
+      >
+        <button
+          class="step-tab"
+          id="tab-numbers"
+          role="tab"
+          type="button"
+          aria-controls="panel-numbers"
+          aria-selected="true"
+          tabindex="0"
+          ><span class="step-title"
+            ><span class="step-number">01</span><span class="step-label"
+              >A shared financial basis</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >Move from AI-extracted statements to reviewed financials and
+            credit-adjusted metrics that carry through to the recommendation</span
+          ></button
+        >
+        <button
+          class="step-tab"
+          id="tab-evidence"
+          role="tab"
+          type="button"
+          aria-controls="panel-evidence"
+          aria-selected="false"
+          tabindex="-1"
+          ><span class="step-title"
+            ><span class="step-number">02</span><span class="step-label"
+              >A faster path to review</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >Use AI to prepare qualitative assessments and cited memo drafts so
+            analysts can focus on review and the final recommendation</span
+          ></button
+        >
+        <button
+          class="step-tab"
+          id="tab-intelligence"
+          role="tab"
+          type="button"
+          aria-controls="panel-intelligence"
+          aria-selected="false"
+          tabindex="-1"
+          ><span class="step-title"
+            ><span class="step-number">03</span><span class="step-label"
+              >Intelligence that builds</span
+            ><span class="step-arrow" aria-hidden="true">↗</span></span
+          ><span class="step-copy"
+            >Each decision process adds to the institutional intelligence that
+            the Insights Assistant in DecAltra’s Foundation layer can draw on
+            over time</span
+          ></button
+        >
+      </div>
+      <div>
+        <div class="detail-window">
+          <section
+            id="panel-numbers"
+            role="tabpanel"
+            aria-labelledby="tab-numbers"
+          >
+            <div class="detail-top">
+              <strong>Same company. Same financial basis.</strong><small
+                >Illustrative example</small
+              >
+            </div>
+            <div class="detail-body">
+              <div class="example-context">
+                <span class="monogram" aria-hidden="true">N</span><div>
+                  <strong>Northstar Manufacturing</strong><small
+                    >Annual credit review · FY2025</small
+                  >
+                </div><span class="pill good">Connected analysis</span>
+              </div>
+              <div class="shared-records">
+                <article class="shared-record">
+                  <span class="record-number">01</span><h3>
+                    Financial spreading
+                  </h3><p class="record-description">
+                    AI-assisted extraction with analyst review
+                  </p><div class="record-figure">
+                    <span>Adjusted EBITDA</span><strong>€13.6m</strong>
+                  </div><div class="record-figure">
+                    <span>Net debt</span><strong>€34.0m</strong>
+                  </div><div class="record-state">
+                    <span class="tiny-dot"></span>Analyst reviewed
+                  </div>
+                </article>
+                <article class="shared-record">
+                  <span class="record-number">02</span><h3>Analytics</h3><p
+                    class="record-description"
+                  >
+                    AI-assisted assessments for analyst review
+                  </p><div class="record-figure">
+                    <span>Net debt / EBITDA</span><strong>2.50×</strong>
+                  </div><div class="record-figure">
+                    <span>Internal rating</span><strong>BBB−</strong>
+                  </div><div class="record-state">
+                    <span class="tiny-dot"></span>Judgments reviewed
+                  </div>
+                </article>
+                <article class="shared-record">
+                  <span class="record-number">03</span><h3>Memo</h3><p
+                    class="record-description"
+                  >
+                    AI-drafted memos with citations for review
+                  </p><p class="memo-snippet">
+                    “Net leverage of <strong>2.50×</strong> supports the <strong
+                      >BBB−</strong
+                    > internal rating.” <span class="reference-mark">1</span>
+                  </p><div class="record-state">
+                    <span class="tiny-dot"></span>Evidence cited for review
+                  </div>
+                </article>
+              </div>
+              <div class="continuity-line">
+                <span class="check-circle" aria-hidden="true">✓</span>One
+                connected basis for the credit decision
+              </div>
+            </div>
+            <div class="detail-foot">
+              From reviewed financials and credit-adjusted metrics to the
+              recommendation
+            </div>
+          </section>
+
+          <section
+            id="panel-evidence"
+            role="tabpanel"
+            aria-labelledby="tab-evidence"
+            hidden
+          >
+            <div class="detail-top">
+              <strong>The recommendation with its evidence</strong><small
+                >Select a citation</small
+              >
+            </div>
+            <div class="detail-body">
+              <div class="trace-grid">
+                <div class="trace-memo">
+                  <span class="eyebrow">Memo · Northstar Manufacturing</span><h3
+                  >
+                    Credit assessment
+                  </h3><p>
+                    Adjusted EBITDA of €13.6m gives net leverage of 2.50× <button
+                      class="citation"
+                      type="button"
+                      data-source-target="source-financial"
+                      aria-controls="source-financial"
+                      aria-pressed="true"
+                      aria-label="View source 1: reviewed financials">1</button
+                    >
+                  </p><p>
+                    The business profile is supported by recurring demand from
+                    established customers <button
+                      class="citation"
+                      type="button"
+                      data-source-target="source-judgment"
+                      aria-controls="source-judgment"
+                      aria-pressed="false"
+                      aria-label="View source 2: analyst-reviewed judgment"
+                      >2</button
+                    >
+                  </p><div class="reviewer-line">
+                    <span class="check-circle" aria-hidden="true">✓</span>AI
+                    cites the information used to aid review
+                  </div>
+                </div>
+                <div class="source-preview" aria-live="polite">
+                  <div id="source-financial" data-source-panel>
+                    <span class="eyebrow">Source 1 · Financial spreading</span
+                    ><h3>
+                      Reviewed financials &amp; credit-adjusted metrics
+                    </h3><p>
+                      The financial basis used in the credit model and
+                      referenced in the memo
+                    </p><div class="record-figure">
+                      <span>Net debt / EBITDA</span><strong>2.50×</strong>
+                    </div><div class="source-location">
+                      <strong>Northstar · FY2025 financials</strong>Net debt
+                      €34.0m / adjusted EBITDA €13.6m
+                    </div>
+                  </div>
+                  <div id="source-judgment" data-source-panel hidden>
+                    <span class="eyebrow">Source 2 · Analytics</span><h3>
+                      Analyst-reviewed qualitative judgment
+                    </h3><p>
+                      AI-assisted assessment of the business profile reviewed by
+                      the analyst before it informs the credit analysis
+                    </p><div class="review-note">
+                      <strong>Evidence behind the judgment</strong><p>
+                        Management report · Customer relationships and recurring
+                        demand
+                      </p>
+                    </div><div class="source-location">
+                      <strong>Northstar · FY2025 credit analysis</strong
+                      >Assessment reviewed by the analyst
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="detail-foot">
+              Faster preparation and review with your analysts in control
+            </div>
+          </section>
+
+          <section
+            id="panel-intelligence"
+            role="tabpanel"
+            aria-labelledby="tab-intelligence"
+            hidden
+          >
+            <div class="detail-top">
+              <strong>A decision record that grows in value</strong><small
+                >Illustrative example</small
+              >
+            </div>
+            <div class="detail-body">
+              <div class="intelligence-rail">
+                <div class="mini-modules">
+                  <span>Financial spreading</span><span>Analytics</span><span
+                    >Memo</span
+                  >
+                </div>
+                <span class="rail-arrow" aria-hidden="true">→</span>
+                <div class="decision-library">
+                  <span class="module-symbol" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24"
+                      ><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path
+                        d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"
+                      ></path></svg
+                    ></span
+                  ><div>
+                    <strong>Decision records</strong><small
+                      >Institutional intelligence over time</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="assistant-example">
+                <div class="assistant-header">
+                  <span class="tiny-dot"></span>Insights Assistant<span
+                    class="pill">Foundation layer</span
+                  >
+                </div>
+                <p class="assistant-question">
+                  How have we assessed similar leverage in earlier decisions?
+                </p>
+                <p class="assistant-answer">
+                  Compare the financial basis and credit rationale from previous
+                  reviews with citations back to the relevant decision records
+                </p>
+                <div class="past-reviews">
+                  <span
+                    ><span class="reference-mark">1</span> Northstar · 2025 review</span
+                  ><span
+                    ><span class="reference-mark">2</span> Harbor · 2025 review</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="detail-foot">
+              Turn the work behind each decision into context for the next
+            </div>
+          </section>
+        </div>
+        <p class="panel-caption">
+          Illustrative views · Not actual screenshot · Fictional data
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="architecture-section"
+    id="product-architecture"
+    aria-label="Credit Decisioning modules and governed foundation"
+  >
+    <div class="preserved-architecture"><ProductCompositionCard /></div>
+  </section>
+
+  <section
+    id="call-to-action"
+    class="closing overview-closing"
+    aria-labelledby="interested-title"
+  >
+    <div class="closing-copy">
+      <h2 id="interested-title">Interested?</h2><p>
+        Learn how DecAltra’s intelligent decision infrastructure could enable
+        you to stay ahead
+      </p>
+    </div>
+    <div class="closing-actions">
+      <button
+        class="button"
+        type="button"
+        command="show-modal"
+        commandfor="demo-request-modal">Request a demo</button
+      ><a class="text-link" href="/contact"
+        >Contact us <span class="arrow" aria-hidden="true">→</span></a
+      >
+    </div>
+  </section>
+</div>
+
+<style>
+  .credit-decisioning-overview {
+    color-scheme: light;
+    --page: #f1f3f3;
+    --paper: #fff;
+    --ink: #0b1011;
+    --body: #526066;
+    --muted: #6b787d;
+    --line: #dbe1e1;
+    --soft: #f7f9f9;
+    --green: #396456;
+    --green-bg: #edf4f0;
+    --display: var(--font-display);
+    --sans: var(--font-sans);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .credit-decisioning-overview {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  button,
+  input {
+    font: inherit;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  figure {
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--display);
+    font-variation-settings: 'wdth' 112.5;
+    font-weight: 450;
+    letter-spacing: -0.045em;
+  }
+  p {
+    color: var(--body);
+  }
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid #477765;
+    outline-offset: 5px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  .wrap {
+    width: min(1280px, calc(100% - 80px));
+    margin-inline: auto;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    font-size: 11px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .pill.good {
+    background: var(--green-bg);
+    border-color: #d8e6dd;
+    color: var(--green);
+  }
+  .pill.good::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 21px;
+    border: 1px solid var(--ink);
+    border-radius: 99px;
+    background: var(--ink);
+    color: white;
+    font-size: 13px;
+    font-weight: 550;
+    line-height: 1.6;
+    white-space: nowrap;
+    transition:
+      background 0.2s,
+      transform 0.2s;
+  }
+  .button:hover {
+    background: #303a3c;
+    transform: translateY(-1px);
+  }
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 550;
+    white-space: nowrap;
+  }
+  .arrow {
+    font:
+      21px/1 Arial,
+      sans-serif;
+  }
+  .hero {
+    padding-top: 46px;
+  }
+  .hero-header {
+    text-align: center;
+    margin-bottom: 42px;
+  }
+  .hero-header .eyebrow {
+    display: inline-flex;
+    border: 1px solid #d3dada;
+    border-radius: 99px;
+    background: #ffffff80;
+    padding: 5px 12px;
+    font-weight: 500;
+  }
+  h1 {
+    margin: 21px 0 15px;
+    font-size: clamp(38px, 4.5vw, 60px);
+    line-height: 1.15;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .check-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 19px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #d4dfda;
+    background: #e5ece8;
+    border-radius: 7px;
+    flex-shrink: 0;
+    font-size: 10px;
+  }
+  .tiny-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #668570;
+    flex-shrink: 0;
+  }
+  .outcomes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+    padding: 40px 0 45px;
+    border-bottom: 1px solid var(--line);
+  }
+  .outcome-top {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 9px;
+  }
+  .index {
+    color: #829094;
+    font-size: 12px;
+  }
+  .outcome h3 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+  .outcome p {
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 345px;
+  }
+  .workflow {
+    padding: 70px 0 64px;
+  }
+  .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 29px;
+  }
+  .section-heading .eyebrow {
+    color: var(--muted);
+  }
+  .section-heading h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-top: 13px;
+  }
+  .section-heading .pill {
+    margin-bottom: 4px;
+    background: #ffffff70;
+  }
+  .workflow-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.7fr);
+    gap: 42px;
+    align-items: start;
+  }
+  .step-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .step-tab {
+    text-align: left;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #d4dbda;
+    border-left: 2px solid transparent;
+    background: transparent;
+    padding: 21px 16px;
+    color: var(--body);
+  }
+  .step-tab:first-child {
+    border-top: 1px solid #d4dbda;
+  }
+  .step-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .step-number {
+    color: #8a9792;
+    font-size: 12px;
+  }
+  .step-label {
+    font: 450 20px/1.4 var(--display);
+    letter-spacing: -0.035em;
+  }
+  .step-arrow {
+    margin-left: auto;
+    font:
+      18px/1 Arial,
+      sans-serif;
+    color: #84968b;
+  }
+  .step-tab[aria-selected='true'] {
+    background: #e8eeea;
+    border-left-color: #466b56;
+    color: var(--ink);
+  }
+  .step-tab[aria-selected='true'] .step-arrow {
+    color: #315740;
+  }
+  .step-copy {
+    display: none;
+    margin: 12px 0 0 28px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #53655b;
+  }
+  .step-tab[aria-selected='true'] .step-copy {
+    display: block;
+  }
+  .detail-window {
+    border: 1px solid #d4dcd8;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 8px 24px #193d2a08;
+    overflow: hidden;
+  }
+  .detail-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 19px 23px;
+    border-bottom: 1px solid #e4e9e6;
+  }
+  .detail-top strong {
+    font-size: 13px;
+    font-weight: 550;
+  }
+  .detail-top small {
+    color: #7b8780;
+    font-size: 10px;
+  }
+  .detail-body {
+    padding: 25px 24px;
+    min-height: 310px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  .detail-foot {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 15px 23px;
+    background: #f7f9f8;
+    border-top: 1px solid #e4eae6;
+    font-size: 11px;
+    color: #617b69;
+  }
+  .review-note {
+    margin-top: 18px;
+    padding: 13px 14px;
+    background: #edf4f0;
+    border-radius: 8px;
+  }
+  .review-note strong {
+    display: block;
+    color: #355a43;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .review-note p {
+    margin-top: 4px;
+    color: #607367;
+    font-size: 11px;
+    line-height: 1.75;
+  }
+  .panel-caption {
+    font-size: 10px;
+    color: #718078;
+    text-align: right;
+    margin: 11px 2px 0;
+  }
+  .module-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 18px;
+    background: #f9fbfa;
+    border: 1px solid #d6dfd9;
+    border-radius: 16px;
+    color: #74867a;
+  }
+  .module-symbol svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .closing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 45px;
+    border: 1px solid #dae1e1;
+    border-radius: 20px;
+    background: white;
+    padding: 43px 48px;
+    margin-bottom: 48px;
+  }
+  .closing-copy {
+    flex: 1 1 max-content;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .closing h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .closing p {
+    font-size: 15px;
+  }
+  .closing-actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 23px;
+  }
+  @media (max-width: 1100px) {
+    .wrap {
+      width: calc(100% - 48px);
+    }
+    .outcome h3 {
+      font-size: 19px;
+    }
+    .outcomes {
+      gap: 24px;
+    }
+    .workflow-grid {
+      gap: 25px;
+      grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.7fr);
+    }
+    .step-label {
+      font-size: 18px;
+    }
+    .step-tab {
+      padding: 19px 13px;
+    }
+    .step-copy {
+      margin-left: 0;
+    }
+    .section-heading h2 {
+      font-size: 32px;
+    }
+    .closing {
+      padding: 32px;
+    }
+    .closing-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 9px;
+    }
+  }
+  @media (max-width: 800px) {
+    .hero-subtitle {
+      font-size: 16px;
+      max-width: 640px;
+      margin: auto;
+    }
+    .outcomes {
+      gap: 22px;
+      padding: 32px 0;
+    }
+    .outcome-top {
+      display: block;
+    }
+    .outcome h3 {
+      margin-top: 6px;
+      font-size: 18px;
+    }
+    .outcome p {
+      padding-left: 0;
+      font-size: 12px;
+    }
+    .workflow {
+      padding: 49px 0;
+    }
+    .section-heading {
+      align-items: flex-start;
+    }
+    .section-heading .pill {
+      display: none;
+    }
+    .section-heading h2 {
+      font-size: 30px;
+    }
+    .workflow-grid {
+      grid-template-columns: 1fr;
+      gap: 23px;
+    }
+    .step-list {
+      flex-direction: row;
+      gap: 8px;
+    }
+    .step-tab {
+      flex: 1;
+      width: auto;
+      border: 1px solid #d4dbda;
+      border-bottom: 2px solid transparent;
+      border-radius: 8px;
+      padding: 13px;
+    }
+    .step-tab[aria-selected='true'] {
+      border-left-color: #d4dbda;
+      border-bottom-color: #466b56;
+    }
+    .step-title {
+      gap: 8px;
+    }
+    .step-label {
+      font: 500 13px/1.5 var(--sans);
+      letter-spacing: 0;
+    }
+    .step-arrow,
+    .step-copy,
+    .step-tab[aria-selected='true'] .step-copy {
+      display: none;
+    }
+    .detail-body {
+      min-height: 310px;
+    }
+    .closing h2 {
+      font-size: 30px;
+    }
+    .closing p {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 540px) {
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .hero {
+      padding-top: 33px;
+    }
+    .hero-header {
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 18px 0 12px;
+    }
+    .hero-subtitle {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .outcomes {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 28px 5px 33px;
+    }
+    .outcome-top {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 5px;
+    }
+    .outcome h3 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+    .outcome p {
+      padding-left: 29px;
+      font-size: 13px;
+      max-width: none;
+    }
+    .workflow {
+      padding: 38px 0;
+    }
+    .section-heading h2 {
+      font-size: 28px;
+    }
+    .step-list {
+      gap: 6px;
+    }
+    .step-tab {
+      padding: 12px 7px;
+    }
+    .step-number {
+      display: none;
+    }
+    .step-label {
+      font-size: 11px;
+    }
+    .step-title {
+      justify-content: center;
+    }
+    .detail-top {
+      padding: 15px;
+      gap: 12px;
+    }
+    .detail-top strong {
+      font-size: 12px;
+    }
+    .detail-top small {
+      font-size: 9px;
+    }
+    .detail-body {
+      padding: 19px 14px;
+      min-height: 0;
+    }
+    .detail-foot {
+      padding: 13px 14px;
+      font-size: 10px;
+    }
+    .detail-foot .check-circle {
+      width: 17px;
+      height: 17px;
+      font-size: 10px;
+    }
+    .module-symbol {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      margin-bottom: 15px;
+    }
+    .module-symbol svg {
+      width: 22px;
+      height: 22px;
+    }
+    .closing {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px 24px;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .closing-actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .closing .button {
+      padding: 12px 16px;
+      font-size: 12px;
+    }
+    .closing .text-link {
+      font-size: 12px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .button {
+      transition: none;
+    }
+  }
+  @media print {
+    .wrap {
+      width: 100%;
+    }
+    .hero {
+      padding: 0;
+    }
+    .workflow {
+      break-inside: avoid;
+    }
+  }
+  .overview-hero .hero-header {
+    margin-bottom: 35px;
+  }
+  .overview-hero .hero-subtitle {
+    max-width: 1050px;
+    margin-inline: auto;
+  }
+  .overview-outcomes {
+    padding-top: 33px;
+  }
+  .overview-outcomes .outcome p {
+    max-width: 370px;
+  }
+  .overview-workflow .section-heading {
+    align-items: center;
+  }
+  .overview-workflow .section-heading > p {
+    max-width: 325px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .overview-workflow .workflow-grid {
+    grid-template-columns: minmax(230px, 0.76fr) minmax(0, 1.74fr);
+    gap: 35px;
+  }
+  .overview-workflow .step-label {
+    font-size: 19px;
+  }
+  .overview-workflow .detail-body {
+    min-height: 362px;
+    padding: 25px;
+  }
+  .example-context {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .example-context strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .example-context small {
+    display: block;
+    color: #728078;
+    font-size: 10px;
+  }
+  .example-context .pill {
+    margin-left: auto;
+    font-size: 10px;
+  }
+  .shared-records {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .shared-record {
+    position: relative;
+    min-width: 0;
+    border: 1px solid #dce4df;
+    border-radius: 10px;
+    background: #fbfcfb;
+    padding: 17px 14px;
+  }
+  .shared-record:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -13px;
+    top: 34px;
+    width: 14px;
+    z-index: 1;
+    text-align: center;
+    font:
+      18px/1 Arial,
+      sans-serif;
+    color: #71887a;
+    background: white;
+  }
+  .record-number {
+    display: block;
+    color: #89998f;
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    margin-bottom: 10px;
+  }
+  .shared-record h3 {
+    font: 550 12px/1.5 var(--sans);
+    letter-spacing: -0.015em;
+    min-height: 36px;
+  }
+  .record-description {
+    min-height: 38px;
+    margin: 9px 0 17px;
+    color: #718177;
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  .record-figure {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3px 8px;
+    border-top: 1px solid #e0e7e2;
+    padding: 10px 0;
+    font-size: 10px;
+    color: #60766a;
+  }
+  .record-figure strong {
+    color: #1b3d2a;
+    font-size: 13px;
+    font-weight: 550;
+    white-space: nowrap;
+  }
+  .shared-record:last-child {
+    background: #f1f6f2;
+    border-color: #cbdccf;
+  }
+  .memo-snippet {
+    font-size: 11px;
+    line-height: 1.9;
+    color: #50665a;
+    margin: 11px 0 16px;
+  }
+  .reference-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font: 600 9px/1 var(--sans);
+    min-width: 17px;
+    height: 17px;
+    background: #e0ebe3;
+    color: #3f664e;
+    border: 1px solid #cfddd3;
+    border-radius: 4px;
+    margin-left: 2px;
+    vertical-align: middle;
+  }
+  .record-state {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #587161;
+    font-size: 10px;
+    margin-top: 12px;
+  }
+  .continuity-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 21px;
+    color: #647c6b;
+    font-size: 11px;
+  }
+  .trace-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 23px;
+  }
+  .trace-memo .eyebrow,
+  .source-preview .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: #789080;
+  }
+  .trace-memo h3 {
+    font-size: 23px;
+    line-height: 1.3;
+    margin: 12px 0 15px;
+  }
+  .trace-memo p {
+    font-size: 12px;
+    line-height: 2;
+    color: #5b6e61;
+    margin-bottom: 16px;
+  }
+  .citation {
+    min-width: 25px;
+    min-height: 25px;
+    font-size: 10px;
+    border: 1px solid #cddbd1;
+    border-radius: 5px;
+    background: #f0f5f1;
+    color: #4d6e58;
+    vertical-align: middle;
+    padding: 3px;
+  }
+  .citation[aria-pressed='true'] {
+    color: white;
+    background: #456751;
+    border-color: #456751;
+  }
+  .source-preview {
+    border: 1px solid #d9e3dc;
+    border-radius: 10px;
+    padding: 20px;
+    background: #f5f8f5;
+  }
+  .source-preview h3 {
+    font: 550 13px/1.5 var(--sans);
+    letter-spacing: 0;
+    margin: 13px 0;
+  }
+  .source-preview p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #687d6e;
+  }
+  .source-preview .record-figure {
+    font-size: 11px;
+    margin-top: 19px;
+  }
+  .source-preview .record-figure strong {
+    font-size: 17px;
+  }
+  .source-location {
+    font-size: 10px;
+    line-height: 1.8;
+    color: #728478;
+    border-top: 1px solid #dce5de;
+    margin-top: 19px;
+    padding-top: 13px;
+  }
+  .source-location strong {
+    display: block;
+    font-weight: 550;
+    color: #4e6b56;
+  }
+  .reviewer-line {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 21px;
+    font-size: 10px;
+    color: #597b63;
+  }
+  .intelligence-rail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 23px;
+  }
+  .mini-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    color: #718479;
+  }
+  .mini-modules span::before {
+    content: '✓';
+    color: #61816b;
+    margin-right: 8px;
+  }
+  .rail-arrow {
+    font:
+      25px/1 Arial,
+      sans-serif;
+    color: #92a497;
+  }
+  .decision-library {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .decision-library .module-symbol {
+    margin: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    background: #edf3ee;
+    color: #64806c;
+  }
+  .decision-library strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 550;
+  }
+  .decision-library small {
+    display: block;
+    font-size: 10px;
+    color: #839088;
+    margin-top: 3px;
+  }
+  .assistant-example {
+    border: 1px solid #d8e3db;
+    border-radius: 11px;
+    padding: 20px;
+    background: #f6f9f6;
+  }
+  .assistant-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 550;
+  }
+  .assistant-header .pill {
+    margin-left: auto;
+    font-size: 9px;
+    font-weight: 400;
+    padding: 4px 8px;
+  }
+  .assistant-question {
+    color: #3c5143;
+    border-top: 1px solid #dfe7e0;
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 12px;
+  }
+  .assistant-answer {
+    color: #697e6d;
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .past-reviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .past-reviews span {
+    font-size: 10px;
+    color: #567060;
+    background: white;
+    border: 1px solid #d8e3dc;
+    padding: 6px 9px;
+    border-radius: 5px;
+  }
+  .preserved-architecture {
+    display: block;
+    padding-top: 16px;
+  }
+  .architecture-section {
+    margin: 0 0 53px;
+  }
+  .overview-closing .closing-copy {
+    flex-basis: 650px;
+  }
+  .overview-closing .closing-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+  .overview-closing p {
+    max-width: 810px;
+    line-height: 1.9;
+  }
+  .overview-workflow .panel-caption {
+    text-align: left;
+    margin-top: 12px;
+  }
+  @media (min-width: 640px) {
+    .preserved-architecture {
+      padding-top: 32px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .overview-workflow .workflow-grid {
+      gap: 25px;
+      grid-template-columns: minmax(215px, 0.76fr) minmax(0, 1.74fr);
+    }
+    .shared-record {
+      padding: 15px 11px;
+    }
+    .shared-records {
+      gap: 10px;
+    }
+    .overview-workflow .detail-body {
+      padding: 21px;
+    }
+    .trace-grid {
+      gap: 18px;
+    }
+  }
+  @media (max-width: 900px) {
+    .overview-workflow .workflow-grid {
+      grid-template-columns: 1fr;
+    }
+    .overview-workflow .step-list {
+      flex-direction: row;
+      gap: 8px;
+    }
+    .overview-workflow .step-tab {
+      flex: 1;
+      width: auto;
+      border: 1px solid #d4dbda;
+      border-bottom: 2px solid transparent;
+      border-radius: 8px;
+      padding: 15px 12px;
+    }
+    .overview-workflow .step-tab[aria-selected='true'] {
+      border-left-color: #d4dbda;
+      border-bottom-color: #466b56;
+    }
+    .overview-workflow .step-label {
+      font: 500 13px/1.5 var(--sans);
+      letter-spacing: 0;
+    }
+    .overview-workflow .step-arrow,
+    .overview-workflow .step-copy {
+      display: none !important;
+    }
+    .overview-workflow .detail-body {
+      min-height: 0;
+    }
+  }
+  @media (max-width: 650px) {
+    .overview-workflow .section-heading {
+      display: block;
+    }
+    .overview-workflow .section-heading > p {
+      max-width: 100%;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+    .overview-workflow .step-label {
+      font-size: 11px;
+    }
+    .overview-workflow .step-number {
+      display: none;
+    }
+    .overview-workflow .step-title {
+      justify-content: center;
+    }
+    .trace-grid {
+      grid-template-columns: 1fr;
+    }
+    .shared-records {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    .shared-record {
+      padding: 16px 19px;
+    }
+    .shared-record h3 {
+      min-height: 0;
+      font-size: 14px;
+    }
+    .shared-record .record-description {
+      min-height: 0;
+      margin: 6px 0 13px;
+      font-size: 11px;
+    }
+    .record-number {
+      float: right;
+      margin-top: 3px;
+    }
+    .shared-record:not(:last-child)::after {
+      content: '↓';
+      right: calc(50% - 7px);
+      top: auto;
+      bottom: -17px;
+      height: 18px;
+    }
+    .record-figure {
+      font-size: 12px;
+    }
+    .record-figure strong {
+      font-size: 14px;
+    }
+    .memo-snippet {
+      font-size: 12px;
+    }
+    .record-state {
+      font-size: 11px;
+    }
+    .intelligence-rail {
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .decision-library {
+      gap: 10px;
+    }
+    .decision-library .module-symbol {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+    }
+    .decision-library .module-symbol svg {
+      width: 22px;
+      height: 22px;
+    }
+    .mini-modules {
+      font-size: 10px;
+    }
+    .decision-library strong {
+      font-size: 11px;
+    }
+    .decision-library small {
+      font-size: 9px;
+    }
+    .assistant-header {
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+    .assistant-header .pill {
+      margin-left: 0;
+    }
+    .assistant-example {
+      padding: 16px;
+    }
+    .architecture-section {
+      margin-bottom: 32px;
+    }
+  }
+
+  /* Keep the existing React sections isolated from the overview typography. */
+  .original-banner,
+  .preserved-architecture {
+    font: 400 16px/1.5 var(--font-sans);
+    letter-spacing: normal;
+  }
+  .original-banner {
+    margin-inline: -6px;
+  }
+  .original-banner > :global(section) {
+    padding-bottom: 0;
+  }
+  .original-banner > :global(section) > :global(div) {
+    max-width: none;
+    padding-inline: 0;
+  }
+  .preserved-architecture {
+    color: var(--color-mist-950);
+  }
+  #hero,
+  #benefits,
+  #connected,
+  #product-architecture,
+  #call-to-action {
+    /* The document already reserves the sticky header's height. */
+    scroll-margin-top: 1rem;
+  }
+  :global(body:has([data-credit-overview]) #footer > div::after) {
+    content: '';
+    display: block;
+    height: var(--credit-overview-end-space, 0px);
+  }
+  @media (max-width: 650px) {
+    .original-banner {
+      margin-inline: 0;
+    }
+  }
+  @media (max-width: 540px) {
+    .overview-closing .closing-copy {
+      flex-basis: auto;
+    }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-credit-overview]');
+  if (root) {
+    const closing = root.querySelector<HTMLElement>('#call-to-action');
+    const footer = document.getElementById('footer');
+    if (closing && footer) {
+      let endSpace = 0;
+      const updateEndSpace = () => {
+        const headerOffset =
+          Number.parseFloat(
+            getComputedStyle(document.documentElement).scrollPaddingTop
+          ) || 0;
+        const sectionOffset =
+          Number.parseFloat(getComputedStyle(closing).scrollMarginTop) || 0;
+        const naturalRemainingHeight =
+          footer.getBoundingClientRect().bottom -
+          closing.getBoundingClientRect().top -
+          endSpace;
+        const requiredSpace = Math.max(
+          0,
+          Math.round(
+            window.innerHeight -
+              headerOffset -
+              sectionOffset -
+              naturalRemainingHeight
+          )
+        );
+        if (requiredSpace === endSpace) return;
+        endSpace = requiredSpace;
+        footer.style.setProperty(
+          '--credit-overview-end-space',
+          `${endSpace}px`
+        );
+      };
+      // Only add the scroll room needed to align the final section, even on tall screens.
+      const endObserver = new ResizeObserver(updateEndSpace);
+      endObserver.observe(closing);
+      endObserver.observe(footer);
+      window.addEventListener('resize', updateEndSpace);
+      updateEndSpace();
+    }
+    const tabs = Array.from(
+      root.querySelectorAll<HTMLButtonElement>('.step-tab')
+    );
+    const panels = Array.from(
+      root.querySelectorAll<HTMLElement>('[role="tabpanel"]')
+    );
+    const tablist = root.querySelector<HTMLElement>('.step-list');
+    const orientation = window.matchMedia('(max-width:900px)');
+    function selectTab(tab: HTMLButtonElement, focus = false) {
+      for (const item of tabs) {
+        const active = item === tab;
+        item.setAttribute('aria-selected', String(active));
+        item.tabIndex = active ? 0 : -1;
+      }
+      for (const panel of panels)
+        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+      if (focus) tab.focus();
+    }
+    for (const [index, tab] of tabs.entries()) {
+      tab.addEventListener('click', () => selectTab(tab));
+      tab.addEventListener('keydown', event => {
+        let next: number;
+        if (event.key === 'ArrowDown' || event.key === 'ArrowRight')
+          next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft')
+          next = (index + tabs.length - 1) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectTab(tabs[next], true);
+      });
+    }
+    function updateOrientation() {
+      tablist?.setAttribute(
+        'aria-orientation',
+        orientation.matches ? 'horizontal' : 'vertical'
+      );
+    }
+    orientation.addEventListener('change', updateOrientation);
+    updateOrientation();
+    const citations = Array.from(
+      root.querySelectorAll<HTMLButtonElement>('[data-source-target]')
+    );
+    const sources = Array.from(
+      root.querySelectorAll<HTMLElement>('[data-source-panel]')
+    );
+    for (const citation of citations) {
+      citation.addEventListener('click', () => {
+        const target = citation.dataset.sourceTarget;
+        if (!target) return;
+        for (const button of citations)
+          button.setAttribute(
+            'aria-pressed',
+            String(button.dataset.sourceTarget === target)
+          );
+        for (const source of sources) source.hidden = source.id !== target;
+      });
+    }
+  }
+</script>

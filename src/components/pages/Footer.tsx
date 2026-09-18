@@ -3,7 +3,6 @@ import {
   FooterLink,
   FooterWithLinkCategories,
 } from '@/components/sections/footer-with-link-categories'
-import { productsPagesEnabled } from '@/lib/site-config'
 
 export default function Footer() {
   return (
@@ -11,23 +10,19 @@ export default function Footer() {
       id="footer"
       links={
         <>
-          {productsPagesEnabled ? (
-            <FooterCategory title="Products">
-              <li className="pt-1 text-xs font-semibold uppercase tracking-[0.16em] text-mist-500 underline decoration-mist-300 underline-offset-4">
-                Decision modules
-              </li>
-              <FooterLink href="/products/financial-spreading">Financial spreading</FooterLink>
-              <FooterLink href="/products/risk-rating">Analytics</FooterLink>
-              <FooterLink href="/products/memo-generator">Memo</FooterLink>
-              <li className="pt-4 text-xs font-semibold uppercase tracking-[0.16em] text-mist-500 underline decoration-mist-300 underline-offset-4">
-                Foundation
-              </li>
-              <FooterLink href="/products/decaltra-platform">DecAltra Platform</FooterLink>
-            </FooterCategory>
-          ) : null}
+          <FooterCategory title="Product">
+            <FooterLink href="/credit-decisioning">Credit Decisioning overview</FooterLink>
+            <FooterLink href="/credit-decisioning/financial-spreading">Financial spreading</FooterLink>
+            <FooterLink href="/credit-decisioning/analytics">Analytics</FooterLink>
+            <FooterLink href="/credit-decisioning/memo">Memo</FooterLink>
+          </FooterCategory>
           <FooterCategory title="Company">
             <FooterLink href="/about#about">About DecAltra</FooterLink>
             <FooterLink href="/about#team">The team</FooterLink>
+            <FooterLink href="/contact">Contact us</FooterLink>
+            <li className="text-mist-700">
+              <button type="button" command="show-modal" commandfor="feedback-modal" className="cursor-pointer text-left hover:underline">Share feedback</button>
+            </li>
           </FooterCategory>
           <FooterCategory title="Legal">
             <FooterLink href="/terms-of-use">Terms of use</FooterLink>
@@ -37,7 +32,7 @@ export default function Footer() {
           </FooterCategory>
         </>
       }
-      fineprint={`\u00A9 ${new Date().getFullYear()} DecAltra B.V.`}
+      fineprint={`\u00A9 ${new Date().getFullYear()} DecAltra`}
     />
   )
 }

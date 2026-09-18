@@ -11,6 +11,8 @@ export function HeroSimpleCentered({
   cta,
   backgroundImageSrc,
   className,
+  headlineClassName,
+  subheadlineClassName,
   ...props
 }: {
   eyebrow?: ReactNode
@@ -18,6 +20,8 @@ export function HeroSimpleCentered({
   subheadline: ReactNode
   cta?: ReactNode
   backgroundImageSrc?: string
+  headlineClassName?: string
+  subheadlineClassName?: string
 } & ComponentProps<'section'>) {
   return (
     <section
@@ -50,8 +54,14 @@ export function HeroSimpleCentered({
           )}
         >
           {eyebrow}
-          <Heading className="max-w-5xl text-center">{headline}</Heading>
-          <Text size="lg" className="flex max-w-2xl flex-col gap-4 text-center">
+          <Heading className={clsx('max-w-5xl text-center', headlineClassName)}>{headline}</Heading>
+          <Text
+            size="lg"
+            className={clsx(
+              'flex max-w-2xl flex-col gap-4 text-center',
+              subheadlineClassName,
+            )}
+          >
             {subheadline}
           </Text>
           {cta}

@@ -1,0 +1,403 @@
+<div class="analytics-module-page shared-workspace">
+  <div
+    class="workspace"
+    role="img"
+    aria-label="Illustrative Analytics workspace for fictional Northstar Manufacturing. A model result of BBB-minus is based on a score of 68 out of 100 combining quantitative and qualitative inputs. This is an example internal rating, not an actual credit assessment."
+  >
+    <div class="workspace-head">
+      <span class="workspace-mark">DecAltra</span><span class="workspace-label"
+        >Credit Decisioning / Analytics</span
+      >
+    </div>
+    <div class="workspace-body">
+      <div class="app-sidebar">
+        <div class="company">
+          <span class="monogram">NM</span> Northstar<br />Manufacturing
+        </div>
+        <div class="app-menu">Company overview</div>
+        <div class="app-menu">Documents &amp; data</div>
+        <div class="app-menu">Financial spreading</div>
+        <div class="app-menu active">Analytics</div>
+        <div class="app-menu">Memo</div>
+      </div>
+      <div class="workspace-content">
+        <div class="workspace-title">
+          <div>
+            <strong>Northstar Manufacturing</strong><small
+              >Corporate credit model · v2.1</small
+            >
+          </div><span class="pill good">Ready for review</span>
+        </div>
+        <div class="app-tabs">
+          <span class="active">Score overview</span><span>Inputs</span><span
+            >Rationale</span
+          >
+        </div>
+        <div class="rating-overview">
+          <div>
+            <div class="rating-title">Model result</div><div class="rating">
+              BBB−
+            </div><div class="rating-bottom">
+              <strong>68</strong> / 100 · Internal score
+            </div>
+          </div>
+          <div>
+            <div class="factor">
+              <div class="factor-label">
+                <span>Quantitative</span><strong>69.3 / 100</strong>
+              </div><div class="factor-track">
+                <div class="factor-fill" style="width:69.3%"></div>
+              </div>
+            </div>
+            <div class="factor">
+              <div class="factor-label">
+                <span>Qualitative</span><strong>64.0 / 100</strong>
+              </div><div class="factor-track">
+                <div class="factor-fill secondary" style="width:64%"></div>
+              </div>
+            </div>
+            <div class="factor-note">75% financials + 25% judgement</div>
+          </div>
+        </div>
+        <div class="score-driver">
+          <span>Strongest financial factor</span><strong>Profitability</strong>
+        </div>
+        <div class="score-driver">
+          <span>Key consideration</span><strong>Customer concentration</strong>
+        </div>
+        <div class="workspace-foot">
+          <span class="tiny-dot"></span> Inputs, model logic and rationale in one
+          view
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .analytics-module-page {
+    color-scheme: light;
+    --page: #f1f3f3;
+    --paper: #fff;
+    --ink: #0b1011;
+    --body: #526066;
+    --muted: #6b787d;
+    --line: #dbe1e1;
+    --soft: #f7f9f9;
+    --green: #396456;
+    --green-bg: #edf4f0;
+    --display: var(--font-display);
+    --sans: var(--font-sans);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .analytics-module-page {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    font-size: 11px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .pill.good {
+    background: var(--green-bg);
+    border-color: #d8e6dd;
+    color: var(--green);
+  }
+  .pill.good::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .workspace {
+    min-width: 0;
+    border: 1px solid #cbd4cf;
+    border-right: 0;
+    border-radius: 13px 0 0 13px;
+    background: white;
+    box-shadow: 0 18px 44px #173b2920;
+    overflow: hidden;
+  }
+  .workspace-head {
+    min-height: 47px;
+    padding: 12px 19px;
+    border-bottom: 1px solid #e4e9e7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .workspace-mark {
+    font: 650 15px/1 var(--display);
+    letter-spacing: -0.5px;
+  }
+  .workspace-label {
+    font-size: 10px;
+    color: #65746e;
+  }
+  .workspace-body {
+    display: grid;
+    grid-template-columns: 125px minmax(0, 1fr);
+  }
+  .app-sidebar {
+    background: #f8faf9;
+    border-right: 1px solid #e6ebe8;
+    padding: 20px 9px;
+  }
+  .company {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 3px 25px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #d4dfda;
+    background: #e5ece8;
+    border-radius: 7px;
+    flex-shrink: 0;
+    font-size: 10px;
+  }
+  .app-menu {
+    font-size: 10px;
+    color: #6a7872;
+    padding: 9px 8px;
+    margin: 3px 0;
+    border-radius: 6px;
+  }
+  .app-menu.active {
+    background: #e7eeea;
+    color: #173f2e;
+    font-weight: 600;
+  }
+  .workspace-content {
+    min-width: 0;
+    padding: 20px;
+  }
+  .workspace-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .workspace-title strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+  .workspace-title small {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 10px;
+  }
+  .workspace-title .pill {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  .app-tabs {
+    display: flex;
+    gap: 23px;
+    border-bottom: 1px solid #e5eae7;
+    color: #66776d;
+    font-size: 10px;
+    margin-bottom: 17px;
+  }
+  .app-tabs span {
+    padding-bottom: 8px;
+  }
+  .app-tabs .active {
+    border-bottom: 2px solid var(--green);
+    color: #224c39;
+    font-weight: 600;
+  }
+  .rating-overview {
+    display: grid;
+    grid-template-columns: 1fr 1.22fr;
+    gap: 22px;
+    align-items: center;
+    padding: 17px 18px;
+    border: 1px solid #dce5df;
+    border-radius: 10px;
+    background: #f5f8f6;
+  }
+  .rating-title {
+    font-size: 10px;
+    color: #587161;
+  }
+  .rating {
+    font: 450 43px/1.25 var(--display);
+    letter-spacing: -2px;
+  }
+  .rating-bottom {
+    font-size: 10px;
+    color: #63776a;
+    margin-top: 4px;
+  }
+  .rating-bottom strong {
+    font-weight: 600;
+    color: #203f2e;
+  }
+  .factor {
+    margin: 10px 0;
+  }
+  .factor-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 10px;
+    color: #55685c;
+    margin-bottom: 7px;
+  }
+  .factor-label strong {
+    font-weight: 600;
+    color: #243b2c;
+  }
+  .factor-track {
+    height: 5px;
+    background: #e0e8e2;
+    border-radius: 3px;
+  }
+  .factor-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: #638273;
+  }
+  .factor-fill.secondary {
+    background: #98aea2;
+  }
+  .factor-note {
+    font-size: 9px;
+    color: #677b6d;
+    margin-top: 10px;
+  }
+  .score-driver {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf0ee;
+    font-size: 10px;
+  }
+  .score-driver span {
+    color: #67746d;
+  }
+  .score-driver strong {
+    color: #283b30;
+    font-weight: 500;
+  }
+  .workspace-foot {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 15px;
+    font-size: 10px;
+    color: #55705f;
+  }
+  .tiny-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #668570;
+    flex-shrink: 0;
+  }
+  @media (max-width: 1100px) {
+    .workspace-body {
+      grid-template-columns: 1fr;
+    }
+    .app-sidebar {
+      display: none;
+    }
+  }
+  @media (max-width: 800px) {
+    .workspace {
+      border: 1px solid #cbd4cf;
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+    }
+    .workspace-body {
+      grid-template-columns: 125px minmax(0, 1fr);
+    }
+    .app-sidebar {
+      display: block;
+    }
+  }
+  @media (max-width: 540px) {
+    .workspace-head {
+      padding: 13px;
+    }
+    .workspace-label {
+      font-size: 9px;
+    }
+    .workspace-body {
+      display: block;
+    }
+    .app-sidebar {
+      display: none;
+    }
+    .workspace-content {
+      padding: 16px 13px;
+    }
+    .workspace-title strong {
+      font-size: 12px;
+    }
+    .workspace-title small {
+      font-size: 9px;
+    }
+    .workspace-title .pill {
+      font-size: 9px;
+    }
+    .rating-overview {
+      padding: 15px 12px;
+      gap: 14px;
+    }
+    .rating {
+      font-size: 37px;
+    }
+    .factor-label {
+      font-size: 9px;
+    }
+    .factor-note {
+      font-size: 9px;
+      line-height: 1.5;
+    }
+  }
+  @media (max-width: 360px) {
+    .workspace-label {
+      display: none;
+    }
+    .workspace-title {
+      flex-wrap: wrap;
+    }
+    .factor-label {
+      gap: 5px;
+    }
+  }
+
+  .shared-workspace {
+    background: transparent;
+    min-width: 0;
+  }
+</style>

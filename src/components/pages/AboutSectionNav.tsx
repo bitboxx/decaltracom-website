@@ -2,42 +2,51 @@ import { useEffect, useState } from 'react'
 
 const sections = [
   { id: 'about', label: 'About DecAltra' },
+  { id: 'our-story', label: 'Our story' },
+  { id: 'why-decaltra', label: 'Why DecAltra' },
   { id: 'team', label: 'The team' },
-  { id: 'call-to-action', label: 'Want to learn more?' },
+  { id: 'call-to-action', label: 'Interested?' },
 ] as const
 
 export default function AboutSectionNav() {
   const [activeSection, setActiveSection] = useState<(typeof sections)[number]['id']>('about')
 
   useEffect(() => {
-    const elements = sections
-      .map((section) => document.getElementById(section.id))
-      .filter((element): element is HTMLElement => element instanceof HTMLElement)
+    const updateActiveSection = () => {
+      const scrollPadding = Number.parseFloat(
+        window.getComputedStyle(document.documentElement).scrollPaddingTop,
+      ) || 0
+      let currentSection: (typeof sections)[number]['id'] = sections[0].id
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((entryA, entryB) => entryA.boundingClientRect.top - entryB.boundingClientRect.top)
-
-        if (visibleEntries.length > 0) {
-          setActiveSection(visibleEntries[0].target.id as (typeof sections)[number]['id'])
+      // Use the same offset as anchor navigation, not the nearest section midpoint.
+      for (const section of sections) {
+        const element = document.getElementById(section.id)
+        if (!element) continue
+        const scrollMargin = Number.parseFloat(window.getComputedStyle(element).scrollMarginTop) || 0
+        if (element.getBoundingClientRect().top <= scrollPadding + scrollMargin + 2) {
+          currentSection = section.id
         }
-      },
-      {
-        rootMargin: '-25% 0px -55% 0px',
-        threshold: [0.1, 0.3, 0.6],
-      },
-    )
+      }
 
-    for (const element of elements) observer.observe(element)
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+        currentSection = sections[sections.length - 1].id
+      }
+      setActiveSection(currentSection)
+    }
 
-    return () => observer.disconnect()
+    updateActiveSection()
+    window.addEventListener('scroll', updateActiveSection, { passive: true })
+    window.addEventListener('resize', updateActiveSection)
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection)
+      window.removeEventListener('resize', updateActiveSection)
+    }
   }, [])
 
   return (
-    <div className="pointer-events-none fixed right-6 top-1/2 z-5 hidden -translate-y-1/2 lg:block">
-      <nav className="pointer-events-auto flex flex-col items-center gap-3 rounded-full border border-mist-200 bg-white/78 px-2 py-3 shadow-sm backdrop-blur">
+    <div className="pointer-events-none fixed right-3 top-1/2 z-5 hidden -translate-y-1/2 lg:block">
+      <nav aria-label="About page sections" className="pointer-events-auto flex flex-col items-center gap-1 rounded-full border border-mist-200 bg-white/90 p-1.5 shadow-sm backdrop-blur">
         {sections.map((section) => {
           const isActive = activeSection === section.id
 
@@ -46,8 +55,18 @@ export default function AboutSectionNav() {
               key={section.id}
               href={`#${section.id}`}
               aria-label={section.label}
+              aria-current={isActive ? 'location' : undefined}
               title={section.label}
-              className="group flex items-center"
+              className="group flex size-6 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mist-700"
+              onClick={(event) => {
+                event.preventDefault()
+                setActiveSection(section.id)
+                document.getElementById(section.id)?.scrollIntoView({
+                  behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+                  block: 'start',
+                })
+                window.history.replaceState(null, '', `#${section.id}`)
+              }}
             >
               <span
                 className={`block rounded-full border transition ${isActive

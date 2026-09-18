@@ -1,0 +1,174 @@
+.carousel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d9e0e1;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 24px 52px rgb(30 48 51 / 12%);
+}
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 680 / 520;
+  overflow: hidden;
+  container-type: inline-size;
+}
+.canvas {
+  position: absolute;
+  width: 680px;
+  height: 520px;
+  transform: scale(var(--preview-scale, 1));
+  transform-origin: top left;
+}
+/* Fit the illustration before hydration as well as after browser resizing. */
+@supports (transform: scale(calc(1px / 1px))) {
+  .canvas {
+    transform: scale(calc(100cqw / 680px));
+  }
+}
+.canvas :global([data-platform-slide]) {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 650ms ease,
+    visibility 650ms;
+  pointer-events: none;
+}
+.frame[data-active='0'] :global([data-platform-slide='0']),
+.frame[data-active='1'] :global([data-platform-slide='1']),
+.frame[data-active='2'] :global([data-platform-slide='2']),
+.frame[data-active='3'] :global([data-platform-slide='3']) {
+  opacity: 1;
+  visibility: visible;
+}
+.canvas :global(.shared-workspace) {
+  height: 100%;
+}
+.canvas :global(.workspace) {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+}
+.canvas :global(.workspace-body) {
+  min-height: 471px;
+  grid-template-columns: 133px minmax(0, 1fr);
+  display: grid;
+}
+.canvas :global(.app-sidebar) {
+  display: block;
+}
+/* Fill the financial preview without a gap beneath the table or sidebar. */
+.carousel .canvas :global([data-platform-slide='1'] .workspace) {
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+}
+.carousel .canvas :global([data-platform-slide='1'] .workspace-head) {
+  flex-shrink: 0;
+}
+.carousel .canvas :global([data-platform-slide='1'] .workspace-body) {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 133px minmax(0, 1fr);
+}
+.carousel .canvas :global([data-platform-slide='1'] .app-sidebar) {
+  display: block;
+  align-self: stretch;
+}
+.carousel .canvas :global([data-platform-slide='1'] .workspace-content) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.carousel .canvas :global([data-platform-slide='1'] .spread-table) {
+  flex: 1;
+}
+.carousel .canvas :global([data-platform-slide='1'] .workspace-bottom) {
+  flex-shrink: 0;
+}
+.caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-height: 73px;
+  border-top: 1px solid #d9e0e1;
+  padding: 12px 17px;
+  font-size: 12px;
+  color: #5c686d;
+}
+.caption strong {
+  font-weight: 650;
+  color: #171b1d;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 8px;
+  padding: 0 9px 5px 17px;
+}
+.disclosure {
+  font-size: 10px;
+  color: #69757a;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+}
+.dot,
+.play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 36px;
+  cursor: pointer;
+  color: #52665b;
+  border-radius: 6px;
+}
+.dot span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9d4ce;
+  transition:
+    background 200ms,
+    width 200ms;
+}
+.dot[aria-current='true'] span {
+  width: 17px;
+  border-radius: 6px;
+  background: #416753;
+}
+.dot:hover,
+.play:hover {
+  background: #f0f5f2;
+}
+.dot:focus-visible,
+.play:focus-visible {
+  outline: 2px solid #416753;
+  outline-offset: -2px;
+}
+@media (pointer: coarse) {
+  .dot,
+  .play {
+    width: 44px;
+    height: 44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .canvas :global([data-platform-slide]),
+  .dot span {
+    transition: none;
+  }
+}

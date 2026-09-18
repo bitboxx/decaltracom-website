@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react'
 
 const sections = [
   { id: 'hero', label: 'Home' },
-  { id: 'product-architecture', label: 'Our solution' },
   { id: 'features', label: 'Why DecAltra' },
-  { id: 'call-to-action', label: 'Ready to accelerate your financial decisions?' },
 ] as const
 
 export default function HomeSectionNav() {
