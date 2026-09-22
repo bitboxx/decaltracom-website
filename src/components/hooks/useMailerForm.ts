@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-const MAILER_URL = 'https://decaltracom-mailer.michaelbolle1981.workers.dev'
+const MAILER_URL =
+  import.meta.env.PUBLIC_MAILER_URL ?? 'https://decaltracom-mailer.michaelbolle1981.workers.dev'
 const ATTACH_DELAY_MS = 10_000
 
 export function useMailerForm() {
@@ -22,11 +23,18 @@ export function useMailerForm() {
       message: string
       company?: string
       phone?: string
+      website?: string
     }) => {
-      if (!ready || Date.now() - mountedAt.current < ATTACH_DELAY_MS) return
-
       setSending(true)
       setError(false)
+
+      // Bot guard: the worker is only called once the page has been open for
+      // ATTACH_DELAY_MS. A human who fills the form faster than that waits out
+      // the remainder rather than having the submission silently dropped.
+      const waitFor = ATTACH_DELAY_MS - (Date.now() - mountedAt.current)
+      if (waitFor > 0) {
+        await new Promise((resolve) => setTimeout(resolve, waitFor))
+      }
 
       try {
         const response = await fetch(MAILER_URL, {
@@ -47,7 +55,7 @@ export function useMailerForm() {
         setSending(false)
       }
     },
-    [ready],
+    [],
   )
 
   return { ready, sending, sent, error, submit }

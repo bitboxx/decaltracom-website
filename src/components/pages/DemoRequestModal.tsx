@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ElDialog, ElDialogPanel } from '@tailwindplus/elements/react'
 import { Button } from '@/components/elements/button'
 import { CheckmarkIcon } from '@/components/icons/checkmark-icon'
+import { HoneypotField } from '@/components/elements/honeypot-field'
 import { useMailerForm } from '@/components/hooks/useMailerForm'
 
 type FormState = {
@@ -11,6 +12,7 @@ type FormState = {
   role: string
   priority: string
   timeline: string
+  website: string
 }
 
 const initialState: FormState = {
@@ -20,6 +22,7 @@ const initialState: FormState = {
   role: '',
   priority: '',
   timeline: 'This week',
+  website: '',
 }
 
 export default function DemoRequestModal() {
@@ -43,6 +46,7 @@ export default function DemoRequestModal() {
     ].join('\n')
 
     await submit({
+      website: formState.website,
       name: formState.fullName,
       email: formState.workEmail,
       company: formState.company,
@@ -108,6 +112,7 @@ export default function DemoRequestModal() {
 
               <div className="p-6 sm:p-8">
                 <form className="space-y-5" onSubmit={handleSubmit}>
+                  <HoneypotField value={formState.website} onChange={(value) => updateField('website', value)} />
                   <div className="grid gap-5 sm:grid-cols-2">
                     <label className="flex flex-col gap-2">
                       <span className="text-sm/6 font-medium text-mist-950">Full name</span>
@@ -190,7 +195,7 @@ export default function DemoRequestModal() {
 
                   {error ? (
                     <div className="rounded-2xl border border-red-200 bg-red-50 p-4 text-base/7 text-red-800">
-                      Something went wrong. Please try again or email us at <strong>info@DecAltra.com</strong>.
+                      Something went wrong. Please try again or email us at <strong>info@decaltra.com</strong>.
                     </div>
                   ) : null}
 

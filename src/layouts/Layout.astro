@@ -3,9 +3,11 @@ import '../styles/global.css'
 import { Main } from '@/components/elements/main'
 import DemoRequestModal from '@/components/pages/DemoRequestModal'
 import FeedbackModal from '@/components/pages/FeedbackModal'
+import MessageModal from '@/components/pages/MessageModal'
 import RequestCallModal from '@/components/pages/RequestCallModal'
 import Navbar from '@/components/pages/Navbar'
 import Footer from '@/components/pages/Footer'
+import CookieNotice from '@/components/pages/CookieNotice'
 
 interface Props {
   title: string
@@ -13,6 +15,10 @@ interface Props {
 }
 
 const { title, description = 'AI-enabled decision infrastructure for capital providers' } = Astro.props
+
+// Simple Analytics: Dutch, EU-hosted, cookieless. Inert unless
+// PUBLIC_ANALYTICS is "on", so local and preview builds send nothing.
+const analyticsEnabled = import.meta.env.PUBLIC_ANALYTICS === 'on'
 ---
 
 <!doctype html>
@@ -22,16 +28,6 @@ const { title, description = 'AI-enabled decision infrastructure for capital pro
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,112.5,200..900;1,112.5,200..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <Navbar client:load />
@@ -40,7 +36,10 @@ const { title, description = 'AI-enabled decision infrastructure for capital pro
     </Main>
     <DemoRequestModal client:load />
     <FeedbackModal client:load />
+    <MessageModal client:load />
     <RequestCallModal client:load />
     <Footer />
+    <CookieNotice client:load />
+    {analyticsEnabled && <script is:inline async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>}
   </body>
 </html>
