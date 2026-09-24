@@ -301,7 +301,10 @@ export default function AboutPage() {
                 className={styles.profileLink}
                 aria-label={`View ${founder.name} on LinkedIn (opens in a new tab)`}
               >
-                View LinkedIn <span aria-hidden="true">↗</span>
+                <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <rect width="24" height="24" rx="2" fill="#0A66C2" />
+                  <path fill="#fff" d="M5.37 7.9a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48ZM3.87 9.22h3v10.36h-3V9.22Zm5.02 0h2.88v1.42h.04c.4-.76 1.38-1.57 2.84-1.57 3.04 0 3.6 2 3.6 4.6v5.91h-3v-5.24c0-1.25-.03-2.85-1.74-2.85-1.74 0-2.01 1.36-2.01 2.76v5.33h-3V9.22Z" />
+                </svg>
               </a>
             </article>
           ))}

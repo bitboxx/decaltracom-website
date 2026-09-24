@@ -106,3 +106,32 @@
 
   }
 }
+
+/* One page-level demo CTA style across React and scoped Astro sections.
+   Keep navigation buttons compact; override legacy page-specific sizing. */
+main button[commandfor="demo-request-modal"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 12px 21px !important;
+  border: 1px solid #0b1011 !important;
+  border-radius: 100px !important;
+  background: #0b1011 !important;
+  color: #fff !important;
+  font-family: var(--font-sans) !important;
+  font-size: 13px !important;
+  font-weight: 550 !important;
+  line-height: 1.6 !important;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 160ms;
+}
+main button[commandfor="demo-request-modal"]:hover {
+  background: #303a3c !important;
+  transform: none !important;
+}
+main button[commandfor="demo-request-modal"]:focus-visible {
+  outline: 2px solid #477765;
+  outline-offset: 5px;
+}

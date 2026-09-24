@@ -47,6 +47,12 @@ export default function ContactPage() {
               info@decaltra.com <span aria-hidden="true">↗</span>
             </a>
           </div>
+          <p className={styles.feedback}>
+            Have a suggestion?{' '}
+            <button type="button" command="show-modal" commandfor="feedback-modal">
+              Share feedback
+            </button>
+          </p>
         </div>
         <div className={styles.card}>
           <h2>How can we help?</h2>

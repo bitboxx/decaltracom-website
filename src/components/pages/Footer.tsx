@@ -16,6 +16,9 @@ export default function Footer() {
             <FooterLink href="/credit-decisioning/analytics">Analytics</FooterLink>
             <FooterLink href="/credit-decisioning/memo">Memo</FooterLink>
           </FooterCategory>
+          <FooterCategory title="Insights & News">
+            <FooterLink href="/insights-news">Insights &amp; News</FooterLink>
+          </FooterCategory>
           <FooterCategory title="Company">
             <FooterLink href="/about#about">About DecAltra</FooterLink>
             <FooterLink href="/about#team">The team</FooterLink>

@@ -252,3 +252,30 @@
     width: 100%;
   }
 }
+.feedback {
+  margin-top: 32px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--color-mist-600);
+}
+
+.feedback button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-mist-950);
+  font: inherit;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.feedback button:hover {
+  color: var(--color-mist-600);
+}
+
+.feedback button:focus-visible {
+  outline: 2px solid #477765;
+  outline-offset: 4px;
+}

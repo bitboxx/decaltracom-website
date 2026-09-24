@@ -35,18 +35,20 @@ export function NavbarWithLinksActionsAndCenteredLogo({
   links,
   logo,
   actions,
+  compactLinks,
   className,
   ...props
 }: {
   links: ReactNode
   logo: ReactNode
   actions: ReactNode
+  compactLinks?: ReactNode
 } & ComponentProps<'header'>) {
   return (
     <header className={clsx('sticky top-0 z-10 bg-mist-100 dark:bg-mist-950', className)} {...props}>
-      <style>{`:root { --scroll-padding-top: 5.25rem }`}</style>
+      <style>{`:root { --scroll-padding-top: 5.25rem } ${compactLinks ? '@media (min-width: 640px) and (max-width: 1023px) { :root { --scroll-padding-top: 8.25rem } }' : ''}`}</style>
       <nav>
-        <div className="mx-auto flex h-(--scroll-padding-top) max-w-7xl items-center gap-4 px-6 lg:px-10">
+        <div className="mx-auto flex h-21 max-w-7xl items-center gap-4 px-6 lg:px-10">
           <div className="flex flex-1 items-center gap-8">
             <div className="flex items-center">{logo}</div>
             <div className="flex gap-8 max-lg:hidden">{links}</div>
@@ -71,9 +73,15 @@ export function NavbarWithLinksActionsAndCenteredLogo({
           </div>
         </div>
 
+        {compactLinks && (
+          <div className="hidden h-12 items-center gap-8 border-t border-mist-200 px-6 text-sm font-medium text-mist-950 sm:flex lg:hidden">
+            {compactLinks}
+          </div>
+        )}
+
         <ElDialog className="lg:hidden">
           <dialog id="mobile-menu" className="backdrop:bg-transparent">
-            <ElDialogPanel className="fixed inset-0 bg-mist-100 px-6 py-6 lg:px-10 dark:bg-mist-950">
+            <ElDialogPanel className="fixed inset-0 overflow-y-auto bg-mist-100 px-6 py-6 lg:px-10 dark:bg-mist-950">
               <div className="flex justify-end">
                 <button
                   command="close"

@@ -38,6 +38,12 @@ export default function Navbar() {
   return (
     <NavbarWithLinksActionsAndCenteredLogo
       id="navbar"
+      compactLinks={
+        <>
+          <a href="/credit-decisioning" className="hover:underline">Credit Decisioning</a>
+          <a href="/insights-news" className="hover:underline">Insights &amp; News</a>
+        </>
+      }
       links={
         <>
           <div ref={creditMenuRef} className="relative hidden lg:block">
@@ -100,24 +106,36 @@ export default function Navbar() {
               </div>
             </div>
           </div>
+          <div className="hidden lg:block"><NavbarLink href="/insights-news">Insights &amp; News</NavbarLink></div>
           <div className="flex flex-col gap-6 lg:hidden">
-            <NavbarLink href="/credit-decisioning">
-              Credit Decisioning - Overview
-            </NavbarLink>
-            <div className="text-xs font-semibold uppercase tracking-[0.16em] text-mist-500">
-              Modules
+            <section aria-labelledby="mobile-credit-heading">
+              <h2 id="mobile-credit-heading" className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-mist-500">
+                Credit Decisioning
+              </h2>
+              <a href="/credit-decisioning" className="flex min-h-11 items-center text-xl font-medium text-mist-950 hover:underline">
+                Overview
+              </a>
+              <div className="mt-2 border-l border-mist-300 pl-4">
+                <p className="mb-1 text-xs font-medium text-mist-500">Modules</p>
+                <a href="/credit-decisioning/financial-spreading" className="flex min-h-11 items-center text-base text-mist-700 hover:underline">Financial spreading</a>
+                <a href="/credit-decisioning/analytics" className="flex min-h-11 items-center text-base text-mist-700 hover:underline">Analytics</a>
+                <a href="/credit-decisioning/memo" className="flex min-h-11 items-center text-base text-mist-700 hover:underline">Memo</a>
+              </div>
+            </section>
+            <section aria-labelledby="mobile-insights-heading" className="border-t border-mist-200 pt-5">
+              <h2 id="mobile-insights-heading" className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-mist-500">Insights &amp; News</h2>
+              <a href="/insights-news" className="flex min-h-11 items-center text-xl font-medium text-mist-950 hover:underline">Insights &amp; News</a>
+            </section>
+            <section aria-labelledby="mobile-company-heading" className="border-t border-mist-200 pt-5">
+              <h2 id="mobile-company-heading" className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-mist-500">Company</h2>
+              <a href="/about#about" className="flex min-h-11 items-center text-xl font-medium text-mist-950 hover:underline">About DecAltra</a>
+              <a href="/about#why-decaltra" className="flex min-h-11 items-center text-base text-mist-700 hover:underline">Why DecAltra</a>
+              <a href="/about#team" className="flex min-h-11 items-center text-base text-mist-700 hover:underline">The team</a>
+            </section>
+            <div className="border-t border-mist-200 pt-3">
+
+              <a href="/contact" className="flex min-h-11 items-center text-xl font-medium text-mist-950 hover:underline">Contact us</a>
             </div>
-            <NavbarLink href="/credit-decisioning/financial-spreading">
-              Financial spreading
-            </NavbarLink>
-            <NavbarLink href="/credit-decisioning/analytics">
-              Analytics
-            </NavbarLink>
-            <NavbarLink href="/credit-decisioning/memo">Memo</NavbarLink>
-            <NavbarLink href="/about#about">About DecAltra</NavbarLink>
-            <NavbarLink href="/about#why-decaltra">Why DecAltra</NavbarLink>
-            <NavbarLink href="/about#team">The team</NavbarLink>
-            <NavbarLink href="/contact">Contact us</NavbarLink>
             <DemoRequestButton size="lg">Request a demo</DemoRequestButton>
           </div>
         </>
@@ -145,7 +163,7 @@ export default function Navbar() {
                 if (event.key === 'Escape') setIsAboutMenuOpen(false)
               }}
             >
-              About us
+              Company
               <ChevronIcon
                 className={`size-3 transition-transform ${isAboutMenuOpen ? 'rotate-270' : 'rotate-90'}`}
               />

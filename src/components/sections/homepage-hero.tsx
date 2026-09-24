@@ -34,7 +34,7 @@ export function HomepageHero({ children }: { children: ReactNode }) {
             Now available · Credit Decisioning
           </p>
           <div className="flex flex-wrap items-center gap-6">
-            <DemoRequestButton className="px-[22px]! py-4! text-[15px]! font-[650]!">
+            <DemoRequestButton>
               Request a demo
             </DemoRequestButton>
             <a

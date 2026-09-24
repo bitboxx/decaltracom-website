@@ -1,0 +1,1417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Research & Perspectives — DecAltra · Design preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700&family=Mona+Sans:wdth,wght@112.5,400;112.5,500;112.5,550;112.5,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f1f3f3;
+        --ink: #17201d;
+        --muted: #626f69;
+        --line: #d8e0db;
+        --green: #496d58;
+        --display: 'Mona Sans', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          15px/1.65 Inter,
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      a:focus-visible,
+      button:focus-visible,
+      summary:focus-visible {
+        outline: 2px solid #629478;
+        outline-offset: 5px;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--display);
+        font-weight: 500;
+        letter-spacing: -0.045em;
+        line-height: 1.15;
+      }
+      .wrap {
+        max-width: 1280px;
+        margin: auto;
+        padding: 0 40px;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+        min-height: 84px;
+      }
+      .logo {
+        font: 650 22px var(--display);
+        letter-spacing: -1px;
+      }
+      .navlinks {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-left: auto;
+        font-size: 13px;
+      }
+      .navlinks a:hover,
+      .textlink:hover {
+        color: var(--green);
+      }
+      .navlinks .active {
+        border-bottom: 1px solid var(--ink);
+        padding: 5px 0;
+      }
+      .pill-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 99px;
+        padding: 10px 20px;
+        background: #101715;
+        color: white;
+        font-size: 13px;
+      }
+      .preview {
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border: 1px solid var(--line);
+        padding: 4px 9px;
+        border-radius: 5px;
+        color: var(--muted);
+      }
+      .intro {
+        padding: 57px 0 39px;
+      }
+      .kicker {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--green);
+      }
+      .kicker:before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: currentColor;
+      }
+      h1 {
+        font-size: clamp(36px, 4.6vw, 60px);
+        margin: 17px 0 20px;
+      }
+      .intro-bottom {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+      }
+      .intro p {
+        max-width: 635px;
+        font-size: 18px;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+      .edition {
+        font-size: 11px;
+        color: #748178;
+        white-space: nowrap;
+        padding-bottom: 4px;
+      }
+      .feature {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        background: #1c3028;
+        color: #f3f5ef;
+        border-radius: 18px;
+        overflow: hidden;
+        min-height: 405px;
+      }
+      .feature-copy {
+        padding: 42px;
+      }
+      .feature .kicker {
+        color: #b5c8b5;
+      }
+      .feature h2 {
+        font-size: clamp(29px, 3.2vw, 42px);
+        max-width: 480px;
+        margin: 23px 0 20px;
+      }
+      .feature p {
+        color: #c0cec5;
+        font-size: 15px;
+        max-width: 470px;
+        line-height: 1.85;
+      }
+      .feature button {
+        margin-top: 29px;
+        display: inline-flex;
+        align-items: center;
+        gap: 22px;
+        border: 1px solid #adbdad;
+        border-radius: 99px;
+        padding: 11px 19px;
+        background: #eaf0e5;
+        color: #21372a;
+        font-size: 12px;
+        font-weight: 550;
+      }
+      .feature button:hover {
+        background: white;
+      }
+      .feature-foot {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+      .readtime {
+        font-size: 10px;
+        color: #a8bdb0;
+        margin-top: 29px;
+      }
+      .art {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 42px 34px;
+        border-left: 1px solid #ffffff12;
+        background: radial-gradient(
+          ellipse at 80% 15%,
+          #91af8220,
+          transparent 65%
+        );
+      }
+      .art-label {
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        color: #9cb8a7;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .flow {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+      .flow-card {
+        flex: 1;
+        min-height: 138px;
+        border: 1px solid #aec8b72b;
+        border-radius: 10px;
+        padding: 18px 13px;
+        background: #ffffff05;
+      }
+      .flow-card.accent {
+        background: #e1ead9;
+        color: #223b2b;
+        border-color: #e1ead9;
+      }
+      .flow-card small {
+        font-size: 9px;
+        color: #9eb6a7;
+      }
+      .flow-card.accent small {
+        color: #647e69;
+      }
+      .flow-card strong {
+        display: block;
+        font-family: var(--display);
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        margin-top: 20px;
+        line-height: 1.25;
+      }
+      .flow-arrow {
+        color: #adc4ac;
+        font-size: 17px;
+      }
+      .art-bottom {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid #ffffff1a;
+        color: #a8c0ae;
+        font-size: 11px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .art-note {
+        color: #d6e2d8;
+        font: 400 20px/1.5 var(--display);
+        letter-spacing: -0.03em;
+        margin-top: 32px;
+        max-width: 300px;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        margin: 66px 0 27px;
+      }
+      .section-head h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .section-head p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .count {
+        color: #748178;
+        font-size: 11px;
+        white-space: nowrap;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        padding: 26px;
+        transition: box-shadow 0.2s;
+      }
+      .card:hover {
+        box-shadow: 0 12px 28px #243a2e08;
+      }
+      .meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 10px;
+        color: #748178;
+      }
+      .tag {
+        color: #52725d;
+        background: #edf3ed;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 9px;
+      }
+      .publisher {
+        margin-top: 28px;
+        color: #6f7e74;
+        font-size: 10px;
+      }
+      .card h3 {
+        font-size: 24px;
+        margin: 10px 0 18px;
+        min-height: 83px;
+      }
+      .summary {
+        font-size: 13px;
+        line-height: 1.85;
+        color: #68736d;
+      }
+      .relevance {
+        margin: 22px 0 24px;
+        border-left: 2px solid #b9cbb8;
+        padding-left: 13px;
+      }
+      .relevance b {
+        display: block;
+        font-size: 10px;
+        font-weight: 600;
+        color: #47664f;
+        margin-bottom: 7px;
+      }
+      .relevance p {
+        font-size: 12px;
+        line-height: 1.8;
+        color: #52635a;
+      }
+      .card-footer {
+        border-top: 1px solid #e7ece8;
+        padding-top: 15px;
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 11px;
+      }
+      .note-button {
+        padding: 0;
+        border: 0;
+        background: none;
+        color: var(--ink);
+        font-weight: 550;
+      }
+      .note-button:hover {
+        text-decoration: underline;
+      }
+      .source {
+        color: #687e6c;
+      }
+      .source:hover {
+        text-decoration: underline;
+      }
+      .manifesto {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 60px;
+        padding: 43px 0;
+        margin: 62px 0 30px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .manifesto h2 {
+        font-size: 28px;
+        max-width: 280px;
+        margin-top: 13px;
+      }
+      .manifesto p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.9;
+      }
+      .manifesto a {
+        display: inline-block;
+        margin-top: 16px;
+        font-size: 12px;
+        font-weight: 550;
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 15px 0 40px;
+        font-size: 11px;
+        color: #738077;
+      }
+      .bottom-links {
+        display: flex;
+        gap: 24px;
+      }
+      dialog {
+        width: min(780px, calc(100% - 32px));
+        max-height: 88vh;
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 17px;
+        padding: 0;
+        color: var(--ink);
+        background: #fafbf9;
+      }
+      dialog::backdrop {
+        background: #10201899;
+        backdrop-filter: blur(4px);
+      }
+      .dialog-bar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fafbf9;
+        padding: 18px 28px;
+        border-bottom: 1px solid var(--line);
+        z-index: 1;
+      }
+      .dialog-bar span {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--green);
+      }
+      .close {
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: white;
+        width: 35px;
+        height: 35px;
+        font-size: 21px;
+      }
+      .article {
+        padding: 34px 45px 44px;
+      }
+      .article h2 {
+        font-size: 38px;
+        margin-bottom: 23px;
+      }
+      .article h3 {
+        font-size: 22px;
+        margin: 28px 0 12px;
+      }
+      .article p {
+        font-size: 15px;
+        line-height: 1.85;
+        color: #5d6d62;
+        margin: 0 0 15px;
+      }
+      .article a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        color: #325e41;
+      }
+      .article blockquote {
+        margin: 26px 0;
+        padding: 19px 22px;
+        border-left: 3px solid #728f70;
+        background: #eaf0e5;
+        font: 400 23px/1.5 var(--display);
+        letter-spacing: -0.035em;
+      }
+      .article .small {
+        font-size: 12px;
+      }
+      .article .label {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #50715a;
+        margin-top: 25px;
+      }
+      .article ul {
+        padding-left: 20px;
+        color: #5d6d62;
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      @media (max-width: 1000px) {
+        .navlinks {
+          gap: 17px;
+        }
+        .navlinks .optional {
+          display: none;
+        }
+        .feature-copy {
+          padding: 30px;
+        }
+        .art {
+          padding: 30px 24px;
+        }
+        .cards {
+          gap: 13px;
+        }
+        .card {
+          padding: 20px;
+        }
+        .card h3 {
+          font-size: 21px;
+        }
+      }
+      @media (max-width: 740px) {
+        .wrap {
+          padding: 0 23px;
+        }
+        nav {
+          min-height: 74px;
+          gap: 15px;
+        }
+        .preview {
+          margin-left: auto;
+        }
+        .navlinks {
+          display: none;
+        }
+        .intro {
+          padding: 33px 0 30px;
+        }
+        .intro-bottom {
+          display: block;
+        }
+        .intro p {
+          font-size: 16px;
+        }
+        .edition {
+          display: block;
+          margin-top: 19px;
+        }
+        .feature {
+          grid-template-columns: 1fr;
+        }
+        .feature-copy {
+          padding: 28px;
+        }
+        .feature h2 {
+          font-size: 34px;
+        }
+        .art {
+          border-left: 0;
+          border-top: 1px solid #ffffff12;
+          padding: 24px 28px;
+        }
+        .art-note {
+          display: none;
+        }
+        .flow-card {
+          min-height: 112px;
+        }
+        .flow-card strong {
+          font-size: 15px;
+        }
+        .art-bottom {
+          margin-top: 16px;
+          padding-top: 15px;
+        }
+        .section-head {
+          margin-top: 43px;
+        }
+        .section-head h2 {
+          font-size: 27px;
+        }
+        .count {
+          display: none;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .card {
+          padding: 24px;
+        }
+        .card h3 {
+          min-height: 0;
+          font-size: 26px;
+        }
+        .publisher {
+          margin-top: 20px;
+        }
+        .manifesto {
+          grid-template-columns: 1fr;
+          gap: 23px;
+          margin-top: 40px;
+          padding: 30px 0;
+        }
+        .manifesto h2 {
+          max-width: 100%;
+        }
+        .bottom {
+          align-items: start;
+        }
+        .bottom-links {
+          flex-direction: column;
+          gap: 8px;
+        }
+        .article {
+          padding: 25px;
+        }
+        .article h2 {
+          font-size: 29px;
+        }
+        .readtime {
+          display: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+      .perspective-entry {
+        display: grid;
+        grid-template-columns: 0.8fr 1.4fr;
+        gap: 48px;
+        padding: 36px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+      }
+      .perspective-entry h3 {
+        font-size: 32px;
+        margin: 14px 0 20px;
+      }
+      .perspective-entry p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin-bottom: 24px;
+      }
+      .perspective-art {
+        background: #e3ebdf;
+        border-radius: 9px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+      }
+      .evidence-step {
+        padding: 14px 18px;
+        background: #ffffffa8;
+        border: 1px solid #c5d3c2;
+        border-radius: 6px;
+        font-size: 13px;
+      }
+      .evidence-step:last-child {
+        background: #243e31;
+        color: white;
+        margin-left: 36px;
+      }
+      @media (max-width: 740px) {
+        .perspective-entry {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          padding: 24px;
+        }
+        .perspective-entry h3 {
+          font-size: 27px;
+        }
+      }
+      .perspective-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px;
+        margin-top: 44px;
+      }
+      .perspective-tile {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 34px;
+        transition:
+          box-shadow 0.2s,
+          border-color 0.2s;
+      }
+      .perspective-tile:hover {
+        border-color: #9aad9b;
+        box-shadow: 0 12px 30px #243a2e0b;
+      }
+      .tile-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        color: #69756c;
+        font-size: 10px;
+      }
+      .perspective-tile h2 {
+        font-size: 34px;
+        line-height: 1.15;
+        margin: 26px 0 18px;
+      }
+      .perspective-tile h2 button {
+        text-align: left;
+        font: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+        padding: 0;
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+      .perspective-tile h2 button::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+      }
+      .tile-deck {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 24px;
+      }
+      .takeaways {
+        background: #f1f5ef;
+        border-radius: 9px;
+        padding: 22px;
+        margin-bottom: 28px;
+      }
+      .perspective-tile h3 {
+        font:
+          600 11px/1.5 'Inter',
+          sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin: 0 0 12px;
+      }
+      .takeaways ul {
+        margin: 0;
+        padding-left: 18px;
+        font-size: 14px;
+        line-height: 1.75;
+        color: #40574a;
+      }
+      .takeaways li + li {
+        margin-top: 10px;
+      }
+      .tile-sources {
+        margin-top: auto;
+        padding-bottom: 26px;
+      }
+      .tile-sources p {
+        font-size: 11px;
+        color: var(--muted);
+        margin: 0 0 12px;
+      }
+      .tile-sources a {
+        display: block;
+        width: fit-content;
+        position: relative;
+        z-index: 1;
+        font-size: 12px;
+        line-height: 1.6;
+        margin: 8px 0;
+        color: #486652;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .tile-bottom {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+      }
+      .tile-bottom button {
+        position: relative;
+        z-index: 1;
+        font-size: 13px;
+      }
+      .tile-bottom > span {
+        color: var(--muted);
+        font-size: 10px;
+      }
+      @media (max-width: 800px) {
+        .perspective-grid {
+          grid-template-columns: 1fr;
+        }
+        .perspective-tile {
+          padding: 26px;
+        }
+        .perspective-tile h2 {
+          font-size: 30px;
+        }
+        .tile-top {
+          flex-wrap: wrap;
+        }
+      }
+      .research-quote {
+        margin: 0 0 28px;
+        padding: 24px;
+        background: #203d30;
+        color: #f4f7ee;
+        border-radius: 10px;
+      }
+      .research-quote blockquote,
+      .article .research-quote blockquote {
+        font: 500 23px/1.4 var(--display);
+        letter-spacing: -0.02em;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: inherit;
+      }
+      .research-quote figcaption {
+        font-size: 10px;
+        line-height: 1.8;
+        color: #d6e1d6;
+        margin-top: 16px;
+      }
+      .research-quote a {
+        position: relative;
+        z-index: 1;
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .references {
+        padding-left: 20px;
+        font-size: 13px;
+        line-height: 1.8;
+        color: var(--muted);
+      }
+      .references li + li {
+        margin-top: 16px;
+      }
+      .editorial-note {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="logo" href="/">DecAltra</a
+        ><span class="preview">Design preview</span>
+        <div class="navlinks">
+          <a href="/credit-decisioning">Credit Decisioning</a
+          ><a href="/about" class="optional">About us</a
+          ><a class="active" href="#research" aria-current="page"
+            >Research & Perspectives</a
+          ><a href="/contact" class="pill-button">Let’s talk ↗</a>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap" id="research">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="kicker">The thinking behind DecAltra</div>
+        <h1 id="page-title">Research & Perspectives</h1>
+        <div class="intro-bottom">
+          <p>
+            The evidence and ideas shaping how we think about financial
+            decisions, capital allocation, and productive growth.
+          </p>
+          <span class="edition"
+            >2 perspectives · Research referenced in each article</span
+          >
+        </div>
+      </section>
+      <section aria-label="Perspectives" class="perspective-grid">
+        <article class="perspective-tile">
+          <div class="tile-top">
+            <span class="tag">Purpose &amp; productive growth</span
+            ><span>01 / Founding perspective</span>
+          </div>
+          <h2>
+            <button data-open="perspective">
+              Why better credit infrastructure matters
+            </button>
+          </h2>
+          <p class="tile-deck">
+            The case for improving the infrastructure between business
+            information and the allocation of capital.
+          </p>
+          <figure class="research-quote">
+            <blockquote>
+              &ldquo;Taking steps to lower delivery and monitoring costs would
+              be instrumental in improving the economics of SME lending.&rdquo;
+            </blockquote>
+            <figcaption>
+              Manning, Babu, Bourdais &amp; Włodarski · Bank of England · 19
+              June 2026<br /><a
+                href="https://www.bankofengland.co.uk/bank-insights/2026/what-drives-differences-in-commercial-banks-product-level-returns"
+                target="_blank"
+                rel="noopener noreferrer"
+                >What drives differences in commercial banks&#8217; product
+                level returns? ↗</a
+              >
+            </figcaption>
+          </figure>
+          <div class="takeaways">
+            <h3>Main takeaways</h3>
+            <ul>
+              <li>
+                The cost of understanding a borrower shapes the economics of
+                lending.
+              </li>
+              <li>
+                Information gaps can hold back access to suitable finance.
+              </li>
+              <li>
+                DecAltra’s purpose starts with connecting evidence, analysis,
+                and judgement.
+              </li>
+            </ul>
+          </div>
+          <div class="tile-sources">
+            <h3>Research informing our perspective</h3>
+            <p>Bank of England · 3 sources · 2025–2026</p>
+            <a
+              href="https://www.bankofengland.co.uk/bank-insights/2026/what-drives-differences-in-commercial-banks-product-level-returns"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Commercial banks’ product-level returns ↗</a
+            ><a
+              href="https://www.bankofengland.co.uk/bank-insights/2026/finance-growth-and-productive-investment-what-is-the-fpc-assessing-in-2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Finance, growth and productive investment ↗</a
+            ><a
+              href="https://www.bankofengland.co.uk/bank-overground/2025/unlocking-growth-what-can-the-literature-tell-us-about-whats-holding-back-high-growth-firms"
+              target="_blank"
+              rel="noopener noreferrer"
+              >What holds back high-growth firms? ↗</a
+            >
+          </div>
+          <div class="tile-bottom">
+            <button class="note-button" data-open="perspective">
+              Read perspective <span aria-hidden="true">↗</span></button
+            ><span>DecAltra perspective</span>
+          </div>
+        </article>
+        <article class="perspective-tile">
+          <div class="tile-top">
+            <span class="tag">Evidence &amp; professional judgement</span
+            ><span>02 / Illustrative draft</span>
+          </div>
+          <h2>
+            <button data-open="evidence">
+              Faster decisions need stronger evidence
+            </button>
+          </h2>
+          <p class="tile-deck">
+            Our view on keeping decisions understandable as AI changes how
+            financial analysis is prepared.
+          </p>
+          <div class="takeaways">
+            <h3>Main takeaways</h3>
+            <ul>
+              <li>
+                Preserve the connection between a conclusion and its source
+                information.
+              </li>
+              <li>
+                Give professionals room to challenge assumptions and add
+                business context.
+              </li>
+              <li>
+                Assess efficiency alongside reviewability and decision quality.
+              </li>
+            </ul>
+          </div>
+          <div class="tile-sources">
+            <h3>Research informing our perspective</h3>
+            <p>Bank of England · 2 contextual sources · 2025–2026</p>
+            <a
+              href="https://www.bankofengland.co.uk/bank-insights/2026/what-drives-differences-in-commercial-banks-product-level-returns"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Lending costs and digitalisation ↗</a
+            ><a
+              href="https://www.bankofengland.co.uk/bank-overground/2025/unlocking-growth-what-can-the-literature-tell-us-about-whats-holding-back-high-growth-firms"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Information gaps and high-growth firms ↗</a
+            >
+          </div>
+          <div class="tile-bottom">
+            <button class="note-button" data-open="evidence">
+              Read perspective <span aria-hidden="true">↗</span></button
+            ><span>DecAltra perspective</span>
+          </div>
+        </article>
+      </section>
+      <section class="manifesto">
+        <div>
+          <div class="kicker">From perspective to practice</div>
+          <h2>Better decisions start with better foundations.</h2>
+        </div>
+        <div>
+          <p>
+            DecAltra connects information, analysis, and professional judgement.
+            Our ambition is to help financial institutions spend less time
+            preparing a case and more time understanding the opportunity in
+            front of them.
+          </p>
+          <a class="textlink" href="/credit-decisioning"
+            >Explore Credit Decisioning <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="wrap bottom">
+      <span
+        >© 2026 DecAltra<br />Research informs our thinking. Our perspectives
+        explain why.</span
+      >
+      <div class="bottom-links">
+        <a href="/about">About DecAltra</a><a href="/contact">Contact us</a
+        ><a href="/privacy-policy">Privacy policy</a>
+      </div>
+    </footer>
+    <dialog id="perspective" aria-labelledby="perspective-title">
+      <div class="dialog-bar">
+        <span>Our founding perspective · DecAltra</span
+        ><button class="close" aria-label="Close perspective">×</button>
+      </div>
+      <article class="article">
+        <h2 id="perspective-title">Why better credit infrastructure matters</h2>
+        <p>
+          DecAltra starts with a conviction: the infrastructure behind financial
+          decisions deserves attention alongside the availability of capital
+          itself.
+        </p>
+        <h3>The economic problem</h3>
+        <p>
+          Financing frictions can interrupt investment and expansion. The Bank
+          of England’s discussion of
+          <a
+            href="https://www.bankofengland.co.uk/bank-insights/2026/finance-growth-and-productive-investment-what-is-the-fpc-assessing-in-2026"
+            >finance and productive investment</a
+          >
+          emphasises the importance of suitable finance, alongside resilience.
+        </p>
+        <figure class="research-quote">
+          <blockquote>
+            &ldquo;Taking steps to lower delivery and monitoring costs would be
+            instrumental in improving the economics of SME lending. SME loans
+            are typically smaller, more heterogeneous and more labour‑intensive
+            to assess, which raises operating costs per‑loan and depresses
+            returns. Investment in digitalisation, automation and data‑driven
+            credit processes can materially reduce these costs by streamlining
+            underwriting, improving risk assessment, and enabling more efficient
+            ongoing monitoring.&rdquo;
+          </blockquote>
+          <figcaption>
+            Manning, Babu, Bourdais &amp; Włodarski · Bank of England · 19 June
+            2026<br /><a
+              href="https://www.bankofengland.co.uk/bank-insights/2026/what-drives-differences-in-commercial-banks-product-level-returns"
+              target="_blank"
+              rel="noopener noreferrer"
+              >What drives differences in commercial banks&#8217; product level
+              returns? ↗</a
+            >
+          </figcaption>
+        </figure>
+        <h3>Lower costs, stronger decision infrastructure</h3>
+        <p>
+          The Bank’s
+          <a
+            href="https://www.bankofengland.co.uk/bank-insights/2026/what-drives-differences-in-commercial-banks-product-level-returns"
+            >analysis of lending returns</a
+          >
+          identifies operating costs as one contributor to lower SME lending
+          profitability. Its estimates depend on cost-allocation assumptions and
+          do not describe every bank’s experience.
+        </p>
+        <h3>The information problem</h3>
+        <p>
+          The
+          <a
+            href="https://www.bankofengland.co.uk/bank-overground/2025/unlocking-growth-what-can-the-literature-tell-us-about-whats-holding-back-high-growth-firms"
+            >review of high-growth firms</a
+          >
+          highlights the role of information and relationships in financing.
+          Understanding a business involves context as well as numbers.
+        </p>
+        <h3>Why we are building Credit Decisioning Infrastructure</h3>
+        <p>
+          Our reading is that the work required to deliver and monitor credit is
+          an economic constraint worth addressing. This is central to
+          DecAltra&#8217;s reason for existing.
+        </p>
+        <p>
+          DecAltra&#8217;s Credit Decisioning Infrastructure is designed to
+          connect financial spreading, analysis, credit memoranda, and portfolio
+          oversight. Our aim is to reduce repeated preparation and fragmented
+          handovers while preserving the evidence behind each decision.
+        </p>
+        <p>
+          For credit teams, that means a workflow built around three priorities:
+        </p>
+        <ul class="references">
+          <li>
+            <strong>Less repeated work:</strong> carry information and analysis
+            through the assessment process.
+          </li>
+          <li>
+            <strong>Clearer review:</strong> keep sources, adjustments, and
+            assumptions connected to the conclusions professionals assess.
+          </li>
+          <li>
+            <strong>Continuity into monitoring:</strong> connect the assessment
+            of a borrower with the portfolio view and the next action.
+          </li>
+        </ul>
+        <h3>Our vision</h3>
+        <p>
+          We want to help financial institutions make sound credit decisions
+          more efficiently, so that the cost of understanding and monitoring a
+          business becomes less of a barrier to serving it.
+        </p>
+        <blockquote>
+          Help suitable capital reach productive opportunities sooner.
+        </blockquote>
+        <p>
+          The research strengthens the economic rationale for this ambition. The
+          outcomes of using DecAltra must be established in practice, through
+          measures such as preparation time, review effort, and monitoring
+          workload.
+        </p>
+        <p>
+          <a href="/credit-decisioning"
+            >Explore DecAltra&#8217;s Credit Decisioning Infrastructure ↗</a
+          >
+        </p>
+        <p class="small editorial-note">
+          Written by DecAltra, drawing on the research referenced below.
+          Interpretations and conclusions are our own.
+        </p>
+        <h3>Research references</h3>
+        <ol class="references">
+          <li>
+            Colm Manning, Prashant Babu, Ben Bourdais and Robert Włodarski.
+            <a
+              href="https://www.bankofengland.co.uk/bank-insights/2026/what-drives-differences-in-commercial-banks-product-level-returns"
+              target="_blank"
+              rel="noopener noreferrer"
+              >What drives differences in commercial banks&#8217; product level
+              returns?</a
+            >
+            Bank of England, Bank Insights, 19 June 2026.
+          </li>
+          <li>
+            Sarah Breeden and Colm Manning.
+            <a
+              href="https://www.bankofengland.co.uk/bank-insights/2026/finance-growth-and-productive-investment-what-is-the-fpc-assessing-in-2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Finance, growth and productive investment: what is the FPC
+              assessing in 2026?</a
+            >
+            Bank of England, Bank Insights, 22 September 2026.
+          </li>
+          <li>
+            Bank of England.
+            <a
+              href="https://www.bankofengland.co.uk/bank-overground/2025/unlocking-growth-what-can-the-literature-tell-us-about-whats-holding-back-high-growth-firms"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Unlocking growth: what can the literature tell us about
+              what&#8217;s holding back high-growth firms?</a
+            >
+            Bank Overground, 2 October 2025. Prepared with the help of Sudipto
+            Karmakar and Isabelle Roland.
+          </li>
+        </ol>
+      </article>
+    </dialog>
+    <dialog id="evidence" aria-labelledby="evidence-title">
+      <div class="dialog-bar">
+        <span>DecAltra perspective · Illustrative draft</span
+        ><button class="close" aria-label="Close perspective">×</button>
+      </div>
+      <article class="article">
+        <h2 id="evidence-title">Faster decisions need stronger evidence</h2>
+        <p>
+          For DecAltra, a useful decision process combines efficient preparation
+          with analysis that professionals can understand, challenge, and
+          explain.
+        </p>
+        <h3>Keep the source connected</h3>
+        <p>
+          A financial figure becomes more useful when its origin and any
+          adjustments remain visible. Our design principle is to preserve those
+          connections as information moves through a credit assessment.
+        </p>
+        <h3>Make room for judgement</h3>
+        <p>
+          AI can support preparation and analysis. The workflow should help
+          professionals inspect assumptions, add business context, and take
+          responsibility for the conclusion.
+        </p>
+        <h3>Measure more than speed</h3>
+        <p>
+          Our view is that time saved should be considered alongside the effort
+          needed to review a case, resolve uncertainty, and explain the
+          decision.
+        </p>
+        <p class="small editorial-note">
+          Written by DecAltra, drawing on the research referenced below.
+          Interpretations and conclusions are our own.
+        </p>
+        <h3>Research references</h3>
+        <p class="small">
+          These sources provide context on lending costs and information
+          barriers; the workflow principles in this perspective are
+          DecAltra&#8217;s interpretation.
+        </p>
+        <ol class="references">
+          <li>
+            Colm Manning, Prashant Babu, Ben Bourdais and Robert Włodarski.
+            <a
+              href="https://www.bankofengland.co.uk/bank-insights/2026/what-drives-differences-in-commercial-banks-product-level-returns"
+              target="_blank"
+              rel="noopener noreferrer"
+              >What drives differences in commercial banks&#8217; product level
+              returns?</a
+            >
+            Bank of England, Bank Insights, 19 June 2026.
+          </li>
+          <li>
+            Bank of England.
+            <a
+              href="https://www.bankofengland.co.uk/bank-overground/2025/unlocking-growth-what-can-the-literature-tell-us-about-whats-holding-back-high-growth-firms"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Unlocking growth: what can the literature tell us about
+              what&#8217;s holding back high-growth firms?</a
+            >
+            Bank Overground, 2 October 2025. Prepared with the help of Sudipto
+            Karmakar and Isabelle Roland.
+          </li>
+        </ol>
+        <blockquote>
+          Less time reconstructing the evidence. More time understanding what it
+          means.
+        </blockquote>
+        <p>
+          This illustrative editorial shows how a second DecAltra perspective
+          could sit alongside the founding article. It describes our approach,
+          rather than reporting a new research finding.
+        </p>
+      </article>
+    </dialog>
+    <dialog id="economics" aria-labelledby="economics-title">
+      <div class="dialog-bar">
+        <span>Research note · Lending economics</span
+        ><button class="close" aria-label="Close research note">×</button>
+      </div>
+      <article class="article">
+        <h2 id="economics-title">The cost of understanding a borrower</h2>
+        <p class="label">What the research says</p>
+        <p>
+          In its large-UK-bank analysis, the Bank estimates that SME lending
+          earns lower average returns than larger corporate lending. Impairments
+          and operating costs are the main contributors to that gap; capital
+          requirements play a smaller role. Digitalisation could reduce delivery
+          and monitoring costs.
+        </p>
+        <p class="label">Our perspective</p>
+        <p>
+          This makes the work behind a credit decision economically important.
+          DecAltra focuses on reducing repeated preparation and connecting the
+          stages of assessment. Time saved should be measured alongside the
+          quality and reviewability of the resulting analysis.
+        </p>
+        <p class="label">Keep in mind</p>
+        <p>
+          The estimates are sensitive to assumptions. Lower processing costs do
+          not remove underlying credit risk.
+        </p>
+        <a
+          href="https://www.bankofengland.co.uk/bank-insights/2026/what-drives-differences-in-commercial-banks-product-level-returns"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Read the original Bank of England article ↗</a
+        >
+      </article>
+    </dialog>
+    <dialog id="investment" aria-labelledby="investment-title">
+      <div class="dialog-bar">
+        <span>Research note · Productive investment</span
+        ><button class="close" aria-label="Close research note">×</button>
+      </div>
+      <article class="article">
+        <h2 id="investment-title">The right finance, at the right time</h2>
+        <p class="label">What the research says</p>
+        <p>
+          The FPC’s work examines how finance supports productive investment
+          without weakening resilience. Firms need funding suited to their
+          circumstances; additional bank debt is not always the answer. The
+          article also notes that digital lending benefits can concentrate among
+          lower-risk businesses.
+        </p>
+        <p class="label">Our perspective</p>
+        <p>
+          We see better assessment infrastructure as one contribution to this
+          wider challenge. Our purpose is to help professionals evaluate
+          opportunities efficiently and thoughtfully, with the evidence
+          available for review.
+        </p>
+        <p class="label">Keep in mind</p>
+        <p>
+          This is an overview of an ongoing policy research programme, not a
+          finding that technology can resolve every financing constraint.
+        </p>
+        <a
+          href="https://www.bankofengland.co.uk/bank-insights/2026/finance-growth-and-productive-investment-what-is-the-fpc-assessing-in-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Read the original Bank of England article ↗</a
+        >
+      </article>
+    </dialog>
+    <dialog id="growth" aria-labelledby="growth-title">
+      <div class="dialog-bar">
+        <span>Research note · Information & growth</span
+        ><button class="close" aria-label="Close research note">×</button>
+      </div>
+      <article class="article">
+        <h2 id="growth-title">Understanding the businesses ready to grow</h2>
+        <p class="label">What the research says</p>
+        <p>
+          The literature review describes financing barriers associated with
+          limited collateral, backward-looking assessments, and information
+          asymmetries. Relationship lending can bring valuable qualitative
+          information into decisions. Some innovative scale-ups need equity or
+          patient capital.
+        </p>
+        <p class="label">Our perspective</p>
+        <p>
+          We believe institutions should be able to carry useful context
+          forward. Connecting source information, analysis, and professional
+          judgement is our approach to making that knowledge easier to review
+          and reuse.
+        </p>
+        <p class="label">Keep in mind</p>
+        <p>
+          High-growth firms differ substantially. Faster assessment cannot
+          substitute for a suitable funding model.
+        </p>
+        <a
+          href="https://www.bankofengland.co.uk/bank-overground/2025/unlocking-growth-what-can-the-literature-tell-us-about-whats-holding-back-high-growth-firms"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Read the original Bank of England article ↗</a
+        >
+      </article>
+    </dialog>
+    <script>
+      document.querySelectorAll('[data-open]').forEach(button =>
+        button.addEventListener('click', () => {
+          document.getElementById(button.dataset.open).showModal();
+        })
+      );
+      document.querySelectorAll('dialog').forEach(dialog => {
+        dialog
+          .querySelector('.close')
+          .addEventListener('click', () => dialog.close());
+        dialog.addEventListener('click', event => {
+          if (event.target === dialog) {
+            const r = dialog.getBoundingClientRect();
+            if (
+              event.clientX < r.left ||
+              event.clientX > r.right ||
+              event.clientY < r.top ||
+              event.clientY > r.bottom
+            )
+              dialog.close();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
