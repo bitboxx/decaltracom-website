@@ -2,6 +2,11 @@ const AUTH_USER = 'visitor'
 const AUTH_PASS = 'creditmemo'
 
 export const onRequest: PagesFunction = async (context) => {
+  const hostname = new URL(context.request.url).hostname
+  if (hostname === 'decaltra.com' || hostname === 'www.decaltra.com') {
+    return context.next()
+  }
+
   const auth = context.request.headers.get('Authorization')
 
   if (auth) {
