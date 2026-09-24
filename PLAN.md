@@ -60,3 +60,4 @@ Implementation complete; not published. Project-wide type checking reports 15 er
 - [x] Add a discreet Have a suggestion? Share feedback control below Contact page email details, opening the existing feedback modal.
 - [x] Prepare release: use https://www.decaltra.com for sitemap URLs and move the last public mock-up into the non-published editorial archive.
 - [x] Preserve remote main changes (analytics switch, cookie notice, self-hosted fonts and mailer improvements). Remove the basic-auth gate only on decaltra.com and www.decaltra.com for the public launch; retain preview protection. Build and live-origin mailer preflight passed.
+- [x] Update homepage preview to Beyond financial decision making and approved subtitle; add Open Graph and Twitter metadata. Production build passed; publication awaits explicit approval after automatic review blocked deploy.
