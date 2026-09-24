@@ -61,7 +61,7 @@ const founders = [
     linkedin: 'https://www.linkedin.com/in/michael-bolle/',
   },
   {
-    name: 'Martin Tedjawardhana',
+    name: 'Martin Ted',
     portraitPosition: 'right',
     role: 'Co-Founder | CTO',
     expertise: 'Software engineering • AI • Architecture • Data',

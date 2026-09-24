@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './fonts.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -24,7 +25,7 @@
   .glass3d {
     --filter-glass3d: blur(32px) brightness(0.85) saturate(2.5);
     --color-glass3d: hsl(189 76% 100% / 0.6);
-    --noise-glass3d: url("https://www.transparenttextures.com/patterns/fabric-1-light.png");
+    --noise-glass3d: url("/img/noise-fabric.png");
 
     position: relative;
     z-index: 4;

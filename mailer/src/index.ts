@@ -14,6 +14,8 @@ export interface Env {
 
 interface ContactFormPayload extends EmailContentInput {
   language?: 'nl-nl' | 'en-gb';
+  /** Honeypot. Hidden from people on the site; only bots fill it in. */
+  website?: string;
 }
 
 const sendOk = (headers: Record<string, string>): Response => {
@@ -60,6 +62,14 @@ const handlePost = async (request: Request, env: Env): Promise<Response> => {
   try {
     const payload = await request.json<ContactFormPayload>();
     const language = payload.language === 'nl-nl' ? 'nl-nl' : 'en-gb';
+
+    // Honeypot: the form ships a field people never see. Anything that fills it
+    // is a bot, so answer 200 and send nothing. A rejection would just tell the
+    // sender which field gave it away.
+    if (typeof payload.website === 'string' && payload.website.trim() !== '') {
+      console.warn('Honeypot triggered, discarding submission.');
+      return sendOk(corsHeadersWithOrigin);
+    }
 
     if (!payload.email || !isValidEmail(payload.email)) {
       return new Response('Invalid email format.', { status: 400, headers: corsHeadersWithOrigin });
