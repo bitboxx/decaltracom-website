@@ -17,13 +17,12 @@ export function HomepageHero({ children }: { children: ReactNode }) {
           </h1>
           <div className="mt-[31px] mb-[29px] max-w-[555px] space-y-3 text-lg leading-[1.5] tracking-[-0.02em] text-[#5c686d] min-[561px]:text-xl">
             <p>
-              DecAltra empowers financial institutions to scale their
-              decision-making processes and stay competitive
+              DecAltra helps financial institutions scale and stay ahead.
             </p>
             <p>
-              Our adaptable platform uses AI to reduce manual work, maintains an
-              evidence chain from raw information to final decisions, and keeps
-              professionals in control
+              Our intelligent decision infrastructure connects information,
+              analysis and professional judgement so teams can spend less time
+              preparing information and more time understanding opportunities.
             </p>
           </div>
           <p className="mb-[29px] flex items-center gap-[11px] text-xs font-[750] tracking-[0.12em] text-[#171b1d] uppercase">
