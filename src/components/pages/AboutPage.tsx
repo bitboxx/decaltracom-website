@@ -46,7 +46,7 @@ const benefits = [
   {
     icon: CompassIcon,
     title: 'Stay ahead',
-    description: 'Make faster, higher-quality decisions and stay competitive',
+    description: 'Make faster, higher-quality decisions and stay ahead',
   },
 ]
 
@@ -125,7 +125,7 @@ const storySections: StorySection[] = [
       'bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_38%),linear-gradient(145deg,rgba(20,29,36,1),rgba(44,72,84,0.94)_50%,rgba(84,121,138,0.88))]',
     accentClassName: 'bg-[#d0e0ea]/20',
     content: [
-      'DecAltra builds intelligent decision infrastructure that connects information, analysis and professional judgement.',
+      'DecAltra offers intelligent decision infrastructure that connects information, analysis and professional judgement.',
       'AI handles more of the preparation while connected modules carry the work forward. An evidence chain links source information to the final decision so professionals can review with confidence and remain in control.',
     ],
   },
