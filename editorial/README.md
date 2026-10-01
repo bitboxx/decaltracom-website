@@ -5,8 +5,9 @@ It contains the decision-infrastructure and private-credit perspectives. The pri
 
 ## Draft queue
 
-1. drafts/03-professional-judgement.html — Scale the process. Preserve the judgement.
-2. drafts/04-productive-growth.html — Help suitable capital reach productive businesses.
+1. drafts/02-private-credit-operations.html — Growing private credit needs stronger infrastructure.
+2. drafts/03-professional-judgement.html — Scale the process. Preserve the judgement.
+3. drafts/04-productive-growth.html — Help suitable capital reach productive businesses.
 
 Each draft preserves the complete tile, quotation, sources, and article as HTML.
 Edit these files here until ready. They are outside public and src/pages and are
