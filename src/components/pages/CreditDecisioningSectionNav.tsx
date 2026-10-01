@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 const sections = [
   { id: 'hero', label: 'Credit Decisioning' },
   { id: 'benefits', label: 'Cross-module benefits' },
-  { id: 'connected', label: 'Connected workflow' },
   { id: 'product-architecture', label: 'Modules and Foundation' },
   { id: 'call-to-action', label: 'Interested?' },
 ] as const;

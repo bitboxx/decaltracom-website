@@ -13,6 +13,12 @@ Each draft preserves the complete tile, quotation, sources, and article as HTML.
 Edit these files here until ready. They are outside public and src/pages and are
 not included in the static website build. They are not scheduled for automatic publication.
 
+## Product-page drafts
+
+- drafts/credit-decisioning-connected-workflow.astro — The removed “One analysis
+  that carries through” section from the Credit Decisioning overview. Retained
+  for potential future use and not included in the website build.
+
 ## Publishing a perspective
 
 - Review the text, quotation and linked research.
