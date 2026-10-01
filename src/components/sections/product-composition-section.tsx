@@ -134,7 +134,7 @@ export function ProductCompositionCard() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h3 className="font-display text-2xl/8 font-medium tracking-tight text-mist-950">
-                Three connected modules. Traceable decision records.
+                Three connected modules
               </h3>
             </div>
             <Tag className="border-mist-300 bg-white text-mist-700">
@@ -174,7 +174,7 @@ export function ProductCompositionCard() {
             <div className="space-y-2">
               <div>
                 <h3 className="font-display text-2xl/8 font-medium tracking-tight">
-                  The governed foundation
+                  One governed foundation
                 </h3>
               </div>
             </div>
