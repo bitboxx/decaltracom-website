@@ -20,7 +20,6 @@
 		"wrangler": "^4.19.2"
 	},
 	"dependencies": {
-		"tsx": "^4.20.3",
-		"worker-mailer": "^1.1.4"
+		"tsx": "^4.20.3"
 	}
 }

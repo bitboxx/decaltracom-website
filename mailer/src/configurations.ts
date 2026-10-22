@@ -4,18 +4,17 @@ export interface SiteConfig {
   fromAddress: string; // Should be a verified sender in your email service
   notificationSenderName: string;
   notificationRecipientName: string;
-  mailerUserSecretName: string;
-  mailerPassSecretName: string;
+  /** The mailbox the Worker sends as; the app registration may send as nothing else. */
+  senderAddress: string;
+  /** Secret names: the Entra tenant, the app registration and its client secret. */
+  tenantSecretName: string;
+  clientIdSecretName: string;
+  clientSecretSecretName: string;
   notificationEmailSenderName?: string;
   sendConfirmation?: boolean;
-  smtpHost: string;
-  smtpPort: number;
 }
 
 export type AppConfig = SiteConfig[];
-
-const smtpHost =  'witcher.mxrouting.net';
-const smtpPort =  465;
 
 export const configurations: AppConfig = [
   {
@@ -24,12 +23,12 @@ export const configurations: AppConfig = [
     fromAddress: 'info@decaltra.com',
     notificationSenderName: 'Decaltra.com',
     notificationRecipientName: 'Decaltra',
-    mailerUserSecretName: 'DECALTRACOM_MAILER_USER',
-    mailerPassSecretName: 'DECALTRACOM_MAILER_PASS',
+    senderAddress: 'website@decaltra.com',
+    tenantSecretName: 'DECALTRACOM_GRAPH_TENANT',
+    clientIdSecretName: 'DECALTRACOM_GRAPH_CLIENT_ID',
+    clientSecretSecretName: 'DECALTRACOM_GRAPH_CLIENT_SECRET',
     notificationEmailSenderName: 'The Decaltra Team',
     sendConfirmation: true,
-    smtpHost,
-    smtpPort,
   },
 ];
 

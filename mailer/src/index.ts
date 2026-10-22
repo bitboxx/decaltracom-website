@@ -1,4 +1,4 @@
-import { WorkerMailer } from 'worker-mailer';
+import { acquireToken, sendAs } from './graph-mailer';
 import { generateNotificationEmail, generateConfirmationEmail, EmailContentInput } from './email-templates';
 import { getSiteConfigByOrigin, SiteConfig } from './configurations';
 
@@ -79,49 +79,23 @@ const handlePost = async (request: Request, env: Env): Promise<Response> => {
       return sendOk(corsHeadersWithOrigin);
     }
 
-    const mailerUser = env[siteConfig.mailerUserSecretName];
-    const mailerPass = env[siteConfig.mailerPassSecretName];
-
-    if (!mailerUser || !mailerPass) {
-      console.error(`Mailer credentials not found for site: ${origin}. Missing ${siteConfig.mailerUserSecretName} or ${siteConfig.mailerPassSecretName} in environment variables.`);
+    const credentials = {
+      tenantId: env[siteConfig.tenantSecretName],
+      clientId: env[siteConfig.clientIdSecretName],
+      clientSecret: env[siteConfig.clientSecretSecretName],
+    };
+    if (!credentials.tenantId || !credentials.clientId || !credentials.clientSecret) {
+      console.error(`Mailer credentials not found for site: ${origin}. Missing one of ${siteConfig.tenantSecretName}, ${siteConfig.clientIdSecretName}, ${siteConfig.clientSecretSecretName}.`);
       return new Response('Internal Server Error: Mailer configuration missing.', { status: 500, headers: corsHeadersWithOrigin });
     }
 
-    const connectOptions = {
-      credentials: {
-        username: mailerUser,
-        password: mailerPass,
-      },
-      authType: 'plain' as const,
-      host: siteConfig.smtpHost,
-      port: siteConfig.smtpPort,
-      secure: siteConfig.smtpPort === 465,
-    };
-
-    let mailer;
-    try {
-      mailer = await WorkerMailer.connect(connectOptions);
-    } catch (firstError) {
-      console.warn('SMTP connect failed, retrying once:', firstError);
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      mailer = await WorkerMailer.connect(connectOptions);
-    }
-
+    const token = await acquireToken(credentials);
     const notificationEmailContent = generateNotificationEmail(payload, language, siteConfig);
-
-    await mailer.send({
-      from: {
-        name: siteConfig.notificationSenderName,
-        email: siteConfig.fromAddress,
-      },
-      to: {
-        name: siteConfig.notificationRecipientName,
-        email: siteConfig.toAddress,
-      },
-      reply: {
-        name: payload.name,
-        email: payload.email,
-      },
+    // The notification goes to the founders' address with the visitor as reply-to, so an
+    // answer from the inbox reaches them directly.
+    await sendAs(siteConfig.senderAddress, token, {
+      to: { name: siteConfig.notificationRecipientName, email: siteConfig.toAddress },
+      replyTo: { name: payload.name, email: payload.email },
       subject: notificationEmailContent.subject,
       text: notificationEmailContent.text,
       html: notificationEmailContent.html,
@@ -129,19 +103,9 @@ const handlePost = async (request: Request, env: Env): Promise<Response> => {
 
     if (siteConfig.sendConfirmation !== false) {
       const confirmationEmailContent = generateConfirmationEmail(payload, language, siteConfig);
-      await mailer.send({
-        from: {
-          name: siteConfig.notificationEmailSenderName,
-          email: siteConfig.fromAddress,
-        },
-        to: {
-          name: payload.name,
-          email: payload.email,
-        },
-        reply: {
-          name: siteConfig.notificationRecipientName,
-          email: siteConfig.toAddress,
-        },
+      await sendAs(siteConfig.senderAddress, token, {
+        to: { name: payload.name, email: payload.email },
+        replyTo: { name: siteConfig.notificationRecipientName, email: siteConfig.toAddress },
         subject: confirmationEmailContent.subject,
         text: confirmationEmailContent.text,
         html: confirmationEmailContent.html,
