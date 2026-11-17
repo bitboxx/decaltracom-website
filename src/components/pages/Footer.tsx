@@ -3,6 +3,12 @@ import {
   FooterLink,
   FooterWithLinkCategories,
 } from '@/components/sections/footer-with-link-categories'
+import badge from './simple-analytics-badge.html?raw'
+
+// Simple Analytics' free plan requires its badge in a footer on every page. The snippet is
+// their text link from simpleanalytics.com/badges, unchanged: an inline SVG, so no request to
+// another domain. Shown only in builds that load the analytics script.
+const analyticsEnabled = import.meta.env.PUBLIC_ANALYTICS === 'on'
 
 export default function Footer() {
   return (
@@ -35,7 +41,12 @@ export default function Footer() {
           </FooterCategory>
         </>
       }
-      fineprint={`\u00A9 ${new Date().getFullYear()} DecAltra`}
+      fineprint={
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <span>{`\u00A9 ${new Date().getFullYear()} DecAltra`}</span>
+          {analyticsEnabled && <div dangerouslySetInnerHTML={{ __html: badge }} />}
+        </div>
+      }
     />
   )
 }
